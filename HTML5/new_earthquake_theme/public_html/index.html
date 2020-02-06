@@ -9,6 +9,9 @@ and open the template in the editor.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/canvasjs.min.js"></script>
         <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <style>
             .border-grey{border:1px solid #A9A9A9;}
@@ -17,7 +20,7 @@ and open the template in the editor.
             .float-right{float:right;}
             .font-weight-700{font-weight:700;}
             .padding-0{padding:0px;}
-            .line{border-left:2px solid #e2e2e2	;height:529px;border-width:5px;}
+            .line{border-left:2px solid #e2e2e2	;height:483px;border-width:5px;}
             .font-size-25{font-size:25px;}
             ul.line li{font-size:35px;padding-left:10px;font-weight:300;}
             .content-center{margin:0 auto;width:10%;margin-bottom:30px;}
@@ -45,7 +48,7 @@ and open the template in the editor.
         <div class="col-sm-12" style="border-bottom:0px;">
             <div class="col-sm-8 padding-0">
                 <div class="col-sm-12 padding-0">
-                    <img src="images/Level0.gif" alt="image1" class="img-responsive border-grey padding-tb-60"/>
+                    <img id="imageId" src="images/Level0.gif" alt="image1" class="img-responsive border-grey padding-tb-60"/>
                 </div> 
             </div>
 
@@ -55,18 +58,17 @@ and open the template in the editor.
                     <div class="row">
                         <div class="content-center">
                             <div  class="dot"></div>
-                            <ul class="line list-unstyled">
-                                <li>10</li>
-                                <li>9</li>
-                                <li>8</li>
-                                <li>7</li>
-                                <li>6</li>
-                                <li>5</li>
-                                <li>4</li>
-                                <li>3</li>
-                                <li>2</li>
-                                <li>1</li>
-                                <li>0</li>
+                            <ul class="line list-unstyled" >
+                                <li style="cursor: pointer;">10</li>
+                                <li style="cursor: pointer;">9</li>
+                                <li style="cursor: pointer;">8</li>
+                                <li style="cursor: pointer;">7</li>
+                                <li style="cursor: pointer;">6</li>
+                                <li style="cursor: pointer;">5</li>
+                                <li style="cursor: pointer;">4</li>
+                                <li style="cursor: pointer;">3</li>
+                                <li style="cursor: pointer;">2</li>
+                                <li style="cursor: pointer;">1</li>                                
                             </ul>
                         </div>
                     </div>
@@ -76,8 +78,90 @@ and open the template in the editor.
 
         <div class="col-sm-12 padding-0">
              <p class="text-center margin-tb-10 font-weight-700 font-size-25" >Richter Scale</p>
-            <img src="images/graph1.jpg" alt="graph-image" class="img-responsive col-sm-12 padding-0"/>  
+            <!-- <img src="images/graph1.jpg" alt="graph-image" class="img-responsive col-sm-12 padding-0"/>   -->
+            <div id="chartContainer" style="height: 370px; " class="img-responsive col-sm-12 padding-0"></div>
         </div>
 
     </body>
+    <script>
+        $('.list-unstyled li').click(function() { 
+            var selectedLevel = parseInt($(this).text());
+            var height = ((selectedLevel - 1) * 50) + 10;            
+            $('.dot').css('height', height+'px');
+            if (selectedLevel > 0 && selectedLevel <= 3.5 ) {
+                document.getElementById('imageId').src = "images/Level0.gif";
+                console.log
+                updateGraph(0, 0)
+            }
+            else if (selectedLevel >= 3.6  && selectedLevel <= 5.4) {
+                document.getElementById('imageId').src = "images/Level1.gif";
+                updateGraph(3.6, 5.4)
+            }
+            else if (selectedLevel >= 5.5 && selectedLevel <= 6.0) {
+                document.getElementById('imageId').src = "images/Level2.gif";
+                updateGraph(5.5, 6.0)
+            }
+            else if (selectedLevel >= 6.1 && selectedLevel <= 6.9) {
+                document.getElementById('imageId').src = "images/Level3.gif";
+                updateGraph(6.1, 6.9)
+            }
+            else if (selectedLevel >= 7.0 && selectedLevel <= 7.9) {
+                document.getElementById('imageId').src = "images/Level4.gif";
+                updateGraph(7.0, 7.9)
+            }
+            else if (8 >= selectedLevel) {
+                document.getElementById('imageId').src = "images/Level4.gif";
+                updateGraph(8, 10)
+            }
+        });
+        var chart = '';
+    window.onload = function () {
+        updateGraph(0, 0)
+    }
+    function updateGraph(min, max) {
+        chart = null;
+        $('#chartContainer').empty();
+        var dps = []; // dataPoints
+        chart = new CanvasJS.Chart("chartContainer", {
+            title: {
+                text: ""
+            },
+            axisY: {
+                includeZero: false
+            },
+            data: [{
+                type: "line",
+                dataPoints: dps
+            }]
+        });
+        var xVal = 0;
+        var yVal = max;
+        var updateInterval = 1000;
+        var dataLength = 50;
+        var updateChart = function (count) {
+
+            count = count || 1;
+
+            for (var j = 0; j < count; j++) {
+                yVal = Math.random() * (+max - +min) + +min;
+                dps.push({
+                    x: xVal,
+                    y: yVal
+                });
+                xVal++;
+            }
+
+            if (dps.length > dataLength) {
+                dps.shift();
+            }
+
+            chart.render();
+        };
+
+        updateChart(dataLength);
+        setInterval(function () { updateChart() }, updateInterval);
+
+    }
+    $('.canvasjs-chart-credit').css('display', 'none');
+    </script>
 </html>
