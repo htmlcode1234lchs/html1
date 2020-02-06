@@ -1,0 +1,318 @@
+@media (min-width: 1200px) {
+  #numdiv {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #question {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resultdiv {
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #numdivdes {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #questiondes {
+    margin-top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resultdivdes {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #navtab {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #navtab {
+    text-align: center;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #numdiv {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #question {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #resultdiv {
+    width: 900px;
+    margin-top: 70px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #numdivdes {
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #questiondes {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #resultdivdes {
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1920px) {
+  #homebtn {
+    margin-top: -90px;
+    margin-left: 106px;
+  }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+  #homebtn {
+    margin-top: -90px;
+    margin-left: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #divtab1 {
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #lab2 {
+    margin-left: 350px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #divlab2 {
+    margin-top: 50px;
+    margin-left: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #result {
+  }
+}
+
+@media (min-width: 1200px) {
+  #finaldiv {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #finaldiv {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #lab2 {
+    margin-top: 50px;
+    margin-left: 350px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resetbutton2 {
+    margin-top: -90px;
+    margin-left: 800px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #resetbutton2 {
+    margin-top: -90px;
+    margin-left: 700px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1920px) {
+  #home {
+    margin-top: -90px;
+    margin-left: 500px;
+  }
+}
+
+#reset {
+}
+
+@media screen and (min-width: 1200px) and (max-width:1920px) {
+  #reset {
+    margin-top: 0px;
+    margin-left: 1200px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resett {
+    margin-top: -90px;
+    margin-left: 800px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #home {
+    margin-top: -90px;
+    margin-left: 500px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1199px) {
+  #resett {
+    margin-top: -90px;
+    margin-left: 0px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #homemenu {
+    margin-top: -90px;
+    margin-left: 530px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resetmenu {
+    margin-left: 750px;
+    margin-top: -75px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #hb1 {
+    margin-top: 0px;
+    margin-left: 80px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 999px) {
+  #hb1 {
+    margin-top: 0px;
+    margin-left: 80px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #rb1 {
+    margin-top: 0px;
+    margin-left: 650px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 999px) {
+  #rb1 {
+    margin-top: 0px;
+    margin-left: 650px;
+  }
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #ef8607;
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  #hb1 {
+    margin-top: 0px;
+    margin-left: 80px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+  #rb1 {
+    margin-top: 0px;
+    margin-left: 650px;
+  }
+}
+
