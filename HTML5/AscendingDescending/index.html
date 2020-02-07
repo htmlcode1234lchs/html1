@@ -9,64 +9,130 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body id="fullbody" class="body" style="background-image: url(&quot;assets/img/Knowing-Your-Numbers.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+<body id="fullbody" class="body"
+    style="background-image: url(&quot;assets/img/Knowing-Your-Numbers.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
     <div id="div1" class="title" style="height: 150px;">
         <h1 id="h1" class="titlename" style="text-align: center;color: rgb(5,68,72);padding-top: 40px;"></h1>
-        <div style="margin-left: auto;margin-right: auto;WIDTH: 900px;margin-top: -2px;"><button class="btn btn-primary shadow-none" id="hb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
-            <button
-                class="btn btn-primary shadow-none" id="rb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
+        <div style="margin-left: auto;margin-right: auto;WIDTH: 900px;margin-top: -2px;"><button
+                class="btn btn-primary shadow-none" id="hb1" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
+            <button class="btn btn-primary shadow-none" id="rb1" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
         </div>
     </div>
     <div id="div2" class="tabs">
         <div id="tabgrp" class="grptab" style="margin-top: 20px;">
             <ul class="nav nav-pills" id="navtab" style="height: 70px;text-align: center;">
-                <li class="nav-item" id="tab1"><a class="nav-link active" role="tab" data-toggle="pill" href="#tab-1" style="color: rgb(0,0,0);height: 65px;width: 320px;background-image: url(&quot;assets/img/Ascending%20Order.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></a></li>
-                <li
-                    class="nav-item" id="tab2" style="color: rgb(221,229,237);"><a class="nav-link shadow-none" role="tab" data-toggle="pill" href="#tab-2" style="color: rgb(0,0,0);height: 65px;width: 320px;background-image: url(&quot;assets/img/Descending%20Order.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></a></li>
+                <li class="nav-item" id="tab1"><a class="nav-link active" role="tab" data-toggle="pill" href="#tab-1"
+                        style="color: rgb(0,0,0);height: 65px;width: 320px;background-image: url(&quot;assets/img/Ascending%20Order.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></a>
+                </li>
+                <li class="nav-item" id="tab2" style="color: rgb(221,229,237);"><a class="nav-link shadow-none"
+                        role="tab" data-toggle="pill" href="#tab-2"
+                        style="color: rgb(0,0,0);height: 65px;width: 320px;background-image: url(&quot;assets/img/Descending%20Order.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></a>
+                </li>
             </ul>
             <div class="tab-content" id="content">
                 <div class="tab-pane fade show active" role="tabpanel" id="tab-1">
-				 <div class="text-center div-play" id="ascdiv" style="margin-top: 70px;"><label style="color: rgb(0,0,0);font-size: 27px;">Enter number of digits:&nbsp;</label><input type="text" style="width: 60px;margin-left: 14px;text-align: center;"><label style="margin-left: 10px;">Max. number is 6</label>
-                                <button
-                                    class="btn btn-primary border rounded shadow-none" type="button" style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
-                            </div>
-                    <div id="numdiv" class="divnum"><label id="lab1" class="numlab" style="font-size: 35px;margin-left: 5px;color: rgb(0,0,0);">Numbers:</label><input class="form-control-plaintext" type="text" value="No.1" readonly="" style="width: 110px;height: 50px;margin-top: -59px;margin-left: 220px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
-                        <input
-                            class="form-control-plaintext" type="text" value="No.2" readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 370px;font-size: 25px;text-align: center;background-color: #c8c7ff;"><input class="form-control-plaintext" type="text" value="No.3" readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 520px;font-size: 25px;text-align: center;background-color: #c8c7ff;"><input class="form-control-plaintext"
-                                type="text" value="No.4" readonly="" style="width: 110px;height: 50px;margin-top: -49px;margin-left: 670px;font-size: 25px;text-align: center;background-color: #c8c7ff;"><input class="form-control-plaintext" type="text" value="No.5"
-                                readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 820px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
-                           
+                    <div class="text-center div-play" id="ascdiv" style="margin-top: 70px;"><label
+                            style="color: rgb(0,0,0);font-size: 27px;">Enter number of digits:&nbsp;</label>
+                        <input type="number" min="1" max="6" style="width: 60px;margin-left: 14px;text-align: center;"
+                            id="ascInputId">
+                        <label style="margin-left: 10px;">Max. number is 6</label>
+                        <button class="btn btn-primary border rounded shadow-none" type="button" id="ascendingOrderGoId"
+                            style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
                     </div>
-                    <div id="question" class="divques"><input class="form-control-plaintext" type="text" id="text-ques" value="Arrange the above numbers in ascending order." readonly="" style="font-size: 30px;text-align: center;color: rgb(0,25,255);"><input type="text" style="margin-left: 110px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
-                        <input
-                            type="text" style="margin-left: 42px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text" style="margin-left: 46px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text" style="margin-left: 39px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text"
-                                style="margin-left: 45px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"></div>
-                    <div id="resultdiv" class="divres"><button class="btn btn-primary shadow-none" type="button" style="margin-left: 135px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 70px;background-color: rgba(255,255,255,0);"></button>
-                        <button
-                            class="btn btn-primary shadow-none" id="result1" type="button" style="margin-left: 195px;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;"></button>
+                    <div id="numdiv" class="divnum"><label id="lab1" class="numlab"
+                            style="font-size: 35px;margin-left: 5px;color: rgb(0,0,0);">Numbers:</label>
+                        <input class="form-control-plaintext" type="text" value="No.1" readonly id="ascRandom1"
+                            style="width: 110px;height: 50px;margin-top: -59px;margin-left: 220px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
+                        <input class="form-control-plaintext" type="text" value="No.2" readonly id="ascRandom2"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 370px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
+                        <input class="form-control-plaintext" type="text" value="No.3" readonly id="ascRandom3"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 520px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
+                        <input class="form-control-plaintext" type="text" value="No.4" readonly id="ascRandom4"
+                            style="width: 110px;height: 50px;margin-top: -49px;margin-left: 670px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
+                        <input class="form-control-plaintext" type="text" value="No.5" readonly id="ascRandom5"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 820px;font-size: 25px;text-align: center;background-color: #c8c7ff;">
+
                     </div>
-                    <div id="finaldiv1" class="resultdivision" style="margin-top: 10px;margin-left: auto;margin-right: auto;width: 500px;"><label id="resultlab1" style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label></div>
+                    <div id="question" class="divques"><input class="form-control-plaintext" type="text" id="text-ques"
+                            value="Arrange the above numbers in ascending order." readonly=""
+                            style="font-size: 30px;text-align: center;color: rgb(0,25,255);">
+                        <input type="number" id="ascResult1"
+                            style="margin-left: 110px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="ascResult2"
+                            style="margin-left: 42px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="ascResult3"
+                            style="margin-left: 46px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="ascResult4"
+                            style="margin-left: 39px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="ascResult5"
+                            style="margin-left: 45px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                    </div>
+                    <div id="resultdiv" class="divres">
+                        <button class="btn btn-primary shadow-none" type="button" id="ascCheckId"
+                            style="margin-left: 135px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 70px;background-color: rgba(255,255,255,0);"></button>
+                        <button class="btn btn-primary shadow-none" id="ascResultButtonId" type="button"
+                            style="margin-left: 195px;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;"></button>
+                    </div>
+                    <div id="finaldiv1" class="resultdivision"
+                        style="margin-top: 10px;margin-left: auto;margin-right: auto;width: 500px;">
+                        <label id="resultlab1"
+                            style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label>
+                        <span id="ascResultId" style="font-size: 36px;"> </span>
+                        <div id="ascResultOrder" class="resultdivision" style="display: none;">
+
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="tab-pane fade" role="tabpanel" id="tab-2">
-                    <div id="numdivdes" class="divnumdes"><label id="numdiv2" style="font-size: 35px;margin-left: 5px;color: rgb(0,0,0);">Numbers:</label><input class="form-control-plaintext" type="text" value="No.1" readonly="" style="width: 110px;height: 50px;margin-top: -59px;margin-left: 220px;font-size: 25px;text-align: center;background-color: #76aae6;">
+                    <div class="text-center div-play" id="desdiv" style="margin-top: 70px;"><label
+                        style="color: rgb(0,0,0);font-size: 27px;">Enter number of digits:&nbsp;</label>
+                <input type="number" id="descInputId" min="1" max="6" style="width: 60px;margin-left: 14px;text-align: center;"><label
+                        style="margin-left: 10px;">Max. number is 6</label>
+                    <button class="btn btn-primary border rounded shadow-none" type="button" id="descendingOrderGoId"
+                        style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
+                </div>
+                    <div id="numdivdes" class="divnumdes"><label id="numdiv2"
+                            style="font-size: 35px;margin-left: 5px;color: rgb(0,0,0);">Numbers:</label>
+                        <input class="form-control-plaintext" type="text" value="No.1" readonly id="descRandom1"
+                            style="width: 110px;height: 50px;margin-top: -59px;margin-left: 220px;font-size: 25px;text-align: center;background-color: #76aae6;">
+                        <input class="form-control-plaintext" type="text" value="No.2" readonly id="descRandom2"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 370px;font-size: 25px;text-align: center;background-color: #76aae6;">
+                        <input class="form-control-plaintext" type="text" value="No.3" readonly id="descRandom3"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 520px;font-size: 25px;text-align: center;background-color: #76aae6;">
                         <input
-                            class="form-control-plaintext" type="text" value="No.2" readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 370px;font-size: 25px;text-align: center;background-color: #76aae6;"><input class="form-control-plaintext" type="text" value="No.3" readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 520px;font-size: 25px;text-align: center;background-color: #76aae6;"><input class="form-control-plaintext"
-                                type="text" value="No.4" readonly="" style="width: 110px;height: 50px;margin-top: -49px;margin-left: 670px;font-size: 25px;text-align: center;background-color: #76aae6;"><input class="form-control-plaintext" type="text" value="No.5"
-                                readonly="" style="width: 110px;height: 50px;margin-top: -50px;margin-left: 820px;font-size: 25px;text-align: center;background-color: #76aae6;">
-                            <div class="text-center div-play" id="desdiv" style="margin-top: 70px;"><label style="color: rgb(0,0,0);font-size: 27px;">Enter number of digits:&nbsp;</label><input type="text" style="width: 60px;margin-left: 14px;text-align: center;"><label style="margin-left: 10px;">Max. number is 6</label>
-                                <button
-                                    class="btn btn-primary border rounded shadow-none" type="button" style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
-                            </div>
-                    </div>
-                    <div id="questiondes" class="divquesdes"><input class="form-control-plaintext" type="text" id="text-quesdes" value="Arrange the above numbers in descending order." readonly="" style="font-size: 30px;text-align: center;color: rgb(143,0,255);"><input type="text" style="margin-left: 110px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                            class="form-control-plaintext" type="text" value="No.4" readonly id="descRandom4"
+                            style="width: 110px;height: 50px;margin-top: -49px;margin-left: 670px;font-size: 25px;text-align: center;background-color: #76aae6;">
                         <input
-                            type="text" style="margin-left: 42px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text" style="margin-left: 46px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text" style="margin-left: 39px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"><input type="text"
-                                style="margin-left: 45px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;"></div>
-                    <div id="resultdiv" class="divres"><button class="btn btn-primary shadow-none" type="button" style="margin-left: 135px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 70px;background-color: rgba(255,255,255,0);"></button>
-                        <button
-                            class="btn btn-primary shadow-none" id="result1" type="button" style="margin-left: 195px;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;"></button>
+                            class="form-control-plaintext" type="text" value="No.5" readonl id="descRandom5"
+                            style="width: 110px;height: 50px;margin-top: -50px;margin-left: 820px;font-size: 25px;text-align: center;background-color: #76aae6;">
+                        
                     </div>
-                    <div id="finaldiv" class="resultdivision"><label id="resultlab" style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label></div>
+                    <div id="questiondes" class="divquesdes">
+                        <input class="form-control-plaintext" type="text" id="text-quesdes" value="Arrange the above numbers in descending order." readonly=""
+                            style="font-size: 30px;text-align: center;color: rgb(143,0,255);">
+                        <input type="number" id="descResult1" style="margin-left: 110px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="descResult2" style="margin-left: 42px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="descResult3" style="margin-left: 46px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="descResult4" style="margin-left: 39px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                        <input type="number" id="descResult5" style="margin-left: 45px;margin-top: 58px;width: 100px;height: 50px;font-size: 22px;">
+                    </div>
+                    <div id="resultdiv" class="divres">
+                        <button class="btn btn-primary shadow-none" type="button" id="descCheckId"
+                            style="margin-left: 135px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 70px;background-color: rgba(255,255,255,0);"></button>
+                        <button class="btn btn-primary shadow-none" type="button" id="descResultButtonId"
+                            style="margin-left: 195px;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;"></button>
+                    </div>
+                    <div id="finaldiv" class="resultdivision"><label id="resultlab"
+                            style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label>
+                            <span id="descResultId" style="font-size: 36px;"> </span>
+                        <div id="descResultOrder" class="resultdivision" style="display: none;">
+
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,5 +140,192 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var order = [1, 2, 3, 4, 5];
+    var checkCount = 0;
+    initTab1();
+    function initTab1() {
+        checkCount = 0;
+        $('#ascInputId').val('');
+        order.forEach((element, index) => {
+            document.getElementById("ascResult" + (index + 1)).disabled = true;
+            $('#ascRandom' + (index + 1)).val('No.'+element);
+            $('#ascResult' + (index + 1)).val('');
+        });
+        document.getElementById("ascCheckId").disabled = true;
+        document.getElementById("ascResultButtonId").disabled = true;
+        $('#ascResultOrder').css('display', 'none');
+        $('#ascResultId').text('');
+    }
+
+    function initTab2() {
+        checkCount = 0;
+        $('#descInputId').val('')
+        order.forEach((element, index) => {
+            document.getElementById("descResult" + (index + 1)).disabled = true;
+            $('#descResult' + (index + 1)).val('');
+            $('#descRandom' + (index + 1)).val('No.'+element);
+        });
+        document.getElementById("descCheckId").disabled = true;
+        document.getElementById("descResultButtonId").disabled = true;
+        $('#descResultOrder').css('display', 'none');
+        $('#descResultId').text('');
+    }
+
+    $('#navtab li').click(function(e){
+        this.id == 'tab1' ? initTab1() : initTab2();
+        console.log(this.id);
+    })
+
+/** TAB-1 ASCENDING ORDER **/
+    $('#ascendingOrderGoId').click(function () {
+        if ($('#ascInputId').val() == '') {
+            alert('Please enter number of digits');
+            $('#ascInputId').focus();
+            return false;
+        }
+        var ascRandomArray = generateData($('#ascInputId').val(), 5);
+        console.log(ascRandomArray)
+        ascRandomArray.forEach((element, index) => {
+            $('#ascResult' + (index + 1)).val('');
+            document.getElementById("ascResult" + (index + 1)).disabled = false;
+            $('#ascRandom' + (index + 1)).val(element);
+        });
+        document.getElementById("ascCheckId").disabled = false;
+        document.getElementById("ascResultButtonId").disabled = true;
+        $('#ascResultOrder').css('display', 'none');
+        $('#ascResultId').text('');
+        checkCount = 0;
+    });
+
+    $('#ascCheckId').click(function () {
+        var flag = validateEmptyFields('ascResult');
+        if (flag.includes(false)) {
+            alert('Please fill all the fields.')
+            return false;
+        }
+        validateMatchedFields('ascRandom', 'ascResult', 'ascResultId', false);
+        checkCount = checkCount + 1;
+        checkCount == 3 ? document.getElementById("ascResultButtonId").disabled = false : '';
+    });
+
+    $('#ascResultButtonId').click(function () {
+        var flag = validateEmptyFields('ascResult');
+        if (flag.includes(false)) {
+            alert('Please fill all the fields.')
+            return false;
+        }
+        var ranOrder = [];
+        order.forEach((element, index) => {
+            ranOrder.push($('#ascRandom' + element).val());
+        });
+        $('#ascResultOrder').css('display', 'block');
+        ranOrder.sort();
+        console.log(ranOrder.concat().sort())
+        $('#ascResultOrder').text(ranOrder.toString());
+    });
+
+    /** TAB-2 DESCENDING ORDER **/
+    $('#descendingOrderGoId').click(function () {
+        if ($('#descInputId').val() == '') {
+            alert('Please enter number of digits');
+            $('#descInputId').focus();
+            return false;
+        }
+        var ascRandomArray = generateData($('#descInputId').val(), 5);
+        console.log(ascRandomArray)
+        ascRandomArray.forEach((element, index) => {
+            $('#descResult' + (index + 1)).val('');
+            document.getElementById("descResult" + (index + 1)).disabled = false;
+            $('#descRandom' + (index + 1)).val(element);
+        });
+        document.getElementById("descCheckId").disabled = false;
+        document.getElementById("descResultButtonId").disabled = true;
+        $('#descResultOrder').css('display', 'none');
+        $('#descResultId').text('');
+        checkCount = 0;
+    });
+
+    $('#descCheckId').click(function () {
+        var flag = validateEmptyFields('descResult');
+        if (flag.includes(false)) {
+            alert('Please fill all the fields.')
+            return false;
+        }
+        validateMatchedFields('descRandom', 'descResult', 'descResultId', true);
+        checkCount = checkCount + 1;
+        checkCount == 3 ? document.getElementById("descResultButtonId").disabled = false : '';
+    });
+
+    $('#descResultButtonId').click(function () {
+        var flag = validateEmptyFields('descResult');
+        if (flag.includes(false)) {
+            alert('Please fill all the fields.')
+            return false;
+        }
+        var ranOrder = [];
+        order.forEach((element, index) => {
+            ranOrder.push($('#descRandom' + element).val());
+        });
+        $('#descResultOrder').css('display', 'block');
+        ranOrder.sort().reverse();
+        $('#descResultOrder').text(ranOrder.toString());
+    });
+
+
+    function validateMatchedFields(ranId, resultId, resultsArrayId, flag) {
+        var resultOrder = [];
+        var ranOrder = [];
+        order.forEach((element, index) => {
+            resultOrder.push($('#' + resultId + element).val());
+        });
+        order.forEach((element, index) => {
+            ranOrder.push($('#' + ranId + element).val());
+        });
+        var resultFlag = arraysEqual(resultOrder, ranOrder, flag);
+        if (resultFlag) {
+            $('#'+resultsArrayId).text('Correct');
+            $('#'+resultsArrayId).css('color', 'green');
+        }
+        else if (!resultFlag) {
+            $('#'+resultsArrayId).text('Wrong');
+            $('#'+resultsArrayId).css('color', 'red');
+        }
+    }
+
+    function validateEmptyFields(id) {
+        var flag = [];
+        order.forEach((element, index) => {
+            flag.push($('#' + id + element).val() == '' ? false : true);
+        });
+        return flag;
+    }
+
+    function generateData(digits, size) {
+        return Array.apply(null, { length: size || 100 }).map(function () {
+            return Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
+        });
+    }
+    function arraysEqual(_arr1, _arr2, flag) {
+
+        if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+            return false;
+
+        var arr1 = _arr1.concat().sort();
+        var arr2 = _arr2.concat().sort();
+        if(flag){
+            arr1.reverse();
+            arr2.reverse();
+        }
+
+        for (var i = 0; i < arr1.length; i++) {
+            if (arr1[i] !== arr2[i])
+                return false;
+        }
+
+        return true;
+
+    }
+</script>
 
 </html>
