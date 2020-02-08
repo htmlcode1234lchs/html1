@@ -9,30 +9,149 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="background-color: #ffffff;background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-repeat: no-repeat;">
+<body
+    style="background-color: #ffffff;background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-repeat: no-repeat;">
     <div class="top-panel" style="height: 150px;background-color: rgba(118,137,118,0);">
         <h1 id="toptitle" class="toph1" style="color: rgb(0,0,0);"></h1>
-        <div style="margin-left: auto;margin-right: auto;WIDTH: 900PX;margin-top: 10px;"><button class="btn btn-primary" id="hb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
-            <button
-                class="btn btn-primary" id="rb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
+        <div style="margin-left: auto;margin-right: auto;WIDTH: 900PX;margin-top: 10px;"><button class="btn btn-primary"
+                id="hb1" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
+            <button class="btn btn-primary" id="rb1" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;"></button>
         </div>
     </div>
-    <div class="text-center div-play"><label style="color: rgb(0,0,0);font-size: 27px;">Number of digits:&nbsp;</label><input type="text" style="width: 60px;margin-left: 14px;text-align: center;"><label style="margin-left: 10px;">Max. number is 9</label><button class="btn btn-primary border rounded shadow-none"
-            type="button" style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button></div>
-    <div
-        class="text-center questionarea"><label style="font-size: 22px;margin-left: -11px;">Number:&nbsp;</label><input type="text" name="question" style="margin-left: 13px;text-align: center;" placeholder="Generate number"></div>
-        <div class="text-center question1"><input class="form-control-plaintext" type="text" value="Question" readonly="" style="font-size: 23px;">
-            <div class="btn-group" role="group" id="buttongrp" style="margin-top: 25px;"><button class="btn btn-primary shadow-none" id="button1" type="button" style="background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);height: 74px;"></button>
-                <button
-                    class="btn btn-primary shadow-none" id="button2" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary shadow-none" id="button3" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+    <div class="text-center div-play"><label style="color: rgb(0,0,0);font-size: 27px;">Number of
+            digits:&nbsp;</label>
+        <input type="number" min="2" max="9" id="inputValueId"
+            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
+            style="width: 60px;margin-left: 14px;text-align: center;">
+        <label style="margin-left: 10px;">Max. number is 9</label>
+        <button id="placeValuesGoId" class="btn btn-primary border rounded shadow-none" type="button"
+            style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
+    </div>
+    <div class="text-center questionarea"><label style="font-size: 22px;margin-left: -11px;">Number:&nbsp;</label>
+        <input type="text" readonly name="question" id="generateNumberId" style="margin-left: 13px;text-align: center;"
+            placeholder="Generate number">
+    </div>
+    <div class="text-center question1">
+        <input class="form-control-plaintext" type="text" value="Question: " readonly style="font-size: 23px;">
+        <span id="selectQuestionId"></span>
+        <div class="btn-group" role="group" id="buttongrp" style="margin-top: 25px;">
+            <button class="btn btn-primary shadow-none" id="button1"  type="button"
+                style="background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);height: 74px;">
+            </button>
+            <button class="btn btn-primary shadow-none" id="button2" type="button"
+                style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn btn-primary shadow-none" id="button3" type="button"
+                style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
         </div>
-        <div id="result" class="check" style="margin-top: 60px;margin-left: auto;margin-right: auto;width: 900px;"><button class="btn btn-primary shadow-none" id="checkbtn" type="button" style="margin-left: 121px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 90px;background-color: rgba(255,255,255,0);"></button>
-            <button
-                class="btn btn-primary shadow-none" id="result1" type="button" style="margin-left: 195px;background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;background-color: rgba(255,255,255,0);"></button>
-        </div>
-        <div id="finaldiv1" class="resultdivision" style="margin-top: 20px;margin-left: auto;margin-right: auto;width: 500px;"><label id="resultlab1" style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label></div>
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    </div>
+    <div id="result" class="check" style="margin-top: 60px;margin-left: auto;margin-right: auto;width: 900px;"><button
+            class="btn btn-primary shadow-none" id="checkbtn" type="button"
+            style="margin-left: 121px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 90px;background-color: rgba(255,255,255,0);"></button>
+        <button class="btn btn-primary shadow-none" id="result1" type="button"
+            style="margin-left: 195px;background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 230px;height: 90px;background-color: rgba(255,255,255,0);"></button>
+    </div>
+    <div id="finaldiv1" class="resultdivision"
+        style="margin-top: 20px;margin-left: auto;margin-right: auto;width: 500px;"><label id="resultlab1"
+            style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $(function () {
+        function colorchange(id) {
+
+            var background = document.getElementById(id).style.backgroundColor;
+            if (background == "rgb(255, 145, 0)") {
+                document.getElementById(id).style.background = "rgb(26,255,0)";
+            } else {
+                document.getElementById(id).style.background = "rgb(255,145,0)";
+            }
+
+        }
+        $("#inputValueId").keydown(function () {
+            // Save old value.
+            if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 2))
+                $(this).data("old", $(this).val());
+        });
+        $("#inputValueId").keyup(function () {
+            // Check correct, else revert back to old value.
+            if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 2))
+                ;
+            else
+                $(this).val($(this).data("old"));
+        });
+    });
+
+    var questionsArray = ["What number is in tenth's place?", "What number is in hundred’s place?",
+        "What number is in thousand's place?", "What number is in ten thousand’s place?",
+        "What number is in lack's place?", "What number is in ten lack's place?"];
+
+    $('#placeValuesGoId').click(function () {
+        if ($('#inputValueId').val() == '') {
+            alert('Please enter number of digits');
+            $('#inputValueId').focus();
+            return false;
+        }
+        var ascRandomArray = generateData($('#inputValueId').val(), 1);
+        console.log(ascRandomArray);
+        $('#generateNumberId').val(ascRandomArray[0]);
+        $('#selectQuestionId').text(questionsArray[parseInt($('#inputValueId').val()) - 2]);
+        var arr = [];//generateData(1, 2);
+        var positionValue = parseInt(ascRandomArray[0].toString().charAt(0));
+        arr.push(positionValue);
+        var v = getRandomIntInclusive(1, parseInt($('#inputValueId').val()) - 1);
+        arr.push(parseInt(ascRandomArray[0].toString().charAt(v)));
+        v = getRandomIntInclusive(1, parseInt($('#inputValueId').val()) - 1);
+        console.log(v)
+        arr.push(parseInt(ascRandomArray[0].toString().charAt(v)));
+        console.log(arr);
+        arr = shuffle(arr);
+        arr.forEach((element, index) => {
+            $('#button' + (index + 1)).html(element);
+        });
+
+
+
+    });
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //The maximum is inclusive and the minimum is inclusive 
+    }
+    function ourRandomRange(ourMin, ourMax) {
+        return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+    }
+    function generateData(digits, size) {
+        var arr = [];
+        Array.apply(null, { length: size || 100 }).map(function () {
+            var r = Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
+            if (arr.indexOf(r) == -1) { arr.push(r) };
+        });
+        return arr;
+    }
+    function shuffle(array) {
+        var currentIndex = array.length, temporaryValue, randomIndex;
+
+        // While there remain elements to shuffle...
+        while (0 !== currentIndex) {
+
+            // Pick a remaining element...
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex -= 1;
+
+            // And swap it with the current element.
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+        }
+
+        return array;
+    }
+</script>
 
 </html>

@@ -4,7 +4,18 @@
     background-color: rgb(118,137,118);
   }
 }
-
+#button1:focus
+{
+    background:olive;
+}
+#button2:focus
+{
+    background:olive;
+}
+#button3:focus
+{
+    background:olive;
+}
 @media (min-width: 1200px) {
   #toptitle {
     text-align: center;
