@@ -137,9 +137,10 @@
     $('.selectedresult').click(function(){
         console.log(this.id);
         var selectedId = this.id;
-        globalSelectedId = selectedId;
+        globalSelectedId = $(this).text();
+        console.log('ss='+globalSelectedId)
         array.forEach((element, index) => {
-            console.log((index+1)+" = "+(selectedId.toString().charAt(selectedId.toString().length-1)))
+            //console.log((index+1)+" = "+(selectedId.toString().charAt(selectedId.toString().length-1)))
             if((index+1) == (selectedId.toString().charAt(selectedId.toString().length-1))){
                 $('#button'+(index+1)).css('color', 'white');
                 $('#button'+(index+1)).css('border-color', 'green');
@@ -151,8 +152,8 @@
     });
 
     $('#checkId').click(function(){
-        console.log('hhh')
-        if(parseInt(ascRandomArray[0].toString().charAt(0)) == globalSelectedId){
+        var generateNumberId = $('#generateNumberId').val().toString();
+        if(parseInt(generateNumberId.charAt(0)) == parseInt(globalSelectedId)){
             $('#checkedResult').text('Correct');
             $('#checkedResult').css('color', 'green');
         }else{
@@ -162,8 +163,9 @@
     });
 
     $('#result1').click(function(){
+        var generateNumberId = $('#generateNumberId').val().toString();
         $('#finalResult').css('display','block')
-        $('#finalResult').text(parseInt(ascRandomArray[0].toString().charAt(0)));
+        $('#finalResult').text(parseInt(generateNumberId.charAt(0)));
     });
 
     function getRandomIntInclusive(min, max) {
