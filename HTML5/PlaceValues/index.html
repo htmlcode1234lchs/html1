@@ -57,12 +57,12 @@
     <div id="finaldiv1" class="resultdivision"
         style="margin-top: 20px;margin-left: auto;margin-right: auto;width: 500px;"><label id="resultlab1"
             style="font-size: 40px;color: rgb(0,0,0);width: 150px;text-align: center;margin-left: 150px;">Result</label>
-            <span id="checkedResult" style="font-size: 36px;"> </span>
-            <div id="finalResult" class="resultdivision" style="display: none;">
+        <span id="checkedResult" style="font-size: 36px;"> </span>
+        <div id="finalResult" class="resultdivision" style="display: none;">
 
-            </div>
+        </div>
     </div>
-    
+
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
@@ -92,80 +92,124 @@
         });
     });
 
-    var questionsArray = ["What number is in tenth's place?", "What number is in hundred’s place?",
-        "What number is in thousand's place?", "What number is in ten thousand’s place?",
-        "What number is in lack's place?", "What number is in ten lack's place?"];
-        var ascRandomArray = [];
+    var questionsArray = ["What number is in first place?",
+        "What number is in tenth's place?",
+        "What number is in hundred’s place?",
+        "What number is in thousand's place?",
+        "What number is in ten thousand’s place?",
+        "What number is in lack's place?",
+        "What number is in ten lack's place?",
+        "What number is in core's place?",
+        "What number is in ten core's place?"];
+    var ascRandomArray = [];
+    var finalResultValue = 0;
     $('#placeValuesGoId').click(function () {
-
-        $('#finalResult').css('display','none')
+        $('#finalResult').css('display', 'none')
         $('#finalResult').text('');
         array.forEach((element, index) => {
-         
-                $('#button'+(index+1)).css('color', 'black');
-                $('#button'+(index+1)).css('border-color', '');
-            
+            $('#button' + (index + 1)).css('color', 'black');
+            $('#button' + (index + 1)).css('border-color', '');
         });
         $('#checkedResult').text('');
-
         if ($('#inputValueId').val() == '') {
             alert('Please enter number of digits');
             $('#inputValueId').focus();
             return false;
         }
-
-
-
-        ascRandomArray = generateData($('#inputValueId').val(), 1);
+        ascRandomArray = generateData($('#inputValueId').val(), 1).join("");
         console.log(ascRandomArray);
-        $('#generateNumberId').val(ascRandomArray[0]);
-        $('#selectQuestionId').text(questionsArray[parseInt($('#inputValueId').val()) - 2]);
+        var min = 0, max = parseInt($('#inputValueId').val());
+        var randomPosition = Math.floor(Math.random() * (+max - +min)) + +min;
+        console.log('random position= ' + randomPosition);
+        $('#generateNumberId').val(ascRandomArray);
+        $('#selectQuestionId').text(questionsArray[randomPosition]);
         var arr = [];
 
-        var positionValue = parseInt(ascRandomArray[0].toString().charAt(0));
-        arr.push(parseInt(ascRandomArray[0].toString().charAt(0)));
-        arr.push(parseInt(ascRandomArray[0].toString().charAt(1)));
-        arr.push(parseInt(ascRandomArray[0].toString().charAt(2)));
+
+        var positionValue = parseInt(ascRandomArray.toString().charAt(parseInt(ascRandomArray.toString().length - 1) - randomPosition));
+        console.log('position value = ' + positionValue)
+        finalResultValue = positionValue;
+        arr.push(parseInt(positionValue));
+        if (max > 2) {
+            for (var k = 1; k < 3; k++) {
+                var value = parseInt(ascRandomArray.toString().charAt(parseInt(ourRandomRange(0, max))));
+                console.log(value + ' = ' + arr);
+                if (isNaN(value)) {
+                    k--;
+                }
+                else if (!arr.includes(value)) {
+                    arr.push(value);
+                } else if (arr.includes(value)) {
+                    k--;
+                }
+                else if (arr.length - 1 < k) {
+                    k--;
+                }
+                console.log(arr.length + ' = ' + k)
+            }
+        }else{
+            if(randomPosition-1 == 0){
+                arr.push(parseInt(ascRandomArray.toString().charAt(1)));
+            }else{
+                arr.push(parseInt(ascRandomArray.toString().charAt(0)));
+            }
+            console.log(arr)
+            for (var k = 2; k < 3; k++) {
+                var value = parseInt(ourRandomRange(0, 9));
+                console.log(value + ' = ' + arr);
+                if (isNaN(value)) {
+                    k--;
+                }
+                else if (!arr.includes(value)) {
+                    arr.push(value);
+                } else if (arr.includes(value)) {
+                    k--;
+                }
+                else if (arr.length - 1 < k) {
+                    k--;
+                }
+                console.log(arr.length + ' = ' + k)
+            }
+        }
+        // arr.push(parseInt(ascRandomArray[0].toString().charAt(1)));
+        //arr.push(parseInt(ascRandomArray[0].toString().charAt(2)));
         globalSelectedId = '';
         arr = shuffle(arr);
         arr.forEach((element, index) => {
             $('#button' + (index + 1)).html(element);
         });
     });
-    var array = [1,2,3];
+    var array = [1, 2, 3];
     var globalSelectedId = '';
-    $('.selectedresult').click(function(){
+    $('.selectedresult').click(function () {
         console.log(this.id);
         var selectedId = this.id;
         globalSelectedId = $(this).text();
-        console.log('ss='+globalSelectedId)
+        console.log('ss=' + globalSelectedId)
         array.forEach((element, index) => {
-            //console.log((index+1)+" = "+(selectedId.toString().charAt(selectedId.toString().length-1)))
-            if((index+1) == (selectedId.toString().charAt(selectedId.toString().length-1))){
-                $('#button'+(index+1)).css('color', 'white');
-                $('#button'+(index+1)).css('border-color', 'green');
-            }else{
-                $('#button'+(index+1)).css('color', 'black');
-                $('#button'+(index+1)).css('border-color', '');
+            if ((index + 1) == (selectedId.toString().charAt(selectedId.toString().length - 1))) {
+                $('#button' + (index + 1)).css('color', 'white');
+                $('#button' + (index + 1)).css('border-color', 'green');
+            } else {
+                $('#button' + (index + 1)).css('color', 'black');
+                $('#button' + (index + 1)).css('border-color', '');
             }
         });
     });
 
-    $('#checkId').click(function(){
-        var generateNumberId = $('#generateNumberId').val().toString();
-        if(parseInt(generateNumberId.charAt(0)) == parseInt(globalSelectedId)){
+    $('#checkId').click(function () {
+        if (parseInt(finalResultValue) == parseInt(globalSelectedId)) {
             $('#checkedResult').text('Correct');
             $('#checkedResult').css('color', 'green');
-        }else{
+        } else {
             $('#checkedResult').text('Wrong');
             $('#checkedResult').css('color', 'red');
         }
     });
 
-    $('#result1').click(function(){
-        var generateNumberId = $('#generateNumberId').val().toString();
-        $('#finalResult').css('display','block')
-        $('#finalResult').text(parseInt(generateNumberId.charAt(0)));
+    $('#result1').click(function () {
+        $('#finalResult').css('display', 'block')
+        $('#finalResult').text(parseInt(finalResultValue));
     });
 
     function getRandomIntInclusive(min, max) {
@@ -178,10 +222,33 @@
     }
     function generateData(digits, size) {
         var arr = [];
-        Array.apply(null, { length: size || 100 }).map(function () {
+        /* */
+     //   if(digits > 2){
+        for (var i = 0; i < digits; i++) {
+            var value = ourRandomRange(0, 9);
+            if (isNaN(value)) {
+                    i--;
+            }
+            else if (arr.length == 0) {
+                arr.push(value);
+            } else if (!arr.includes(value)) {
+                arr.push(value);
+            } else if (arr.includes(value)) {
+                i--;
+            }
+            else if (arr.length - 1 < i) {
+                    i--;
+                }
+        }
+       /*  }
+        }else{
+            console.log('sadfadsdas');
+            Array.apply(null, { length: size || 100 }).map(function () {
             var r = Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
             if (arr.indexOf(r) == -1) { arr.push(r) };
         });
+        } */
+        console.log(arr);
         return arr;
     }
     function shuffle(array) {
