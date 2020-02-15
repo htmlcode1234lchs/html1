@@ -27,7 +27,7 @@
 @media screen and (min-width: 1200px) and (max-width:1920px) {
   #divAdd2 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     /*margin-top: 48px;*/
@@ -37,7 +37,7 @@
 @media screen and (min-width: 1200px) and (max-width:1920px) {
   #divAdd3 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
     /*margin-top: 28px;*/
@@ -47,7 +47,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-sub {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -57,7 +57,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-sub1 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -67,7 +67,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-mul {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -77,7 +77,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-mul1 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -155,7 +155,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-sub2 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -165,7 +165,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #div-mul3 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     /*margin-top: 8px;*/
     margin-left: auto;
     margin-right: auto;
@@ -175,7 +175,7 @@
 @media screen and (min-width: 1201px) and (max-width:1920px) {
   #divAdd1 {
     width: 1200px;
-    height: 225px;
+    height: 200px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -334,6 +334,43 @@
 @media screen and (min-width: 1000px) and (max-width:1200px) {
   #d2subcheck611 {
     margin-left: 750px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media screen and (min-width: 902px) and (max-width:1016px) {
+  #hint {
+    margin-left: 442px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1920px) {
+  #hint {
+    margin-left: 545px;
+  }
+}
+
+@media screen and (min-width: 1017px) and (max-width:1199px) {
+  #hint {
+    margin-left: 520px;
   }
 }
 
