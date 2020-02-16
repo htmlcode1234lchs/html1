@@ -39,57 +39,69 @@
                 <div class="text-center div-middle" id="middledivision" style="padding-top: 183px;">
                     <div id="middletop" class="MiddleSecond" style="font-size: 30px;margin-top: -137px;"><label
                             id="numberlabel" style="width: 264px;margin-left: -464px;">Number of digits:</label>
-                            <input type="number" min="2" max="4" id="activityInputValueId"
+                        <input type="number" min="2" max="4" id="activityInputValueId"
                             onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
-                            style="width: 70px;margin-left: 14px;text-align: center;" ><input class="form-control-plaintext"
-                            type="text" id="hint" value="Maximum no is 4" readonly=""
+                            style="width: 70px;margin-left: 14px;text-align: center;"><input
+                            class="form-control-plaintext" type="text" id="hint" value="Maximum no is 4" readonly=""
                             style="width: 158px;font-size: 20px;margin-top: -56px;height: 51px;color: rgb(33,37,41);"><button
-                            class="btn btn-primary shadow-none" id="go" type="button"
+                            class="btn btn-primary shadow-none" id="activityGoId" type="button"
                             style="width: 102px;height: 40px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-left: 318px;margin-top: -98px;"></button>
                     </div>
-                    <div id="middlefirst" class="middleFirst" style="margin-top: 9px;"><input type="text" id="Pred"
-                            class="predecessor-class"
+                    <div id="middlefirst" class="middleFirst" style="margin-top: 9px;">
+                        <input type="number" id="pred1" class="predecessor-class"
                             style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
-                            placeholder="Enter Predecessor"><input type="text" id="UserInput" class="UserInput1"
+                            placeholder="Enter Predecessor" 
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  " >
+                        <input type="text" id="randomInput1" class="UserInput1" readonly
                             style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;">
-                        <input type="text" id="succ-text1" class="Succ-class"
+                        <input type="number" id="succ1" class="Succ-class"
                             style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
-                            placeholder="Enter Successor" required=""></div>
-                    <div id="middlesecond" class="MiddleSecond" style="margin-top: 36px;"><input type="text"
-                            id="pred-text2" class="predecessor-class2"
+                            placeholder="Enter Successor" required=""
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  " >
+                    </div>
+                    <div id="middlesecond" class="MiddleSecond" style="margin-top: 36px;">
+                        <input type="number" id="pred2" class="predecessor-class2"
                             style="margin-right: 29px;width: 193px;height: 53px;font-size: 21px;"
-                            placeholder="Enter Predecessor" required=""><input type="text" id="userInput2"
-                            class="UserInput-class1"
-                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"><input type="text"
-                            id="Succ-text2" class="Succ-class2"
-                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
-                            placeholder="Enter Successor" required=""></div>
-                    <div id="middlethird" class="middleThird" style="margin-top: 36px;"><input type="text"
-                            id="pred-text3" class="predecessor-class3"
-                            style="margin-right: 29px;width: 193px;height: 53px;font-size: 21px;"
-                            placeholder="Enter Predecessor" required=""><input type="text" id="userinput4"
-                            class="UserInput-class3"
-                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"><input type="text"
-                            id="succ-text3" class="Succ-class3"
-                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
-                            placeholder="Enter Successor" required=""></div>
-                    <div id="middlefourth" class="middleFourth" style="margin-top: 36px;"><input type="text"
-                            id="pred-text4" class="predecessor-class4"
-                            style="margin-right: 29px;width: 193px;height: 53px;font-size: 21px;"
-                            placeholder="Enter Predecessor" required=""><input type="text" id="user-input4"
-                            class="UserInput-class4"
+                            placeholder="Enter Predecessor" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  " >
+                        <input type="text" id="randomInput2" class="UserInput-class1" readonly
                             style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;">
-                        <input type="text" id="succ-text4" class="Succ-class4"
+                        <input type="number" id="succ2" class="Succ-class2"
+                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
+                            placeholder="Enter Successor" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  ">
+                    </div>
+                    <div id="middlethird" class="middleThird" style="margin-top: 36px;">
+                        <input type="text" id="pred3" class="predecessor-class3"
+                            style="margin-right: 29px;width: 193px;height: 53px;font-size: 21px;"
+                            placeholder="Enter Predecessor" required="">
+                        <input type="text" id="randomInput3" class="UserInput-class3" readonly
+                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;">
+                        <input type="text" id="succ3" class="Succ-class3"
                             style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
                             placeholder="Enter Successor" required=""></div>
+                    <div id="middlefourth" class="middleFourth" style="margin-top: 36px;">
+                        <input type="number" id="pred4" class="predecessor-class4"
+                            style="margin-right: 29px;width: 193px;height: 53px;font-size: 21px;"
+                            placeholder="Enter Predecessor" onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  " >
+                        <input type="text" id="randomInput4" class="UserInput-class4" readonly
+                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;">
+                        <input type="number" id="succ4" class="Succ-class4"
+                            style="width: 193px;height: 53px;margin-right: 29px;font-size: 21px;"
+                            placeholder="Enter Successor" 
+                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  ">
+                    </div>
                     <div id="bottomdiv" class="div-bottom" style="margin-top: 21px;"><button
-                            class="btn btn-primary text-center shadow-none -check" id="check" type="button"
+                            class="btn btn-primary text-center shadow-none -check" id="activityCheckId" type="button"
                             style="width: 228px;height: 67px;margin-top: 26px;font-size: 38px;background-color: rgba(62,171,79,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                        <button class="btn btn-primary shadow-none -result" id="show-result" type="button"
+                        <button class="btn btn-primary shadow-none -result" id="activityShowResultsId" type="button"
                             style="width: 228px;height: 67px;margin-left: 86px;margin-top: 26px;font-size: 38px;background-color: rgba(62,171,79,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
                     </div>
                     <div id="Result-div" style="height: 82px;margin-top: 39px;"><label class="text-center" id="label1"
                             style="width: 253px;height: 75px;margin-bottom: 0px;margin-top: 8px;font-size: 36px;">Result</label>
+                            <span id="activityResultStatus"></span>
+                    </div>
+                    <div>
+                        <span id="predFinalResults"></span><br>
+                        <span id="succFinalResults"></span>
                     </div>
                 </div>
             </div>
@@ -98,23 +110,30 @@
                     style="width: 900px;margin-left: auto;margin-right: auto;margin-top: 23px;"><label id="label1Input"
                         style="width: 242px;font-size: 30px;margin-left: 16px;">Number of Digits:</label><input
                         type="number" min="2" max="4" id="additionInputValueId"
-                            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
-                            style="width: 70px; height:40px ;margin-left: 14px;text-align: center;"><input
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
+                        style="width: 70px; height:40px ;margin-left: 14px;text-align: center;">
+                    <input
                         class="form-control-plaintext" type="text" id="maxhint" value="Maximum No is 4" readonly=""
                         style="width: 162px;margin-left: 342px;margin-top: -47px;font-size: 20px;"><button
                         class="btn btn-primary shadow-none" id="btn-go1" type="button"
                         style="margin-left: 501px;margin-top: -72px;width: 102px;background-repeat: no-repeat;height: 40px;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;"></button>
                 </div>
-                <div id="divAdd1" class="div-addition3" style="height: 200px;"><input type="text" id="d3text1"
+                <div id="divAdd1" class="div-addition3" style="height: 200px;">
+                    <input type="number" id="addition11"
                         class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 28px;font-size: 39px;"
-                        placeholder="a"><input type="text" id="d3text2" class="Input"
+                        placeholder="a" readonly>
+                    <input type="number" id="addition12" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="b"><input type="text" id="d3text3" class="Input"
+                        placeholder="b" readonly>
+                    <input type="number" id="addition13" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="c"><input type="text" id="d3text4" class="Input"
+                        placeholder="c" readonly>
+                    <input type="number" id="addition14" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="?"><input class="form-control-plaintext" type="text" id="d3addsymbol" value="+"
+                        placeholder="?"
+                        onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  ">
+                    <input class="form-control-plaintext" type="text" id="d3addsymbol" value="+"
                         readonly=""
                         style="width: 50px;height: 50px;margin-left: 171px;margin-top: -47px;font-size: 39px;"><input
                         class="form-control-plaintext" type="text" id="d3addsym" value="+" readonly=""
@@ -129,15 +148,20 @@
                             style="width: 182px;height: 61px;font-size: 36px;margin-left: 420px;background-color: rgba(255,255,255,0);">Result</label>
                     </div>
                 </div>
-                <div id="divAdd2" class="div-addition1"><input type="text" id="d2text1" class="Input"
+                <div id="divAdd2" class="div-addition1">
+                    <input type="number" id="addition21" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 28px;font-size: 39px;"
-                        placeholder="a1"><input type="text" id="d2text2" class="Input"
+                        placeholder="a1">
+                    <input type="number" id="addition22" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="b1"><input type="text" id="d2text3" class="Input"
+                        placeholder="b1">
+                    <input type="number" id="addition23" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="?"><input type="text" id="d2text4" class="Input"
+                        placeholder="?">
+                    <input type="number" id="addition24" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="c"><input class="form-control-plaintext" type="text" id="d2addsymbol" value="+"
+                        placeholder="c">
+                    <input class="form-control-plaintext" type="text" id="d2addsymbol" value="+"
                         readonly=""
                         style="width: 50px;height: 50px;margin-left: 171px;margin-top: -47px;font-size: 39px;"><input
                         class="form-control-plaintext" type="text" id="d2addsym" value="+" readonly=""
@@ -152,15 +176,20 @@
                             style="width: 182px;height: 61px;margin-top: 10px;margin-left: 420px;font-size: 36px;background-color: rgba(255,255,255,0);">Result</label>
                     </div>
                 </div>
-                <div id="divAdd3" class="div-addition"><input type="text" id="d3text1" class="Input"
+                <div id="divAdd3" class="div-addition">
+                    <input type="number" id="addition31" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 28px;font-size: 39px;"
-                        placeholder="a1"><input type="text" id="d3text2" class="Input"
+                        placeholder="a1">
+                    <input type="number" id="addition32" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="b1"><input type="text" id="d3text3" class="Input"
+                        placeholder="b1">
+                    <input type="number" id="addition33" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="c"><input type="text" id="d3text4" class="Input"
+                        placeholder="c">
+                    <input type="number" id="addition34" class="Input"
                         style="width: 115px;height: 53px;margin-top: 28px;margin-left: 96px;font-size: 39px;"
-                        placeholder="c"><input class="form-control-plaintext" type="text" id="d3addsymbol" value="+"
+                        placeholder="c">
+                    <input class="form-control-plaintext" type="text" id="d3addsymbol" value="+"
                         readonly=""
                         style="width: 50px;height: 50px;margin-left: 171px;margin-top: -47px;font-size: 39px;"><input
                         class="form-control-plaintext" type="text" id="d3addsym" value="+" readonly=""
@@ -180,10 +209,10 @@
                 <div class="shadow-none subtraction" id="subtop"
                     style="width: 900px;margin-right: auto;margin-left: auto;margin-top: 23px;"><label id="label2Input"
                         style="width: 244px;font-size: 30px;">Number of Digits:</label>
-                        <input type="number" min="2" max="4" id="subtractionInputValueId"
+                    <input type="number" min="2" max="4" id="subtractionInputValueId"
                         onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
-                        style="width: 70px;height: 40px;margin-left: 14px;text-align: center;"><input class="form-control-plaintext" type="text"
-                        id="maxnohint" value="Maximum No is 4" readonly=""
+                        style="width: 70px;height: 40px;margin-left: 14px;text-align: center;"><input
+                        class="form-control-plaintext" type="text" id="maxnohint" value="Maximum No is 4" readonly=""
                         style="width: 159px;margin-left: 329px;margin-top: -46px;font-size: 20px;"><button
                         class="btn btn-primary shadow-none" id="btn-go2" type="button"
                         style="margin-left: 496px;margin-top: -74px;width: 102px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 40px;background-color: rgba(255,255,255,0);"></button>
@@ -262,10 +291,10 @@
                 <div class="shadow-none subtraction" id="multop"
                     style="width: 900px;margin-right: auto;margin-left: auto;margin-top: 23px;"><label id="label2Input"
                         style="width: 252px;font-size: 30px;">Number of Digits:</label>
-                        <input type="number" min="2" max="4" id="multiplicationInputValueId"
+                    <input type="number" min="2" max="4" id="multiplicationInputValueId"
                         onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
-                        style="width: 70px;height: 40px;margin-left: 14px;text-align: center;"><input class="form-control-plaintext" type="text"
-                        id="maxnohint" value="Maximum No is 4" readonly=""
+                        style="width: 70px;height: 40px;margin-left: 14px;text-align: center;"><input
+                        class="form-control-plaintext" type="text" id="maxnohint" value="Maximum No is 4" readonly=""
                         style="width: 163px;margin-left: 333px;margin-top: -44px;font-size: 20px;color: rgb(33,37,41);"><button
                         class="btn btn-primary shadow-none" id="btn-go2" type="button"
                         style="margin-left: 501px;margin-top: -73px;width: 102px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 40px;background-color: rgba(255,255,255,0);"></button>
@@ -342,60 +371,176 @@
     </div>
     <script>
         $(function () {
-         $("#activityInputValueId").keydown(function () {
-            // Save old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                $(this).data("old", $(this).val());
-        });
-        $("#activityInputValueId").keyup(function () {
-            // Check correct, else revert back to old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                ;
-            else
-                $(this).val($(this).data("old"));
-        });
+            $("#activityInputValueId").keydown(function () {
+                // Save old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    $(this).data("old", $(this).val());
+            });
+            $("#activityInputValueId").keyup(function () {
+                // Check correct, else revert back to old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    ;
+                else
+                    $(this).val($(this).data("old"));
+            });
 
-        $("#additionInputValueId").keydown(function () {
-            // Save old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                $(this).data("old", $(this).val());
-        });
-        $("#additionInputValueId").keyup(function () {
-            // Check correct, else revert back to old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                ;
-            else
-                $(this).val($(this).data("old"));
-        });
+            $("#additionInputValueId").keydown(function () {
+                // Save old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    $(this).data("old", $(this).val());
+            });
+            $("#additionInputValueId").keyup(function () {
+                // Check correct, else revert back to old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    ;
+                else
+                    $(this).val($(this).data("old"));
+            });
 
-        $("#multiplicationInputValueId").keydown(function () {
-            // Save old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                $(this).data("old", $(this).val());
-        });
-        $("#multiplicationInputValueId").keyup(function () {
-            // Check correct, else revert back to old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                ;
-            else
-                $(this).val($(this).data("old"));
-        });
+            $("#multiplicationInputValueId").keydown(function () {
+                // Save old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    $(this).data("old", $(this).val());
+            });
+            $("#multiplicationInputValueId").keyup(function () {
+                // Check correct, else revert back to old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    ;
+                else
+                    $(this).val($(this).data("old"));
+            });
 
-        $("#subtractionInputValueId").keydown(function () {
-            // Save old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                $(this).data("old", $(this).val());
+            $("#subtractionInputValueId").keydown(function () {
+                // Save old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    $(this).data("old", $(this).val());
+            });
+            $("#subtractionInputValueId").keyup(function () {
+                // Check correct, else revert back to old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
+                    ;
+                else
+                    $(this).val($(this).data("old"));
+            });
         });
-        $("#subtractionInputValueId").keyup(function () {
-            // Check correct, else revert back to old value.
-            if (!$(this).val() || (parseInt($(this).val()) <= 4 && parseInt($(this).val()) >= 2))
-                ;
-            else
-                $(this).val($(this).data("old"));
-        });
-    });
     </script>
-  
+    <script>
+
+        $('#navtab li').click(function (e) {
+            this.id == 'tab1' ? initTab1() : this.id == 'tab2' ? initTab2() : this.id == 'tab3' ? initTab3() : initTab4();
+            console.log(this.id);
+        });
+        var activityStaticArray = [1, 2, 3, 4];
+        initTab1(true);
+        function refreshActivityFields(flag){
+            activityStaticArray.forEach((element, index) => {
+                $('#pred' + element).val('');
+                $('#randomInput' + element).val('');
+                $('#succ' + element).val('');
+                if(flag){
+                    document.getElementById("pred"+element).disabled = true;
+                    document.getElementById("succ"+element).disabled = true;
+                }else{
+                    document.getElementById("pred"+element).disabled = false;
+                    document.getElementById("succ"+element).disabled = false;
+                }
+            });
+            $('#activityResultStatus').text('');
+            $('#predFinalResults').text('');
+            $('#succFinalResults').text('');
+        }
+        function initTab1(flag) {
+            refreshActivityFields(flag);
+
+        }
+
+        function initTab2() {
+
+        }
+
+        function initTab3() {
+
+        }
+
+        function initTab4() {
+
+        }
+
+        $('#activityGoId').click(function () {
+            if ($('#activityInputValueId').val() == '') {
+                alert('Please enter number of digits');
+                $('#activityInputValueId').focus();
+                return false;
+            }
+            initTab1(false);
+            console.log($('#activityInputValueId').val())
+            var randomNumber = generateData(parseInt($('#activityInputValueId').val()), 4);
+            console.log(randomNumber);
+            activityStaticArray.forEach((element,index)=> {
+                $('#randomInput'+element).val(randomNumber[index]);
+            });            
+        });
+
+        $('#activityCheckId').click(function(){
+            var predArray = [];
+            var succArray = [];
+            var actualArray = [];
+            var verifyFlag = false;
+            activityStaticArray.forEach(element =>{
+                if($('#pred'+element).val() == '' || $('#succ'+element).val() == ''){
+                    verifyFlag = true;
+                }else{
+                    predArray.push(parseInt($('#pred'+element).val()));
+                    succArray.push(parseInt($('#succ'+element).val()));
+                    actualArray.push(parseInt($('#randomInput'+element).val()));
+                }
+            });
+            if(verifyFlag){
+                alert('Please fill all fields.');
+                return false;
+            }
+            console.log(predArray);
+            console.log(actualArray);
+            console.log(succArray);
+            var finalVerify = false;
+            activityStaticArray.forEach((element, index) =>{
+                if((predArray[index]+1 == actualArray[index]) && (succArray[index]-1 == actualArray[index])){
+
+                }else{
+                    finalVerify = true;
+                }
+            });
+            if(finalVerify){
+                $('#activityResultStatus').text('Wrong');
+                $('#activityResultStatus').css('color', 'red');			
+            }else{
+                $('#activityResultStatus').text('Correct');
+                $('#activityResultStatus').css('color', 'green');
+            }
+        });
+        $('#activityShowResultsId').click(function(){
+            var actualArray = [];
+            var predResults = [];
+            var succResults = [];
+             activityStaticArray.forEach(element =>{
+                predResults.push(parseInt($('#randomInput'+element).val())-1);
+                succResults.push(parseInt($('#randomInput'+element).val())+1);
+            });
+            $('#predFinalResults').text(predResults.join(','));
+            $('#succFinalResults').text(succResults.join(','));
+        });                               
+
+        function ourRandomRange(ourMin, ourMax) {
+            return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+        }
+        function generateData(digits, size) {
+            return Array.apply(null, { length: size || 100 }).map(function () {
+                return Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
+            });
+        }
+
+    </script>
+
 </body>
 
 </html>
