@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+
+</head>
+<body onload="InitThis();">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="JsCode.js"></script>
+    <div align="center">
+        <div class="text-center div-play"><label style="color: rgb(0,0,0);font-size: 27px;">Number of
+            digits:&nbsp;</label>
+        <input type="number" min="2" max="9" id="inputValueId"
+            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
+            style="width: 60px;margin-left: 14px;text-align: center;">
+        <label style="margin-left: 10px;">Max. number is 9</label>
+        <button id="placeValuesGoId" class="btn btn-primary border rounded shadow-none" type="button"
+            style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
+    </div>
+        <canvas id="myCanvas" width="300" height="300" style="border:2px solid black">
+			
+		</canvas>
+		<div style="text-align:center" id="1">
+  <span class="dot"></span>
+  <span class="dot"></span>
+</div>
+        <br /><br />
+        <button onclick="javascript:clearArea();return false;">Clear Area</button>
+        Line width : <select id="selWidth">
+            <option value="1">1</option>
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            <option value="9" selected="selected">9</option>
+            <option value="11">11</option>
+        </select> 
+        Color : <select id="selColor">
+            <option value="black">black</option>
+            <option value="blue" selected="selected">blue</option>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+            <option value="gray">gray</option>
+        </select> 
+    </div>
+	<script>
+	
+
+function drawDots(size){
+    clearArea();
+	var canvas = document.getElementById('myCanvas');
+          var context = canvas.getContext('2d');
+          var sizeX = canvas.width / 10;
+          var sizeY = canvas.height / 10;
+          var total = 15;
+          var count = 0;
+		  var input = size;
+          for (var j = 0; j < 10; j++) {
+            for (var i = 0; i < 10; i++) {
+				if(input ==2 && ((j==4 && i == 1) || (j==4 && i == 8))){
+              context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==3 && ((j== 1 && i == 4) || (j==5 && i == 1) || (j==5 && i == 8))){
+				context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==4 && ((j==1 && i==1) || (j==1 && i==8) || (j==5 && i == 1) || (j==5 && i == 8))){
+			  context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==5 && ((j==1 && i==4) || (j==3 && i==1) || (j==3 && i == 8) || (j==7 && i == 2) || (j==7 && i==7))){
+			  context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==6 && ((j==1 && i==2) || (j==1 && i ==7) || (j==4 && i==1) || (j==4 && i == 8) || (j==7 && i == 2) || (j==7 && i==7))){
+			  context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==7 && ((j==1 && i==4) ||  (j==3 && i==2) || (j==3 && i ==7) || (j==5 && i==1) || (j==5 && i == 8) || (j==7 && i == 2) || (j==7 && i==7))){
+			  context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+			  else if(input ==8 && ((j==1 && i==2) || (j==1 && i==7) ||  
+						(j==3 && i==1) || (j==3 && i ==8) || 
+						(j==5 && i==1) || (j==5 && i == 8) || 
+						(j==7 && i ==2) || (j==7 && i==7))){
+			  context.beginPath();
+              context.arc(sizeX * (i+.5), sizeY * (j+.5), sizeX / Math.PI, 0, 2 * Math.PI, false);
+              context.fillStyle = total > count ? 'green' : 'red';
+              context.fill();
+              count++;
+			  }
+            }
+          }
+        }
+	
+    </script>
+    <script>
+        $(function () {
+          
+            $("#inputValueId").keydown(function () {
+                // Save old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 2))
+                    $(this).data("old", $(this).val());
+            });
+            $("#inputValueId").keyup(function () {
+                // Check correct, else revert back to old value.
+                if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 2))
+                    ;
+                else
+                    $(this).val($(this).data("old"));
+            });
+        });
+        $('#placeValuesGoId').click(function () {
+        if ($('#inputValueId').val() == '') {
+            alert('Please enter number of digits');
+            $('#inputValueId').focus();
+            return false;
+        }else{
+            drawDots($('#inputValueId').val());
+        }
+    });
+    </script>
+</body>
+</html>
