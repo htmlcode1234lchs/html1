@@ -1,0 +1,18 @@
+@media screen and (min-width: 1700px) and (max-width:1920px) {
+  #div-bottom {
+    margin-left: 839px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-bottom {
+    margin-left: 450px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1699px) {
+  #div-bottom {
+    margin-left: 674px;
+  }
+}
+

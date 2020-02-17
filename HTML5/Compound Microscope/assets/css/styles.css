@@ -1,0 +1,24 @@
+@media screen and (min-width: 1700px) and (max-width:1920px) {
+  #div-bottom {
+    margin-left: 860px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1249px) {
+  #div-bottom {
+    margin-left: 430px;
+  }
+}
+
+@media screen and (min-width: 1250px) and (max-width:1499px) {
+  #div-bottom {
+    margin-left: 470px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1699px) {
+  #div-bottom {
+    margin-left: 733px;
+  }
+}
+
