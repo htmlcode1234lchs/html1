@@ -69,21 +69,140 @@
         </div>
         <div class="text-center visible" id="imginputflower" style="margin-left: auto;margin-right: auto;height: 700px;width: 900px;">
             <div class="text-right" id="div-flowerinputimg" style="margin-left: auto;margin-right: auto;height: 500px;width: 800px;background-image: url(&quot;assets/img/floral%20parts.png&quot;);background-position: 40%;background-size: cover;background-repeat: no-repeat;"></div>
-            <div id="flowerbottominput" style="margin-top: -44px;margin-left: 19px;width: 557px;"><input class="form-control-sm" type="text" id="flowerinput9" style="width: 37px;height: 37px;margin-right: 372px;font-size: 20px;"></div>
-            <div id="flowerleftinput" style="width: 38px;margin-top: -510px;margin-left: -3px;"><input class="form-control-sm" type="text" id="flowerinput1" style="width: 37px;height: 37px;margin-top: 86px;font-size: 20px;"><input class="form-control-sm" type="text" id="flowerinput2" style="width: 37px;height: 37px;margin-top: 57px;font-size: 20px;">
-                <input
-                    class="form-control-sm" type="text" id="flowerinput3" style="width: 37px;height: 37px;margin-top: 80px;font-size: 20px;"><input class="form-control-sm" type="text" id="flowerinput4" style="width: 37px;height: 37px;margin-top: 58px;font-size: 20px;"></div>
-            <div id="flowerrightinput" style="width: 37px;margin-left: 856px;margin-top: -393px;"><input class="form-control-sm" type="text" id="flowerinput5" style="width: 37px;height: 37px;margin-top: -34px;font-size: 20px;"><input class="form-control-sm" type="text" id="flowerinput6" style="width: 37px;height: 37px;margin-top: 92px;font-size: 20px;">
-                <input
-                    class="form-control-sm" type="text" id="flowerinput7" style="width: 37px;height: 37px;margin-top: 176px;font-size: 20px;"><input class="form-control-sm" type="text" id="flowerinput8" style="width: 37px;height: 37px;margin-top: 20px;font-size: 20px;"></div><input class="form-control-plaintext" type="text" id="div-plaintxt" value="Enter the correct part number in the given empty blocks"
-                readonly="" style="margin-top: 144px;margin-left: 58px;font-size: 29px;font-weight: bold;width: 783px;"></div>
+            <div id="flowerbottominput" style="margin-top: -44px;margin-left: 19px;width: 557px;">
+                <input class="form-control-sm" type="number" id="inputValue8"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-right: 372px;font-size: 20px;">
+            </div>
+            <div id="flowerleftinput" style="width: 38px;margin-top: -510px;margin-left: -3px;">
+                <input class="form-control-sm" type="number" id="inputValue3"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 86px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue4"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 57px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue1"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 80px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue6"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 58px;font-size: 20px;">
+            </div>
+            <div id="flowerrightinput" style="width: 37px;margin-left: 856px;margin-top: -393px;">
+                <input class="form-control-sm" type="number" id="inputValue2"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57"
+                    style="width: 60px;height: 37px;margin-top: -34px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue5"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57"
+                    style="width: 60px;height: 37px;margin-top: 92px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue9"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 176px;font-size: 20px;">
+                <input class="form-control-sm" type="number" id="inputValue7"
+                    onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null 
+                    : event.charCode >= 48 && event.charCode <= 57" 
+                    style="width: 60px;height: 37px;margin-top: 20px;font-size: 20px;">
+            </div>
+            <input class="form-control-plaintext" type="text" id="div-plaintxt" 
+                value="Enter the correct part number in the given empty blocks"
+                readonly
+                style="margin-top: 144px;margin-left: 58px;font-size: 29px;font-weight: bold;width: 783px;"></div>
     </div>
-    <div id="div-bottom" class="bottomdivision" style="width: 756px;height: 100px;margin-top: -93px;"><button class="btn btn-primary text-center shadow-none -check" id="check" type="button" style="width: 228px;height: 67px;font-size: 38px;background-color: rgba(62,171,79,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 7px;background-image: url(&quot;assets/img/Check.png&quot;);"></button>
-        <input
-            class="form-control-plaintext" type="text" value="Result" readonly="" style="width: 200px;margin-left: 319px;margin-top: -67px;font-size: 27px;"><button class="btn btn-primary btn-show" id="show" type="button" style="width: 228px;height: 67px;background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 525px;margin-top: -73px;background-image: url(&quot;assets/img/Show%20Answer.png&quot;);"></button></div>
+    <div id="div-bottom" class="bottomdivision" style="width: 756px;height: 100px;margin-top: -93px;">
+        <button class="btn btn-primary text-center shadow-none -check" id="cmCheckId" type="button" 
+            style="width: 228px;height: 67px;font-size: 38px;background-color: rgba(62,171,79,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 7px;background-image: url(&quot;assets/img/Check.png&quot;);">
+        </button>
+        <input class="form-control-plaintext" type="text" value="Result" readonly
+             style="width: 200px;margin-left: 319px;margin-top: -67px;font-size: 27px;">
+             <button class="btn btn-primary btn-show" id="showResultsId" type="button" 
+             style="width: 228px;height: 67px;background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 525px;margin-top: -73px;background-image: url(&quot;assets/img/Show%20Answer.png&quot;);"></button>
+     </div>
+     <div>
+        <div style="width: 100%;">
+        <span style="margin-left: 58%;font-size: 30px;" id="finalResult"></span>
+        <span style="margin-left: 9%;display: none;" id="leftLebelId">Left Side:</span> <span id="leftSideId"
+            style="margin-left: 0%;font-size: 24px;"></span>
+        </div>
+            <br><span style="margin-left: 74%;display: none;" id="rightLebelId">Right Side:</span> <span id="rightSideId"
+            style="margin-left: 0%;font-size: 24px;"></span>
+    </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var leftArray = [3,4,1,6,8];
+    var rightArray = [2,5,9,7];
+    $('#cmCheckId').click(function () {
+        var validFlag = false;
+        for (var i = 1; i < 10; i++) {
+            if ($('#inputValue' + i).val() == '') {
+                validFlag = true;
+            }
+        }
+        if (validFlag) {
+            alert('all fields are required');
+            return false;
+        } else {
+            validFlag = false;
+            for (var i = 1; i < 10; i++) {
+                if ($('#inputValue' + i).val() != i) {
+                    validFlag = true;
+                }
+            }
+            if (!validFlag) {
 
+                $('#finalResult').text('Correct');
+                $('#finalResult').css('color', 'green');
+            } else {
+                $('#finalResult').text('Wrong');
+                $('#finalResult').css('color', 'red');
+            }
+        }
+    });
+    $('#showResultsId').click(function () {
+        var validFlag = false;
+        for (var i = 1; i < 10; i++) {
+            if ($('#inputValue' + i).val() == '') {
+                validFlag = true;
+            }
+        }
+        if (validFlag) {
+            alert('all fields are required');
+            return false;
+        } else {
+            $('#leftLebelId').css('display', 'block');
+            $('#rightLebelId').css('display', 'block');
+            $('#leftSideId').text(leftArray.join(','));
+            $('#rightSideId').text(rightArray.join(','));
+        }
+    });
+    $('#homebutton').click(function(){
+        refresh();
+    });
+    $('#resetbutton').click(function(){
+        refresh();
+    });
+    function refresh(){
+        leftArray.forEach(element =>{
+            $('#inputValue'+element).val('');
+        });
+        rightArray.forEach(element => {
+            $('#inputValue'+element).val('');
+        });
+        $('#leftLebelId').css('display', 'none');
+        $('#rightLebelId').css('display', 'none');
+        $('#finalResult').text('');
+        $('#leftSideId').text('');
+        $('#rightSideId').text('');
+    }
+</script>
 </html>
