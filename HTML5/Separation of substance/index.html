@@ -1,5 +1,40 @@
 <!DOCTYPE html>
 <html>
+<style>
+    #CorrectAnswers {
+        background-color: rgba(0, 123, 255, 0);
+        background-image: url(assets/img/Correct.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 157px;
+        height: 43px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 8px;
+        margin-left: 6%;
+        text-align: left;
+        font-size: 20px;
+        font-family: "Comic Sans MS";
+        border: 0px;
+    }
+
+    #IncorrectAnswers {
+        background-color: rgba(0, 123, 255, 0);
+        background-image: url(assets/img/Incorrect.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 157px;
+        height: 43px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 8px;
+        margin-left: 6%;
+        text-align: right;
+        font-size: 20px;
+        font-family: "Comic Sans MS";
+        border: 0px;
+    }
+</style>
 
 <head>
     <meta charset="utf-8">
@@ -7,41 +42,398 @@
     <title>Separation of substance</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .imgunsink_zone {
+            border: #000000 0px solid;
+            width: 318px;
+            height: 120px;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+        }
+
+        .imgsink_zone {
+            border: #000000 0px solid;
+            width: 318px;
+            height: 120px;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+        }
+
+        #imgsink_type1 {
+            background-image: url('assets/img/sinkable2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgsink_type2 {
+            background-image: url('assets/img/sinkable3.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgsink_type3 {
+            background-image: url('assets/img/sinkable4.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgsink_type4 {
+            background-image: url('assets/img/sinkable5.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgsink_type5 {
+            background-image: url('assets/img/coins.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+
+        #imgunsink_type1 {
+            background-image: url('assets/img/ns1.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgunsink_type2 {
+            background-image: url('assets/img/ns2.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgunsink_type3 {
+            background-image: url('assets/img/ns3.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgunsink_type4 {
+            background-image: url('assets/img/ns4.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+        #imgunsink_type5 {
+            background-image: url('assets/img/ns5.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        var box1Count = [0, 0];
+        var Countmap = {};
+        var shapes = ['imgsink', 'imgunsink'];
+        for (var i = 0; i < shapes.length; i++) {
+            Countmap[shapes[i]] = 0;
+        }
+        var correct = 0;
+        var incorrect = 0;
+        var boxSeq = 1;
+        var inputSet = ['imgunsink_type1', 'imgunsink_type2', 'imgunsink_type3', 'imgunsink_type4',
+            'imgunsink_type5', 'imgsink_type1', 'imgsink_type2', 'imgsink_type3', 'imgsink_type4',
+            'imgsink_type5'];
+
+    </script>
+    <script>
+        function play(audioToPlay) {
+            var audio = document.getElementById(audioToPlay);
+            audio.play();
+        }
+
+        function _(id) {
+            return document.getElementById(id);
+        }
+        var droppedIn = false;
+        function drag_start(event) {           
+            event.dataTransfer.dropEffect = "move";
+            event.dataTransfer.setData("text", event.target.getAttribute('id'));
+        }
+        function drag_enter(event) {
+            //  _('app_status').innerHTML = "You are dragging over the "+event.target.getAttribute('id');
+        }
+        function drag_leave(event) {
+            //  _('app_status').innerHTML = "You left the "+event.target.getAttribute('class');
+        }
+
+
+
+        function drag_drop_zone(event) {
+            var elem_id = event.dataTransfer.getData('text');
+            var i = elem_id.replace("drop_zone", "").charAt(0);
+            boxSeq++;
+           
+            document.getElementById("done").style.visibility = "visible";
+            event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+            var count = i - 1;
+            
+            var boxElem = boxElem1;
+            if (i == 2) {
+                boxElem = boxElem2;
+            }
+            while (boxElem.length > 0) {
+                event.target.appendChild(_(boxElem.pop()));
+            }
+            var color = ["blue", "red"];
+            _(elem_id).removeAttribute("draggable");
+            _(elem_id).style.cursor = "default";
+            var BoxName = "chocStack" + i;
+            var zoneName = "drop_zone" + i;
+            if (i == 1) {
+                showBox();
+            }
+            else {
+                var sum = box1Count[0] + box1Count[1];
+                var htmltext = "" + box1Count[0] + " + " + box1Count[1] + "=" + sum;
+                document.getElementById("done").innerHTML = htmltext;
+            }
+
+            droppedIn = true;
+
+        }
+
+        function drag_drop(event) {
+            var targetClass = event.target.getAttribute('class');
+            var elem_id = event.dataTransfer.getData('text');
+           
+            var shape = elem_id.split("_")[0];
+            if (targetClass.split("_")[0] === shape) {                
+                event.preventDefault();    
+                var count = Countmap[shape] + 1;
+                Countmap[shape] = count;
+                var targetShape = shape + count;
+                document.getElementById(shape + count).appendChild(_(elem_id));
+                var color = ["blue", "red"];
+                
+                _(elem_id).removeAttribute("draggable");
+                _(elem_id).style.cursor = "default";
+                droppedIn = true;
+                correct++;
+                play("correct");
+            }
+            else {
+                incorrect++;
+
+                play("wrong");
+            }
+            _('CorrectAnswers').innerHTML = correct;
+            _('IncorrectAnswers').innerHTML = incorrect;
+        }
+        function drag_end(event) {
+            droppedIn = false;
+        }
+        function readDropZone() {
+            for (var i = 0; i < _("drop_zone").children.length; i++) {
+                alert(_("drop_zone").children[i].id + " is in the drop zone");
+            }
+        }
+
+        function addBoxes() {
+            document.getElementById("choc11").ondrag.start;
+        }
+
+
+        function closeBox(i) {
+            var BoxName = "chocStack" + i;
+            document.getElementById(BoxName).innerHTML = "<img src='images/box_cover.jpg' width=\"270px\" height=\"270px\" opacity =\"0.5\" />";
+            if (i == 1) {
+                //   _('app_status').innerHTML = "Drag Red Box to Addition Zone";
+            }
+            else {
+                // _('app_status').innerHTML = "Drag Yellow Box to Addition Zone";
+            }
+            document.getElementById("done").style.visibility = "hidden";
+
+        }
+        function hideBox() {
+
+        }
+        function showBox() {
+            document.getElementById("chocStack2").style.visibility = "visible";
+            document.getElementById("drop_zone2").style.visibility = "visible";
+            document.getElementById("chocStack2").style.display = "block";
+            document.getElementById("drop_zone2").style.display = "block";
+        }
+
+        function showAnswer() {
+            for (var j = 0; j < shapes.length; j++) {
+                Countmap[shapes[j]] = 1;
+            }
+            for (var i = 0; i < inputSet.length; i++) {
+                var shapeType = inputSet[i].split("_")[0];
+                var count = Countmap[shapeType];
+                document.getElementById(shapeType + count).appendChild(document.getElementById(inputSet[i]));
+                count++;
+                Countmap[shapeType] = count;
+            }
+        }
+
+        function restart() {
+            document.location.reload();
+        }
+
+        function restart() {
+            document.location.reload();
+        } 
+    </script>
 </head>
 
-<body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+<body
+    style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="div-title" class="titledivision" style="height: 100px;">
-        <div id="div-buttons" class="buttonsdiv" style="width: 900px;margin-right: auto;margin-left: auto;"><button class="btn btn-primary shadow-none -homebtn" id="home" type="button" style="width: 60px;height: 60px;margin: 30px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-            <button
-                class="btn btn-primary shadow-none resetbtn" id="reset" type="button" style="width: 60px;height: 60px;margin-left: 700px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+        <div id="div-buttons" class="buttonsdiv" style="width: 900px;margin-right: auto;margin-left: auto;"><button
+                class="btn btn-primary shadow-none -homebtn" id="home" type="button" onclick="javascript:restart();"
+                style="width: 60px;height: 60px;margin: 30px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+            <button class="btn btn-primary shadow-none resetbtn" id="reset" type="button" onclick="javascript:restart();"
+                style="width: 60px;height: 60px;margin-left: 700px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="lab" class="lab" style="font-size: 35px;">Drag and drop the substances on to the right side based on their classification.</label></div>
-    <div class="d-xl-flex align-items-xl-center contextdivision" id="div-context" style="margin-left: auto;margin-right: auto;">
-        <div class="d-xl-flex align-items-xl-center animals" id="div-substance" style="background-image: url(&quot;assets/img/Block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-            <div class="text-center -subs1" id="div-subs1"><img id="imgsink2" class="sink2" style="background-image: url(&quot;assets/img/sinkable2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="imgsink3" class="sink3" style="background-image: url(&quot;assets/img/sinkable3.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <img
-                    id="imgsink4" class="sink4" style="background-image: url(&quot;assets/img/sinkable4.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="imgsink5" class="sink5" style="background-image: url(&quot;assets/img/sinkable5.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div class="text-center -subs2" id="div-subs2"><img id="imgcoins" class="coins" style="background-image: url(&quot;assets/img/coins.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="imgunsink" class="unsink" style="background-image: url(&quot;assets/img/ns1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <img
-                    id="imgunsink1" class="unsink1" style="background-image: url(&quot;assets/img/ns2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="imgunsink2" class="unsink2" style="background-image: url(&quot;assets/img/ns3.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div class="text-center -subs3" id="div-subs3"><img id="imgunsink3" class="unsink3" style="background-image: url(&quot;assets/img/ns4.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="imgunsink4" class="unsink4" style="background-image: url(&quot;assets/img/ns5.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-        </div>
-        <div class="d-xl-flex align-items-xl-center -classification" id="div-classify" style="margin-right: auto;margin-left: auto;">
-            <div id="div-unsink" class="unsink-div" style="background-image: url(&quot;assets/img/block3.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-                <div class="text-center rightdiv-1" id="rightdivcol-1"><img id="div1img1" class="img1div1"><img id="div1img2" class="img2div1"><img id="div1img3" class="img3div1"><img id="div1img4" class="img4div1"><img id="div1img5" class="img5div1"></div>
+    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="lab"
+            class="lab" style="font-size: 35px;">Drag and drop the substances on to the right side based on their
+            classification.</label></div>
+    <div class="d-xl-flex align-items-xl-center contextdivision" id="div-context"
+        style="margin-left: auto;margin-right: auto;">
+        <div class="d-xl-flex align-items-xl-center animals" id="div-substance"
+            style="background-image: url(&quot;assets/img/Block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
+            <div class="text-center -subs1" id="div-subs1">
+                <div id="imgsink_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgsink_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgsink_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgsink_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
             </div>
-            <div id="div-sink" class="sink-div" style="background-image: url(&quot;assets/img/Block2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-                <div class="text-center rightdiv-2" id="rightdivcol-2"><img id="div2img1" class="img1div2"><img id="div2img2" class="img2div2"><img id="div2img3" class="img3div2"><img id="div2img4" class="img4div2"><img id="div2img5" class="img5div2"></div>
+            <div class="text-center -subs2" id="div-subs2">
+                <div id="imgsink_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgunsink_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgunsink_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgunsink_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+            </div>
+            <div class="text-center -subs3" id="div-subs3">
+                <div id="imgunsink_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+                <div id="imgunsink_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)">
+                </div>
+            </div>
+        </div>
+        <div class="d-xl-flex align-items-xl-center -classification" id="div-classify"
+            style="margin-right: auto;margin-left: auto;">
+            <div id="div-unsink" class="unsink-div"
+                style="background-image: url(&quot;assets/img/block3.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
+                <div class="text-center rightdiv-1" id="rightdivcol-1">
+                    <div class="text-center divright1img" id="right1imgdiv">
+                        <div id="imgunsink1" class="imgunsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgunsink2" class="imgunsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgunsink3" class="imgunsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgunsink4" class="imgunsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgunsink5" class="imgunsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="div-sink" class="sink-div"
+                style="background-image: url(&quot;assets/img/Block2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
+                <div class="text-center rightdiv-2" id="rightdivcol-2">
+                    <div class="text-center divright1img" id="right1imgdiv">
+                        <div id="imgsink1" class="imgsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgsink2" class="imgsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgsink3" class="imgsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgsink4" class="imgsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                        <div id="imgsink5" class="imgsink_zone" ondragenter="drag_enter(event)" draggable="true"
+                            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                            ondragleave="drag_leave(event)"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="text-center buttonsbottom" id="bottomdiv" style="width: 900px;margin-left: auto;"><button class="btn btn-primary shadow-none btn-check" id="check" type="button" style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-center">
+                            <td align="lef">
+                                <div id="CorrectAnswers">0</div>
+                            </td>
+                            <td align="center">
+                                <button
+                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                </button>
+                            </td>
+                            <td align="right">
+                                <div id="IncorrectAnswers">0</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <!-- <div class="text-center buttonsbottom" id="bottomdiv" style="width: 900px;margin-left: auto;"><button class="btn btn-primary shadow-none btn-check" id="check" type="button" style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         <label
             id="resultlabel" class="labelresult" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;">Result</label><button class="btn btn-primary shadow-none btn-show" id="showbtn" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;width: 200px;height: 50px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
-    <script
-        src="assets/js/jquery.min.js"></script>
-        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+     -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 
 </html>
