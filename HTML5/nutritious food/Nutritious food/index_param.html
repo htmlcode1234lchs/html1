@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Nutritious Food</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+ <script>
+    var box1Count = [0,0];
+    var Countmap = {};    
+    var shapes = ['pulse','millet']; 
+    for(var i =0 ; i<shapes.length;i++)
+        {
+        Countmap[shapes[i]]=0;
+        }
+    var correct = 0;
+    var incorrect = 0;    
+    var boxSeq = 1;
+    var inputSet = ['millet_type1','millet_type2','millet_type3', 'millet_type4','millet_type5', 'pulse_type1','pulse_type2','pulse_type3','pulse_type4','pulse_type5'];    
+    
+</script>
+    
+<style>
+    
+#millet_type1 {
+    background-image: url('assets/img/Pearl-millet.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px; 
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+ }   
+    
+
+
+#millet_type2 {
+    background-image: url('assets/img/Foxtail-millet.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}           
+    
+#millet_type3 {
+    background-image: url('assets/img/Black%20gram.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}    
+    
+#millet_type4 {
+   background-image: url('assets/img/Jowar.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}    
+
+#millet_type5 {
+    background-image: url('assets/img/Barnyard%20Millet.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}     
+
+#pulse_type1 {
+    background-image: url('assets/img/Lentil.png');
+	background-size:contain;
+    background-position:center;
+    background-repeat:no-repeat;
+    height: 100px;
+    width: 100px;
+    cursor: move;
+    display: inline-block;
+ }       
+       
+    
+#pulse_type2 {
+   background-image: url('assets/img/Finger-millet-ragi.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    height: 100px;
+    width: 100px;
+    cursor: move;
+    display: inline-block;
+}       
+   
+
+
+ #pulse_type3 {
+  background-image: url('assets/img/Green%20Gram%20.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+} 
+    
+#pulse_type4 {
+   background-image: url('assets/img/Rajma.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}     
+
+#pulse_type5 {
+   background-image: url('assets/img/Black-eyed%20pea.png');
+    background-position:center;
+	background-repeat:no-repeat;
+	background-size:contain;
+    width: 100px;
+    height: 100px;
+    cursor: move;
+    display: inline-block;
+}
+    
+
+.millet_zone {
+    border: #000000 0px solid;
+    width: 318px; 
+    height: 120px;
+    font-size: 20px;
+    font-family:"Comic Sans MS";
+}    
+
+.pulse_zone {
+    border: #000000 0px solid;
+    width: 318px; 
+    height: 120px;
+    font-size: 20px;
+    font-family:"Comic Sans MS";
+}
+    
+#CorrectAnswers    {
+   background-color: rgba(0,123,255,0);
+    background-image: url(assets/img/Correct.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 157px;height: 43px;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 8px;
+    margin-left: 6%;
+    text-align: left;
+     font-size: 20px;
+    font-family:"Comic Sans MS";
+    border: 0px;
+ }  
+
+#IncorrectAnswers    {
+   background-color: rgba(0,123,255,0);
+    background-image: url(assets/img/Incorrect.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    width: 157px;height: 43px;
+    padding-right: 12px;
+    padding-left: 12px;
+    padding-top: 8px;
+    margin-left: 6%;
+    text-align: right;
+    font-size: 20px;
+    font-family:"Comic Sans MS";
+    border: 0px;
+ }         
+    
+</style>    
+
+ <script>
+      function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+      }
+ 
+function _(id){
+   return document.getElementById(id);	
+}
+var droppedIn = false;
+function drag_start(event) {
+ //   _('app_status').innerHTML = "Dragging the "+event.target.getAttribute('id');
+    event.dataTransfer.dropEffect = "move";
+   // alert(event.target.getAttribute('class'));
+    event.dataTransfer.setData("text", event.target.getAttribute('id') );
+}
+function drag_enter(event) {
+  //  _('app_status').innerHTML = "You are dragging over the "+event.target.getAttribute('id');
+}
+function drag_leave(event) {
+  //  _('app_status').innerHTML = "You left the "+event.target.getAttribute('class');
+}
+
+
+    
+function drag_drop_zone(event) {
+     var elem_id = event.dataTransfer.getData('text');
+    var i = elem_id.replace("drop_zone","").charAt(0);
+        boxSeq++;
+    //_('app_status').innerHTML = "" + event.target.getAttribute('class');
+    document.getElementById("done").style.visibility="visible";       
+    event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+    var count = i -1;
+   // event.target.appendChild(_(elem_id));
+    var boxElem = boxElem1;
+    if(i==2)
+        {
+            boxElem = boxElem2;
+        }
+    while(boxElem.length>0)
+        {
+            event.target.appendChild(_(boxElem.pop()));
+        }
+    
+    //_('app_status').innerHTML = "Dropped "+elem_id+" into the "+event.target.getAttribute('id');
+    var color = ["blue","red"];       
+    _(elem_id).removeAttribute("draggable");
+    _(elem_id).style.cursor = "default";
+       var BoxName = "chocStack"+ i;
+       var zoneName = "drop_zone"+ i;   
+           if(i==1)
+               {
+                showBox();       
+               }
+    else{
+        var sum = box1Count[0] + box1Count[1];
+        var htmltext = "" + box1Count[0] + " + " +  box1Count[1] + "=" + sum ;
+        document.getElementById("done").innerHTML=htmltext;
+    }
+    
+    droppedIn = true;
+ 
+}
+    
+function drag_drop(event) {
+    var targetClass = event.target.getAttribute('class');
+     var elem_id = event.dataTransfer.getData('text');
+    var shape = elem_id.split("_")[0];
+    if( targetClass.split("_")[0]===shape)
+       {
+            //_('app_status').innerHTML = "" + event.target.getAttribute('class');
+        event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+       // box1Count[count]++;
+       // event.target.appendChild(_(elem_id));
+          var count = Countmap[shape] + 1;
+        Countmap[shape] =count;      
+        var targetShape =  shape+count;  
+        document.getElementById(shape+count).appendChild(_(elem_id));   
+      
+        //_('app_status').innerHTML = "Dropped "+elem_id+" into the "+event.target.getAttribute('id');
+        var color = ["blue","red"];       
+       //  document.getElementById('counter'+i).style.color=color[count];
+        // _('counter' + i).innerHTML = box1Count[count] ;
+        _(elem_id).removeAttribute("draggable");
+        _(elem_id).style.cursor = "default";
+        droppedIn = true;
+        correct++;  
+         play("correct");   
+       }
+    else
+        {
+            incorrect++;  
+                
+            play("wrong");
+        }
+      _('CorrectAnswers').innerHTML = correct;
+      _('IncorrectAnswers').innerHTML = incorrect;
+}
+function drag_end(event) {
+    if(droppedIn == false){
+    //    _('app_status').innerHTML = "You let the "+event.target.getAttribute('id')+" go.";
+    }
+	droppedIn = false;
+}
+function readDropZone(){
+    for(var i=0; i < _("drop_zone").children.length; i++){
+        alert(_("drop_zone").children[i].id+" is in the drop zone");
+    }
+    /* Run Ajax request to pass any data to your server */
+}
+    
+function addBoxes()
+    {
+      document.getElementById("choc11").ondrag.start;
+    }
+    
+    
+function closeBox(i)
+    {
+    var BoxName = "chocStack"+ i;
+       document.getElementById(BoxName).innerHTML="<img src='images/box_cover.jpg' width=\"270px\" height=\"270px\" opacity =\"0.5\" />";
+        if(i==1)
+            {
+                //   _('app_status').innerHTML = "Drag Red Box to Addition Zone";
+            }
+        else{
+            // _('app_status').innerHTML = "Drag Yellow Box to Addition Zone";
+            }
+        document.getElementById("done").style.visibility="hidden";
+   
+    }
+function hideBox()
+    {
+    
+    }
+function showBox()
+    {
+        document.getElementById("chocStack2").style.visibility ="visible";
+        document.getElementById("drop_zone2").style.visibility ="visible"; 
+         document.getElementById("chocStack2").style.display ="block";
+        document.getElementById("drop_zone2").style.display ="block"; 
+    }   
+    
+function showAnswer()
+    {
+        for(var j =0 ; j<shapes.length;j++)
+             {
+                Countmap[shapes[j]]=1;
+             }
+        for(var i = 0;i < inputSet.length ; i++)
+            {
+                var shapeType = inputSet[i].split("_")[0];  
+                var count = Countmap[shapeType];
+                document.getElementById(shapeType+count).appendChild(document.getElementById(inputSet[i])); 
+                count++;
+                Countmap[shapeType]=count;
+            }
+    }  
+
+function restart()
+    {
+       document.location.reload();
+    }      
+
+function restart()
+    {
+       document.location.reload();
+    } 
+     
+</script>    
+</head>
+   
+<body style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+     <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
+    <div id="titlediv" class="divtitle" style="height: 80px;">
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;">
+            <button class="btn btn-primary btnhome" id="homebtn" type="button" style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(assets/img/B_Home.png);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn btn-primary btnreset" id="resetbtn" type="button" style="margin-left: 680px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(assets/img/B_Reset.png);background-position: center;background-size: contain;background-repeat: no-repeat;" onclick="javascript:restart();">
+            </button>
+        </div>
+    </div>
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;width: auto">
+        <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="background-image: url(&quot;assets/img/Block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;padding-top: 0px">
+                <table border="0" style="height: 650px;width: 507px">
+                <tbody>
+                   <tr style="height: 110px;width: 500px;">
+                       <td id="objrow1cell1"><center><div id="pulse_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                       <td id="objrow1cell2"><center><div id="millet_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                    </tr>
+                    <tr style="height: 110px;width: 500px;">
+                        <td id="objrow2cell1"><center><div id="pulse_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                        <td id="objrow2cell2"><center><div id="millet_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                     </tr>
+                    <tr style="height: 110px;width: 500px;">
+                        <td id="objrow3cell1"><center><div id="millet_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                        <td id="objrow3cell2"><center><div id="pulse_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                     </tr>
+                    <tr style="height: 110px;width: 500px;">
+                        <td id="objrow4cell1"><center><div id="millet_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                        <td id="objrow4cell2"><center><div id="pulse_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                     </tr>
+                    <tr style="height: 110px;width: 500px;">
+                        <td ><center><div id="millet_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                        <td id="objrow5cell2"><center><div id="pulse_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div></center></td>
+                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;border: 1">
+        <div class="text-center toprightdiv" id="righttopdiv">
+        <label style="font-size: 30px;"><center>Drag and drop the food based on its classification</center></label>
+        </div>
+        <div id="rightmiddlediv" class="middlerightdiv" style="background-image: url(&quot;assets/img/Millets.png&quot;);
+            background-position: center;background-size: contain;background-repeat: no-repeat;border: 0px;border-color: 
+            black;display: flex;padding-top: 50px;padding-left: 5px">
+            <div class="text-center divright1img" id="right1imgdiv">
+                    <div id="millet1" class="millet_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="millet2" class="millet_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="millet3" class="millet_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="millet4" class="millet_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="millet5" class="millet_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+            </div>
+        </div>
+        <div id="rightdiv" class="middlerightdiv" style="background-image: url(&quot;assets/img/Block2.png&quot;);background-position: 
+                    center;background-size: contain;background-repeat: no-repeat;border: 0px;border-color: black;display: flex;
+                    padding-top: 50px;padding-left: 5px">
+                    <div class="text-center divright1img" id="right1imgdiv">
+                    <div id="pulse1" class="pulse_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="pulse2" class="pulse_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="pulse3" class="pulse_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="pulse4" class="pulse_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+                    <div id="pulse5" class="pulse_zone"  ondragenter="drag_enter(event)" draggable="true" ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false" ondragleave="drag_leave(event)"></div>
+            </div>
+        </div>
+            
+         <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr class="text-center">
+                        <td align="lef">
+                            <div id="CorrectAnswers">0</div>
+                        </td>
+                        <td align="center">
+                            <button class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center" id="showbtn" type="button" onclick ="javascript:showAnswer();" style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                            </button>
+                        </td>
+                        <td align="right">
+                            <div id="IncorrectAnswers">0</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+            </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
