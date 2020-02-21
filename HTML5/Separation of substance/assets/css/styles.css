@@ -500,21 +500,21 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
-  #imgsink1 {
+  #imgsink_type1 {
     width: 140px;
     height: 140px;
   }
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgsink1 {
+  #imgsink_type1 {
     width: 160px;
     height: 160px;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
-  #imgsink3 {
+  #imgsink_type3 {
     width: 140px;
     height: 140px;
     margin-top: 10px;
@@ -522,7 +522,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgsink3 {
+  #imgsink_type3 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -530,7 +530,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgsink2 {
+  #imgsink_type2 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -538,7 +538,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
-  #imgsink2 {
+  #imgsink_type2 {
     width: 140px;
     height: 140px;
     margin-top: 10px;
@@ -546,7 +546,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgsink4 {
+  #imgsink_type4 {
     width: 140px;
     height: 140px;
     margin-top: 10px;
@@ -554,7 +554,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgsink4 {
+  #imgsink_type4 {
     margin-top: 10px;
     width: 160px;
     height: 160px;
@@ -562,7 +562,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgsink5 {
+  #imgsink_type5 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -570,7 +570,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgsink5 {
+  #imgsink_type5 {
     width: 140px;
     height: 140px;
   }
@@ -590,14 +590,14 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgcoins {
+  #imgsink_type5 {
     width: 160px;
     height: 160px;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgcoins {
+  #imgsink_type5 {
     width: 140px;
     height: 140px;
   }
@@ -620,7 +620,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgunsink1 {
+  #imgunsink_type1 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -628,7 +628,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgunsink1 {
+  #imgunsink_type1 {
     width: 140px;
     height: 140px;
     margin-left: 10px;
@@ -636,7 +636,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgunsink2 {
+  #imgunsink_type2 {
     width: 140px;
     height: 140px;
     margin-left: 10px;
@@ -644,7 +644,23 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgunsink2 {
+  #imgunsink_type2 {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgunsink_type5 {
+    width: 140px;
+    height: 140px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1920px) {
+  #imgunsink_type5 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -654,32 +670,33 @@
 @media screen and (min-width: 1200px) and (max-width:1399px) {
   #div-subs3 {
     width: 150px;
+    height: 27px;
   }
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
   #div-subs3 {
     width: 200px;
-    margin-top: -331px;
+   
   }
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgunsink3 {
+  #imgunsink_type3 {
     width: 160px;
     height: 160px;
   }
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgunsink3 {
+  #imgunsink_type3 {
     width: 140px;
     height: 140px;
   }
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1920px) {
-  #imgunsink4 {
+  #imgunsink_type4 {
     width: 160px;
     height: 160px;
     margin-top: 10px;
@@ -687,7 +704,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1399px) {
-  #imgunsink4 {
+  #imgunsink_type4 {
     width: 140px;
     height: 140px;
     margin-top: 10px;
