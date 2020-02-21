@@ -156,10 +156,12 @@
             for (var i = 1; i < 10; i++) {
                 if ($('#inputValue' + i).val() != i) {
                     validFlag = true;
+                    $('#inputValue' + i).css('background-color','red');
+                }else{
+                    $('#inputValue' + i).css('background-color','green');
                 }
             }
             if (!validFlag) {
-
                 $('#finalResult').text('Correct');
                 $('#finalResult').css('color', 'green');
             } else {
@@ -179,10 +181,18 @@
             alert('all fields are required');
             return false;
         } else {
-            $('#leftLebelId').css('display', 'block');
+            leftArray.forEach(element=>{
+                $('#inputValue' + element).val(element);
+                $('#inputValue' + element).css('background-color','green');
+            });
+            rightArray.forEach(element=>{
+                $('#inputValue' + element).val(element);
+                $('#inputValue' + element).css('background-color','green');
+            });
+           /*  $('#leftLebelId').css('display', 'block');
             $('#rightLebelId').css('display', 'block');
             $('#leftSideId').text(leftArray.join(','));
-            $('#rightSideId').text(rightArray.join(','));
+            $('#rightSideId').text(rightArray.join(',')); */
         }
     });
     $('#homebutton').click(function(){
@@ -194,9 +204,11 @@
     function refresh(){
         leftArray.forEach(element =>{
             $('#inputValue'+element).val('');
+            $('#inputValue' + element).css('background-color','white');
         });
         rightArray.forEach(element => {
             $('#inputValue'+element).val('');
+            $('#inputValue' + element).css('background-color','white');
         });
         $('#leftLebelId').css('display', 'none');
         $('#rightLebelId').css('display', 'none');
