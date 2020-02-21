@@ -147,10 +147,10 @@
                 }
                 console.log(arr.length + ' = ' + k)
             }
-        }else{
-            if(randomPosition-1 == 0){
+        } else {
+            if (randomPosition - 1 == 0) {
                 arr.push(parseInt(ascRandomArray.toString().charAt(1)));
-            }else{
+            } else {
                 arr.push(parseInt(ascRandomArray.toString().charAt(0)));
             }
             console.log(arr)
@@ -205,11 +205,52 @@
             $('#checkedResult').text('Wrong');
             $('#checkedResult').css('color', 'red');
         }
+        array.forEach((element, index) => {
+            var value = $('#button' + element).text();
+            if (parseInt(value) == parseInt(globalSelectedId)) {
+                if (parseInt(value) == parseInt(finalResultValue)) {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'green');
+                } else {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'red');
+                }
+            }
+            /* if ((index + 1) == (selectedId.toString().charAt(selectedId.toString().length - 1))) {
+                $('#button' + (index + 1)).css('color', 'white');
+                $('#button' + (index + 1)).css('border-color', 'green');
+            } */
+        });
     });
 
     $('#result1').click(function () {
-        $('#finalResult').css('display', 'block')
-        $('#finalResult').text(parseInt(finalResultValue));
+        array.forEach((element, index) => {
+            var value = $('#button' + element).text();
+            if (parseInt(value) == parseInt(globalSelectedId)) {
+                if (parseInt(value) == parseInt(finalResultValue)) {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'green');
+                } else {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'red');
+                }
+            }
+            else if (parseInt(value) == parseInt(finalResultValue)) {
+                if (parseInt(value) == parseInt(finalResultValue)) {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'green');
+                } else {
+                    $('#button' + (index + 1)).css('color', 'white');
+                    $('#button' + (index + 1)).css('border-color', 'red');
+                }
+            }
+            /* if ((index + 1) == (selectedId.toString().charAt(selectedId.toString().length - 1))) {
+                $('#button' + (index + 1)).css('color', 'white');
+                $('#button' + (index + 1)).css('border-color', 'green');
+            } */
+        });
+        //$('#finalResult').css('display', 'block')
+        //$('#finalResult').text(parseInt(finalResultValue));
     });
 
     function getRandomIntInclusive(min, max) {
@@ -225,7 +266,7 @@
         for (var i = 0; i < digits; i++) {
             var value = ourRandomRange(0, 9);
             if (isNaN(value)) {
-                    i--;
+                i--;
             }
             else if (arr.length == 0) {
                 arr.push(value);
@@ -235,8 +276,8 @@
                 i--;
             }
             else if (arr.length - 1 < i) {
-                    i--;
-                }
+                i--;
+            }
         }
         console.log(arr);
         return arr;
@@ -258,6 +299,25 @@
         }
 
         return array;
+    }
+    $('#hb1').click(function(){
+        refresh();
+    });
+    $('#rb1').click(function(){
+        refresh();
+    });
+    function refresh(){
+        $('#inputValueId').val('');
+        $('#generateNumberId').val('');
+        $('#finalResult').css('display', 'none')
+        $('#finalResult').text('');
+        $('#selectQuestionId').text('');
+        array.forEach((element, index) => {
+            $('#button' + (index + 1)).text('');
+            $('#button' + (index + 1)).css('color', 'black');
+            $('#button' + (index + 1)).css('border-color', '');
+        });
+        $('#checkedResult').text('');
     }
 </script>
 
