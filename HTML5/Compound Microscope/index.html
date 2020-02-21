@@ -157,10 +157,10 @@
 </body>
 <script>
     var leftArray = [1, 8, 9, 2, 12, 5];
-    var rightArray = [7, 6, 11, 10, 43];
+    var rightArray = [7, 6, 11, 10, 4,3];
     $('#cmCheckId').click(function () {
         var validFlag = false;
-        for (var i = 1; i < 12; i++) {
+        for (var i = 1; i < 13; i++) {
             if ($('#inputValue' + i).val() == '') {
                 validFlag = true;
             }
@@ -170,13 +170,15 @@
             return false;
         } else {
             validFlag = false;
-            for (var i = 1; i < 12; i++) {
+            for (var i = 1; i < 13; i++) {
                 if ($('#inputValue' + i).val() != i) {
                     validFlag = true;
+                    $('#inputValue' + i).css('background-color','red');
+                }else{
+                    $('#inputValue' + i).css('background-color','green');
                 }
             }
             if (!validFlag) {
-
                 $('#finalResult').text('Correct');
                 $('#finalResult').css('color', 'green');
             } else {
@@ -196,10 +198,18 @@
             alert('all fields are required');
             return false;
         } else {
-            $('#leftLebelId').css('display', 'block');
+            leftArray.forEach(element=>{
+                $('#inputValue' + element).val(element);
+                $('#inputValue' + element).css('background-color','green');
+            });
+            rightArray.forEach(element=>{
+                $('#inputValue' + element).val(element);
+                $('#inputValue' + element).css('background-color','green');
+            });
+           /*  $('#leftLebelId').css('display', 'block');
             $('#rightLebelId').css('display', 'block');
             $('#leftSideId').text(leftArray.join(','));
-            $('#rightSideId').text(rightArray.join(','));
+            $('#rightSideId').text(rightArray.join(',')); */
         }
     });
     $('#homebutton').click(function(){
@@ -211,9 +221,11 @@
     function refresh(){
         leftArray.forEach(element =>{
             $('#inputValue'+element).val('');
+            $('#inputValue' + i).css('background-color','white');
         });
         rightArray.forEach(element => {
             $('#inputValue'+element).val('');
+            $('#inputValue' + i).css('background-color','white');
         });
         $('#leftLebelId').css('display', 'none');
         $('#rightLebelId').css('display', 'none');
