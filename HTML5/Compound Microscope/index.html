@@ -221,11 +221,11 @@
     function refresh(){
         leftArray.forEach(element =>{
             $('#inputValue'+element).val('');
-            $('#inputValue' + i).css('background-color','white');
+            $('#inputValue' + element).css('background-color','white');
         });
         rightArray.forEach(element => {
             $('#inputValue'+element).val('');
-            $('#inputValue' + i).css('background-color','white');
+            $('#inputValue' + element).css('background-color','white');
         });
         $('#leftLebelId').css('display', 'none');
         $('#rightLebelId').css('display', 'none');
