@@ -437,6 +437,8 @@
                 $('#pred' + element).val('');
                 $('#randomInput' + element).val('');
                 $('#succ' + element).val('');
+                $('#pred' + (index+1)).css('background-color','white');
+                $('#succ' + (index+1)).css('background-color','white');
                 if(flag){
                     document.getElementById("pred"+element).disabled = true;
                     document.getElementById("succ"+element).disabled = true;
@@ -509,6 +511,17 @@
                 }else{
                     finalVerify = true;
                 }
+
+                if(predArray[index]+1 == actualArray[index])   {
+                    $('#pred' + (index+1)).css('background-color','green');
+                }else{
+                    $('#pred' + (index+1)).css('background-color','red');
+                }
+                if(succArray[index]-1 == actualArray[index])   {
+                    $('#succ' + (index+1)).css('background-color','green');
+                }else{
+                    $('#succ' + (index+1)).css('background-color','red');
+                }
             });
             if(finalVerify){
                 $('#activityResultStatus').text('Wrong');
@@ -522,12 +535,18 @@
             var actualArray = [];
             var predResults = [];
             var succResults = [];
-             activityStaticArray.forEach(element =>{
+             activityStaticArray.forEach((element,index) =>{
                 predResults.push(parseInt($('#randomInput'+element).val())-1);
-                succResults.push(parseInt($('#randomInput'+element).val())+1);
+                succResults.push(parseInt($('#randomInput'+element).val())+1);          
+                $('#pred' + (index+1)).val(parseInt($('#randomInput'+element).val())-1);              
+                $('#succ' + (index)).val(parseInt($('#randomInput'+element).val())+1);
+                $('#pred' + (index+1)).css('background-color','green');
+                $('#succ' + (index+1)).css('background-color','green');
+                
             });
+/* 
             $('#predFinalResults').text(predResults.join(','));
-            $('#succFinalResults').text(succResults.join(','));
+            $('#succFinalResults').text(succResults.join(',')); */
         });                               
 
         function ourRandomRange(ourMin, ourMax) {
