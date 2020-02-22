@@ -9,21 +9,93 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-repeat: no-repeat;margin-right: auto;margin-left: auto;background-size: cover;">
+<body
+    style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-repeat: no-repeat;margin-right: auto;margin-left: auto;background-size: cover;">
     <div id="titlediv" class="divtitle" style="height: 100px;">
-        <div id="dtnsdiv" class="divbtns" style="margin-left: auto;width: 900px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;"><button class="btn btn-primary shadow-none" id="hb" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;position: fixed;"></button>
-            <button
-                class="btn btn-primary shadow-none" id="rb" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;position: fixed;"></button>
+        <div id="dtnsdiv" class="divbtns"
+            style="margin-left: auto;width: 900px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;">
+            <button class="btn btn-primary shadow-none" id="hb" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;position: fixed;"></button>
+            <button class="btn btn-primary shadow-none" id="rb" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;position: fixed;"></button>
         </div>
     </div>
-    <div class="text-center div-ques" id="question-div" style="margin-right: auto;margin-left: auto;"><label style="font-size: 30px;">Enter the correct numerical number upon dragging the slider along the scale&nbsp;</label></div>
-    <div id="btninputtextdiv" class="btninputtext-div"><input type="text" id="input" class="input-text" style="text-align: center;"><button class="btn btn-primary shadow-none btn-check" id="checkbtn" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 150px;"></button></div>
-    <div
-        id="slider-div" class="div-slider"><input class="custom-range" type="range" id="range-slider" style="height: 50px;" value="0" min="0"></div>
-        <div id="resultanswer-div" class="div-resultanswer"><label id="result-label" class="label-result">Result</label><button class="btn btn-primary shadow-none btn-answer" id="answerbtn" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: -15px;"></button></div>
-        <script
-            src="assets/js/jquery.min.js"></script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <div class="text-center div-play"><label style="color: rgb(0,0,0);font-size: 27px;">Number of
+            digits:&nbsp;</label>
+        <input type="number" min="0" max="10" id="inputValueId"
+            onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
+            style="width: 60px;margin-left: 14px;text-align: center;">
+        <label style="margin-left: 10px;">Max. number is 10</label>
+        <button id="identifyNumbersGoId" class="btn btn-primary border rounded shadow-none" type="button"
+            style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
+    </div>
+    <div class="text-center div-ques" id="question-div" style="margin-right: auto;margin-left: auto;">
+        <label style="font-size: 30px;">Enter the correct numerical number upon dragging the slider along the
+            scale&nbsp;</label></div>
+    <div id="btninputtextdiv" class="btninputtext-div"><input type="text" id="input" class="input-text"
+            style="text-align: center;"><button class="btn btn-primary shadow-none btn-check" id="checkbtn"
+            type="button"
+            style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 150px;"></button>
+    </div>
+    <div id="slider-div" class="div-slider">
+        <input class="custom-range" type="range" id="range-slider" style="height: 50px;" value="0" min="0">
+    </div>
+    <div id="resultanswer-div" class="div-resultanswer">
+        <label id="result-label" class="label-result">Result : </label> <label id="result"></label>
+        <button class="btn btn-primary shadow-none btn-answer" id="answerbtn" type="button"
+            style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: -15px;"></button>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $(function () {
+        $("#inputValueId").keydown(function () {
+            // Save old value.
+            if (!$(this).val() || (parseInt($(this).val()) <= 10 && parseInt($(this).val()) >= 0))
+                $(this).data("old", $(this).val());
+        });
+        $("#inputValueId").keyup(function () {
+            // Check correct, else revert back to old value.
+            if (!$(this).val() || (parseInt($(this).val()) <= 10 && parseInt($(this).val()) >= 0))
+                ;
+            else
+                $(this).val($(this).data("old"));
+        });
+    });
+    $('#identifyNumbersGoId').click(function () {
+        if ($('#inputValueId').val() == '') {
+            alert('Please enter number of digits');
+            $('#inputValueId').focus();
+            return false;
+        }
+        $('#result').text('');
+        $('#range-slider').val(0)
+        $('#input').val('');
+        var random = genRand(0, parseInt($('#inputValueId').val()), 1);
+        $('#input').val(random);
+    });
+    $('#checkbtn').click(function () {
+        var rangeValue = parseFloat($('#range-slider').val()) / 10;
+        console.log(rangeValue);
+        if (parseFloat($('#input').val()) == rangeValue) {
+            $('#result').text('Correct');
+            $('#result').css('color', 'green');
+        } else {
+            $('#result').text('Wrong');
+            $('#result').css('color', 'red');
+        }
+    });
+    $('#answerbtn').click(function(){
+        var actualInput = parseFloat($('#input').val());
+        console.log(actualInput);
+        $('#range-slider').val(actualInput*10); 
+    });
+    function genRand(min, max, decimalPlaces) {
+        var rand = Math.random() * (max - min) + min;
+        var power = Math.pow(10, decimalPlaces);
+        return Math.floor(rand * power) / power;
+    }
+</script>
 
 </html>
