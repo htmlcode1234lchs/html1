@@ -7,6 +7,182 @@
     <title>Find way direction</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+    
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+    </style>
+    <script>
+        function play(audioToPlay) {
+            var audio = document.getElementById(audioToPlay);
+            audio.play();
+        }
+
+        function _(id) {
+            return document.getElementById(id);
+        }
+        var droppedIn = false;
+        function drag_start(event) {           
+            event.dataTransfer.dropEffect = "move";
+            event.dataTransfer.setData("text", event.target.getAttribute('id'));
+        }
+        function drag_enter(event) {
+            //  _('app_status').innerHTML = "You are dragging over the "+event.target.getAttribute('id');
+        }
+        function drag_leave(event) {
+            //  _('app_status').innerHTML = "You left the "+event.target.getAttribute('class');
+        }
+
+
+
+        function drag_drop_zone(event) {
+            var elem_id = event.dataTransfer.getData('text');
+            var i = elem_id.replace("drop_zone", "").charAt(0);
+            boxSeq++;
+           
+            document.getElementById("done").style.visibility = "visible";
+            event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+            var count = i - 1;
+            
+            var boxElem = boxElem1;
+            if (i == 2) {
+                boxElem = boxElem2;
+            }
+            while (boxElem.length > 0) {
+                event.target.appendChild(_(boxElem.pop()));
+            }
+            var color = ["blue", "red"];
+            _(elem_id).removeAttribute("draggable");
+            _(elem_id).style.cursor = "default";
+            var BoxName = "chocStack" + i;
+            var zoneName = "drop_zone" + i;
+            if (i == 1) {
+                showBox();
+            }
+            else {
+                var sum = box1Count[0] + box1Count[1];
+                var htmltext = "" + box1Count[0] + " + " + box1Count[1] + "=" + sum;
+                document.getElementById("done").innerHTML = htmltext;
+            }
+
+            droppedIn = true;
+
+        }
+
+        function drag_drop(event) {
+            var targetClass = event.target.getAttribute('class');
+            var elem_id = event.dataTransfer.getData('text');
+           
+            var shape = elem_id.split("_")[0];
+            if (targetClass.split("_")[0] === shape) {                
+                event.preventDefault();    
+                var count = Countmap[shape] + 1;
+                Countmap[shape] = count;
+                var targetShape = shape + count;
+                document.getElementById(shape + count).appendChild(_(elem_id));
+                var color = ["blue", "red"];
+                
+                _(elem_id).removeAttribute("draggable");
+                _(elem_id).style.cursor = "default";
+                droppedIn = true;
+                correct++;
+                play("correct");
+            }
+            else {
+                incorrect++;
+
+                play("wrong");
+            }
+            _('CorrectAnswers').innerHTML = correct;
+            _('IncorrectAnswers').innerHTML = incorrect;
+        }
+        function drag_end(event) {
+            droppedIn = false;
+        }
+        function readDropZone() {
+            for (var i = 0; i < _("drop_zone").children.length; i++) {
+                alert(_("drop_zone").children[i].id + " is in the drop zone");
+            }
+        }
+
+        function addBoxes() {
+            document.getElementById("choc11").ondrag.start;
+        }
+
+
+        function closeBox(i) {
+            var BoxName = "chocStack" + i;
+            document.getElementById(BoxName).innerHTML = "<img src='images/box_cover.jpg' width=\"270px\" height=\"270px\" opacity =\"0.5\" />";
+            if (i == 1) {
+                //   _('app_status').innerHTML = "Drag Red Box to Addition Zone";
+            }
+            else {
+                // _('app_status').innerHTML = "Drag Yellow Box to Addition Zone";
+            }
+            document.getElementById("done").style.visibility = "hidden";
+
+        }
+        function hideBox() {
+
+        }
+        function showBox() {
+            document.getElementById("chocStack2").style.visibility = "visible";
+            document.getElementById("drop_zone2").style.visibility = "visible";
+            document.getElementById("chocStack2").style.display = "block";
+            document.getElementById("drop_zone2").style.display = "block";
+        }
+
+        function showAnswer() {
+            for (var j = 0; j < shapes.length; j++) {
+                Countmap[shapes[j]] = 1;
+            }
+            for (var i = 0; i < inputSet.length; i++) {
+                var shapeType = inputSet[i].split("_")[0];
+                var count = Countmap[shapeType];
+                document.getElementById(shapeType + count).appendChild(document.getElementById(inputSet[i]));
+                count++;
+                Countmap[shapeType] = count;
+            }
+        }
+
+        function restart() {
+            document.location.reload();
+        }
+
+        function restart() {
+            document.location.reload();
+        } 
+    </script>
 </head>
 
 <body style="background-position: top;background-size: auto;background-repeat: no-repeat;background-image: url(&quot;assets/img/BG.jpg&quot;);">
@@ -17,18 +193,96 @@
         </div>
     </div>
     <div class="text-center" id="div-question" style="margin-left: auto;width: 807px;margin-right: auto;"><label id="question-label" style="font-size: 37px;">Drag and drop the correct direction</label></div>
-    <div class="text-center" id="div-block" style="margin-left: auto;background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 574px;width: 1069px;margin-right: auto;"><img id="img-north" style="width: 201px;height: 59px;position: absolute;margin-left: -96px;margin-top: 11px;"><img id="img-south" style="width: 201px;height: 59px;margin-top: 503px;position: absolute;margin-left: -95px;"><img id="img-west" style="height: 59px;width: 201px;position: absolute;margin-top: 254px;margin-left: -416px;">
-        <img
-            id="img-east" style="width: 201px;height: 59px;position: absolute;margin-top: 254px;margin-left: 216px;"><img id="img-northwest" style="width: 201px;height: 59px;position: absolute;margin-left: -362px;margin-top: 92px;"><img id="img-northeast" style="width: 201px;height: 59px;position: absolute;margin-top: 93px;margin-left: 162px;"><img id="img-southeast"
-                style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: 161px;"><img id="img-southwest" style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: -362px;"></div>
+    <div class="text-center" id="div-block" style="margin-left: auto;background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 574px;width: 1069px;margin-right: auto;">
+        <div id="img-north"  draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-left: -96px;margin-top: 11px;"></div>
+        <div id="img-south" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)" 
+            style="width: 201px;height: 59px;margin-top: 503px;position: absolute;margin-left: -95px;"></div>
+        <div id="img-west" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="height: 59px;width: 201px;position: absolute;margin-top: 254px;margin-left: -416px;"></div>
+        <div id="img-east" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 254px;margin-left: 216px;"></div>
+        <div id="img-northwest" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+             style="width: 201px;height: 59px;position: absolute;margin-left: -362px;margin-top: 92px;"></div>
+        <div id="img-northeast" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 93px;margin-left: 162px;"></div>
+        <div id="img-southeast" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: 161px;"></div>
+        <div id="img-southwest" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: -362px;"></div>
+    </div>
     <div class="text-center" id="div-directionimg"
-        style="height: 139px;width: 951px;margin-right: auto;margin-left: auto;margin-top: 27px;"><img id="north" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south" style="background-image: url(&quot;assets/img/South.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 201px;height: 59px;">
-        <img
-            id="west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="east" style="background-image: url(&quot;assets/img/East.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;"><img id="north-west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North%20West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;">
-            <img
-                id="north-east" style="background-image: url(&quot;assets/img/North%20East.png&quot;);width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south-west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/South%20West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south-east" style="background-image: url(&quot;assets/img/South%20East.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;">
-                <button
-                    class="btn" id="showanswer" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-left: -10px;"></button><button class="btn" id="check" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-right: 3px;margin-left: 17px;"></button></div>
+        style="height: 139px;width: 951px;margin-right: auto;margin-left: auto;margin-top: 27px;">
+        <img id="north" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North.png&quot;);
+            background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="south" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="background-image: url(&quot;assets/img/South.png&quot;);background-position: center;
+            background-size: contain;background-repeat: no-repeat;width: 201px;height: 59px;">
+        <img id="west" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="width: 201px;height: 59px;background-image: url(&quot;assets/img/West.png&quot;);
+            background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="east" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="background-image: url(&quot;assets/img/East.png&quot;);background-position: center;
+            background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;">
+        <img id="north-west" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North%20West.png&quot;);
+            background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="north-east" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="background-image: url(&quot;assets/img/North%20East.png&quot;);width: 201px;
+            height: 59px;background-position: center;background-size: cover;
+            background-repeat: no-repeat;">
+        <img id="south-west" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="width: 201px;height: 59px;background-image: url(&quot;assets/img/South%20West.png&quot;);
+            background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="south-east" ondragenter="drag_enter(event)" draggable="true"
+            ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+            ondragleave="drag_leave(event)"
+            style="background-image: url(&quot;assets/img/South%20East.png&quot;);
+            background-position: center;background-size: cover;background-repeat: no-repeat;
+            width: 201px;height: 59px;">
+        <!-- <button class="btn" id="showanswer" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-left: -10px;"></button>
+        <button class="btn" id="check" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-right: 3px;margin-left: 17px;"></button> -->
+    </div>
+    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-center">
+                            <td align="lef">
+                                <div id="CorrectAnswers">0</div>
+                            </td>
+                            <td align="center">
+                                <button
+                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                </button>
+                            </td>
+                            <td align="right">
+                                <div id="IncorrectAnswers">0</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>

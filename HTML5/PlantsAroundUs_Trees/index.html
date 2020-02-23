@@ -7,9 +7,344 @@
     <title>PlantsAroundUs_Trees</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+    
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+        .h_zone {
+            border: #000000 0px solid;
+            width: 318px;
+            height: 120px;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+        }
+
+        .s_zone {
+            border: #000000 0px solid;
+            width: 318px;
+            height: 120px;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+        }
+        .t_zone {
+            border: #000000 0px solid;
+            width: 318px;
+            height: 120px;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+        }
+
+        #h_type1 {
+            background-image: url('assets/img/H_Corriander.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #h_type2 {
+            background-image: url('assets/img/H_Thyme.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #h_type3 {
+            background-image: url('assets/img/H_Grassx.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #h_type4 {
+            background-image: url('assets/img/H_Wheat.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #h_type5 {
+            background-image: url('assets/img/H_Mint.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+
+        #s_type1 {
+            background-image: url('assets/img/S_Blueberry.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #s_type2 {
+            background-image: url('assets/img/S_Rose.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #s_type3 {
+            background-image: url('assets/img/S_Box.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #s_type4 {
+            background-image: url('assets/img/S_Aloevera.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #s_type5 {
+            background-image: url('assets/img/S_Laveander.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+
+
+        #t_type1 {
+            background-image: url('assets/img/T_Mango.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #t_type2 {
+            background-image: url('assets/img/T_Almond.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #t_type3 {
+            background-image: url('assets/img/T_Papaya.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #t_type4 {
+            background-image: url('assets/img/T_Coconut.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+        #t_type5 {
+            background-image: url('assets/img/T_Neem.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            cursor: move;
+            display: inline-block;
+        }
+    </style>
+    <script>
+        var box1Count = [0, 0,0];
+        var Countmap = {};
+        var shapes = ['h', 's','t'];
+        for (var i = 0; i < shapes.length; i++) {
+            Countmap[shapes[i]] = 0;
+        }
+        var correct = 0;
+        var incorrect = 0;
+        var boxSeq = 1;
+        var inputSet = ['h_type1', 'h_type2', 'h_type3', 'h_type4','h_type5',
+                        's_type1', 's_type2', 's_type3', 's_type4','s_type5',
+                        't_type1', 't_type2', 't_type3', 't_type4','t_type5',];
+    
+    </script>
+    <script>
+        function play(audioToPlay) {
+            var audio = document.getElementById(audioToPlay);
+            audio.play();
+        }
+    
+        function _(id) {
+            return document.getElementById(id);
+        }
+        var droppedIn = false;
+        function drag_start(event) {           
+            event.dataTransfer.dropEffect = "move";
+            event.dataTransfer.setData("text", event.target.getAttribute('id'));
+        }
+        function drag_enter(event) {
+            //  _('app_status').innerHTML = "You are dragging over the "+event.target.getAttribute('id');
+        }
+        function drag_leave(event) {
+            //  _('app_status').innerHTML = "You left the "+event.target.getAttribute('class');
+        }
+    
+    
+    
+        function drag_drop_zone(event) {
+            var elem_id = event.dataTransfer.getData('text');
+            var i = elem_id.replace("drop_zone", "").charAt(0);
+            boxSeq++;
+           
+            document.getElementById("done").style.visibility = "visible";
+            event.preventDefault(); /* Prevent undesirable default behavior while dropping */
+            var count = i - 1;
+            
+            var boxElem = boxElem1;
+            if (i == 2) {
+                boxElem = boxElem2;
+            }
+            while (boxElem.length > 0) {
+                event.target.appendChild(_(boxElem.pop()));
+            }
+            var color = ["blue", "red"];
+            _(elem_id).removeAttribute("draggable");
+            _(elem_id).style.cursor = "default";
+            var BoxName = "chocStack" + i;
+            var zoneName = "drop_zone" + i;
+            if (i == 1) {
+                showBox();
+            }
+            else {
+                var sum = box1Count[0] + box1Count[1];
+                var htmltext = "" + box1Count[0] + " + " + box1Count[1] + "=" + sum;
+                document.getElementById("done").innerHTML = htmltext;
+            }
+    
+            droppedIn = true;
+    
+        }
+    
+        function drag_drop(event) {
+            var targetClass = event.target.getAttribute('class');
+            var elem_id = event.dataTransfer.getData('text');
+           
+            var shape = elem_id.split("_")[0];
+            if (targetClass.split("_")[0] === shape) {                
+                event.preventDefault();    
+                var count = Countmap[shape] + 1;
+                Countmap[shape] = count;
+                var targetShape = shape + count;
+                document.getElementById(shape + count).appendChild(_(elem_id));
+                var color = ["blue", "red"];
+                
+                _(elem_id).removeAttribute("draggable");
+                _(elem_id).style.cursor = "default";
+                droppedIn = true;
+                correct++;
+                play("correct");
+            }
+            else {
+                incorrect++;
+    
+                play("wrong");
+            }
+            _('CorrectAnswers').innerHTML = correct;
+            _('IncorrectAnswers').innerHTML = incorrect;
+        }
+        function drag_end(event) {
+            droppedIn = false;
+        }
+        function readDropZone() {
+            for (var i = 0; i < _("drop_zone").children.length; i++) {
+                alert(_("drop_zone").children[i].id + " is in the drop zone");
+            }
+        }
+    
+        function addBoxes() {
+            document.getElementById("choc11").ondrag.start;
+        }
+    
+    
+        function closeBox(i) {
+            var BoxName = "chocStack" + i;
+            document.getElementById(BoxName).innerHTML = "<img src='images/box_cover.jpg' width=\"270px\" height=\"270px\" opacity =\"0.5\" />";
+           
+            document.getElementById("done").style.visibility = "hidden";
+    
+        }
+        function hideBox() {
+    
+        }
+        function showBox() {
+            document.getElementById("chocStack2").style.visibility = "visible";
+            document.getElementById("drop_zone2").style.visibility = "visible";
+            document.getElementById("chocStack2").style.display = "block";
+            document.getElementById("drop_zone2").style.display = "block";
+        }
+    
+        function showAnswer() {
+            for (var j = 0; j < shapes.length; j++) {
+                Countmap[shapes[j]] = 1;
+            }
+            for (var i = 0; i < inputSet.length; i++) {
+                var shapeType = inputSet[i].split("_")[0];
+                var count = Countmap[shapeType];
+                document.getElementById(shapeType + count).appendChild(document.getElementById(inputSet[i]));
+                count++;
+                Countmap[shapeType] = count;
+            }
+        }
+    
+        function restart() {
+            document.location.reload();
+        }
+    
+        function restart() {
+            document.location.reload();
+        } 
+    </script>
 </head>
 
 <body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="titlediv" class="divtitle" style="height: 100px;">
         <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary btnhome" id="homebtn" type="button" style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
             <button
@@ -18,40 +353,115 @@
     </div>
     <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv">
         <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="background-image: url(&quot;assets/img/Block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-            <div id="left1div" class="divleft1"><img id="left1img1" class="img1left1" style="background-image: url(&quot;assets/img/H_Corriander.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left1img2" class="img2left1" style="background-image: url(&quot;assets/img/S_Blueberry.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;">
-                <img
-                    id="left1img3" class="img3left1" style="background-image: url(&quot;assets/img/T_Mango.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left1img4" class="img4left1" style="background-image: url(&quot;assets/img/H_Thyme.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left1img5" class="img5left1"
-                        style="background-image: url(&quot;assets/img/S_Rose.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"></div>
-            <div id="left2div" class="divleft2"><img id="left2img1" class="img1left2" style="background-image: url(&quot;assets/img/T_Almond.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left2img2" class="img2left2" style="background-image: url(&quot;assets/img/H_Grassx.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;">
-                <img
-                    id="left2img3" class="img3left2" style="background-image: url(&quot;assets/img/S_Box.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left2img4" class="img4left2" style="background-image: url(&quot;assets/img/T_Papaya.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left2img5" class="img5left2"
-                        style="background-image: url(&quot;assets/img/H_Wheat.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"></div>
-            <div id="left3div" class="divleft3"><img id="left3img1" class="img1left3" style="background-image: url(&quot;assets/img/S_Aloevera.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left3img2" class="img2left3"
-                    style="background-image: url(&quot;assets/img/T_Coconut.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left3img3" class="img3left3" style="background-image: url(&quot;assets/img/H_Mint.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;">
-                <img
-                    id="left3img4" class="img4left3" style="background-image: url(&quot;assets/img/S_Laveander.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"><img id="left3img5" class="img5left3" style="background-image: url(&quot;assets/img/T_Neem.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 15px;"></div>
+            <div id="left1div" class="divleft1">
+                <div id="h_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="s_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="t_type1" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="h_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="s_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+            </div>
+            <div id="left2div" class="divleft2">
+                <div id="t_type2" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="h_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="s_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="t_type3" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="h_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+            </div>
+            <div id="left3div" class="divleft3">
+                <div id="s_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="t_type4" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="h_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="s_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+                <div id="t_type5" draggable="true" ondragstart="drag_start(event)" ondragend="drag_end(event)"></div>
+            </div>
         </div>
         <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
-            <div class="text-center toprightdiv" id="righttopdiv" style="width: 700px;margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the plants based on its classification</label></div>
+            <div class="text-center toprightdiv" id="righttopdiv" style="width: 700px;
+                margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the plants based on its classification</label></div>
             <div class="d-xl-flex middlerightdiv" id="rightmiddlediv" style="background-image: url(&quot;assets/img/Block2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                 <div id="rightimgsdiv" class="imgsrightdiv">
-                    <div id="right1imgdiv" class="divright1img"><img id="r1img1" class="img1r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r1img2" class="img2r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                        <img
-                            id="r1img3" class="img3r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r1img4" class="img4r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r1img5" class="img5r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                    <div
-                        id="right2imgdiv" class="divright2img"><img id="r2img1" class="img1r2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r2img2" class="img2r2" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                        <img
-                            id="r2img3" class="img3r2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r2img4" class="img4r2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r2img5" class="img5r2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                <div
-                    id="right3imgdiv" class="divright3img"><img id="r3img1" class="img1r3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r3img2" class="img2r3" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                    <img
-                        id="r3img3" class="img3r3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r3img4" class="img4r3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r3img5" class="img5r3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-        </div>
-    </div>
-    <div class="text-center rightbottomdiv" id="bottomrightdiv" style="margin-left: auto;margin-right: auto;"><button class="btn btn-primary btnresult" id="resultbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);"></button>
+                    <div id="right1imgdiv" class="divright1img">
+                        <div id="h1" class="h_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="h2" class="h_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="h3" class="h_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="h4" class="h_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="h5" class="h_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                    </div>
+                    <div id="right2imgdiv" class="divright2img">
+                        <div id="s1" class="s_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="s2" class="s_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="s3" class="s_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="s4" class="s_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="s5" class="s_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                    </div>
+                    <div id="right3imgdiv" class="divright3img">
+                        <div id="t1" class="t_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="t2" class="t_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="t3" class="t_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="t4" class="t_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                        <div id="t5" class="t_zone" ondragenter="drag_enter(event)" draggable="true"
+                        ondragstart="drag_start(event)" ondrop="drag_drop(event)" ondragover="return false"
+                        ondragleave="drag_leave(event)"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center rightbottomdiv" id="bottomrightdiv">
+                <section style="width: 100%;height: 100%">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <tbody>
+                                <tr class="text-center">
+                                    <td align="lef">
+                                        <div id="CorrectAnswers">0</div>
+                                    </td>
+                                    <td align="center">
+                                        <button
+                                            class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                            id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                            style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                        </button>
+                                    </td>
+                                    <td align="right">
+                                        <div id="IncorrectAnswers">0</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+    <!-- <div class="text-center rightbottomdiv" id="bottomrightdiv" style="margin-left: auto;margin-right: auto;"><button class="btn btn-primary btnresult" id="resultbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);"></button>
         <label
             id="labelresult" class="resultlabel" style="font-size: 30px;">Result</label><button class="btn btn-primary btncheck" id="checkbtn" type="button" style="background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);"></button></div>
-    </div>
+     --></div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
