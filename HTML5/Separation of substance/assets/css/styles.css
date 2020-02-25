@@ -147,16 +147,16 @@
 @media screen and (min-width: 1400px) and (max-width:1920px) {
   #rightdivcol-1 {
     width: 130px;
-    margin-top: 70px;
-    margin-left: 120px;
+    margin-top: 50px;
+   /* margin-left: 120px; */
   }
 }
 
 @media screen and (min-width: 1400px) and (max-width:1920px) {
   #rightdivcol-2 {
     width: 130px;
-    margin-top: 70px;
-    margin-left: 120px;
+    margin-top: 50px;
+  /*  margin-left: 120px; */
   }
 }
 
