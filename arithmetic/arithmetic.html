@@ -9,11 +9,11 @@
   <meta name="phet-sim-level" content="production">
 
   <!-- metadata for Open Graph protocol -->
-  <meta property="og:title" content="&#8234;Arithmetic&#8236; 1.0.23"/>
+ <!--  <meta property="og:title" content="&#8234;Arithmetic&#8236; 1.0.23"/>
   <meta property="og:type" content="phet:simulation"/>
   <meta property="og:url" content="http://phet.colorado.edu/sims/html/arithmetic/latest/arithmetic_en.html"/>
   <meta property="og:image" content="http://phet.colorado.edu/sims/html/arithmetic/latest/arithmetic-600.png"/>
-
+ -->
   <title>&#8234;Arithmetic&#8236; 1.0.23</title>
     <style>
         #sim{
@@ -5227,7 +5227,7 @@ id = "script-../chipper/js/initialize-globals.js" >
                     }), "*")
                 })
             }()
-    }(); </script> <script type = "text/javascript"
+    }(); </script> <!-- <script type = "text/javascript"
 id = "script-../phetcommon/js/analytics/google-analytics.js" >
     ! function() {
         "use strict";
@@ -5292,7 +5292,7 @@ id = "script-../phetcommon/js/analytics/google-analytics.js" >
                 setTimeout(e, 0)
             }, !1) : e()
         }
-    }(); </script> <script type = "text/javascript"
+    }(); </script> --> <script type = "text/javascript"
 id = "script-../sherpa/lib/Tween-r12.js" >
     void 0 === Date.now && (Date.now = function() {
         return (new Date).valueOf()
@@ -9928,7 +9928,14 @@ TWEEN.Tween = function(n) {
                         case o.SCALING:
                             return "scale(" + t(this.entries[0]) + (this.entries[0] === this.entries[4] ? "" : "," + t(this.entries[4])) + ")";
                         default:
-                            return "matrix(" + t(this.entries[0]) + "," + t(this.entries[1]) + "," + t(this.entries[3]) + "," + t(this.entries[4]) + "," + t(this.entries[6]) + "," + t(this.entries[7]) + ")"
+                        if(0.59999999999999997780 == t(this.entries[0])){
+                                    return "matrix(0,0,0,0,0,0)"
+                                }else{
+                                return "matrix(" + t(this.entries[0]) + "," + t(this.entries[1]) +
+                                     "," + t(this.entries[3]) + "," + t(this.entries[4]) + "," + t(this.entries[6]) +
+                                      "," + t(this.entries[7]) + ")"
+                                }
+                           // return "matrix(" + t(this.entries[0]) + "," + t(this.entries[1]) + "," + t(this.entries[3]) + "," + t(this.entries[4]) + "," + t(this.entries[6]) + "," + t(this.entries[7]) + ")"
                     }
                 },
                 get svgTransform() {
@@ -26528,7 +26535,7 @@ TWEEN.Tween = function(n) {
                 },
                 check: function() {
                     var t = this;
-                    if (this.areUpdatesChecked && ("unchecked" === t.state || "offline" === t.state)) {
+                    /* if (this.areUpdatesChecked && ("unchecked" === t.state || "offline" === t.state)) {
                         if (this.ourVersion.isSimNotPublished) return void(t.state = "up-to-date");
                         var e = new XMLHttpRequest;
                         "withCredentials" in e && (t.state = "checking", t.setTimeout(), e.onload = function() {
@@ -26548,7 +26555,7 @@ TWEEN.Tween = function(n) {
                             currentVersion: t.ourVersion.toString(),
                             buildTimestamp: phet.chipper.buildTimestamp
                         })))
-                    }
+                    } */
                 }
             });
             var c = new e;
@@ -27582,7 +27589,7 @@ TWEEN.Tween = function(n) {
                     highlightExtensionHeight: 5,
                     highlightCenterOffsetY: 4,
                     tandem: null,
-                    listener: function() {
+                    /* listener: function() {
                         function e(t, e, n) {
                             i.right = t.right / n - 2 / n;
                             var r = t.height - e.height;
@@ -27596,7 +27603,7 @@ TWEEN.Tween = function(n) {
                             }
                         });
                         t.on("resized", e), e(t.bounds, t.screenBounds, t.scale), i.show()
-                    }
+                    } */
                 }, l);
                 var m = new a(g, {
                         scale: S,

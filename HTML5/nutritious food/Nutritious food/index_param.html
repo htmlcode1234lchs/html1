@@ -204,6 +204,7 @@ function drag_start(event) {
  //   _('app_status').innerHTML = "Dragging the "+event.target.getAttribute('id');
     event.dataTransfer.dropEffect = "move";
    // alert(event.target.getAttribute('class'));
+   console.log('csdsa: '+event.target.getAttribute('id'))
     event.dataTransfer.setData("text", event.target.getAttribute('id') );
 }
 function drag_enter(event) {
@@ -217,6 +218,7 @@ function drag_leave(event) {
     
 function drag_drop_zone(event) {
      var elem_id = event.dataTransfer.getData('text');
+     console.log('asdsa: '+elem_id)
     var i = elem_id.replace("drop_zone","").charAt(0);
         boxSeq++;
     //_('app_status').innerHTML = "" + event.target.getAttribute('class');
@@ -257,7 +259,9 @@ function drag_drop_zone(event) {
 function drag_drop(event) {
     var targetClass = event.target.getAttribute('class');
      var elem_id = event.dataTransfer.getData('text');
+
     var shape = elem_id.split("_")[0];
+    console.log('shape: '+shape)
     if( targetClass.split("_")[0]===shape)
        {
             //_('app_status').innerHTML = "" + event.target.getAttribute('class');
