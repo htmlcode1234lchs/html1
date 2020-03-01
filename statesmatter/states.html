@@ -18,7 +18,7 @@
             background-color:darkslateblue !important;
         }
     </style>
-  <title>&#8234;States of Matter&#8236;</title>
+  <title>&#8234;States of Matter&#8236; -- States</title>
 </head>
 <!--
 ‪States of Matter‬ 1.1.10
@@ -16752,7 +16752,12 @@ var _get = function t(e, i, n) {
                         case o.IDENTITY:
                             return "";
                         case o.TRANSLATION_2D:
+                        if(86.94000000000001193712 == t(this.entries[6])){
+                                return "translate(100,100)";
+                            }else{
                             return "translate(" + t(this.entries[6]) + "," + t(this.entries[7]) + ")";
+                            }
+                            //return "translate(" + t(this.entries[6]) + "," + t(this.entries[7]) + ")";
                         case o.SCALING:
                             return "scale(" + t(this.entries[0]) + (this.entries[0] === this.entries[4] ? "" : "," + t(this.entries[4])) + ")";
                         default:
@@ -51867,7 +51872,7 @@ var _get = function t(e, i, n) {
                 },
                 check: function() {
                     var t = this;
-                    if (this.areUpdatesChecked && ("unchecked" === t.stateProperty.value || "offline" === t.stateProperty.value))
+                   /*  if (this.areUpdatesChecked && ("unchecked" === t.stateProperty.value || "offline" === t.stateProperty.value))
                         if (this.ourVersion.isSimNotPublished) t.stateProperty.value = "up-to-date";
                         else {
                             var e = new XMLHttpRequest;
@@ -51888,7 +51893,7 @@ var _get = function t(e, i, n) {
                                 currentVersion: t.ourVersion.toString(),
                                 buildTimestamp: phet.chipper.buildTimestamp
                             })))
-                        }
+                        } */
                 }
             });
             var u = new e;
@@ -52755,9 +52760,9 @@ var _get = function t(e, i, n) {
                         highlightExtensionWidth: 6,
                         highlightExtensionHeight: 5,
                         highlightCenterOffsetY: 4,
-                        listener: function() {
+                       /*  listener: function() {
                             s.show()
-                        },
+                        }, */
                         phetioType: h,
                         phetioInstanceDocumentation: "The button that appears in the bottom of the right of the screen, which shows a menu when pressed",
                         tagName: "button",
@@ -53721,7 +53726,7 @@ var _get = function t(e, i, n) {
                     showSmallHomeScreenIconFrame: !0
                 };
             s.launch(function() {
-                new r(l, [new a, new n(!0), new e(!1, o)], h).start()
+                new r(l, [new a], h).start()
             })
         }), e(["states-of-matter-main"])
 }();
