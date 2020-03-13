@@ -475,10 +475,10 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 <script>
-    document.getElementById('p1').checked = true;
+   
     var partiallyResultsArray = [true, false, false, false, true, false, false, true, false, false];
     var completelyResultsArray = [false, true, false, false, false, false, false, false, false, true];
-    var bendsResultsArray = ['bs', 'bs', 'bs', 'bs', 'bs', 'bs', 'bs', 'ls', 'bs', 'bs'];
+    var bendsResultsArray = ['bs', 'bs', 'bs', 'bs', 'bs', 'bs', 'bs', 'bn', 'bs', 'bs'];
     var liftsResultsArray = ['ln', 'ls', 'ln', 'ln', 'ln', 'ln', 'ln', 'ln', 'ls', 'ls'];
     var movesResultsArray = ['mn', 'ms', 'ms', 'ms', 'ms', 'ms', 'mn', 'ms', 'ms', 'ms'];
     $('#checkbtn').click(function () {
@@ -516,8 +516,13 @@
             document.getElementById(element + (index + 1)).checked = true;
             document.getElementById(liftsResultsArray[index] + (index + 1)).checked = true;
             document.getElementById(movesResultsArray[index] + (index + 1)).checked = true;
-
         });
+    });
+    $('#hb-1').click(function(){
+        window.location.reload();
+    });
+    $('#rb-1').click(function(){
+        window.location.reload();
     });
 </script>
 
