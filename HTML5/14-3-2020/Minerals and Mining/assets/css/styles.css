@@ -1,0 +1,174 @@
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #labelhint {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #labelhint {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #left {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #left {
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #answer {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #answer {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option1 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option1 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option2 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option2 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option3 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option3 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option4 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option4 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option5 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option5 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option6 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option6 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #question {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #question {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #div-options {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-options {
+    width: 605px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option7 {
+    width: 190px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1449px) {
+  #option7 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option8 {
+    width: 140px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option8 {
+    width: 190px;
+    height: 60px;
+  }
+}
+

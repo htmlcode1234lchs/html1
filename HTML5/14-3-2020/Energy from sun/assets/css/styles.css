@@ -1,0 +1,242 @@
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #labelhint {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #labelhint {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #left {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #left {
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #answer {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #answer {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option1 {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option1 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option2 {
+    width: 152px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option2 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option3 {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option3 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option4 {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option4 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option5 {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option5 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #option6 {
+    width: 250px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #option6 {
+    width: 150px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #question {
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #question {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #div-options {
+    width: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-options {
+    width: 605px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #f1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #f1 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #answerinput {
+    width: 300px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #answerinput {
+    width: 200px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #btn-check {
+    width: 250px;
+    height: 70px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #btn-check {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #btn-next {
+    width: 200px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #btn-next {
+    width: 250px;
+    height: 70px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #btn-showans {
+    width: 250px;
+    height: 70px;
+    margin-top: -95px;
+    margin-left: 479px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #btn-showans {
+    width: 200px;
+    height: 50px;
+    margin-top: -76px;
+    margin-left: 401px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1549px) {
+  #Result {
+    margin-left: 240px;
+  }
+}
+
+@media screen and (min-width: 1550px) and (max-width:1920px) {
+  #Result {
+    margin-left: 295px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #datalabel {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1920px) {
+  #datalabel {
+    font-size: 35px;
+  }
+}
+
