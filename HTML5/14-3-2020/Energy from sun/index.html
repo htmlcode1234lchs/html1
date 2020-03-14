@@ -11,25 +11,108 @@
 
 <body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
     <div id="title" style="height: 100px;">
-        <div id="buttons" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none" id="btn-home" style="height: 60px;width: 60px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);margin: 20px;"></button>
-            <button
-                class="btn btn-primary shadow-none" id="btn-reset" type="button" style="background-image: url(&quot;assets/img/Reset.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60px;height: 60px;margin-left: 700px;"></button>
+        <div id="buttons" style="width: 900px;margin-left: auto;margin-right: auto;">
+            <button class="btn btn-primary shadow-none" id="btn-home" style="height: 60px;width: 60px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);margin: 20px;"></button>
+            <button class="btn btn-primary shadow-none" id="btn-reset" type="button" style="background-image: url(&quot;assets/img/Reset.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60px;height: 60px;margin-left: 700px;"></button>
         </div>
     </div>
     <div class="d-xl-flex align-items-xl-center" id="div-area-total" style="margin-left: auto;margin-right: auto;">
-        <div id="left" style="margin-right: auto;margin-left: auto;"><label id="datalabel" style="width: 800px;">Answer the given questions based on the given graph.</label><label id="labelhint">What is the maximum temperature of the city in the month of June?<br></label><input type="text" id="answerinput" style="font-size: 28px;margin-left: 79px;margin-top: 60px;"
-                placeholder="Enter your answer here"><button class="btn btn-primary shadow-none" id="btn-check" type="button" style="background-image: url(&quot;assets/img/Check.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 95px;margin-top: -15px;"></button>
-            <div
-                id="div-buttons" style="margin-right: auto;margin-left: auto;margin-top: 106px;"><button class="btn btn-primary shadow-none" id="btn-next" type="button" style="background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);margin-top: 19px;"></button>
-                <input
-                    class="form-control-plaintext" type="text" id="Result" value="Result" readonly="" style="width: 150px;margin-top: -61px;font-size: 30px;"><button class="btn btn-primary shadow-none" id="btn-showans" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+        <div id="left" style="margin-right: auto;margin-left: auto;">
+            <label id="datalabel" style="width: 800px;">Answer the given questions based on the given graph.</label>
+            <label id="labelhint">What is the maximum temperature of the city in the month of June?<br></label>
+            <input type="text" id="answerinput" style="font-size: 28px;margin-left: 79px;margin-top: 60px;"
+                placeholder="Enter your answer here">
+            <button class="btn btn-primary shadow-none" id="btn-check" type="button" style="background-image: url(&quot;assets/img/Check.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 95px;margin-top: -15px;"></button>
+            <div id="div-buttons" style="margin-right: auto;margin-left: auto;margin-top: 106px;">
+                <button class="btn btn-primary shadow-none" id="btn-next" type="button" 
+                    style="background-image: url(&quot;assets/img/Next.png&quot;);
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    background-color: rgba(0,123,255,0);margin-top: 19px;display: none;">
+                </button>
+                <input class="form-control-plaintext" type="text" id="Result" 
+                    value="Result" readonly="" style="width: 150px;margin-top: -61px;font-size: 30px;">
+                <button class="btn btn-primary shadow-none" id="btn-showans" type="button" 
+                    style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);
+                    background-color: rgba(0,123,255,0);background-position: center;
+                    background-size: contain;background-repeat: no-repeat;">
+                </button>
+                <span style="margin-left: 35%;font-size: 24px;" id="status"></span>
+            </div>
     </div>
-    <div class="text-center" id="right" style="margin-right: auto;margin-left: auto;height: 600px;background-image: url(&quot;assets/img/block%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 1000px;margin-top: 118px;">
-        <div style="margin-top: -115px;"><label id="f1" style="font-size: 35px;">The minimum and maximum temperatures of Visakhaptnam city in an year is represented in the following line graph.</label></div>
+    <div class="text-center" id="right" 
+        style="margin-right: auto;margin-left: auto;height: 600px;
+        background-image: url(&quot;assets/img/block%201.png&quot;);
+        background-position: center;background-size: contain;background-repeat: no-repeat;
+        width: 1000px;margin-top: 118px;">
+        <div style="margin-top: -115px;">
+            <label id="f1" style="font-size: 35px;">The minimum and maximum temperatures of Visakhaptnam city in an year is represented in the following line graph.</label>
+        </div>
     </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var questionsArray = ['1. What is the maximum temperature of the city in the month of June?',
+                            '2. What is the average temperature of the city in the month of October?',
+                            '3. What is the hottest month of the year?',
+                            '4. What is the coldest month of the year?',
+                            '5. What is the difference between minimum and maximum temperatures in December?',
+                            '6. What is the minimum temperature of the city in the month of June?',
+                            '7. Which month has the highest minimum temperature in Visakhapatnam?',
+                            '8. How cold does it usually get in February in Visakhapatnam?',
+                            '9. How hot does it usually get in August in Visakhapatnam?',
+                            '10. What is the difference between minimum and maximum temperatures in March?'];
+    var answersArray = ['40', '28', 'May', 'January', '18', '10', 'June', '12', '33', '15'];
+    init(0);
+    var currentPosition = 0;
+    function init(position){
+        currentPosition = position;
+        $('#labelhint').text(questionsArray[position]);
+        $('#btn-next').css('display','none');
+        $('#status').text('');
+        document.getElementById('answerinput').value = '';
+    }
+    $('#btn-check').click(function(){
+        var answerinput = document.getElementById('answerinput').value;
+       
+        if(answerinput == ''){
+            alert('please enter input value.');
+            document.getElementById('answerinput').focus();
+            return false;
+        }
+        answerinput = answerinput.toLowerCase().trim();
+        console.log('From entered input : '+answerinput)
+        console.log('From Answers array : '+answersArray[currentPosition])
+        if(answersArray[currentPosition].toLowerCase() == answerinput || 
+        answersArray[currentPosition].toLowerCase() === answerinput){
+            $('#status').text('Correct');
+            $('#status').css('color', 'green');
+            $('#btn-next').css('display','block');
+        }else{
+            $('#status').text('Wrong');
+            $('#status').css('color', 'red');
+        }
+    });
 
+    $('#btn-showans').click(function(){
+        document.getElementById('answerinput').value = answersArray[currentPosition];
+        $('status').text('Correct');
+        $('#status').css('color', 'green');
+        $('#btn-next').css('display','block');
+    });
+
+    $('#btn-next').click(function(){
+        if(currentPosition == answersArray.length-1){
+            $('#btn-next').css('display','none');
+            $('#btn-check').css('display','none');
+            $('#btn-showans').css('display','none');
+            $('status').text('All questions are completed. please click home or reset button to reload.');
+            $('#status').css('color', 'yellow');
+            document.getElementById('answerinput').style.display = "none";
+        }else{
+            init(currentPosition+1);
+        }
+    });
+</script>
 </html>
