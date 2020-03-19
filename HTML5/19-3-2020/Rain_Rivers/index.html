@@ -17,22 +17,116 @@
                 class="btn btn-primary shadow-none resetbtn" id="reset" type="button" style="width: 60px;height: 60px;margin-left: 700px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="lab" class="lab" style="font-size: 35px;">Identify and point "Krishna River"</label></div>
+    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="Question" class="lab" style="font-size: 35px;">Identify and point "Krishna River"</label></div>
     <div class="d-xl-flex align-items-xl-center contextdivision" id="div-context" style="margin-right: auto;margin-left: auto;">
         <div class="d-xl-flex align-items-xl-center -classification" id="div-classifyrivers-1" style="height: 713px;width: 1206px;margin-top: -12px;background-image: url(&quot;assets/img/Box%20with%20map.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-            <div id="div-checkbox-1" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;margin-left: 41px;"><input type="checkbox" id="Krishnariver" style="margin-top: 253px;margin-left: 529px;position: absolute;border: 3px solid rgb(0,0,0);width: 21px;height: 22px;"><input type="checkbox" id="Godavaririver" style="margin-top: 185px;margin-left: 661px;width: 21px;height: 22px;position: absolute;">
-                <input
-                    type="checkbox" id="Thungabhadrariver" style="margin-top: 305px;margin-left: 241px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Nagawaliriver" style="margin-top: 85px;margin-left: 767px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Vamsadharariver" style="margin-top: 51px;margin-left: 817px;width: 21px;height: 22px;position: absolute;">
-                    <input
-                        type="checkbox" id="Pennariver" style="margin-top: 409px;margin-left: 425px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Chithravathiriver" style="margin-top: 460px;margin-left: 331px;width: 21px;height: 22px;position: absolute;"></div>
+            <div id="div-checkbox-1" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;margin-left: 41px;">
+                <input type="checkbox" id="Krishnariver" onclick="checkAnswer(this)"
+                    style="margin-top: 253px;margin-left: 529px;position: absolute;border: 3px solid rgb(0,0,0);width: 21px;height: 22px;">
+                <input type="checkbox" id="Godavaririver" onclick="checkAnswer(this)"
+                    style="margin-top: 185px;margin-left: 661px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Thungabhadrariver" onclick="checkAnswer(this)"
+                    style="margin-top: 305px;margin-left: 241px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Nagawaliriver" onclick="checkAnswer(this)"
+                    style="margin-top: 85px;margin-left: 767px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Vamsadharariver" onclick="checkAnswer(this)"
+                    style="margin-top: 51px;margin-left: 817px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Pennariver" onclick="checkAnswer(this)"
+                    style="margin-top: 409px;margin-left: 425px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Chithravathiriver" onclick="checkAnswer(this)"
+                    style="margin-top: 460px;margin-left: 331px;width: 21px;height: 22px;position: absolute;">
+            </div>
         </div>
     </div>
-    <div class="text-center buttonsbottom" id="bottomdiv" style="margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none btn-check" id="check" type="button" style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-        <label
-            id="resultlabel" class="labelresult" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;">Result</label><button class="btn btn-primary shadow-none btn-show" id="showbtn" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;width: 200px;height: 50px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+    <div class="text-center buttonsbottom" id="bottomdiv" style="margin-left: auto;margin-right: auto;">
+        <button class="btn btn-primary shadow-none btn-check" id="check" type="button" 
+            style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;
+            background-image: url(&quot;assets/img/Next.png&quot;);
+            background-position: center;background-size: contain;
+            background-repeat: no-repeat;display: none;"></button>
+        <label id="resultlabel" class="labelresult" 
+            style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;">Result :</label>
+            
+        <button class="btn btn-primary shadow-none btn-show" id="btn-showans"
+         style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;
+         width: 200px;height: 50px;background-color: rgba(0,123,255,0);
+         background-image: url(&quot;assets/img/Show%20Answer.png&quot;);
+         background-position: center;background-size: contain;background-repeat: no-repeat;">
+         </button>
+         <label style="margin-left: -8%;font-size: 24px;display: none;" id="status">  </label>
+        </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    
+    var questionsArray = ['1. Identify and point ‘Krishna River’ on the map.',
+                            '2. Identify and point ‘Godavari River’ on the map.',
+                            '3. Identify and point ‘Nagavali River’ on the map.',
+                            '4. Identify and point ‘Penna River’ on the map.',
+                            '5. Identify and point ‘Thungabhadra River’ on the map.',
+                            '6. Identify and point ‘Vamsadhara River’ on the map.',
+                            '7. Identify and point ‘Chithravathi River’ on the map.'
+                            ];
+    var answersArray = ['Krishnariver', 'Godavaririver', 'Nagawaliriver', 'Pennariver', 'Thungabhadrariver',
+                        'Vamsadharariver','Chithravathiriver'];
+    init(0);
+    var questionPostion = 0;
+    function init(position){
+        questionPostion = position;
+        $('#Question').text(questionsArray[position]);
+        $('#status').css('display','none');
+        $('#check').css('display','none');
+        answersArray.forEach(element =>{
+            $('#'+element).prop("checked", false);
+            $('#'+element).css('outline','3px solid rgb(0,0,0)');
+        });
+    }
+    function checkAnswer(current){        
+        var selectedId = current.id;
+        selectedId = selectedId.trim();
+        if(current.checked && answersArray[questionPostion] == selectedId){
+            $('#status').css('display','block');
+            $('#status').text('Correct');
+            $('#status').css('color','white');
+            $('#'+current.id).css('outline','6px solid #28a745');
+            $('#check').css('display','inline');
+        }else{
+            $('#status').css('display','block');
+            $('#status').text('Wrong');
+            $('#status').css('color','red');
+            $('#'+selectedId).css('outline','6px solid rgb(226, 21, 21)')
+        }
+    }
+    $('#btn-showans').click(function(){
+        $('#'+answersArray[questionPostion]).prop("checked", true);
+        $('#'+answersArray[questionPostion]).css('outline','6px solid #28a745');
+        $('#check').css('display','inline');
+    });
+    $('#check').click(function(){
+        if(questionPostion == answersArray.length-1){
+            answersArray.forEach(element =>{
+                $('#'+element).prop("checked", false);
+                $('#'+element).css('color','black');
+            });
+            $('#Result').css('display','none');
+            $('#Question').text('');            
+            $('#check').css('display','none');
+            $('#btn-showans').css('display','none');
+            $('#status').css('display','block');
+            $('#status').css('color','yellow');
+            $('#status').text('All questions are completed. please click home or reset button to reload.')
+        }else{
+            init(questionPostion+1);
+        }
+    });
 
+    $('#home').click(function(){
+        window.location.reload();
+    });
+    $('#reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>

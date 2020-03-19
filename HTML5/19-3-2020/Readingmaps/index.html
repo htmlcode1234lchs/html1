@@ -13,26 +13,111 @@
 <body style="background-image: url(&quot;assets/img/background.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
     <div id="div-title" class="titledivision" style="height: 100px;">
         <div id="div-buttons" class="buttonsdiv" style="width: 900px;margin-right: auto;margin-left: auto;"><button class="btn btn-primary shadow-none -homebtn" id="home" type="button" style="width: 60px;height: 60px;margin: 30px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-            <button
-                class="btn btn-primary shadow-none resetbtn" id="reset" type="button" style="width: 60px;height: 60px;margin-left: 700px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+            <button class="btn btn-primary shadow-none resetbtn" id="reset" type="button" style="width: 60px;height: 60px;margin-left: 700px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="lab" class="lab" style="font-size: 35px;">Identify and point "Patna"</label></div>
+    <div class="text-center labeldivision" id="div-label" style="margin-right: auto;margin-left: auto;"><label id="Question" class="lab" style="font-size: 35px;">Identify and point "Patna"</label></div>
     <div class="d-xl-flex align-items-xl-center contextdivision" id="div-context" style="margin-right: auto;margin-left: auto;">
         <div class="d-xl-flex align-items-xl-center -classification" id="div-classifyrivers-1" style="height: 713px;width: 1206px;margin-top: -12px;background-image: url(&quot;assets/img/India%20States.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-            <div id="div-checkbox-1" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;margin-left: 41px;"><input type="checkbox" id="Hyderabad" style="margin-top: 375px;margin-left: 483px;position: absolute;border: 3px solid rgb(0,0,0);width: 21px;height: 22px;"><input type="checkbox" id="Raipur" style="margin-top: 282px;margin-left: 549px;width: 21px;height: 22px;position: absolute;">
-                <input
-                    type="checkbox" id="Bhopal" style="margin-top: 255px;margin-left: 456px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Bhubaneswar" style="margin-top: 311px;margin-left: 598px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Jaipur" style="margin-top: 189px;margin-left: 408px;width: 21px;height: 22px;position: absolute;">
-                    <input
-                        type="checkbox" id="Srinagar" style="margin-top: 47px;margin-left: 429px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Patna" style="margin-top: 202px;margin-left: 597px;width: 21px;height: 22px;position: absolute;"><input type="checkbox" id="Amaravati" style="margin-top: 409px;margin-left: 496px;width: 21px;height: 22px;position: absolute;"></div>
+            <div id="div-checkbox-1" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;margin-left: 41px;">
+                <input type="checkbox" id="Hyderabad" onclick="checkAnswer(this)"
+                    style="margin-top: 375px;margin-left: 483px;position: absolute;border: 3px solid rgb(0,0,0);width: 21px;height: 22px;">
+                <input type="checkbox" id="Raipur" onclick="checkAnswer(this)"
+                    style="margin-top: 282px;margin-left: 549px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Bhopal" onclick="checkAnswer(this)"
+                    style="margin-top: 255px;margin-left: 456px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Bhubaneswar" onclick="checkAnswer(this)"
+                    style="margin-top: 311px;margin-left: 598px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Jaipur" onclick="checkAnswer(this)"
+                    style="margin-top: 189px;margin-left: 408px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Srinagar" onclick="checkAnswer(this)"
+                    style="margin-top: 47px;margin-left: 429px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Patna" onclick="checkAnswer(this)"
+                    style="margin-top: 202px;margin-left: 597px;width: 21px;height: 22px;position: absolute;">
+                <input type="checkbox" id="Amaravati" onclick="checkAnswer(this)"
+                    style="margin-top: 409px;margin-left: 496px;width: 21px;height: 22px;position: absolute;">
+            </div>
         </div>
     </div>
-    <div class="text-center buttonsbottom" id="bottomdiv" style="margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none btn-check" id="check" type="button" style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-        <label
-            id="resultlabel" class="labelresult" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;">Result</label><button class="btn btn-primary shadow-none btn-show" id="showbtn" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;width: 200px;height: 50px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+    <div class="text-center buttonsbottom" id="bottomdiv" style="margin-left: auto;margin-right: auto;">
+        <button class="btn btn-primary shadow-none btn-check" id="check" type="button" style="background-color: rgba(0,123,255,0);width: 190px;height: 50px;background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;display: none;"></button>
+        <label id="resultlabel" class="labelresult" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;">Result</label>
+        <button class="btn btn-primary shadow-none btn-show" id="showbtn" style="font-size: 35px;color: rgb(255,255,255);margin-left: 115px;width: 200px;height: 50px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+        <label style="margin-left: -8%;font-size: 24px;display: none;" id="status">  </label>
+    </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
+<script>
+    
+    var questionsArray = ['1. Identify and point ‘Jaipur’ on the map.',
+                            '2. Identify and point ‘Patna’ on the map.',
+                            '3. Identify and point ‘Srinagar’ on the map.',
+                            '4. Identify and point ‘Bhopal’ on the map.',
+                            '5. Identify and point ‘Raipur’ on the map.',
+                            '6. Identify and point ‘Hyderabad’ on the map.',
+                            '7. Identify and point ‘Amaravathi’ on the map.',
+                            '8. Identify and point ‘Bhuvaneswar’ on the map.'
+                            ];
+    var answersArray = ['Jaipur', 'Patna', 'Srinagar', 'Bhopal', 'Raipur',
+                        'Hyderabad','Amaravati', 'Bhubaneswar'];
+    init(0);
+    var questionPostion = 0;
+    function init(position){
+        questionPostion = position;
+        $('#Question').text(questionsArray[position]);
+        $('#status').css('display','none');
+        $('#check').css('display','none');
+        answersArray.forEach(element =>{
+            $('#'+element).prop("checked", false);
+            $('#'+element).css('outline','3px solid rgb(0,0,0)');
+        });
+    }
+    function checkAnswer(current){        
+        var selectedId = current.id;
+        selectedId = selectedId.trim();
+        if(current.checked && answersArray[questionPostion] == selectedId){
+            $('#status').css('display','block');
+            $('#status').text('Correct');
+            $('#status').css('color','white');
+            $('#'+current.id).css('outline','6px solid #28a745');
+            $('#check').css('display','inline');
+        }else{
+            $('#status').css('display','block');
+            $('#status').text('Wrong');
+            $('#status').css('color','red');
+            $('#'+selectedId).css('outline','6px solid rgb(226, 21, 21)')
+        }
+    }
+    $('#btn-showans').click(function(){
+        $('#'+answersArray[questionPostion]).prop("checked", true);
+        $('#'+answersArray[questionPostion]).css('outline','6px solid #28a745');
+        $('#check').css('display','inline');
+    });
+    $('#check').click(function(){
+        if(questionPostion == answersArray.length-1){
+            answersArray.forEach(element =>{
+                $('#'+element).prop("checked", false);
+                $('#'+element).css('color','black');
+            });
+            $('#Result').css('display','none');
+            $('#Question').text('');            
+            $('#check').css('display','none');
+            $('#btn-showans').css('display','none');
+            $('#status').css('display','block');
+            $('#status').css('color','yellow');
+            $('#status').text('All questions are completed. please click home or reset button to reload.')
+        }else{
+            init(questionPostion+1);
+        }
+    });
+    $('#home').click(function(){
+        window.location.reload();
+    });
+    $('#reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>
