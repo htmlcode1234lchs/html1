@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Force</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <div id="div-title" style="width: 900px;margin-right: auto;margin-left: auto;"><button class="btn btn-primary shadow-none" id="btn-home" type="button" style="width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin: 20px;"></button>
+        <button
+            class="btn btn-primary shadow-none" id="btn-reset" type="button" style="width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);margin-left: 700px;"></button>
+    </div>
+    <div id="div-top" style="width: 900px;margin-left: auto;margin-right: auto;"><label id="lab-text" style="font-size: 35px;">Force applied by the Engine:</label><input type="text" id="inp-ans" style="width: 180px;height: 50px;margin-left: 18px;font-size: 30px;"><button class="btn btn-primary shadow-none" type="button" style="width: 150px;height: 50px;margin-left: 47px;margin-top: -17px;background-image: url(&quot;assets/img/Go.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+    <div
+        class="text-center" id="div-playarea" style="width: 1000px;margin-left: auto;margin-right: auto;height: 600px;background-image: url(&quot;assets/img/block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 30px;">
+        <div id="div-car" style="width: 890px;margin-left: auto;margin-right: auto;height: 500px;background-image: url(&quot;assets/img/car.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <div id="div-n1" style="width: 100px;"><label id="lab-n1" style="font-size: 30px;margin-top: 429px;margin-left: 193px;">N1</label><input type="text" id="inp-n1" style="width: 80px;height: 40px;margin-left: 189px;margin-top: -9px;font-size: 30px;"></div>
+            <div id="div-worklabel" style="font-size: 30px;width: 100px;margin-left: 382px;margin-top: -120px;margin-right: 12px;"><label id="lab-w" style="font-size: 30px;">W</label><input type="text" id="inp-w" style="font-size: 30px;width: 80px;height: 40px;margin-top: -45px;"></div>
+            <div id="div-wf" style="margin-top: -113px;width: 100px;margin-left: 628px;"><label id="lab-f" style="font-size: 30px;width: 28px;">f</label><input type="text" id="inp-f" style="width: 80px;height: 40px;font-size: 30px;"></div>
+            <div id="div-wheels" style="width: 650px;margin-top: -162px;">
+                <div id="div-wheel1" style="height: 100px;margin-top: -22px;width: 100px;margin-left: 123px;background-image: url(&quot;assets/img/Wheel%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                <div id="div-wheel2" style="height: 100px;margin-top: -99px;width: 100px;margin-left: 535px;background-image: url(&quot;assets/img/Wheel%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+            </div>
+            <div id="div-n2" style="height: 100px;width: 100px;margin-left: 488px;margin-top: 23px;"><label id="lab-n2" style="font-size: 30px;margin-top: 6px;">N2</label><input type="text" id="inp-n2" style="font-size: 30px;width: 80px;height: 40px;"></div>
+            <div id="div-F" style="height: 100px;width: 100px;margin-top: -307px;"><input type="text" id="inp-F" style="width: 80px;height: 40px;margin-top: -112px;font-size: 30px;"><label id="lab-F" style="font-size: 35px;width: 28px;margin-top: -3px;">F</label></div>
+        </div>
+        <div id="div-bottomhint" style="height: 150px;width: 900px;margin-left: auto;margin-right: auto;margin-top: 110px;"><label id="lab-friction" style="margin-left: auto;margin-right: auto;font-size: 30px;width: 900px;">f = Friction applied by the road</label><label id="lab-normal-force" style="margin-left: auto;margin-right: auto;font-size: 30px;">N1 &amp; N2 = Normal Forces</label>
+            <label
+                id="lab-weight" style="margin-left: auto;margin-right: auto;font-size: 30px;width: 900px;">W = Weight (Gravitational Force)</label>
+        </div>
+        </div>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
