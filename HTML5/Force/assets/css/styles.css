@@ -1,4 +1,12 @@
-#div-wheel2 {
-  transform: rotate(360deg);
-}
+#div-wheel2, #div-wheel1 {
+  animation: rotation 1s infinite linear;
+         }
 
+          @keyframes rotation {
+		    from {
+				transform: rotate(0deg);
+		      }
+		    to {
+				transform: rotate(-359deg);
+		       }
+}
