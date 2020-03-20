@@ -20,17 +20,95 @@
     <div id="playareadiv" class="divplayarea" style="margin-top: 10px;">
         <div class="text-center divapmap" id="apmapdiv" style="width: 1200px;height: 650px;margin-right: auto;margin-left: auto;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/block.png&quot;);background-position: center;">
             <div id="mapimgdiv" class="divmapimg" style="margin-right: auto;margin-left: auto;"><img id="mapimg" class="imgmap" style="width: 1100px;height: 550px;background-image: url(&quot;assets/img/map_a.p..png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 50px;margin-right: auto;margin-left: auto;"></div>
-            <input
-                type="checkbox" id="checkbox-telangana" class="checkbox1" style="position: absolute;width: 25px;height: 25px;margin-top: -400px;margin-left: -150px;"><input type="checkbox" id="checkbox-tamilnadu" class="checkbox2" style="position: absolute;width: 25px;height: 25px;margin-left: -150px;"><input type="checkbox" id="checkbox-karnataka" class="checkbox3" style="position: absolute;width: 25px;height: 25px;margin-top: -120px;margin-left: -375px;">
-                <input
-                    type="checkbox" id="checkbox-rayalaseema" class="checkbox4" style="position: absolute;width: 25px;height: 25px;margin-top: -180px;margin-left: -190px;"><input type="checkbox" id="checkbox-coastaandhra" class="checkbox5" style="position: absolute;width: 25px;height: 25px;margin-top: -365px;margin-left: 30px;"><input type="checkbox" id="checkbox-bayofbengal" class="checkbox6" style="position: absolute;width: 25px;height: 25px;margin-left: 70px;margin-top: -190px;"></div>
+            <input type="checkbox" onclick="checkAnswer(this)"  
+                id="checkbox-telangana" class="checkbox1" style="position: absolute;width: 25px;height: 25px;margin-top: -400px;margin-left: -150px;">
+            <input type="checkbox" onclick="checkAnswer(this)" 
+                 id="checkbox-tamilnadu" class="checkbox2" style="position: absolute;width: 25px;height: 25px;margin-left: -150px;">
+            <input type="checkbox" id="checkbox-karnataka" onclick="checkAnswer(this)"  
+                class="checkbox3" style="position: absolute;width: 25px;height: 25px;margin-top: -120px;margin-left: -375px;">
+            <input type="checkbox" onclick="checkAnswer(this)"  
+                id="checkbox-rayalaseema" class="checkbox4" style="position: absolute;width: 25px;height: 25px;margin-top: -180px;margin-left: -190px;">
+            <input type="checkbox" id="checkbox-coastaandhra" onclick="checkAnswer(this)"  
+                class="checkbox5" style="position: absolute;width: 25px;height: 25px;margin-top: -365px;margin-left: 30px;">
+            <input type="checkbox" onclick="checkAnswer(this)"  
+                id="checkbox-bayofbengal" class="checkbox6" style="position: absolute;width: 25px;height: 25px;margin-left: 70px;margin-top: -190px;">
+        </div>
     </div>
     <div id="bottom-div" class="div-bottom" style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 20px;"><button class="btn btn-primary" id="checkbtn" type="button" style="background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;margin-left: 103px;background-color: rgba(255,255,255,0);"></button>
         <label
-            id="resultlabel" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary" id="answerbtn" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button></div>
+            id="resultlabel" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary" id="answerbtn" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button>
+            <label style="margin-left: 45%;font-size: 24px;display: none;" id="status">  </label>
+        </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
+<script>    
+    var questionsArray = ['1. Locate and  Identify ‘Tamil Nadu’  on the A.P map.',
+                             '2. Locate and  Identify ‘Bay of Bengal’  on the A.P map.',
+                             '3. Locate and  Identify ‘Coasta Andhra’  on the  A.P map.',
+                             '4. Locate and  Identify ‘Rayalaseema’  on the A.P map.',
+                             '5. Locate and  Identify ‘Karnataka’  on the  A.P map.',
+                             '6. Locate and  Identify ‘Telangana ’  on the  A.P map.'
+                             ];
+     var answersArray = ['checkbox-tamilnadu','checkbox-bayofbengal','checkbox-coastaandhra','checkbox-rayalaseema',
+                        'checkbox-karnataka','checkbox-telangana'];
+     init(0);
+     var questionPostion = 0;
+     function init(position){
+         questionPostion = position;
+         $('#queslabel').text(questionsArray[position]);
+         $('#status').css('display','none');
+         $('#checkbtn').prop('disabled', true);
+         answersArray.forEach(element =>{
+             $('#'+element).prop("checked", false);
+             $('#'+element).css('outline','3px solid rgb(0,0,0)');
+         });
+     }
+     function checkAnswer(current){        
+         var selectedId = current.id;
+         selectedId = selectedId.trim();
+         if(current.checked && answersArray[questionPostion] == selectedId){
+             $('#status').css('display','block');
+             $('#status').text('Correct');
+             $('#status').css('color','white');
+             $('#'+current.id).css('outline','6px solid #28a745');
+             $('#checkbtn').prop('disabled', false);;
+         }else{
+             $('#status').css('display','block');
+             $('#status').text('Wrong');
+             $('#status').css('color','red');
+             $('#'+selectedId).css('outline','6px solid rgb(226, 21, 21)')
+         }
+     }
+     $('#answerbtn').click(function(){
+         $('#'+answersArray[questionPostion]).prop("checked", true);
+         $('#'+answersArray[questionPostion]).css('outline','6px solid #28a745');
+         $('#checkbtn').prop('disabled', false);;
+     });
+     $('#checkbtn').click(function(){
+         if(questionPostion == answersArray.length-1){
+             answersArray.forEach(element =>{
+                 $('#'+element).prop("checked", false);
+                 $('#'+element).css('color','black');
+             });
+             $('#Result').css('display','none');
+             $('#queslabel').text('');            
+             $('#checkbtn').prop('disabled', true);
+             $('#answerbtn').css('display','none');
+             $('#status').css('display','block');
+             $('#status').css('color','yellow');
+             $('#status').text('All questions are completed. please click home or reset button to reload.')
+         }else{
+             init(questionPostion+1);
+         }
+     });
+     $('#hb').click(function(){
+         window.location.reload();
+     });
+     $('#rb').click(function(){
+         window.location.reload();
+     });
+ </script>
 </html>
