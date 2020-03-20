@@ -19,20 +19,103 @@
     <div class="text-center divques" id="quesdiv" style="margin-left: auto;margin-right: auto;font-size: 30px;margin-top: 10px;"><label id="queslabel" class="labelques">Locate and identify Pataliputra,Gujarat,Kalinga,Suvarnagiri,Ujjayini,Takhshasila,Thar desert,Malwa Plateau on the India map.</label></div>
     <div id="playareadiv" class="divplayarea" style="margin-top: 10px;">
         <div class="text-center divapmap" id="apmapdiv" style="width: 1200px;height: 650px;margin-right: auto;margin-left: auto;">
-            <div id="mapimgdiv" class="divmapimg" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block%20with%20map.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 650px;"></div><input type="checkbox" id="checkbox-kalinga" class="kalinga-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -300px;margin-left: -70px;"><input type="checkbox" id="checkbox-suvarnagiri" class="suvarnagiri-checkbox"
-                style="position: absolute;width: 25px;height: 25px;margin-top: -205px;margin-left: -95px;"><input type="checkbox" id="checkbox-takshashila" class="takshashila-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -518px;margin-left: -188px;">
-            <input
-                type="checkbox" id="checkbox-ujjayini" class="ujjayini-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -350px;margin-left: -155px;"><input type="checkbox" id="checkbox-gujarat" class="rajasthan-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -375px;margin-left: -200px;"><input type="checkbox" id="checkbox-thardesert" class="thardesert-checkbox"
-                    style="position: absolute;width: 25px;height: 25px;margin-left: -185px;margin-top: -445px;"><input type="checkbox" id="checkbox-malwaplateau" class="malwaplateau-checkbox" style="position: absolute;width: 25px;height: 25px;margin-left: -130px;margin-top: -400px;">
-                <input
-                    type="checkbox" id="checkbox-pataliputra" class="pataliputra-checkbox" style="position: absolute;width: 25px;height: 25px;margin-left: -30px;margin-top: -385px;"></div>
+            <div id="mapimgdiv" class="divmapimg" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block%20with%20map.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 650px;"></div>
+            <input type="checkbox" id="checkbox-kalinga" onclick="checkAnswer(this)" 
+                class="kalinga-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -300px;margin-left: -70px;">
+            <input type="checkbox" id="checkbox-suvarnagiri" onclick="checkAnswer(this)" 
+                class="suvarnagiri-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -205px;margin-left: -95px;">
+            <input type="checkbox" id="checkbox-takshashila" onclick="checkAnswer(this)"  
+                class="takshashila-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -518px;margin-left: -188px;">
+            <input type="checkbox" id="checkbox-ujjayini" onclick="checkAnswer(this)" 
+                 class="ujjayini-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -350px;margin-left: -155px;">
+            <input type="checkbox" id="checkbox-gujarat" onclick="checkAnswer(this)"  
+                class="rajasthan-checkbox" style="position: absolute;width: 25px;height: 25px;margin-top: -375px;margin-left: -200px;">
+            <input type="checkbox" id="checkbox-thardesert" onclick="checkAnswer(this)"  
+                class="thardesert-checkbox" style="position: absolute;width: 25px;height: 25px;margin-left: -185px;margin-top: -445px;">
+            <input type="checkbox" id="checkbox-malwaplateau" onclick="checkAnswer(this)" 
+                class="malwaplateau-checkbox" style="position: absolute;width: 25px;height: 25px;margin-left: -130px;margin-top: -400px;">
+            <input type="checkbox" id="checkbox-pataliputra" onclick="checkAnswer(this)" 
+                class="pataliputra-checkbox" style="position: absolute;width: 25px;height: 25px;margin-left: -30px;margin-top: -385px;">
+        </div>
     </div>
     <div id="bottom-div" class="div-bottom" style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 20px;"><button class="btn btn-primary" id="checkbtn" type="button" style="background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;margin-left: 103px;background-color: rgba(255,255,255,0);"></button>
         <label
-            id="resultlabel" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary" id="answerbtn" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button></div>
+            id="resultlabel" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary" id="answerbtn" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 70px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button>
+            <label style="margin-left: 45%;font-size: 24px;display: none;" id="status">  </label>
+        </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
+
+<script>    
+    var questionsArray = ['1. Locate and  Identify ‘Pataliputra’  on the Indian map.',
+                             '2. Locate and  Identify ‘Gujarat’  on the Indian map.',
+                             '3. Locate and  Identify ‘Kalinga’  on the  Indian map.',
+                             '4. Locate and  Identify ‘Suvarnagiri’  on the Indian map.',
+                             '5. Locate and  Identify ‘Ujjayini’  on the  Indian map.',
+                             '6. Locate and  Identify ‘Takhshasila’  on the  Indian map.',
+                             '7. Locate and  Identify ‘Thar desert’  on the  Indian map.',
+                             '8. Locate and  Identify ‘Malwa Plateau’  on the  Indian map.'
+                             ];
+     var answersArray = ['checkbox-pataliputra','checkbox-gujarat','checkbox-kalinga','checkbox-suvarnagiri',
+                        'checkbox-ujjayini','checkbox-takshashila', 'checkbox-thardesert', 'checkbox-malwaplateau'];
+     init(0);
+     var questionPostion = 0;
+     function init(position){
+         questionPostion = position;
+         $('#queslabel').text(questionsArray[position]);
+         $('#status').css('display','none');
+         $('#checkbtn').prop('disabled', true);
+         answersArray.forEach(element =>{
+             $('#'+element).prop("checked", false);
+             $('#'+element).css('outline','3px solid rgb(0,0,0)');
+         });
+     }
+     function checkAnswer(current){        
+         var selectedId = current.id;
+         selectedId = selectedId.trim();
+         if(current.checked && answersArray[questionPostion] == selectedId){
+             $('#status').css('display','block');
+             $('#status').text('Correct');
+             $('#status').css('color','white');
+             $('#'+current.id).css('outline','6px solid #28a745');
+             $('#checkbtn').prop('disabled', false);;
+         }else{
+             $('#status').css('display','block');
+             $('#status').text('Wrong');
+             $('#status').css('color','red');
+             $('#'+selectedId).css('outline','6px solid rgb(226, 21, 21)')
+         }
+     }
+     $('#answerbtn').click(function(){
+         $('#'+answersArray[questionPostion]).prop("checked", true);
+         $('#'+answersArray[questionPostion]).css('outline','6px solid #28a745');
+         $('#checkbtn').prop('disabled', false);;
+     });
+     $('#checkbtn').click(function(){
+         if(questionPostion == answersArray.length-1){
+             answersArray.forEach(element =>{
+                 $('#'+element).prop("checked", false);
+                 $('#'+element).css('color','black');
+             });
+             $('#Result').css('display','none');
+             $('#queslabel').text('');            
+             $('#checkbtn').prop('disabled', true);
+             $('#answerbtn').css('display','none');
+             $('#status').css('display','block');
+             $('#status').css('color','yellow');
+             $('#status').text('All questions are completed. please click home or reset button to reload.')
+         }else{
+             init(questionPostion+1);
+         }
+     });
+     $('#hb').click(function(){
+         window.location.reload();
+     });
+     $('#rb').click(function(){
+         window.location.reload();
+     });
+ </script>
 </html>

@@ -13,19 +13,27 @@
 <body style="background-color: rgb(191,239,234);background-image: url(&quot;assets/img/Title.png&quot;);background-position: top;background-repeat: no-repeat;">
     <div id="titlediv" class="divtitle" style="height: 100px;">
         <div id="dtnsdiv" class="divbtns" style="margin-left: auto;margin-right: auto;width: 900px;background-position: center;background-size: contain;background-repeat: no-repeat;"><button class="btn btn-primary shadow-none" id="hb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;margin-left: 100px;margin-top: 16px;"></button>
-            <button
-                class="btn btn-primary shadow-none" id="rb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;margin-left: 572px;margin-top: 20px;"></button>
+            <button class="btn btn-primary shadow-none" id="rb1" type="button" 
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;margin-left: 572px;margin-top: 20px;">
+            </button>
         </div>
     </div>
     <div class="text-center d-xl-flex align-items-xl-center divplay" id="playdiv" style="margin-left: auto;margin-right: auto;margin-top: 5px;">
         <div id="leftdiv" class="div-left" style="margin-left: auto;margin-right: auto;">
-            <div class="text-center div-question" id="questiondiv" style="margin-left: auto;margin-right: auto;"><label class="text-left label-ques" id="queslabel">A boy is 13 years old with 125cm tall. At the end of growth period his height is likely to be</label></div>
-            <div id="inputcheckdiv" class="div-checkinput" style="margin-top: 50px;margin-left: auto;margin-right: auto;"><input type="text" id="inputtext" style="text-align: center;" placeholder="Enter your answer here"><button class="btn btn-primary shadow-none btn-check" id="checkbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: -20px;"></button></div>
+            <div class="text-center div-question" id="questiondiv" style="margin-left: auto;margin-right: auto;">
+                <label class="text-left label-ques" id="queslabel">A boy is 13 years old with 125cm tall. At the end of growth period his height is likely to be</label>
+            </div>
+            <div id="inputcheckdiv" class="div-checkinput" style="margin-top: 50px;margin-left: auto;margin-right: auto;">
+                <input type="number" id="inputtext" style="text-align: center;" placeholder="Enter your answer here">
+                <button class="btn btn-primary shadow-none btn-check" id="checkbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: -20px;"></button></div>
+            <div id="hintresansdiv" class="div-hintresans"  title="Note: Year range: 8 to 18 and height range: 70 to 150"
+                style="margin-top: 100px;margin-left: auto;margin-right: auto;">
+            <button class="btn btn-primary shadow-none btn-hint" id="hintbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Hint.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+            <label class="text-left label-result" id="resultlabel">Result: </label>
+
+            <button class="btn btn-primary shadow-none btn-answer" id="answerbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;"></button></div>
+            <label class="text-left label-result" id="result"></label>
             <div
-                id="hintresansdiv" class="div-hintresans" style="margin-top: 100px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none btn-hint" id="hintbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Hint.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                <label
-                    class="text-left label-result" id="resultlabel">Result</label><button class="btn btn-primary shadow-none btn-answer" id="answerbtn" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;"></button></div>
-        <div
             class="invisible div-formula" id="formuladiv" style="margin-top: 100px;"><label id="formulalabel" class="label-formula">((Present height / Max.height ) * 100) = % of full height (As given in chart)</label></div>
     </div>
     <div id="rightdiv" class="div-right" style="height: 850px;margin-left: auto;margin-right: auto;background-image: url(&quot;assets/img/Table.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
@@ -34,4 +42,64 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
+<script>
+
+    var age = getRandomArbitrary(8,18);
+    console.log('age= '+age);
+
+    var heright = getRandomArbitrary(70, 150);
+    console.log('height ='+heright);
+    
+    var maxheightBoy = [72, 75, 78, 81, 84, 88, 92, 95, 98, 99, 100];
+    var maxHeightGirl = [77, 81, 84, 88, 91, 95, 98, 99, 99.5, 100, 100];
+
+    var borgirl = ['boy', 'girl'];
+    var hisher = ['his', 'her'];
+    var position = getRandomArbitrary(0,1);
+    console.log('position= '+position)
+
+    $('#queslabel').text('“A '+borgirl[position]+' is '+age+' years old with '+heright+'cm tall. At the end of growth period '+hisher[position]+' height is likely to be?”')
+
+    $('#checkbtn').click(function(){
+        var inputtext = $('#inputtext').val();
+        var max = 0;
+        if(position == 0){
+            max = maxheightBoy[age-8];
+        }else{
+            max = maxHeightGirl[age-8];
+        }
+        console.log('max= '+max);
+        var result = ((heright/max) * 100).toFixed(1);
+        console.log('result = '+result);
+        if(inputtext == result){
+            $('#result').text('Correct');
+            $('#result').css('color', 'green');
+        }else{
+            $('#result').text('Wrong');
+            $('#result').css('color', 'red');
+        }
+    });
+
+    $('#answerbtn').click(function(){
+        var max = 0;
+        if(position == 0){
+            max = maxheightBoy[age-8];
+        }else{
+            max = maxHeightGirl[age-8];
+        }
+        console.log('max= '+max);
+        var result = ((heright/max) * 100).toFixed(1);
+        console.log('result = '+result);
+        $('#inputtext').val(result);
+    });
+    /**
+ * Returns a random number between min (inclusive) and max (exclusive)
+ */
+function getRandomArbitrary(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+</script>
 </html>
