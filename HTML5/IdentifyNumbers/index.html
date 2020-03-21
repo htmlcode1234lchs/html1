@@ -20,12 +20,12 @@
                 style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 60PX;height: 60PX;position: fixed;"></button>
         </div>
     </div>
-    <div class="text-center div-play"><label style="color: rgb(0,0,0);font-size: 27px;">Number of
+    <div class="text-center div-play" style="margin-top:40px;"><label style="color: rgb(0,0,0);font-size: 27px;">Number of
             digits:&nbsp;</label>
         <input type="number" min="0" max="10" id="inputValueId"
             onkeypress="return (event.charCode == 8 || event.charCode == 0) ? null : event.charCode >= 48 && event.charCode <= 57  "
             style="width: 60px;margin-left: 14px;text-align: center;">
-        <label style="margin-left: 10px;">Max. number is 10</label>
+        <label style="margin-left: 10px;">Max. number is 2</label>
         <button id="identifyNumbersGoId" class="btn btn-primary border rounded shadow-none" type="button"
             style="margin-left: 20px;margin-top: -4px;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 130px;height: 50px;background-color: rgba(255,255,255,0);"></button>
     </div>
@@ -41,7 +41,7 @@
         <input class="custom-range" type="range" id="range-slider" style="height: 50px;" value="0" min="0">
     </div>
     <div id="resultanswer-div" class="div-resultanswer">
-        <label id="result-label" class="label-result">Result : </label> <label id="result"></label>
+        <label id="result-label" class="label-result">Result : </label> <label id="result" style="font-size:40px;"></label>
         <button class="btn btn-primary shadow-none btn-answer" id="answerbtn" type="button"
             style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: -15px;"></button>
     </div>
