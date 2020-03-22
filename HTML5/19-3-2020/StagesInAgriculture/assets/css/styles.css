@@ -19,7 +19,7 @@
 }
 
 @media (min-width: 1400px) {
-  #img11 {
+  #img1 {
     width: 170px;
     height: 170px;
   }
@@ -33,7 +33,7 @@
 }
 
 @media (min-width: 1400px) {
-  #img12 {
+  #img2 {
     width: 170px;
     height: 170px;
   }
@@ -47,7 +47,7 @@
 }
 
 @media (min-width: 1400px) {
-  #img13 {
+  #img3 {
     width: 170px;
     height: 170px;
   }
@@ -96,7 +96,14 @@
 }
 
 @media (min-width: 1400px) {
-  #img22 {
+  #img5 {
+    width: 170px;
+    height: 170px;
+  }
+}
+
+@media (min-width: 1400px) {
+  #img6 {
     width: 170px;
     height: 170px;
   }
@@ -110,7 +117,7 @@
 }
 
 @media (min-width: 1400px) {
-  #img23 {
+  #img7 {
     width: 170px;
     height: 170px;
   }
@@ -373,7 +380,7 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #img11 {
+  #img1 {
     width: 130px;
     height: 130px;
   }
@@ -387,7 +394,7 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #img12 {
+  #img2 {
     width: 130px;
     height: 130px;
   }
@@ -401,7 +408,7 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #img13 {
+  #img3 {
     width: 130px;
     height: 130px;
   }
@@ -443,7 +450,14 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #img22 {
+  #img5 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1399px) {
+  #img6 {
     width: 130px;
     height: 130px;
   }
@@ -457,7 +471,7 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #img23 {
+  #img7 {
     width: 130px;
     height: 130px;
   }
@@ -525,7 +539,7 @@
 }
 
 @media (min-width: 1400px) {
-  #div7 {
+  #result1 {
     width: 140px;
     margin-top: -315px;
     margin-left: 95px;
@@ -533,7 +547,7 @@
 }
 
 @media (min-width: 1400px) {
-  #div6 {
+  #result7 {
     width: 170px;
     margin-top: -323px;
     margin-left: 40px;
@@ -541,7 +555,7 @@
 }
 
 @media (min-width: 1400px) {
-  #div5 {
+  #result2 {
     width: 170px;
     margin-top: -260px;
     margin-left: 85px;
@@ -549,7 +563,7 @@
 }
 
 @media (min-width: 1400px) {
-  #div4 {
+  #result5 {
     width: 170px;
     margin-left: 295px;
     margin-top: -80px;
@@ -557,7 +571,7 @@
 }
 
 @media (min-width: 1400px) {
-  #div3 {
+  #result4 {
     width: 170px;
     margin-top: 110px;
     margin-left: 562px;
@@ -565,14 +579,14 @@
 }
 
 @media (min-width: 1400px) {
-  #div2 {
+  #result6 {
     width: 170px;
     margin-left: 572px;
   }
 }
 
 @media (min-width: 1400px) {
-  #div1 {
+  #result3 {
     width: 220px;
     margin-top: 42px;
     margin-left: 320px;
@@ -580,7 +594,7 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div1 {
+  #result3 {
     width: 180px;
     margin-left: 230px;
     margin-top: 60px;
@@ -588,146 +602,146 @@
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div2 {
+  #result6 {
     width: 120px;
-    margin-left: 415px;
-    margin-top: -10px;
+    margin-left: 70%;
+    margin-top: 31%;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div3 {
+  #result4 {
     width: 120px;
-    margin-left: 400px;
+    margin-left: 7%;
     margin-top: 72px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div4 {
+  #result5 {
     width: 120px;
-    margin-top: -60px;
-    margin-left: 225px;
+    margin-top: 40%;
+    margin-left: 8%;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div5 {
+  #result2 {
     width: 120px;
-    margin-top: -185px;
+    margin-top: 64%;
     margin-left: 95px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div6 {
+  #result7 {
     width: 120px;
-    margin-top: -225px;
-    margin-left: 65px;
+    margin-top: 73%;
+    margin-left: 41%;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #div7 {
+  #result1 {
     width: 100px;
-    margin-top: -215px;
-    margin-left: 92px;
+    margin-top: 60%;
+    margin-left: 67%;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg1 {
+  #result3 {
     width: 220px;
     height: 170px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg2 {
+  #result6 {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg3 {
+  #result4 {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rrimg4 {
+  #result5 {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg5 {
+  #result2 {
     width: 170px;
     height: 170px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg6 {
+  #result7 {
     width: 170px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg1 {
+  #result3 {
     width: 180px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg2 {
+  #result6 {
     width: 120px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg3 {
+  #result4 {
     width: 120px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rrimg4 {
+  #result5 {
     width: 120px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg5 {
+  #result2 {
     width: 120px;
     height: 120px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg6 {
+  #result7 {
     width: 120px;
     height: 90px;
   }
 }
 
 @media (min-width: 1400px) {
-  #rimg7 {
+  #result1 {
     width: 140px;
     height: 140px;
   }
 }
 
 @media screen and (min-width: 900px) and (max-width: 1399px) {
-  #rimg7 {
+  #result1 {
     width: 100px;
     height: 100px;
   }

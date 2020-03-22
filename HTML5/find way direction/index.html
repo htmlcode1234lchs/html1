@@ -7,31 +7,267 @@
     <title>Find way direction</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+        #answer {
+  width: 300px;
+  height: 125px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+    </style>
 </head>
 
 <body style="background-position: top;background-size: auto;background-repeat: no-repeat;background-image: url(&quot;assets/img/BG.jpg&quot;);">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="div-top" class="top-div" style="height: 100px;">
-        <div id="div-buttons" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn" id="homebutton" type="button" style="width: 40px;height: 40px;background-image: url(&quot;assets/img/Home.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 30px;margin-left: 189px;"></button>
-            <button
-                class="btn" id="resetbutton" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40px;height: 40px;margin-left: 669px;margin-top: -70px;"></button>
+        <div id="div-buttons" style="width: 900px;margin-left: auto;margin-right: auto;">
+            <button class="btn" id="homebutton" type="button" style="width: 40px;height: 40px;background-image: url(&quot;assets/img/Home.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 30px;margin-left: 189px;"></button>
+            <button class="btn" id="resetbutton" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40px;height: 40px;margin-left: 669px;margin-top: -70px;"></button>
         </div>
     </div>
     <div class="text-center" id="div-question" style="margin-left: auto;width: 807px;margin-right: auto;"><label id="question-label" style="font-size: 37px;">Drag and drop the correct direction</label></div>
-    <div class="text-center" id="div-block" style="margin-left: auto;background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 574px;width: 1069px;margin-right: auto;"><img id="img-north" style="width: 201px;height: 59px;position: absolute;margin-left: -96px;margin-top: 11px;"><img id="img-south" style="width: 201px;height: 59px;margin-top: 503px;position: absolute;margin-left: -95px;"><img id="img-west" style="height: 59px;width: 201px;position: absolute;margin-top: 254px;margin-left: -416px;">
-        <img
-            id="img-east" style="width: 201px;height: 59px;position: absolute;margin-top: 254px;margin-left: 216px;"><img id="img-northwest" style="width: 201px;height: 59px;position: absolute;margin-left: -362px;margin-top: 92px;"><img id="img-northeast" style="width: 201px;height: 59px;position: absolute;margin-top: 93px;margin-left: 162px;"><img id="img-southeast"
-                style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: 161px;"><img id="img-southwest" style="width: 201px;height: 59px;position: absolute;margin-top: 413px;margin-left: -362px;"></div>
+    <div class="text-center" id="div-block" style="margin-left: auto;background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 574px;width: 1069px;margin-right: auto;">
+        <div id="img-north" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;
+            margin-left: 32%;margin-top: 11px;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-south" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;margin-top: 503px;position: absolute;
+            margin-left:32%;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-west" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="height: 59px;width: 201px;position: absolute;margin-top: 254px;
+            margin-left: 9%;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-east" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 254px;
+            margin-left: 56%;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-north-west" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-left:13%;
+            margin-top: 92px;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-north-east" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 93px;
+            margin-left: 52%;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-south-east" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 413px;
+            margin-left: 52%;border: 1px solid #aaaaaa;">
+        </div>
+        <div id="img-south-west" ondrop="drop(event)" ondragover="allowDrop(event)"
+            style="width: 201px;height: 59px;position: absolute;margin-top: 413px;
+            margin-left: 13%;border: 1px solid #aaaaaa;">
+        </div>
+    </div>
     <div class="text-center" id="div-directionimg"
-        style="height: 139px;width: 951px;margin-right: auto;margin-left: auto;margin-top: 27px;"><img id="north" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south" style="background-image: url(&quot;assets/img/South.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 201px;height: 59px;">
-        <img
-            id="west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="east" style="background-image: url(&quot;assets/img/East.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;"><img id="north-west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/North%20West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;">
-            <img
-                id="north-east" style="background-image: url(&quot;assets/img/North%20East.png&quot;);width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south-west" style="width: 201px;height: 59px;background-image: url(&quot;assets/img/South%20West.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;"><img id="south-east" style="background-image: url(&quot;assets/img/South%20East.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;">
-                <button
-                    class="btn" id="showanswer" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-left: -10px;"></button><button class="btn" id="check" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-right: 3px;margin-left: 17px;"></button></div>
+        style="height: 139px;width: 951px;margin-right: auto;margin-left: auto;margin-top: 27px;">
+        <img id="north" draggable="true" ondragstart="drag(event)" src="assets/img/North.png"
+            style="width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="south" draggable="true" ondragstart="drag(event)" src="assets/img/South.png"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;width: 201px;height: 59px;">
+        <img id="west" draggable="true" ondragstart="drag(event)" src="assets/img/West.png"
+            style="width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="east" draggable="true" ondragstart="drag(event)" src="assets/img/East.png"
+            style="background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;">
+        <img id="north-west" draggable="true" ondragstart="drag(event)" src="assets/img/North%20West.png"
+            style="width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="north-east" draggable="true" ondragstart="drag(event)" src="assets/img/North%20East.png"
+            style="width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="south-west" draggable="true" ondragstart="drag(event)" src="assets/img/South%20West.png"
+            style="width: 201px;height: 59px;background-position: center;background-size: cover;background-repeat: no-repeat;">
+        <img id="south-east" draggable="true" ondragstart="drag(event)" src="assets/img/South%20East.png"
+            style="background-position: center;background-size: cover;background-repeat: no-repeat;width: 201px;height: 59px;">
+  <!--   <button class="btn" id="showanswer" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-left: -10px;">
+    </button>
+    <button class="btn" id="check" type="button" style="width: 250px;height: 55px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: cover;background-repeat: no-repeat;margin-top: 28px;margin-right: 3px;margin-left: 17px;">
+    </button> -->
+</div>
+<div class="text-center rightbottomdiv" id="bottomrightdiv">
+    <section style="width: 100%;height: 100%">
+        <div class="table-responsive">
+            <table class="table">
+                <tbody>
+                    <tr class="text-center">
+                        <td align="lef">
+                            <div id="CorrectAnswers">0</div>
+                        </td>
+                        <td align="center">
+                            <button class="btn btn-primary shadow-none" id="nextBtn" type="button" 
+                                style="background-image: url(&quot;assets/img/Next.png&quot;);
+                                background-position: center;background-size: contain;background-repeat: no-repeat;
+                                background-color: rgba(0,123,255,0);width: 250px;height: 70px;display: none;">
+                            </button>
+                        </td>
+                        <td>
+                            <span style="display: none; font-size: 28px;color: yellow;" id="status"></span>
+                        </td>
+                        <td align="center">
+                           
+                            <button
+                                class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                            </button>
+                        </td>
+                        <td align="right">
+                            <div id="IncorrectAnswers">0</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    /*  var questionsArray = ['1. What is the difference in production of food grains in the years 2000-01 and 1980-81?',
+         '2. In which decade the production of food grains is the highest?',
+         '3. In which decade the production of food grains is the lowest?',
+         '4. How many million tonnes of food grains are produced in 2010-11 when compared to 1970-71?',
+         '5. What is the average production of food grains of the years 1970-71 and 1980-81?',
+         '6. What is the average production of food grains of the years 1970-71 and 1960-61 and 2010-11?'];
+     var answersArray = ['option1', 'option2', 'option3', 'option4', 'option5',
+         'option6'];
+     init(0);
+     var correct = 0;
+     var incorrect = 0; 
+     var currentPosition = 0;
+     function init(position){
+         currentPosition = position;
+         $('#question').text(questionsArray[position]);
+         correct = 0;
+         incorrect = 0; 
+         $('#nextBtn').css('display','none');
+         $('#CorrectAnswers').text('');
+         $('#IncorrectAnswers').text('');
+         $('#answer').empty();
+         var answers = $('<img id="option1" src="assets/img/60%20millions%20tonnes.png" '+
+                     '   width="20px" height="20px" '+
+                     '   draggable="true" ondragstart="drag(event)"> '+
+                 '<img id="option2" src="assets/img/2010-2011.png" '+
+                  '  width="20px" height="20px" '+
+                     'draggable="true" ondragstart="drag(event)"> '+
+                 '<img id="option3" src="assets/img/19501951.png" '+
+                     'width="20px" height="20px" '+
+                     'draggable="true" ondragstart="drag(event)"> '+
+                 '<img id="option4" src="assets/img/134%20miilions%20tonnes.png" '+
+                     'width="20px" height="20px" '+
+                     'draggable="true" ondragstart="drag(event)"> '+
+                 '<img id="option5" src="assets/img/119%20millon%20tonnes.png" '+
+                     'width="20px" height="20px" '+
+                     'draggable="true" ondragstart="drag(event)"> '+
+                 '<img id="option6" src="assets/img/144%20millions%20tonnes.png" '+
+                     'width="20px" height="20px"'+
+                     'draggable="true" ondragstart="drag(event)">');
+         $('#div-options').empty();
+         $('#div-options').append(answers);
+     }
+  */
+ 
+  var answersArray = ['north', 'west', 'south', 'east', 'north-west',
+         'north-east', 'south-west','south-east'];
+  var correct = 0;
+     var incorrect = 0;
+     function play(audioToPlay) {
+         var audio = document.getElementById(audioToPlay);
+         audio.play();
+     }
+ 
+     function allowDrop(ev) {
+         ev.preventDefault();
+     }
+ 
+     function drag(ev) {
+         ev.dataTransfer.setData("text", ev.target.id);
+     }
+ 
+     function drop(ev) {
+         ev.preventDefault();
+         var data = ev.dataTransfer.getData("text");
+         console.log(data);
+         var sourceId = data.replace('img','').trim();
+         console.log('sourceId = '+sourceId)
+       //  console.log(answersArray[sourceId-1])
+ 
+         console.log(ev.target.id)
+        // var targetId = ev.target.id.replace('result','').trim();
+        // console.log('targetId = '+targetId)
+         if('img-'+data == ev.target.id){
+             ev.target.appendChild(document.getElementById(data));
+             correct++;  
+             play("correct");
+             $('#nextBtn').css('display','block');
+         }else{
+             incorrect++;                 
+             play("wrong");
+         }
+         $('#CorrectAnswers').text(correct);
+         $('#IncorrectAnswers').text(incorrect);
+     }
+     function showAnswer(){
+         answersArray.forEach(element =>{
+            document.getElementById('img-'+element).appendChild(document.getElementById(element));
+        
+         })
+        
+     }
+     $('#nextBtn').click(function(){
+         if(currentPosition == answersArray.length-1){
+             $('#nextBtn').css('display','none');
+             $('#answer').empty();
+             $('#status').css('display','block');
+             $('#showbtn').css('display','none');
+             $('#status').text('All questions are completed. please click home or reset button to reload.')
+         }else{            
+             init(currentPosition+1);
+         }
+     });
 
+    
+
+     $('#btn-home').click(function(){
+         window.location.reload();
+     });
+     $('#btn-reset').click(function(){
+         window.location.reload();
+     });
+ </script>
 </html>

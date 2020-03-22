@@ -7,9 +7,52 @@
     <title>SatgesInAgriculture</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+        #answer {
+  width: 300px;
+  height: 125px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+}
+    </style>
 </head>
 
 <body style="background-image: url(&quot;assets/img/Stages-in-agriculture.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="titlediv" class="divtitle" style="height: 100px;">
         <div id="dtnsdiv" class="divbtns" style="margin-left: auto;margin-right: auto;width: 900px;"><button class="btn btn-primary shadow-none" id="hb1" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40PX;height: 40PX;margin-left: 189px;margin-top: 29px;"></button>
             <button
@@ -19,38 +62,215 @@
     <div class="text-center divques" id="quesdiv" style="margin-left: auto;margin-right: auto;"><label id="queslabel" class="labelques" style="color: rgb(0,0,0);">Drag and drop the images on to the right side according to the stages in agriculture.</label></div>
     <div class="text-center d-xl-flex align-items-xl-center divplay" id="playdiv" style="margin-left: auto;margin-right: auto;">
         <div class="d-lg-flex d-xl-flex align-items-lg-center align-items-xl-center divmainleft" id="leftmaindiv" style="background-image: url(&quot;assets/img/block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-            <div id="leftimgdiv1" class="div1leftimg" style="margin-right: auto;margin-left: auto;"><label id="num1" class="lab1" style="height: 60px;text-align: center;">1.</label><img id="img11" class="r1img1" style="background-image: url(&quot;assets/img/storage.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);">
-                <label
-                    id="num2" class="lab2" style="height: 60px;text-align: center;">2.</label><img id="img12" class="r1img2" style="background-image: url(&quot;assets/img/protecting%20weed.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
-                    <label
-                        id="num3" class="lab3" style="height: 60px;text-align: center;">3.</label><img id="img13" class="r1img3" style="background-image: url(&quot;assets/img/preparation%20of%20soil.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
-                        <label
-                            id="num4" class="lab4" style="height: 60px;text-align: center;">4.</label><img id="img14" class="r1img4" style="background-image: url(&quot;assets/img/adding%20fertilizers.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;"></div>
+            <div id="leftimgdiv1" class="div1leftimg" style="margin-right: auto;margin-left: auto;">
+                <!-- <label id="num1" class="lab1" style="height: 60px;text-align: center;">1.</label> --><img id="img1" class="r1img1" draggable="true" ondragstart="drag(event)" src="assets/img/storage.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);">
+               <!--  <label
+                    id="num2" class="lab2" style="height: 60px;text-align: center;">2.</label> --><img id="img2" class="r1img2" draggable="true" ondragstart="drag(event)" src="assets/img/protecting%20weed.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
+                    <!-- <label
+                        id="num3" class="lab3" style="height: 60px;text-align: center;">3.</label> --><img id="img3" class="r1img3" draggable="true" ondragstart="drag(event)" src="assets/img/preparation%20of%20soil.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
+                        <!-- <label
+                            id="num4" class="lab4" style="height: 60px;text-align: center;">4.</label> --><img id="img4" class="r1img4" draggable="true" ondragstart="drag(event)" src="assets/img/adding%20fertilizers.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;"></div>
             <div
-                id="leftimgdiv2" class="div2leftimg" style="margin-right: auto;margin-left: auto;"><label id="num6" class="lab6" style="height: 60px;text-align: center;">5.</label><img id="img22" class="r2img2" style="background-image: url(&quot;assets/img/irrigation.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
-                <label
-                    id="num6" class="lab6" style="height: 60px;text-align: center;">6.</label><img id="img22" class="r2img2" style="background-image: url(&quot;assets/img/sowing.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
-                    <label
-                        id="num7" class="lab7" style="height: 60px;text-align: center;">7.</label><img id="img23" class="r2img3" style="background-image: url(&quot;assets/img/hravsesting.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;"></div>
+                id="leftimgdiv2" class="div2leftimg" style="margin-right: auto;margin-left: auto;"><!-- <label id="num6" class="lab6" style="height: 60px;text-align: center;">5.</label> --><img id="img5" class="r2img2"  draggable="true" ondragstart="drag(event)" src="assets/img/irrigation.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
+                <!-- <label
+                    id="num6" class="lab6" style="height: 60px;text-align: center;">6.</label> --><img id="img6" class="r2img2" draggable="true" ondragstart="drag(event)" src="assets/img/sowing.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;">
+                    <!-- <label
+                        id="num7" class="lab7" style="height: 60px;text-align: center;">7.</label> --><img id="img7" class="r2img3" draggable="true" ondragstart="drag(event)" src="assets/img/hravsesting.png" style="background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);margin-top: 5px;"></div>
     </div>
     <div class="text-center d-xl-flex justify-content-xl-center mainrightdiv" id="rightmaindiv" style="background-image: url(&quot;assets/img/block%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-        <div id="rightdiv" class="divright" style="margin-left: auto;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;">
-            <div id="div1" class="divi1"><img id="rimg1" class="img1r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div2" class="divi2"><img id="rimg2" class="img2r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div3" class="divi3"><img id="rimg3" class="img3r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div4" class="divi4"><img id="rrimg4" class="img4rr" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div5" class="divi5"><img id="rimg5" class="img5r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div6" class="divi6"><img id="rimg6" class="img6r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div7" class="divi7"><img id="rimg7" class="img7r" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+        <div id="rightdiv" class="divright" style="position: relative; margin-left: auto;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <div id="result3" class="divi3"  ondrop="drop(event)" 
+            style="background-position: center;background-size: contain;
+            background-repeat: no-repeat; position:absolute;top: 0px;border: gray 1px solid;"
+            ondragover="allowDrop(event)"><!-- <img id="" class="img1r"
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> -->
+            </div>
+            <div id="result6" class="divi6" ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+                position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result6" class="img2r" 
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> -->
+            </div>
+            <div id="result4" class="divi4" ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+            position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result4" class="img3r" 
+               > --></div>
+            <div id="result5" class="divi5" ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+            position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result5" class="img4rr" 
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> --></div>
+            <div id="result2" class="divi2" ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+            position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result2" class="img5r" 
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> --></div>
+            <div id="result7" class="divi7" ondrop="drop(event)"
+            ondragover="allowDrop(event)"  
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+            position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result7" class="img6r" 
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> --></div>
+            <div id="result1" class="divi1" ondrop="drop(event)"
+            ondragover="allowDrop(event)"
+            style="background-position: center;background-size: contain;background-repeat: no-repeat;
+            position:absolute;top: 0px;border: gray 1px solid;"><!-- <img id="result1" class="img7r" 
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;"> --></div>
         </div>
     </div>
     </div>
-    <div class="text-center divbottom" id="bottomdiv" style="width: 800px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none btncheck" id="checkbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 50px;background-color: rgba(255,255,255,0);"></button>
+    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-center">
+                            <td align="lef">
+                                <div id="CorrectAnswers">0</div>
+                            </td>
+                           <!--  <td align="center">
+                                <button class="btn btn-primary shadow-none" id="nextBtn" type="button" 
+                                    style="background-image: url(&quot;assets/img/Next.png&quot;);
+                                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                                    background-color: rgba(0,123,255,0);width: 250px;height: 70px;display: none;">
+                                </button>
+                            </td>
+                            <td>
+                                <span style="display: none; font-size: 28px;color: yellow;" id="status"></span>
+                            </td> -->
+                            <td align="center">
+                               
+                                <button
+                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                </button>
+                            </td>
+                            <td align="right">
+                                <div id="IncorrectAnswers">0</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <!-- <div class="text-center divbottom" id="bottomdiv" style="width: 800px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none btncheck" id="checkbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 190px;height: 50px;background-color: rgba(255,255,255,0);"></button>
         <label
             id="reslabel" class="labelres" style="font-size: 40px;margin-left: 90px;height: 50px;">Result</label><button class="btn btn-primary shadow-none btnans" id="ansbtn" type="button" style="width: 200px;height: 50px;background-color: rgba(255,255,255,0);margin-left: 110px;background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
-    <script
+     --><script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+   /*  var questionsArray = ['1. What is the difference in production of food grains in the years 2000-01 and 1980-81?',
+        '2. In which decade the production of food grains is the highest?',
+        '3. In which decade the production of food grains is the lowest?',
+        '4. How many million tonnes of food grains are produced in 2010-11 when compared to 1970-71?',
+        '5. What is the average production of food grains of the years 1970-71 and 1980-81?',
+        '6. What is the average production of food grains of the years 1970-71 and 1960-61 and 2010-11?'];
+    var answersArray = ['option1', 'option2', 'option3', 'option4', 'option5',
+        'option6'];
+    init(0);
+    var correct = 0;
+    var incorrect = 0; 
+    var currentPosition = 0;
+    function init(position){
+        currentPosition = position;
+        $('#question').text(questionsArray[position]);
+        correct = 0;
+        incorrect = 0; 
+        $('#nextBtn').css('display','none');
+        $('#CorrectAnswers').text('');
+        $('#IncorrectAnswers').text('');
+        $('#answer').empty();
+        var answers = $('<img id="option1" src="assets/img/60%20millions%20tonnes.png" '+
+                    '   width="20px" height="20px" '+
+                    '   draggable="true" ondragstart="drag(event)"> '+
+                '<img id="option2" src="assets/img/2010-2011.png" '+
+                 '  width="20px" height="20px" '+
+                    'draggable="true" ondragstart="drag(event)"> '+
+                '<img id="option3" src="assets/img/19501951.png" '+
+                    'width="20px" height="20px" '+
+                    'draggable="true" ondragstart="drag(event)"> '+
+                '<img id="option4" src="assets/img/134%20miilions%20tonnes.png" '+
+                    'width="20px" height="20px" '+
+                    'draggable="true" ondragstart="drag(event)"> '+
+                '<img id="option5" src="assets/img/119%20millon%20tonnes.png" '+
+                    'width="20px" height="20px" '+
+                    'draggable="true" ondragstart="drag(event)"> '+
+                '<img id="option6" src="assets/img/144%20millions%20tonnes.png" '+
+                    'width="20px" height="20px"'+
+                    'draggable="true" ondragstart="drag(event)">');
+        $('#div-options').empty();
+        $('#div-options').append(answers);
+    }
+ */
 
+ var answersArray = ['result4', 'result2', 'result3', 'result1', 'result7',
+        'result6', 'result5'];
+ var correct = 0;
+    var incorrect = 0;
+    function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+        ev.dataTransfer.setData('src', ev.target.src)
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var src = ev.dataTransfer.getData("src");
+        console.log(data+ " = "+src);
+        var sourceId = data.replace('img','').trim();
+        console.log('sourceId = '+sourceId)
+        console.log(answersArray[sourceId-1])
+
+        console.log(ev.target.id)
+        var targetId = ev.target.id.replace('result','').trim();
+        console.log('targetId = '+targetId)
+        if(answersArray[sourceId-1] == ev.target.id){
+            ev.target.appendChild(document.getElementById(data));
+            correct++;  
+            play("correct");
+            $('#nextBtn').css('display','block');
+        }else{
+            incorrect++;                 
+            play("wrong");
+        }
+        $('#CorrectAnswers').text(correct);
+        $('#IncorrectAnswers').text(incorrect);
+    }
+    function showAnswer(){
+        answersArray.forEach((element, inde) => {
+            var source = element.replace('result', 'img');
+            document.getElementById(element).appendChild(document.getElementById('img'+(inde+1)));
+        });        
+    }
+    $('#nextBtn').click(function(){
+        if(currentPosition == answersArray.length-1){
+            $('#nextBtn').css('display','none');
+            $('#answer').empty();
+            $('#status').css('display','block');
+            $('#showbtn').css('display','none');
+            $('#status').text('All questions are completed. please click home or reset button to reload.')
+        }else{            
+            init(currentPosition+1);
+        }
+    });
+    $('#btn-home').click(function(){
+        window.location.reload();
+    });
+    $('#btn-reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>
