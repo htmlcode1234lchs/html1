@@ -15,7 +15,9 @@
         <button
             class="btn btn-primary shadow-none" id="btn-reset" type="button" style="width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);margin-left: 700px;"></button>
     </div>
-    <div id="div-toptitle" style="width: 900px;margin-left: auto;margin-right: auto;"><label id="lab-text">Force applied by the Engine:</label><input type="number" id="ip-number" style="width: 180px;height: 50px;"><button class="btn btn-primary shadow-none" type="button" style="width: 150px;height: 50px;margin-left: 47px;margin-top: -17px;background-image: url(&quot;assets/img/Go.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+    <div id="div-toptitle" style="width: 900px;margin-left: auto;margin-right: auto;"><label id="lab-text">Force applied by the Engine:</label>
+        <input type="number" id="ip-number" style="width: 180px;height: 50px;">
+        <button class="btn btn-primary shadow-none" id="gobtn" type="button" style="width: 150px;height: 50px;margin-left: 47px;margin-top: -17px;background-image: url(&quot;assets/img/Go.png&quot;);background-color: rgba(0,123,255,0);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
     <div
         class="text-center d-xl-flex align-items-xl-center" id="div-playarea" style="margin-left: auto;margin-right: auto;background-image: url(&quot;assets/img/block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
         <div id="div-car" style="background-image: url(&quot;assets/img/car.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;margin-left: auto;">
@@ -46,5 +48,17 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
+<script>
+$('#gobtn').click(function(){
+    if($('#ip-number').val() == ''){
+        alert('Please enter input value');
+        $('#ip-number').focus();
+        return false;
+    };
+    var w = ($('#ip-number').val() * 9.8).toFixed(2);
+    console.log('w = '+w);
+    var n = (w/2).toFixed(2)
+})
+    //ip-number
+</script>
 </html>
