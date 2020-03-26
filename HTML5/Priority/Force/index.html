@@ -21,23 +21,55 @@
     <div
         class="text-center d-xl-flex align-items-xl-center" id="div-playarea" style="margin-left: auto;margin-right: auto;background-image: url(&quot;assets/img/block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
         <div id="div-car" style="background-image: url(&quot;assets/img/car.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;margin-left: auto;">
-            <div id="div-n1"><label id="lab-n1" style="font-size: 30px;margin-left: 193px;margin-top: 368px;">N1</label><label id="inp-n1" style="margin-left: 189px;font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label></div>
-            <div
-                id="div-worklabel" style="font-size: 30px;"><label id="lab-w" style="font-size: 30px;margin-top: -73px;">W</label><label id="inp-w" style="font-size: 30px;width: 65.75;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label></div>
-        <div id="div-wf"><label id="lab-f" style="font-size: 30px;width: 28px;">f</label><label id="inp-n2" style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label></div>
-        <div id="div-wheels">
-            <div id="div-wheel1" style="background-image: url(&quot;assets/img/Wheel%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="div-wheel2" style="background-image: url(&quot;assets/img/Wheel%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+            <div id="div-n1">
+                <label id="lab-n1" style="font-size: 30px;margin-left: 193px;margin-top: 368px;">N1</label>
+                <label id="inp-n1" style="margin-left: 189px;font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+            </div>
+            <div id="div-worklabel" style="font-size: 30px;">
+                <label id="lab-w" style="font-size: 30px;margin-top: -73px;">W</label>
+                <label id="inp-w" style="font-size: 30px;width: 65.75;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+            </div>
+        <div id="div-wf">
+            <label id="lab-f" style="font-size: 30px;width: 28px;">f</label>
+            <label id="inp-f" style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
         </div>
-        <div id="div-n2"><label id="lab-n2" style="font-size: 30px;margin-top: 6px;">N2</label><label id="inp-n2" style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label></div>
-        <div id="div-F"><label id="inp-F" style="font-size: 30px;background-color: #ffffff;margin-top: 17px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label><label id="lab-F" style="font-size: 35px;width: 90px;margin-top: 14px;margin-left: -5px;">F</label></div>
+        <div id="div-wheels">
+            <div id="div-wheel1" class="wheels" style="background-image: url(&quot;assets/img/Wheel%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+            <div id="div-wheel2" class="wheels" style="background-image: url(&quot;assets/img/Wheel%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+        </div>
+        <div id="div-n2">
+            <label id="lab-n2" style="font-size: 30px;margin-top: 6px;">N2</label>
+            <label id="inp-n2" style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+        </div>
+        <div id="div-F">
+            <label id="inp-F" style="font-size: 30px;background-color: #ffffff;margin-top: 17px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+            <label id="lab-F" style="font-size: 35px;width: 90px;margin-top: 14px;margin-left: -5px;">F</label>
+        </div>
         </div>
         <div id="div-values" style="margin-right: auto;margin-left: auto;width: 350px;">
             <div id="div-top">
-                <div id="div-lveh" style="margin-left: -141px;"><label id="lab-vehicle">Weight of the Vehicle:</label><input type="number" id="fl-vehicle" style="width: 108px;"></div>
-                <div id="div-lfstatic" style="margin-top: 10px;"><label id="lab-Static">Static Friction(μs):0<input class="custom-range" type="range" id="ri-static" style="background-color: rgba(255,255,255,0);" min="0" max="10">1</label></div>
-                <div id="div-kinetic" style="margin-top: 10px;"><label id="lab-kinetic">Kinetic Friction(μk): 0<input class="custom-range" type="range" id="ri-kinetic" style="background-color: rgba(255,255,255,0);" min="0" max="10">1</label></div>
-                <div id="div-acc" style="margin-left: -92px;margin-top: 10px;width: 443px;"><label id="lab-acc">Acceleration:</label><label id="fl-ac" style="background-color: #ffffff;height: 46px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label></div>
+                <div id="div-lveh" style="margin-left: -141px;">
+                    <label id="lab-vehicle">Weight of the Vehicle:</label>
+                    <input type="number" id="fl-vehicle" style="width: 108px;">
+                </div>
+                <div id="div-lfstatic" style="margin-top: 10px;">
+                    <label id="lab-Static">Static Friction(μs):0 </label>
+                    <input class="custom-range" type="range" id="ri-static"
+                        oninput="showStaticVal(this.value)" onchange="showStaticVal(this.value)"
+                        style="background-color: rgba(255,255,255,0);" min="0" max="1" step="0.1" value="0.1">
+                    <label id="staticVal">1</label>
+                </div>
+                <div id="div-kinetic" style="margin-top: 10px;">
+                    <label id="lab-kinetic">Kinetic Friction(μk): 0 </label>
+                    <input class="custom-range" type="range" id="ri-kinetic" 
+                        oninput="showKineticVal(this.value)" onchange="showKineticVal(this.value)"
+                        style="background-color: rgba(255,255,255,0);" min="0" max="1" step="0.1" value="0.1">
+                    <label id="kineticVal">1</label>
+                </div>
+                <div id="div-acc" style="margin-left: -92px;margin-top: 10px;width: 443px;">
+                    <label id="lab-acc">Acceleration:</label>
+                    <label id="fl-ac" style="background-color: #ffffff;height: 46px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</label>
+                </div>
             </div>
             <div id="div-bottom">
                 <div class="text-center" id="div-bottomhint" style="height: 150px;"><label id="lab-friction" style="margin-right: auto;margin-left: auto;">f = Friction applied by the road</label><label id="lab-normal-force" style="margin-left: auto;margin-right: auto;">N1 &amp; N2 = Normal Forces</label><label id="lab-weight"
@@ -51,14 +83,57 @@
 <script>
 $('#gobtn').click(function(){
     if($('#ip-number').val() == ''){
-        alert('Please enter input value');
+        alert('Please enter force value');
         $('#ip-number').focus();
         return false;
     };
-    var w = ($('#ip-number').val() * 9.8).toFixed(2);
+
+    if($('#fl-vehicle').val() == ''){
+        alert('Please enter weight of the value.');
+        $('#ip-number').focus();
+        return false;
+    }
+
+    applyformula();
+   
+});
+
+function applyformula(){
+    var w = ($('#fl-vehicle').val() * 9.8).toFixed(2);
     console.log('w = '+w);
-    var n = (w/2).toFixed(2)
-})
+    $('#inp-w').text(w);
+
+    var n = (w/2).toFixed(2);
+    console.log("n= "+n);
+
+    $('#inp-n1').text(n);
+    $('#inp-n2').text(n);
+
+    var riStatic = $('#ri-static').val();
+    var riKinetic = $('#ri-kinetic').val();
+
+    var force = $('#ip-number').val();
+    var f = (force - (riStatic * w)).toFixed(2);
+    console.log("F= "+f);
+    $('#inp-F').text(force);
+    if(f > 0){        
+        var Acceleration = (force - (riKinetic * w)) / $('#fl-vehicle').val();
+        $('#fl-ac').text(Acceleration);
+        $('#div-wheel2').css('animation', 'rotation '+(Acceleration /100)+'s infinite linear');
+        $('#div-wheel1').css('animation', 'rotation '+(Acceleration/100)+'s infinite linear')
+    }
+
+
+}
+
+function showStaticVal(value){
+    $('#staticVal').text(value);
+    applyformula();
+}
+function showKineticVal(value){
+    $('#kineticVal').text(value);
+    applyformula();
+}
     //ip-number
 </script>
 </html>
