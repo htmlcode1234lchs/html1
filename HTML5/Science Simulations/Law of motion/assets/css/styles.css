@@ -1,0 +1,491 @@
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-animals {
+    width: 563px;
+    height: 748px;
+    margin-top: -3px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-anim1 {
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-anim2 {
+    width: 200px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-anim3 {
+    width: 200px;
+    margin-top: -331px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgdon {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgox {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgbuffalo {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imghor {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imggoat {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgele {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgpig {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #imghen {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgcam {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #imgcow {
+    width: 160px;
+    height: 160px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-classify {
+    width: 905px;
+    margin-top: -43px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-live {
+    width: 370px;
+    height: 700px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div-transport {
+    width: 370px;
+    height: 700px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #rightdivcol-1 {
+    width: 130px;
+    margin-top: 70px;
+    margin-left: 120px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #rightdivcol-2 {
+    width: 130px;
+    margin-top: 70px;
+    margin-left: 120px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div1img1 {
+    width: 120px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div1img1 {
+    width: 100px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div1img2 {
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div1img2 {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div1img3 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div1img4 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div1img5 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div2img1 {
+    width: 120px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div2img2 {
+    width: 120px;
+    height: 120px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div2img3 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div2img4 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #div2img5 {
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-animals {
+    width: 515px;
+    height: 623px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-anim1 {
+    width: 150px;
+    margin-left: 27px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-anim2 {
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-anim3 {
+    width: 150px;
+    margin-top: -299px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgdon {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgox {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgbuffalo {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imghor {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imggoat {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgele {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgpig {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imghen {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgcam {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #imgcow {
+    width: 140px;
+    height: 140px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-classify {
+    width: 650px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-live {
+    width: 321px;
+    height: 583px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #rightdivcol-1 {
+    width: 120px;
+    margin-left: 88px;
+    margin-top: 57px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div1img3 {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div1img4 {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div1img5 {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div-transport {
+    width: 321px;
+    height: 583px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #rightdivcol-2 {
+    width: 120px;
+    margin-top: 57px;
+    margin-left: 88px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div2img1 {
+    width: 100px;
+    height: 90px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div2img2 {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div2img3 {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div2img4 {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #div2img5 {
+    width: 100px;
+    height: 100px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1399px) {
+  #bottomdiv {
+    margin-top: -5px;
+    margin-right: -52px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width:1920px) {
+  #bottomdiv {
+    margin-top: -23px;
+    margin-right: 120px;
+  }
+}
+
+input[type=checkbox], input[type=radio] {
+  box-sizing: border-box;
+  padding: 0;
+  outline: 3px solid rgb(0,0,0);
+}
+
+#div-checkbox-1 {
+  width: 1130px;
+  height: 572px;
+  margin-left: auto;
+  margin-top: 14px;
+}
+
+@media (min-width: 1700px) {
+  #div-classifyindia {
+    margin-left: -1206px;
+  }
+}
+

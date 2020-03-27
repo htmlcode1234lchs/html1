@@ -1,0 +1,97 @@
+:root label.checkbox-bootstrap input[type=checkbox] {
+  opacity: 0;
+  /*position: absolute;*/
+}
+
+:root label.checkbox-bootstrap input[type=checkbox] + span.checkbox-placeholder {
+  width: 14px;
+  height: 14px;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #737373;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 7px 0 -20px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+:root label.checkbox-bootstrap input[type=checkbox]:hover + span.checkbox-placeholder {
+  /*background: #0ccce4;*/
+  border-color: #3B86FF !important;
+}
+
+:root label.checkbox-bootstrap.checkbox-lg input[type=checkbox] + span.checkbox-placeholder {
+  width: 30px;
+  height: 30px;
+  border: 3px solid;
+  border-radius: 5px;
+  border-color: #D7DAE2;
+}
+
+#div-checkbox-1 {
+}
+
+#andhrapradesh {
+}
+
+@media screen and (min-width: 1450px) and (max-width:1699px) {
+  #div-classifyindia {
+    margin-left: -1358px;
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width:1449px) {
+  #div-classifyindia {
+    margin-left: -1157px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1299px) {
+  #div-classifyindia {
+    margin-left: -1107px;
+  }
+}
+
+#div-contextworld {
+}
+
+@media (min-width: 1700px) {
+  #div-classifyworld {
+    margin-left: 370px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1299px) {
+  #div-classifyworld {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (min-width: 1300px) and (max-width:1449px) {
+  #div-classifyworld {
+    margin-left: 85px;
+  }
+}
+
+@media screen and (min-width: 1450px) and (max-width:1699px) {
+  #div-classifyworld {
+    margin-left: 228px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1450px) {
+  #div-classifyrivers {
+    margin-left: -1238px;
+  }
+}
+
+@media (min-width: 1451px) {
+  #div-classifyrivers {
+    margin-left: -1210px;
+  }
+}
+
+#div-classifyindia {
+}
+
