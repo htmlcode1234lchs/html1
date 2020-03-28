@@ -1,0 +1,1765 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Static and Kinetic Frictional Model for Primary School Science Inquiry</title>
+<!--<script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-3326007-19"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-3326007-19');
+</script>
+<script data-ad-client="ca-pub-0121577198857509" async="true" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->   <link rel="stylesheet"  type="text/css" href="_ejs_library/css/ejss.css" />
+    <script src="_ejs_library/scripts/common_script.js"></script>
+    <script src="_ejs_library/scripts/textresizedetector.js"></script>
+    <script src="_ejs_library/ejsS.v1.max.js"></script>
+<script type="text/javascript"><!--//--><![CDATA[//><!--
+/* _inputParameters: an object with different values for the model parameters */
+function frictionprimaryenergy(_topFrame,_libraryPath,_codebasePath, _inputParameters) {
+  var _model = EJSS_CORE.createAnimationLMS();
+  var _view;
+  var _isPlaying = false;
+  var _isPaused = true;
+  var _isMobile = (navigator===undefined) ? false : navigator.userAgent.match(/iPhone|iPad|iPod|Android|BlackBerry|Opera Mini|IEMobile/i);
+
+var _stringProperties = {};
+  var _tools = {
+    showInputDialog : EJSS_INTERFACE.BoxPanel.showInputDialog,
+    showOkDialog : EJSS_INTERFACE.BoxPanel.showOkDialog,
+    showOkCancelDialog : EJSS_INTERFACE.BoxPanel.showOkCancelDialog,
+    downloadText: EJSS_TOOLS.File.downloadText,
+    uploadText: function(action) { EJSS_TOOLS.File.uploadText(_model,action); } 
+  };
+
+  function _play()  { _isPaused = false; _isPlaying = true;  _model.play();  }
+  function _pause() { _isPaused = true;  _isPlaying = false; _model.pause(); }
+  function _step()  { _pause();  _model.step(); }
+  function _reset() { _model.reset();  _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); }
+  _model._play  = _play;
+  _model._pause = _pause;
+  _model._step  = _step;
+  _model._reset = _reset;
+  function _update() { _model.update(); }
+  function _initialize() { _model.initialize(); }
+  function _setFPS(_fps) { _model.setFPS(_fps); }
+  function _setDelay(_delay) { _model.setDelay(_delay); }
+  function _setStepsPerDisplay(_spd) { _model.setStepsPerDisplay(_spd); }
+  function _setUpdateView(_updateView) { _model.setUpdateView(_updateView); }
+  function _setAutoplay(_auto) { _model.setAutoplay(_auto); }
+  function _println(_message) { console.log(_message); }
+
+  function _breakAfterThisPage() { _model.setShouldBreak(true); }
+
+  function _resetSolvers() { if (_model.resetSolvers) _model.resetSolvers(); }
+
+  function _saveText(name,type,content) { if (_model.saveText) _model.saveText(name,type,content); }
+
+  function _saveState(name) { if (_model.saveState) _model.saveState(name); }
+
+  function _saveImage(name,panelname) { if (_model.saveImage) _model.saveImage(name,panelname); }
+
+  function _readState(url,type) { if (_model.readState) _model.readState(url,type); }
+
+  function _readText(url,type,varname) { if (_model.readText) _model.readText(url,type,varname); }
+
+  function _getStringProperty(propertyName) {
+    var _value = _stringProperties[propertyName];
+    if (_value===undefined) return propertyName;
+    else return _value;
+  }
+  var __pagesEnabled = [];
+  function _setPageEnabled(pageName,enabled) { __pagesEnabled[pageName] = enabled; }
+
+  var xmin; // EjsS Model.Variables.Var Table.xmin
+  var xmax; // EjsS Model.Variables.Var Table.xmax
+  var ymin; // EjsS Model.Variables.Var Table.ymin
+  var ymax; // EjsS Model.Variables.Var Table.ymax
+  var rangex; // EjsS Model.Variables.Var Table.rangex
+  var rangey; // EjsS Model.Variables.Var Table.rangey
+  var size; // EjsS Model.Variables.Var Table.size
+  var t; // EjsS Model.Variables.Var Table.t
+  var dt; // EjsS Model.Variables.Var Table.dt
+  var sizex; // EjsS Model.Variables.Var Table.sizex
+  var sizey; // EjsS Model.Variables.Var Table.sizey
+  var x; // EjsS Model.Variables.Var Table.x
+  var y; // EjsS Model.Variables.Var Table.y
+  var v; // EjsS Model.Variables.Var Table.v
+  var vy; // EjsS Model.Variables.Var Table.vy
+  var a; // EjsS Model.Variables.Var Table.a
+  var ay; // EjsS Model.Variables.Var Table.ay
+  var text; // EjsS Model.Variables.Var Table.text
+  var autoscale; // EjsS Model.Variables.Var Table.autoscale
+  var statetext; // EjsS Model.Variables.Var Table.statetext
+  var colorF; // EjsS Model.Variables.Var Table.colorF
+  var scale; // EjsS Model.Variables.Var Table.scale
+  var selected; // EjsS Model.Variables.Var Table.selected
+  var memorycolor; // EjsS Model.Variables.Var Table.memorycolor
+
+  var L; // EjsS Model.Variables.Var Table 2.L
+  var h; // EjsS Model.Variables.Var Table 2.h
+  var angle; // EjsS Model.Variables.Var Table 2.angle
+  var angleDegrees; // EjsS Model.Variables.Var Table 2.angleDegrees
+  var planeLength; // EjsS Model.Variables.Var Table 2.planeLength
+
+  var blockMass; // EjsS Model.Variables.Var Table 3.blockMass
+  var blockSizeX; // EjsS Model.Variables.Var Table 3.blockSizeX
+  var blockSizeY; // EjsS Model.Variables.Var Table 3.blockSizeY
+  var maxPos; // EjsS Model.Variables.Var Table 3.maxPos
+  var gravity; // EjsS Model.Variables.Var Table 3.gravity
+  var weight; // EjsS Model.Variables.Var Table 3.weight
+  var Ft; // EjsS Model.Variables.Var Table 3.Ft
+  var normalForce; // EjsS Model.Variables.Var Table 3.normalForce
+  var directionOfMotion; // EjsS Model.Variables.Var Table 3.directionOfMotion
+  var staticCoefficient; // EjsS Model.Variables.Var Table 3.staticCoefficient
+  var dynamicCoefficient; // EjsS Model.Variables.Var Table 3.dynamicCoefficient
+  var Friction; // EjsS Model.Variables.Var Table 3.Friction
+  var maxStaticFriction; // EjsS Model.Variables.Var Table 3.maxStaticFriction
+  var staticFriction; // EjsS Model.Variables.Var Table 3.staticFriction
+  var dynamicFriction; // EjsS Model.Variables.Var Table 3.dynamicFriction
+  var Ntext; // EjsS Model.Variables.Var Table 3.Ntext
+  var mgtext; // EjsS Model.Variables.Var Table 3.mgtext
+  var Fdftext; // EjsS Model.Variables.Var Table 3.Fdftext
+  var Fntext; // EjsS Model.Variables.Var Table 3.Fntext
+  var Fttext; // EjsS Model.Variables.Var Table 3.Fttext
+  var Ftotaltext; // EjsS Model.Variables.Var Table 3.Ftotaltext
+
+  var polPts; // EjsS Model.Variables.polygon.polPts
+
+  var Width; // EjsS Model.Variables.layout.Width
+  var Height; // EjsS Model.Variables.layout.Height
+  var Width1; // EjsS Model.Variables.layout.Width1
+  var Width2; // EjsS Model.Variables.layout.Width2
+  var Width3; // EjsS Model.Variables.layout.Width3
+  var fvst; // EjsS Model.Variables.layout.fvst
+  var vvst; // EjsS Model.Variables.layout.vvst
+  var avst; // EjsS Model.Variables.layout.avst
+  var disabledworld; // EjsS Model.Variables.layout.disabledworld
+  var disabledfvst; // EjsS Model.Variables.layout.disabledfvst
+  var disabledvvst; // EjsS Model.Variables.layout.disabledvvst
+  var KEvstime; // EjsS Model.Variables.layout.KEvstime
+  var world; // EjsS Model.Variables.layout.world
+
+  var kineticenergy; // EjsS Model.Variables.energies.kineticenergy
+  var potentialenergy; // EjsS Model.Variables.energies.potentialenergy
+  var heat; // EjsS Model.Variables.energies.heat
+  var totalenergy; // EjsS Model.Variables.energies.totalenergy
+  var kineticenergys; // EjsS Model.Variables.energies.kineticenergys
+  var potentialenergys; // EjsS Model.Variables.energies.potentialenergys
+  var heats; // EjsS Model.Variables.energies.heats
+  var totalenergys; // EjsS Model.Variables.energies.totalenergys
+  var counter; // EjsS Model.Variables.energies.counter
+  var font; // EjsS Model.Variables.energies.font
+  var log; // EjsS Model.Variables.energies.log
+
+  var _privateOdesList;
+  var _ODEi_evolution1;
+  var userEvents1=[];
+
+  _model.getOdes = function() { return [_ODEi_evolution1]; };
+
+  _model.removeEvents = function(){
+    userEvents1=[];
+  };
+
+  function _serialize() { return _model.serialize(); }
+
+  _model._userSerialize = function() {
+    return {
+      xmin : xmin,
+      xmax : xmax,
+      ymin : ymin,
+      ymax : ymax,
+      rangex : rangex,
+      rangey : rangey,
+      size : size,
+      t : t,
+      dt : dt,
+      sizex : sizex,
+      sizey : sizey,
+      x : x,
+      y : y,
+      v : v,
+      vy : vy,
+      a : a,
+      ay : ay,
+      text : text,
+      autoscale : autoscale,
+      statetext : statetext,
+      colorF : colorF,
+      scale : scale,
+      selected : selected,
+      memorycolor : memorycolor,
+      L : L,
+      h : h,
+      angle : angle,
+      angleDegrees : angleDegrees,
+      planeLength : planeLength,
+      blockMass : blockMass,
+      blockSizeX : blockSizeX,
+      blockSizeY : blockSizeY,
+      maxPos : maxPos,
+      gravity : gravity,
+      weight : weight,
+      Ft : Ft,
+      normalForce : normalForce,
+      directionOfMotion : directionOfMotion,
+      staticCoefficient : staticCoefficient,
+      dynamicCoefficient : dynamicCoefficient,
+      Friction : Friction,
+      maxStaticFriction : maxStaticFriction,
+      staticFriction : staticFriction,
+      dynamicFriction : dynamicFriction,
+      Ntext : Ntext,
+      mgtext : mgtext,
+      Fdftext : Fdftext,
+      Fntext : Fntext,
+      Fttext : Fttext,
+      Ftotaltext : Ftotaltext,
+      polPts : polPts,
+      Width : Width,
+      Height : Height,
+      Width1 : Width1,
+      Width2 : Width2,
+      Width3 : Width3,
+      fvst : fvst,
+      vvst : vvst,
+      avst : avst,
+      disabledworld : disabledworld,
+      disabledfvst : disabledfvst,
+      disabledvvst : disabledvvst,
+      KEvstime : KEvstime,
+      world : world,
+      kineticenergy : kineticenergy,
+      potentialenergy : potentialenergy,
+      heat : heat,
+      totalenergy : totalenergy,
+      kineticenergys : kineticenergys,
+      potentialenergys : potentialenergys,
+      heats : heats,
+      totalenergys : totalenergys,
+      counter : counter,
+      font : font,
+      log : log
+    };
+  };
+
+  function _serializePublic() { return _model.serializePublic(); }
+
+  _model._userSerializePublic = function() {
+    return {
+      xmin : xmin,
+      xmax : xmax,
+      ymin : ymin,
+      ymax : ymax,
+      rangex : rangex,
+      rangey : rangey,
+      size : size,
+      t : t,
+      dt : dt,
+      sizex : sizex,
+      sizey : sizey,
+      x : x,
+      y : y,
+      v : v,
+      vy : vy,
+      a : a,
+      ay : ay,
+      text : text,
+      autoscale : autoscale,
+      statetext : statetext,
+      colorF : colorF,
+      scale : scale,
+      selected : selected,
+      memorycolor : memorycolor,
+      L : L,
+      h : h,
+      angle : angle,
+      angleDegrees : angleDegrees,
+      planeLength : planeLength,
+      blockMass : blockMass,
+      blockSizeX : blockSizeX,
+      blockSizeY : blockSizeY,
+      maxPos : maxPos,
+      gravity : gravity,
+      weight : weight,
+      Ft : Ft,
+      normalForce : normalForce,
+      directionOfMotion : directionOfMotion,
+      staticCoefficient : staticCoefficient,
+      dynamicCoefficient : dynamicCoefficient,
+      Friction : Friction,
+      maxStaticFriction : maxStaticFriction,
+      staticFriction : staticFriction,
+      dynamicFriction : dynamicFriction,
+      Ntext : Ntext,
+      mgtext : mgtext,
+      Fdftext : Fdftext,
+      Fntext : Fntext,
+      Fttext : Fttext,
+      Ftotaltext : Ftotaltext,
+      polPts : polPts,
+      Width : Width,
+      Height : Height,
+      Width1 : Width1,
+      Width2 : Width2,
+      Width3 : Width3,
+      fvst : fvst,
+      vvst : vvst,
+      avst : avst,
+      disabledworld : disabledworld,
+      disabledfvst : disabledfvst,
+      disabledvvst : disabledvvst,
+      KEvstime : KEvstime,
+      world : world,
+      kineticenergy : kineticenergy,
+      potentialenergy : potentialenergy,
+      heat : heat,
+      totalenergy : totalenergy,
+      kineticenergys : kineticenergys,
+      potentialenergys : potentialenergys,
+      heats : heats,
+      totalenergys : totalenergys,
+      counter : counter,
+      font : font,
+      log : log
+    };
+  };
+
+  _model._readParameters = function(json) {
+    if(typeof json.xmin != "undefined") xmin = json.xmin;
+    if(typeof json.xmax != "undefined") xmax = json.xmax;
+    if(typeof json.ymin != "undefined") ymin = json.ymin;
+    if(typeof json.ymax != "undefined") ymax = json.ymax;
+    if(typeof json.rangex != "undefined") rangex = json.rangex;
+    if(typeof json.rangey != "undefined") rangey = json.rangey;
+    if(typeof json.size != "undefined") size = json.size;
+    if(typeof json.t != "undefined") t = json.t;
+    if(typeof json.dt != "undefined") dt = json.dt;
+    if(typeof json.sizex != "undefined") sizex = json.sizex;
+    if(typeof json.sizey != "undefined") sizey = json.sizey;
+    if(typeof json.x != "undefined") x = json.x;
+    if(typeof json.y != "undefined") y = json.y;
+    if(typeof json.v != "undefined") v = json.v;
+    if(typeof json.vy != "undefined") vy = json.vy;
+    if(typeof json.a != "undefined") a = json.a;
+    if(typeof json.ay != "undefined") ay = json.ay;
+    if(typeof json.text != "undefined") text = json.text;
+    if(typeof json.autoscale != "undefined") autoscale = json.autoscale;
+    if(typeof json.statetext != "undefined") statetext = json.statetext;
+    if(typeof json.colorF != "undefined") colorF = json.colorF;
+    if(typeof json.scale != "undefined") scale = json.scale;
+    if(typeof json.selected != "undefined") selected = json.selected;
+    if(typeof json.memorycolor != "undefined") memorycolor = json.memorycolor;
+    if(typeof json.L != "undefined") L = json.L;
+    if(typeof json.h != "undefined") h = json.h;
+    if(typeof json.angle != "undefined") angle = json.angle;
+    if(typeof json.angleDegrees != "undefined") angleDegrees = json.angleDegrees;
+    if(typeof json.planeLength != "undefined") planeLength = json.planeLength;
+    if(typeof json.blockMass != "undefined") blockMass = json.blockMass;
+    if(typeof json.blockSizeX != "undefined") blockSizeX = json.blockSizeX;
+    if(typeof json.blockSizeY != "undefined") blockSizeY = json.blockSizeY;
+    if(typeof json.maxPos != "undefined") maxPos = json.maxPos;
+    if(typeof json.gravity != "undefined") gravity = json.gravity;
+    if(typeof json.weight != "undefined") weight = json.weight;
+    if(typeof json.Ft != "undefined") Ft = json.Ft;
+    if(typeof json.normalForce != "undefined") normalForce = json.normalForce;
+    if(typeof json.directionOfMotion != "undefined") directionOfMotion = json.directionOfMotion;
+    if(typeof json.staticCoefficient != "undefined") staticCoefficient = json.staticCoefficient;
+    if(typeof json.dynamicCoefficient != "undefined") dynamicCoefficient = json.dynamicCoefficient;
+    if(typeof json.Friction != "undefined") Friction = json.Friction;
+    if(typeof json.maxStaticFriction != "undefined") maxStaticFriction = json.maxStaticFriction;
+    if(typeof json.staticFriction != "undefined") staticFriction = json.staticFriction;
+    if(typeof json.dynamicFriction != "undefined") dynamicFriction = json.dynamicFriction;
+    if(typeof json.Ntext != "undefined") Ntext = json.Ntext;
+    if(typeof json.mgtext != "undefined") mgtext = json.mgtext;
+    if(typeof json.Fdftext != "undefined") Fdftext = json.Fdftext;
+    if(typeof json.Fntext != "undefined") Fntext = json.Fntext;
+    if(typeof json.Fttext != "undefined") Fttext = json.Fttext;
+    if(typeof json.Ftotaltext != "undefined") Ftotaltext = json.Ftotaltext;
+    if(typeof json.polPts != "undefined") polPts = json.polPts;
+    if(typeof json.Width != "undefined") Width = json.Width;
+    if(typeof json.Height != "undefined") Height = json.Height;
+    if(typeof json.Width1 != "undefined") Width1 = json.Width1;
+    if(typeof json.Width2 != "undefined") Width2 = json.Width2;
+    if(typeof json.Width3 != "undefined") Width3 = json.Width3;
+    if(typeof json.fvst != "undefined") fvst = json.fvst;
+    if(typeof json.vvst != "undefined") vvst = json.vvst;
+    if(typeof json.avst != "undefined") avst = json.avst;
+    if(typeof json.disabledworld != "undefined") disabledworld = json.disabledworld;
+    if(typeof json.disabledfvst != "undefined") disabledfvst = json.disabledfvst;
+    if(typeof json.disabledvvst != "undefined") disabledvvst = json.disabledvvst;
+    if(typeof json.KEvstime != "undefined") KEvstime = json.KEvstime;
+    if(typeof json.world != "undefined") world = json.world;
+    if(typeof json.kineticenergy != "undefined") kineticenergy = json.kineticenergy;
+    if(typeof json.potentialenergy != "undefined") potentialenergy = json.potentialenergy;
+    if(typeof json.heat != "undefined") heat = json.heat;
+    if(typeof json.totalenergy != "undefined") totalenergy = json.totalenergy;
+    if(typeof json.kineticenergys != "undefined") kineticenergys = json.kineticenergys;
+    if(typeof json.potentialenergys != "undefined") potentialenergys = json.potentialenergys;
+    if(typeof json.heats != "undefined") heats = json.heats;
+    if(typeof json.totalenergys != "undefined") totalenergys = json.totalenergys;
+    if(typeof json.counter != "undefined") counter = json.counter;
+    if(typeof json.font != "undefined") font = json.font;
+    if(typeof json.log != "undefined") log = json.log;
+  };
+
+  _model._readParametersPublic = function(json) {
+    if(typeof json.xmin != "undefined") xmin = json.xmin;
+    if(typeof json.xmax != "undefined") xmax = json.xmax;
+    if(typeof json.ymin != "undefined") ymin = json.ymin;
+    if(typeof json.ymax != "undefined") ymax = json.ymax;
+    if(typeof json.rangex != "undefined") rangex = json.rangex;
+    if(typeof json.rangey != "undefined") rangey = json.rangey;
+    if(typeof json.size != "undefined") size = json.size;
+    if(typeof json.t != "undefined") t = json.t;
+    if(typeof json.dt != "undefined") dt = json.dt;
+    if(typeof json.sizex != "undefined") sizex = json.sizex;
+    if(typeof json.sizey != "undefined") sizey = json.sizey;
+    if(typeof json.x != "undefined") x = json.x;
+    if(typeof json.y != "undefined") y = json.y;
+    if(typeof json.v != "undefined") v = json.v;
+    if(typeof json.vy != "undefined") vy = json.vy;
+    if(typeof json.a != "undefined") a = json.a;
+    if(typeof json.ay != "undefined") ay = json.ay;
+    if(typeof json.text != "undefined") text = json.text;
+    if(typeof json.autoscale != "undefined") autoscale = json.autoscale;
+    if(typeof json.statetext != "undefined") statetext = json.statetext;
+    if(typeof json.colorF != "undefined") colorF = json.colorF;
+    if(typeof json.scale != "undefined") scale = json.scale;
+    if(typeof json.selected != "undefined") selected = json.selected;
+    if(typeof json.memorycolor != "undefined") memorycolor = json.memorycolor;
+    if(typeof json.L != "undefined") L = json.L;
+    if(typeof json.h != "undefined") h = json.h;
+    if(typeof json.angle != "undefined") angle = json.angle;
+    if(typeof json.angleDegrees != "undefined") angleDegrees = json.angleDegrees;
+    if(typeof json.planeLength != "undefined") planeLength = json.planeLength;
+    if(typeof json.blockMass != "undefined") blockMass = json.blockMass;
+    if(typeof json.blockSizeX != "undefined") blockSizeX = json.blockSizeX;
+    if(typeof json.blockSizeY != "undefined") blockSizeY = json.blockSizeY;
+    if(typeof json.maxPos != "undefined") maxPos = json.maxPos;
+    if(typeof json.gravity != "undefined") gravity = json.gravity;
+    if(typeof json.weight != "undefined") weight = json.weight;
+    if(typeof json.Ft != "undefined") Ft = json.Ft;
+    if(typeof json.normalForce != "undefined") normalForce = json.normalForce;
+    if(typeof json.directionOfMotion != "undefined") directionOfMotion = json.directionOfMotion;
+    if(typeof json.staticCoefficient != "undefined") staticCoefficient = json.staticCoefficient;
+    if(typeof json.dynamicCoefficient != "undefined") dynamicCoefficient = json.dynamicCoefficient;
+    if(typeof json.Friction != "undefined") Friction = json.Friction;
+    if(typeof json.maxStaticFriction != "undefined") maxStaticFriction = json.maxStaticFriction;
+    if(typeof json.staticFriction != "undefined") staticFriction = json.staticFriction;
+    if(typeof json.dynamicFriction != "undefined") dynamicFriction = json.dynamicFriction;
+    if(typeof json.Ntext != "undefined") Ntext = json.Ntext;
+    if(typeof json.mgtext != "undefined") mgtext = json.mgtext;
+    if(typeof json.Fdftext != "undefined") Fdftext = json.Fdftext;
+    if(typeof json.Fntext != "undefined") Fntext = json.Fntext;
+    if(typeof json.Fttext != "undefined") Fttext = json.Fttext;
+    if(typeof json.Ftotaltext != "undefined") Ftotaltext = json.Ftotaltext;
+    if(typeof json.polPts != "undefined") polPts = json.polPts;
+    if(typeof json.Width != "undefined") Width = json.Width;
+    if(typeof json.Height != "undefined") Height = json.Height;
+    if(typeof json.Width1 != "undefined") Width1 = json.Width1;
+    if(typeof json.Width2 != "undefined") Width2 = json.Width2;
+    if(typeof json.Width3 != "undefined") Width3 = json.Width3;
+    if(typeof json.fvst != "undefined") fvst = json.fvst;
+    if(typeof json.vvst != "undefined") vvst = json.vvst;
+    if(typeof json.avst != "undefined") avst = json.avst;
+    if(typeof json.disabledworld != "undefined") disabledworld = json.disabledworld;
+    if(typeof json.disabledfvst != "undefined") disabledfvst = json.disabledfvst;
+    if(typeof json.disabledvvst != "undefined") disabledvvst = json.disabledvvst;
+    if(typeof json.KEvstime != "undefined") KEvstime = json.KEvstime;
+    if(typeof json.world != "undefined") world = json.world;
+    if(typeof json.kineticenergy != "undefined") kineticenergy = json.kineticenergy;
+    if(typeof json.potentialenergy != "undefined") potentialenergy = json.potentialenergy;
+    if(typeof json.heat != "undefined") heat = json.heat;
+    if(typeof json.totalenergy != "undefined") totalenergy = json.totalenergy;
+    if(typeof json.kineticenergys != "undefined") kineticenergys = json.kineticenergys;
+    if(typeof json.potentialenergys != "undefined") potentialenergys = json.potentialenergys;
+    if(typeof json.heats != "undefined") heats = json.heats;
+    if(typeof json.totalenergys != "undefined") totalenergys = json.totalenergys;
+    if(typeof json.counter != "undefined") counter = json.counter;
+    if(typeof json.font != "undefined") font = json.font;
+    if(typeof json.log != "undefined") log = json.log;
+  };
+
+  function _unserializePublic(json) { return _model.unserializePublic(json); }
+
+  _model._userUnserializePublic = function(json) {
+    _model._readParametersPublic(json);
+   _resetSolvers();
+   _model.update();
+  };
+
+  function _unserialize(json) { return _model.unserialize(json); }
+
+  _model._userUnserialize = function(json) {
+    _model._readParameters(json);
+   _resetSolvers();
+   _model.update();
+  };
+
+  _model.addToReset(function() {
+    __pagesEnabled["Init Page"] = true;
+    __pagesEnabled["Init Page 2"] = true;
+    __pagesEnabled["Evol Page"] = true;
+    __pagesEnabled["Eventcountervkeepchangingatzerovalue"] = true;
+    __pagesEnabled["Event Pause"] = true;
+    __pagesEnabled["FixRel Page"] = true;
+    __pagesEnabled["text"] = true;
+    __pagesEnabled["colorline"] = true;
+    __pagesEnabled["energies"] = true;
+  });
+
+  _model.addToReset(function() {
+    xmin = -2; // EjsS Model.Variables.Var Table.xmin
+    xmax = 22; // EjsS Model.Variables.Var Table.xmax
+    ymin = -2; // EjsS Model.Variables.Var Table.ymin
+    ymax = 22; // EjsS Model.Variables.Var Table.ymax
+    rangex = xmax-xmin; // EjsS Model.Variables.Var Table.rangex
+    rangey = ymax-ymin; // EjsS Model.Variables.Var Table.rangey
+    size = rangex/20; // EjsS Model.Variables.Var Table.size
+    t = 0; // EjsS Model.Variables.Var Table.t
+    dt = 0.05; // EjsS Model.Variables.Var Table.dt
+    sizex = rangex/10; // EjsS Model.Variables.Var Table.sizex
+    sizey = rangey/10; // EjsS Model.Variables.Var Table.sizey
+    x = 0; // EjsS Model.Variables.Var Table.x
+    y = 0; // EjsS Model.Variables.Var Table.y
+    v = 0; // EjsS Model.Variables.Var Table.v
+    vy = 0; // EjsS Model.Variables.Var Table.vy
+    a = 0; // EjsS Model.Variables.Var Table.a
+    ay = 0; // EjsS Model.Variables.Var Table.ay
+    text = "select/change angle,x,v, mu_s, mu_k and click play"; // EjsS Model.Variables.Var Table.text
+    statetext = ""; // EjsS Model.Variables.Var Table.statetext
+    colorF = "rgba(200,220,208,255)"; // EjsS Model.Variables.Var Table.colorF
+    scale = 1; // EjsS Model.Variables.Var Table.scale
+    selected = new Array(1); // EjsS Model.Variables.Var Table.selected
+    (function () {
+      var _i0;
+      for (_i0=0; _i0<1; _i0+=1) {  // EjsS Model.Variables.Var Table.selected
+        selected[_i0] = "glass";  // EjsS Model.Variables.Var Table.selected
+      }
+    }());
+    memorycolor = 0; // EjsS Model.Variables.Var Table.memorycolor
+  });
+
+  _model.addToReset(function() {
+    L = 20.0; // EjsS Model.Variables.Var Table 2.L
+    h = L*Math.tan(0.523598775); // EjsS Model.Variables.Var Table 2.h
+    angle = Math.atan2(h,L); // EjsS Model.Variables.Var Table 2.angle
+    angleDegrees = angle*180/Math.PI; // EjsS Model.Variables.Var Table 2.angleDegrees
+    planeLength = Math.sqrt(L*L+h*h); // EjsS Model.Variables.Var Table 2.planeLength
+  });
+
+  _model.addToReset(function() {
+    blockMass = 1; // EjsS Model.Variables.Var Table 3.blockMass
+    blockSizeX = 4; // EjsS Model.Variables.Var Table 3.blockSizeX
+    blockSizeY = 2; // EjsS Model.Variables.Var Table 3.blockSizeY
+    maxPos = planeLength; // EjsS Model.Variables.Var Table 3.maxPos
+    gravity = 9.81; // EjsS Model.Variables.Var Table 3.gravity
+    weight = blockMass*gravity; // EjsS Model.Variables.Var Table 3.weight
+    Ft = weight*Math.sin(angle); // EjsS Model.Variables.Var Table 3.Ft
+    normalForce = weight*Math.cos(angle); // EjsS Model.Variables.Var Table 3.normalForce
+    directionOfMotion = 1; // EjsS Model.Variables.Var Table 3.directionOfMotion
+    staticCoefficient = 0.5; // EjsS Model.Variables.Var Table 3.staticCoefficient
+    dynamicCoefficient = 0.2; // EjsS Model.Variables.Var Table 3.dynamicCoefficient
+    Friction = 0; // EjsS Model.Variables.Var Table 3.Friction
+    maxStaticFriction = staticCoefficient*normalForce; // EjsS Model.Variables.Var Table 3.maxStaticFriction
+    staticFriction = -Math.min(Ft,maxStaticFriction); // EjsS Model.Variables.Var Table 3.staticFriction
+    dynamicFriction = -dynamicCoefficient*normalForce; // EjsS Model.Variables.Var Table 3.dynamicFriction
+  });
+
+  _model.addToReset(function() {
+    polPts = [[0,0],[planeLength,0],[h*Math.sin(angle),h*Math.cos(angle)]]; // EjsS Model.Variables.polygon.polPts
+  });
+
+  _model.addToReset(function() {
+    Width = (_isEPub)?"400":"100%"; // EjsS Model.Variables.layout.Width
+    Height = (_isEPub)?"500":"100%"; // EjsS Model.Variables.layout.Height
+    Width1 = "60%"; // EjsS Model.Variables.layout.Width1
+    Width2 = "40%"; // EjsS Model.Variables.layout.Width2
+    Width3 = "0%"; // EjsS Model.Variables.layout.Width3
+    fvst = true; // EjsS Model.Variables.layout.fvst
+    vvst = false; // EjsS Model.Variables.layout.vvst
+    disabledvvst = true; // EjsS Model.Variables.layout.disabledvvst
+    KEvstime = true; // EjsS Model.Variables.layout.KEvstime
+    world = true; // EjsS Model.Variables.layout.world
+  });
+
+  _model.addToReset(function() {
+    kineticenergy = 0; // EjsS Model.Variables.energies.kineticenergy
+    potentialenergy = blockMass*gravity*(L-x)*Math.sin(angle); // EjsS Model.Variables.energies.potentialenergy
+    heat = 0; // EjsS Model.Variables.energies.heat
+    totalenergy = kineticenergy+potentialenergy+heat; // EjsS Model.Variables.energies.totalenergy
+    kineticenergys = 0; // EjsS Model.Variables.energies.kineticenergys
+    potentialenergys = blockMass*gravity*(L-x)*Math.sin(angle); // EjsS Model.Variables.energies.potentialenergys
+    heats = heat; // EjsS Model.Variables.energies.heats
+    totalenergys = kineticenergy+potentialenergy+heat; // EjsS Model.Variables.energies.totalenergys
+    font = "normal normal 2vw "; // EjsS Model.Variables.energies.font
+  });
+
+  if (_inputParameters) {
+    _inputParameters = _model.parseInputParameters(_inputParameters);
+    if (_inputParameters) _model.addToReset(function() { _model._readParameters(_inputParameters); });
+  }
+
+  _model.addToReset(function() {
+    _privateOdesList=[];
+    _ODEi_evolution1 = _ODE_evolution1();
+    _privateOdesList.push(_ODEi_evolution1);
+  });
+
+  _model.addToReset(function() {
+    _model.setAutoplay(false);
+    _model.setPauseOnPageExit(true);
+    _model.setFPS(20);
+    _model.setStepsPerDisplay(1);
+  });
+
+  function totalForce(time,position,velocity) {  // > CustomCode.Lib Page:1
+  // var time;  // > CustomCode.Lib Page:2
+   //var position;  // > CustomCode.Lib Page:3
+   //var velocity;  // > CustomCode.Lib Page:4
+   if (velocity!==0) return Ft+directionOfMotion*dynamicFriction;  // > CustomCode.Lib Page:5
+    return Math.max(0,staticFriction+Ft);  // > CustomCode.Lib Page:6
+  }  // > CustomCode.Lib Page:7
+  //https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Using_full_screen_mode  // > CustomCode.Lib Page:8
+  // does not work for iOS   // > CustomCode.Lib Page:9
+  /*jslint browser:true */  // > CustomCode.Lib Page:10
+  function toggleFullScreen() {  // > CustomCode.Lib Page:11
+    if (!document.fullscreenElement &&    // alternative standard method  // > CustomCode.Lib Page:12
+        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement ) {  // current working methods  // > CustomCode.Lib Page:13
+      if (document.documentElement.requestFullscreen) {  // > CustomCode.Lib Page:14
+        document.documentElement.requestFullscreen();  // > CustomCode.Lib Page:15
+      } else if (document.documentElement.msRequestFullscreen) {  // > CustomCode.Lib Page:16
+        document.documentElement.msRequestFullscreen();  // > CustomCode.Lib Page:17
+      } else if (document.documentElement.mozRequestFullScreen) {  // > CustomCode.Lib Page:18
+        document.documentElement.mozRequestFullScreen();  // > CustomCode.Lib Page:19
+      } else if (document.documentElement.webkitRequestFullscreen) {  // > CustomCode.Lib Page:20
+        document.documentElement.webkitRequestFullscreen();  // > CustomCode.Lib Page:21
+      }  // > CustomCode.Lib Page:22
+    } else {  // > CustomCode.Lib Page:23
+      if (document.exitFullscreen) {  // > CustomCode.Lib Page:24
+        document.exitFullscreen();  // > CustomCode.Lib Page:25
+      } else if (document.msExitFullscreen) {  // > CustomCode.Lib Page:26
+        document.msExitFullscreen();  // > CustomCode.Lib Page:27
+      } else if (document.mozCancelFullScreen) {  // > CustomCode.Lib Page:28
+        document.mozCancelFullScreen();  // > CustomCode.Lib Page:29
+      } else if (document.webkitExitFullscreen) {  // > CustomCode.Lib Page:30
+        document.webkitExitFullscreen();  // > CustomCode.Lib Page:31
+      }  // > CustomCode.Lib Page:32
+    }  // > CustomCode.Lib Page:33
+  }  // > CustomCode.Lib Page:34
+
+  function logfunction () {  // > CustomCode.log:1
+  log = log+ "\n run "+counter+" , t= "+t.toFixed(0)+" s ,"+selected +" , kineticenegy="+kineticenergy.toFixed(0)+ " J, " + "potentialenergy="+ potentialenergy.toFixed(0) + " J , " + "heat="+ heat.toFixed(0)+ " J" ;  // > CustomCode.log:2
+  }  // > CustomCode.log:3
+
+  _model.addToInitialization(function() {
+    if (!__pagesEnabled["Init Page"]) return;
+    if(log==undefined){  // > Initialization.Init Page:1
+      log="";  // > Initialization.Init Page:2
+      }  // > Initialization.Init Page:3
+    if(counter==undefined){  // > Initialization.Init Page:4
+      counter=0;  // > Initialization.Init Page:5
+      }  // > Initialization.Init Page:6
+  });
+
+  _model.addToInitialization(function() {
+    if (!__pagesEnabled["Init Page 2"]) return;
+    if (_isMobile){  // > Initialization.Init Page 2:1
+      //do nothing  // > Initialization.Init Page 2:2
+      }  // > Initialization.Init Page 2:3
+        // > Initialization.Init Page 2:4
+      else{  // > Initialization.Init Page 2:5
+        // copy this into the initialization  // > Initialization.Init Page 2:6
+    // make the font bigger  // > Initialization.Init Page 2:7
+    _view.plottingPanel.getMessageDecoration("TL").getFont().setFontSize("1vw");  // > Initialization.Init Page 2:8
+    _view.plottingPanel.getMessageDecoration("TR").getFont().setFontSize("1vw");  // > Initialization.Init Page 2:9
+    _view.plottingPanel.getMessageDecoration("BL").getFont().setFontSize("1vw");  // > Initialization.Init Page 2:10
+    _view.plottingPanel.getMessageDecoration("BR").getFont().setFontSize("1vw");  // > Initialization.Init Page 2:11
+        }  // > Initialization.Init Page 2:12
+  });
+
+  _model.addToInitialization(function() {
+    _initializeSolvers();
+  });
+
+  _model.addToEvolution(function() {
+    if (!__pagesEnabled["Evol Page"]) return;
+    _ODEi_evolution1.step();
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["FixRel Page"]) return;
+    // In case h changes  // > FixedRelations.FixRel Page:1
+    angle = Math.atan2(h,L);  // > FixedRelations.FixRel Page:2
+    angleDegrees = angle*180/Math.PI;  // > FixedRelations.FixRel Page:3
+    planeLength = Math.sqrt(L*L+h*h);  // > FixedRelations.FixRel Page:4
+    maxPos = planeLength-blockSizeX/2;  // > FixedRelations.FixRel Page:5
+    polPts = [[0,0],[planeLength,0],[h*Math.sin(angle),h*Math.cos(angle)]];  // > FixedRelations.FixRel Page:6
+    // Forces  // > FixedRelations.FixRel Page:7
+    weight = blockMass*gravity;  // > FixedRelations.FixRel Page:8
+    Ft = weight*Math.sin(angle);  // > FixedRelations.FixRel Page:9
+    normalForce = weight*Math.cos(angle);  // > FixedRelations.FixRel Page:10
+    maxStaticFriction = normalForce*staticCoefficient;  // > FixedRelations.FixRel Page:11
+    staticFriction = -Math.min(Ft,maxStaticFriction);  // > FixedRelations.FixRel Page:12
+    dynamicFriction = -normalForce*dynamicCoefficient;  // > FixedRelations.FixRel Page:13
+    if (v===0&&totalForce(t,x,v)===0){  // > FixedRelations.FixRel Page:14
+      Friction = staticFriction;  // > FixedRelations.FixRel Page:15
+      Fdftext = "f_s = "+_view._format(-staticFriction,"0.000")+ " N ";  // > FixedRelations.FixRel Page:16
+      statetext= " in equilibrium, F_net = " + _view._format(totalForce(t,x,v),"0.000") + " N ";   // > FixedRelations.FixRel Page:17
+      colorF="rgba(0,0,255,255)";  // > FixedRelations.FixRel Page:18
+      }  // > FixedRelations.FixRel Page:19
+      else if (v===0&&totalForce(t,x,v)!==0){  // > FixedRelations.FixRel Page:20
+      Friction = staticFriction;  // > FixedRelations.FixRel Page:21
+      Fdftext = "f_s = "+_view._format(-staticFriction,"0.000")+ " N ";  // > FixedRelations.FixRel Page:22
+      statetext= " NOT in equilibrium, F_net = " + _view._format(totalForce(t,x,v),"0.000") + " N ";   // > FixedRelations.FixRel Page:23
+      colorF="rgba(0,0,255,255)";  // > FixedRelations.FixRel Page:24
+      }  // > FixedRelations.FixRel Page:25
+      else if (v!==0){  // > FixedRelations.FixRel Page:26
+        Friction =dynamicFriction*directionOfMotion;  // > FixedRelations.FixRel Page:27
+       Fdftext = "f_k = "+_view._format(-dynamicFriction,"0.000")+ " N ";  // > FixedRelations.FixRel Page:28
+       statetext= " NOT in equilibrium and in motion, F_net = " + _view._format(totalForce(t,x,v),"0.000") + " N ";   // > FixedRelations.FixRel Page:29
+       colorF="rgba(255,0,255,255)";  // > FixedRelations.FixRel Page:30
+       }  // > FixedRelations.FixRel Page:31
+    // current direction of motion  // > FixedRelations.FixRel Page:32
+    if (v===0){  // > FixedRelations.FixRel Page:33
+      directionOfMotion=0;  // > FixedRelations.FixRel Page:34
+      }  // > FixedRelations.FixRel Page:35
+      else if (v<0){  // > FixedRelations.FixRel Page:36
+        directionOfMotion=-1;  // > FixedRelations.FixRel Page:37
+        }  // > FixedRelations.FixRel Page:38
+        else if (v>0){  // > FixedRelations.FixRel Page:39
+        directionOfMotion=+1;  // > FixedRelations.FixRel Page:40
+        }  // > FixedRelations.FixRel Page:41
+        // > FixedRelations.FixRel Page:42
+    //directionOfMotion = v===0 ? 0 : (v<0? -1 : 1);  // > FixedRelations.FixRel Page:43
+  });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["text"]) return;
+    //text by lookang  // > FixedRelations.text:1
+    Fttext = " F_{tangent} = " + _view._format(Ft,"0.000") + " N ";  // > FixedRelations.text:2
+    Fntext = " F_{normal} = " + _view._format(normalForce,"0.000") + " N ";  // > FixedRelations.text:3
+    mgtext = " mg = " + _view._format(weight,"0.000")+ " N ";  // > FixedRelations.text:4
+    Ntext = " N = " + _view._format(normalForce,"0.000") + " N ";  // > FixedRelations.text:5
+    Ftotaltext = " F_{nett} = " + _view._format(totalForce(t,x,v),"0.000") + " N ";  // > FixedRelations.text:6
+  });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["colorline"]) return;
+  });
+
+  _model.addToFixedRelations(function() {
+    if (!__pagesEnabled["energies"]) return;
+    kineticenergy=0.5*blockMass*v*v;  // > FixedRelations.energies:1
+    potentialenergy=blockMass*gravity*(L-x)*Math.sin(angle);  // > FixedRelations.energies:2
+    heat=Math.abs(dynamicFriction*x);  // > FixedRelations.energies:3
+    totalenergy=kineticenergy+potentialenergy+heat;  // > FixedRelations.energies:4
+    //console.log(potentialenergy,heat,totalenergy);  // > FixedRelations.energies:5
+  });
+
+  _model.addToFixedRelations(function() { _isPaused = _model.isPaused(); _isPlaying = _model.isPlaying(); });
+
+  function _initializeSolvers() {
+    for (var i=0,n=_privateOdesList.length; i<n; i++) _privateOdesList[i].initializeSolver();
+  }
+
+  function _automaticResetSolvers() {
+    for (var i=0,n=_privateOdesList.length; i<n; i++) _privateOdesList[i].automaticResetSolver();
+  }
+
+  _model.resetSolvers = function() {
+    for (var i=0,n=_privateOdesList.length; i<n; i++) _privateOdesList[i].resetSolver();
+  };
+
+  _getODE = function (_odeName) {
+    if (_odeName=="Evol Page") return _ODEi_evolution1;
+    return null;
+  }
+
+  function _getEventSolver(_odeName) {
+    var ode = _getODE(_odeName);
+    if (ode===null) return null;
+    return ode.getEventSolver();
+  }
+
+  function _setSolverClass(_odeName, _engine) {
+    var ode = _getODE(_odeName);
+    if (ode===null) return;
+    if (!_engine.setODE) {
+      var classname = _engine.toLowerCase();
+      if      (classname.indexOf("boga")>=0)   _engine = EJSS_ODE_SOLVERS.bogackiShampine23;
+      else if (classname.indexOf("cash")>=0)   _engine = EJSS_ODE_SOLVERS.cashKarp45;
+      else if (classname.indexOf("dopri5")>=0) _engine = EJSS_ODE_SOLVERS.dopri5;
+      else if (classname.indexOf("dopri8")>=0) _engine = EJSS_ODE_SOLVERS.dopri853;
+      else if (classname.indexOf("richa")>=0)  _engine = EJSS_ODE_SOLVERS.eulerRichardson;
+      else if (classname.indexOf("euler")>=0)  _engine = EJSS_ODE_SOLVERS.euler;
+      else if (classname.indexOf("fehlberg87")>=0) _engine = EJSS_ODE_SOLVERS.fehlberg87;
+      else if (classname.indexOf("fehlberg8")>=0)  _engine = EJSS_ODE_SOLVERS.fehlberg8;
+      else if (classname.indexOf("radau")>=0)   _engine = EJSS_ODE_SOLVERS.radau5;
+      else if (classname.indexOf("runge")>=0)  _engine = EJSS_ODE_SOLVERS.rungeKutta4;
+      else if (classname.indexOf("rk4")>=0)    _engine = EJSS_ODE_SOLVERS.rungeKutta4;
+      else if (classname.indexOf("verlet")>=0) _engine = EJSS_ODE_SOLVERS.velocityVerlet;
+    }
+    if (_engine) ode.setSolverClass(_engine);
+  }
+
+  function _ODE_evolution1() {
+    var __odeSelf = {};
+    var __eventSolver;
+    var __solverClass = EJSS_ODE_SOLVERS.rungeKutta4;
+    var __state=[];
+    var _ODE_evolution1_Event1;
+    var _ODE_evolution1_Event2;
+    var __ignoreErrors=false;
+    var __mustInitialize=true;
+    var __isEnabled=true;
+    var __mustUserReinitialize=false;
+    var __mustReinitialize=true;
+
+
+    __odeSelf._getOdeVars = function (){ return["x","v","t"]};
+
+    __odeSelf.setSolverClass = function(__aSolverClass) {
+      __solverClass = __aSolverClass;
+      __instantiateSolver();
+    };
+
+    function __instantiateSolver() {
+      __state=[];
+      __pushState();
+      __eventSolver = EJSS_ODE_SOLVERS.interpolatorEventSolver(__solverClass(),__odeSelf);
+      __mustInitialize = true;
+    }
+
+    __odeSelf.setEnabled = function(_enabled) { __isEnabled = _enabled; };
+
+    __odeSelf.getIndependentVariableValue = function() { return __eventSolver.getIndependentVariableValue(); };
+
+    __odeSelf.getInternalStepSize = function() { return __eventSolver.getInternalStepSize(); };
+
+    __odeSelf.isAccelerationIndependentOfVelocity = function() { return false; };
+
+    __odeSelf.initializeSolver = function() {
+      if (__arraysChanged()) { __instantiateSolver(); __odeSelf.initializeSolver(); return; }
+      __pushState();
+      __eventSolver.initialize(dt);
+      __eventSolver.setBestInterpolation(false);
+      __eventSolver.setMaximumInternalSteps(10000);
+      __eventSolver.removeAllEvents();
+      if (__pagesEnabled["Eventcountervkeepchangingatzerovalue"]) __eventSolver.addEvent(_ODE_evolution1_Event1());
+      if (__pagesEnabled["Event Pause"]) __eventSolver.addEvent(_ODE_evolution1_Event2());
+      for(k in userEvents1){__eventSolver.addEvent(userEvents1[k]);}
+      __eventSolver.setEstimateFirstStep(false);
+      __eventSolver.setEnableExceptions(false);
+      __eventSolver.setTolerances(0.00001,0.00001);
+      __mustReinitialize = true;
+      __mustInitialize = false;
+    };
+
+    function __pushState() {
+      // Copy our variables to __state[] 
+        var __j=0;
+        var __n=0;
+        var __cIn=0;
+        if (__state[__cIn]!=x) __mustReinitialize = true;
+        __state[__cIn++] = x;
+        if (__state[__cIn]!=v) __mustReinitialize = true;
+        __state[__cIn++] = v;
+        if (__state[__cIn]!=t) __mustReinitialize = true;
+        __state[__cIn++] = t;
+    }
+
+    function __arraysChanged () {
+      return false;
+    }
+
+    __odeSelf.getEventSolver = function() {
+      return __eventSolver;
+    };
+
+    __odeSelf.resetSolver = function() {
+      __mustUserReinitialize = true;
+    };
+
+    __odeSelf.automaticResetSolver = function() {
+      __mustReinitialize = true;
+    };
+
+    function __errorAction () {
+      if (__ignoreErrors) return;
+      console.log (__eventSolver.getErrorMessage());
+      _pause();
+      // Make sure the solver is reinitialized;
+      __mustReinitialize = true;
+    }
+
+    __odeSelf.step = function() { return __privateStep(false); };
+
+    __odeSelf.solverStep = function() { return __privateStep(true); };
+
+    function __privateStep(__takeMaximumStep) {
+      if (!__isEnabled) return 0;
+      if (dt===0) return 0;
+      if (__mustInitialize) __odeSelf.initializeSolver();
+      if (__arraysChanged()) { __instantiateSolver(); __odeSelf.initializeSolver(); }
+      __eventSolver.setStepSize(dt);
+      __eventSolver.setInternalStepSize(dt);
+      __eventSolver.setMaximumInternalSteps(10000);
+      __eventSolver.setTolerances(0.00001,0.00001);
+      __pushState();
+      if (__mustUserReinitialize) { 
+        __eventSolver.userReinitialize();
+        __mustUserReinitialize = false;
+        __mustReinitialize = false;
+        if (__eventSolver.getErrorCode()!=EJSS_ODE_SOLVERS.ERROR.NO_ERROR) __errorAction();
+      }
+      else if (__mustReinitialize) { 
+        __eventSolver.reinitialize();
+        __mustReinitialize = false;
+        if (__eventSolver.getErrorCode()!=EJSS_ODE_SOLVERS.ERROR.NO_ERROR) __errorAction();
+      }
+      var __stepTaken = __takeMaximumStep ? __eventSolver.maxStep() : __eventSolver.step();
+      // Extract our variables from __state
+        var __i=0;
+        var __cOut=0;
+        x = __state[__cOut++];
+        v = __state[__cOut++];
+        t = __state[__cOut++];
+      // Check for error
+      if (__eventSolver.getErrorCode()!=EJSS_ODE_SOLVERS.ERROR.NO_ERROR) __errorAction();
+      return __stepTaken;
+    }
+
+    __odeSelf.getState = function() { return __state; };
+
+    __odeSelf.getRate = function(_aState,_aRate) {
+      // Extract our variables from _aState
+        var __i=0;
+        var __cOut=0;
+        var x = _aState[__cOut++];
+        var v = _aState[__cOut++];
+        var t = _aState[__cOut++];
+      // Compute the rate
+        var __cRate=0;
+        _aRate[__cRate++] = v; // Rate for ODE: Evol Page:x
+        _aRate[__cRate++] = totalForce(t,x,v)/blockMass; // Rate for ODE: Evol Page:v
+        _aRate[__cRate++] = 1; // independent variable
+        return _aRate;
+    }; //end of getRate
+
+    __odeSelf._addEvent = function(userCondition,userAction,eventType,eventMethod,maxIter,eventTolerance,endAtEvent){
+    var User_Event = function (userCondition,userAction,eventType,eventMethod,maxIter,eventTolerance,endAtEvent) {
+      var _eventSelf = {};
+
+      _eventSelf.getTypeOfEvent = function() { return eventType; };
+
+      _eventSelf.getRootFindingMethod = function() { return eventMethod; };
+
+      _eventSelf.getMaxIterations = function() { return maxIter; };
+
+      _eventSelf.getTolerance = function() { return eventTolerance; };
+
+      _eventSelf.evaluate = function(_aState) { 
+      // Extract our variables from _aState
+        var __i=0;
+        var __cOut=0;
+        var x = _aState[__cOut++];
+        var v = _aState[__cOut++];
+        var t = _aState[__cOut++];
+      return eval(userCondition);
+      };
+
+      _eventSelf.action = function() { 
+      // Extract our variables from __state
+        var __i=0;
+        var __cOut=0;
+        x = __state[__cOut++];
+        v = __state[__cOut++];
+        t = __state[__cOut++];
+        var _returnValue = __userDefinedAction();
+      // Copy our variables to __state[] 
+        var __j=0;
+        var __n=0;
+        var __cIn=0;
+        __state[__cIn++] = x;
+        __state[__cIn++] = v;
+        __state[__cIn++] = t;
+        return _returnValue;
+      };
+
+      function __userDefinedAction() {
+        if (undefined != functions) eval(functions.toString());
+        eval(userAction);
+        return endAtEvent;
+      }
+
+      return _eventSelf;
+    }; // End of event
+
+   userEvents1.push(User_Event(userCondition,userAction,eventType,eventMethod,maxIter,eventTolerance,endAtEvent));
+   }
+
+    _ODE_evolution1_Event1 = function() {
+      var _eventSelf = {};
+
+      _eventSelf.getTypeOfEvent = function() { return EJSS_ODE_SOLVERS.EVENT_TYPE.CROSSING_EVENT; };
+
+      _eventSelf.getRootFindingMethod = function() { return EJSS_ODE_SOLVERS.EVENT_METHOD.BISECTION; };
+
+      _eventSelf.getMaxIterations = function() { return 100; };
+
+      _eventSelf.getTolerance = function() { return 1.0e-5; };
+
+      _eventSelf.evaluate = function(_aState) { 
+      // Extract our variables from _aState
+        var __i=0;
+        var __cOut=0;
+        var x = _aState[__cOut++];
+        var v = _aState[__cOut++];
+        var t = _aState[__cOut++];
+        if (directionOfMotion===0) return 1.0; // no event is possible  // > Event zero-condition for page Evol Page:1
+        return directionOfMotion*v;  // > Event zero-condition for page Evol Page:2
+      };
+
+      _eventSelf.action = function() { 
+      // Extract our variables from __state
+        var __i=0;
+        var __cOut=0;
+        x = __state[__cOut++];
+        v = __state[__cOut++];
+        t = __state[__cOut++];
+        var _returnValue = __userDefinedAction();
+      // Copy our variables to __state[] 
+        var __j=0;
+        var __n=0;
+        var __cIn=0;
+        __state[__cIn++] = x;
+        __state[__cIn++] = v;
+        __state[__cIn++] = t;
+        return _returnValue;
+      };
+
+      function __userDefinedAction() {
+        v = 0;  // > Event action for page Evol Page:1
+        return true;
+      }
+
+      return _eventSelf;
+    }; // End of event
+
+    _ODE_evolution1_Event2 = function() {
+      var _eventSelf = {};
+
+      _eventSelf.getTypeOfEvent = function() { return EJSS_ODE_SOLVERS.EVENT_TYPE.CROSSING_EVENT; };
+
+      _eventSelf.getRootFindingMethod = function() { return EJSS_ODE_SOLVERS.EVENT_METHOD.BISECTION; };
+
+      _eventSelf.getMaxIterations = function() { return 100; };
+
+      _eventSelf.getTolerance = function() { return 1.0e-5; };
+
+      _eventSelf.evaluate = function(_aState) { 
+      // Extract our variables from _aState
+        var __i=0;
+        var __cOut=0;
+        var x = _aState[__cOut++];
+        var v = _aState[__cOut++];
+        var t = _aState[__cOut++];
+        return L-blockSizeX - x;  // > Event zero-condition for page Evol Page:1
+      };
+
+      _eventSelf.action = function() { 
+      // Extract our variables from __state
+        var __i=0;
+        var __cOut=0;
+        x = __state[__cOut++];
+        v = __state[__cOut++];
+        t = __state[__cOut++];
+        var _returnValue = __userDefinedAction();
+      // Copy our variables to __state[] 
+        var __j=0;
+        var __n=0;
+        var __cIn=0;
+        __state[__cIn++] = x;
+        __state[__cIn++] = v;
+        __state[__cIn++] = t;
+        return _returnValue;
+      };
+
+      function __userDefinedAction() {
+        text="paused";  // > Event action for page Evol Page:1
+        counter=counter+1;  // > Event action for page Evol Page:2
+        _pause();  // > Event action for page Evol Page:3
+        return true;
+      }
+
+      return _eventSelf;
+    }; // End of event
+
+    __instantiateSolver();
+
+    return __odeSelf;
+  }
+
+  function _historic_x(__time) {
+    var __index = 0;
+    return _ODEi_evolution1.getEventSolver().getStateHistory().interpolate(__time,__index);
+  }
+
+  function _historic_v(__time) {
+    var __index = 0 + 1;
+    return _ODEi_evolution1.getEventSolver().getStateHistory().interpolate(__time,__index);
+  }
+
+    _model._fontResized = function(iBase,iSize,iDelta) {
+      _view._fontResized(iBase,iSize,iDelta);
+  }; // end of _fontResized
+
+  function _getViews() {
+    var _viewsInfo = [];
+    var _counter = 0;
+    _viewsInfo[_counter++] = { name : "HtmlView Page", width : 800, height : 600 };
+    return _viewsInfo;
+  } // end of _getViews
+
+  function _selectView(_viewNumber) {
+    _view = null;
+    _view = new frictionprimaryenergy_View(_topFrame,_viewNumber,_libraryPath,_codebasePath);
+    var _view_super_reset = _view._reset;
+    _view._reset = function() {
+      _view_super_reset();
+      switch(_viewNumber) {
+        case -10 : break; // make Lint happy
+        default :
+        case 0:
+          _view.full.linkProperty("Height",  function() { return Height; }, function(_v) { Height = _v; } ); // HtmlView Page linking property 'Height' for element 'full'
+          _view.full.linkProperty("Width",  function() { return Width; }, function(_v) { Width = _v; } ); // HtmlView Page linking property 'Width' for element 'full'
+          _view.mrocket2.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'mrocket2'
+          _view.comboBox.linkProperty("Options",  function() { return ["glass","iron","rubber","wood","wood with oil"]; } ); // HtmlView Page linking property 'Options' for element 'comboBox'
+          _view.comboBox.setAction("OnChange", function(_data,_info) {
+  var opts = _view.comboBox.getProperty("SelectedOptions");  // array of options
+      var option = (opts.length > 0)? opts[0]:""; // selected option 
+      
+      if ( option==="user_defined"){
+    
+    }
+  else if ( option==="iron"){
+    staticCoefficient=1.0; // http://www.engineeringtoolbox.com/friction-coefficients-d_778.html
+    dynamicCoefficient=0.2;
+   
+    }
+    else if ( option==="rubber"){
+    staticCoefficient=1.16;
+    dynamicCoefficient=1.16/2; //estimated
+    }
+  else if ( option==="wood"){
+   staticCoefficient=0.35;
+    dynamicCoefficient=0.35/2; //estimated
+    }
+    else if ( option==="glass"){
+  staticCoefficient=0.95;
+    dynamicCoefficient=0.3; //estimated
+    }
+  else if ( option==="wood with oil"){
+   staticCoefficient=0.15;
+    dynamicCoefficient=0.15/2; //estimated
+    }
+  text = "select/change x,v and a and click play";
+
+}); // HtmlView Page setting action 'OnChange' for element 'comboBox'
+          _view.comboBox.linkProperty("SelectedOptions",  function() { return selected; }, function(_v) { selected = _v; } ); // HtmlView Page linking property 'SelectedOptions' for element 'comboBox'
+          _view.comboBox.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'comboBox'
+          _view.slider22223.linkProperty("Value",  function() { return angleDegrees; }, function(_v) { angleDegrees = _v; } ); // HtmlView Page linking property 'Value' for element 'slider22223'
+          _view.slider22223.setAction("OnChange", function(_data,_info) {
+  h = L * Math.tan(angleDegrees*Math.PI/180);
+
+}); // HtmlView Page setting action 'OnChange' for element 'slider22223'
+          _view.field22223.linkProperty("Value",  function() { return angleDegrees; }, function(_v) { angleDegrees = _v; } ); // HtmlView Page linking property 'Value' for element 'field22223'
+          _view.field22223.setAction("OnChange", function(_data,_info) {
+  h = L * Math.tan(angleDegrees*Math.PI/180);
+
+}); // HtmlView Page setting action 'OnChange' for element 'field22223'
+          _view.slider2.linkProperty("Value",  function() { return blockMass; }, function(_v) { blockMass = _v; } ); // HtmlView Page linking property 'Value' for element 'slider2'
+          _view.field2.linkProperty("Value",  function() { return blockMass; }, function(_v) { blockMass = _v; } ); // HtmlView Page linking property 'Value' for element 'field2'
+          _view.fvst.linkProperty("Checked",  function() { return fvst; }, function(_v) { fvst = _v; } ); // HtmlView Page linking property 'Checked' for element 'fvst'
+          _view.fvst.setAction("OnCheckOff", function(_data,_info) {
+  fvst =false;
+  Width1 ="100%";
+  Width2 ="0%";
+  disabledvvst=false;
+
+}); // HtmlView Page setting action 'OnCheckOff' for element 'fvst'
+          _view.fvst.linkProperty("Background",  function() { return colorF; }, function(_v) { colorF = _v; } ); // HtmlView Page linking property 'Background' for element 'fvst'
+          _view.fvst.linkProperty("Disabled",  function() { return disabledfvst; }, function(_v) { disabledfvst = _v; } ); // HtmlView Page linking property 'Disabled' for element 'fvst'
+          _view.fvst.setAction("OnCheckOn", function(_data,_info) {
+  fvst =true;
+  Width1 ="50%";
+  Width2 ="50%";
+  disabledvvst=true;
+
+}); // HtmlView Page setting action 'OnCheckOn' for element 'fvst'
+          _view.xvst2.linkProperty("Checked",  function() { return vvst; }, function(_v) { vvst = _v; } ); // HtmlView Page linking property 'Checked' for element 'xvst2'
+          _view.xvst2.setAction("OnCheckOff", function(_data,_info) {
+  vvst =false;
+  Width1 ="100%";
+  Width3 ="0%";
+  disabledfvst=false;
+
+}); // HtmlView Page setting action 'OnCheckOff' for element 'xvst2'
+          _view.xvst2.linkProperty("Disabled",  function() { return disabledvvst; }, function(_v) { disabledvvst = _v; } ); // HtmlView Page linking property 'Disabled' for element 'xvst2'
+          _view.xvst2.setAction("OnCheckOn", function(_data,_info) {
+  vvst =true;
+  Width1 ="50%";
+  Width3 ="50%";
+  disabledfvst=true;
+
+}); // HtmlView Page setting action 'OnCheckOn' for element 'xvst2'
+          _view.playPauseButton22.setAction("OffClick", function(_data,_info) {
+  text="paused";
+  _pause();
+  logfunction ();
+
+}); // HtmlView Page setting action 'OffClick' for element 'playPauseButton22'
+          _view.playPauseButton22.linkProperty("State",  function() { return _isPaused; } ); // HtmlView Page linking property 'State' for element 'playPauseButton22'
+          _view.playPauseButton22.setAction("OnClick", function(_data,_info) {
+  logfunction ();
+  _play();
+  text="playing";
+
+}); // HtmlView Page setting action 'OnClick' for element 'playPauseButton22'
+          _view.initialize.setAction("OnClick", function(_data,_info) {
+  //counter=counter%2+1;
+  kineticenergys=kineticenergy;
+  potentialenergys=potentialenergy;
+  heats=heat;
+  totalenergys=totalenergy;
+  t=0;
+  x=0;
+  y=0;
+  v=0;
+  log = log+ "\n"+selected;
+  _initialize();
+
+}); // HtmlView Page setting action 'OnClick' for element 'initialize'
+          _view.resetButton22.setAction("OnClick", function(_data,_info) {
+  counter=counter-1;
+  //
+  //t=0;
+  //x=0;
+  //y=0;
+  //v=0;
+  //log = log+ "\n run "+counter+" , "+selected +" , kineticenegy="+kineticenergy.toFixed(0)+ " J, " + "potentialenergy="+ potentialenergy.toFixed(0) + " J , " + "heat="+ heat.toFixed(0)+ " J" ;
+  logfunction ();
+  counter=counter+1;
+  _reset();
+
+}); // HtmlView Page setting action 'OnClick' for element 'resetButton22'
+          _view.resetButton22.linkProperty("Font",  function() { return font; }, function(_v) { font = _v; } ); // HtmlView Page linking property 'Font' for element 'resetButton22'
+          _view.FullScreen2Button.setAction("OffClick", function(_data,_info) {
+  toggleFullScreen();
+
+}); // HtmlView Page setting action 'OffClick' for element 'FullScreen2Button'
+          _view.FullScreen2Button.setAction("OnClick", function(_data,_info) {
+  toggleFullScreen();
+
+}); // HtmlView Page setting action 'OnClick' for element 'FullScreen2Button'
+          _view.panel.linkProperty("CSS",  function() { return {display:"inline-block"}; } ); // HtmlView Page linking property 'CSS' for element 'panel'
+          _view.plottingPanel.linkProperty("Width",  function() { return Width1; }, function(_v) { Width1 = _v; } ); // HtmlView Page linking property 'Width' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MaximumY",  function() { return ymax; }, function(_v) { ymax = _v; } ); // HtmlView Page linking property 'MaximumY' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MaximumX",  function() { return xmax; }, function(_v) { xmax = _v; } ); // HtmlView Page linking property 'MaximumX' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("TRMessage",  function() { return "Static and Kinetic Frictional Model for Primary School Science Inquiry"+log; } ); // HtmlView Page linking property 'TRMessage' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MinimumX",  function() { return xmin; }, function(_v) { xmin = _v; } ); // HtmlView Page linking property 'MinimumX' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("MinimumY",  function() { return ymin; }, function(_v) { ymin = _v; } ); // HtmlView Page linking property 'MinimumY' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("XTickStep",  function() { return L; }, function(_v) { L = _v; } ); // HtmlView Page linking property 'XTickStep' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("YTickStep",  function() { return L; }, function(_v) { L = _v; } ); // HtmlView Page linking property 'YTickStep' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("BLMessage",  function() { return statetext; }, function(_v) { statetext = _v; } ); // HtmlView Page linking property 'BLMessage' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("TLMessage",  function() { return text; }, function(_v) { text = _v; } ); // HtmlView Page linking property 'TLMessage' for element 'plottingPanel'
+          _view.plottingPanel.linkProperty("BRMessage",  function() { return "t = "+_view._format(t,"0.00")+ " s "; } ); // HtmlView Page linking property 'BRMessage' for element 'plottingPanel'
+          _view.slope.linkProperty("Transformation",  function() { return -angle; } ); // HtmlView Page linking property 'Transformation' for element 'slope'
+          _view.slope.linkProperty("SizeX",  function() { return L; }, function(_v) { L = _v; } ); // HtmlView Page linking property 'SizeX' for element 'slope'
+          _view.slope.linkProperty("X",  function() { return L; }, function(_v) { L = _v; } ); // HtmlView Page linking property 'X' for element 'slope'
+          _view.slope.linkProperty("SizeY",  function() { return size; }, function(_v) { size = _v; } ); // HtmlView Page linking property 'SizeY' for element 'slope'
+          _view.group.linkProperty("Transformation",  function() { return -angle; } ); // HtmlView Page linking property 'Transformation' for element 'group'
+          _view.group.linkProperty("X",  function() { return L; }, function(_v) { L = _v; } ); // HtmlView Page linking property 'X' for element 'group'
+          _view.particle.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'particle'
+          _view.particle.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'particle'
+          _view.particle.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'particle'
+          _view.particle.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'particle'
+          _view.glass.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'glass'
+          _view.glass.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'glass'
+          _view.glass.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'glass'
+          _view.glass.linkProperty("Visibility",  function() { return selected[0]==="glass"; } ); // HtmlView Page linking property 'Visibility' for element 'glass'
+          _view.glass.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'glass'
+          _view.iron.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'iron'
+          _view.iron.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'iron'
+          _view.iron.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'iron'
+          _view.iron.linkProperty("Visibility",  function() { return selected[0]==="iron"; } ); // HtmlView Page linking property 'Visibility' for element 'iron'
+          _view.iron.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'iron'
+          _view.rubber2.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'rubber2'
+          _view.rubber2.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'rubber2'
+          _view.rubber2.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'rubber2'
+          _view.rubber2.linkProperty("Visibility",  function() { return selected[0]==="rubber"; } ); // HtmlView Page linking property 'Visibility' for element 'rubber2'
+          _view.rubber2.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'rubber2'
+          _view.weight.linkProperty("Transformation",  function() { return angle; }, function(_v) { angle = _v; } ); // HtmlView Page linking property 'Transformation' for element 'weight'
+          _view.weight.linkProperty("X",  function() { return x-L+blockSizeX/2; } ); // HtmlView Page linking property 'X' for element 'weight'
+          _view.weight.linkProperty("Y",  function() { return y+blockSizeY/2; } ); // HtmlView Page linking property 'Y' for element 'weight'
+          _view.weight.linkProperty("SizeY",  function() { return -weight*scale; } ); // HtmlView Page linking property 'SizeY' for element 'weight'
+          _view.mg2.linkProperty("Transformation",  function() { return angle; }, function(_v) { angle = _v; } ); // HtmlView Page linking property 'Transformation' for element 'mg2'
+          _view.mg2.linkProperty("X",  function() { return x-L+blockSizeX/2+weight*Math.sin(angle); } ); // HtmlView Page linking property 'X' for element 'mg2'
+          _view.mg2.linkProperty("Y",  function() { return y+blockSizeY/2-weight*Math.cos(angle); } ); // HtmlView Page linking property 'Y' for element 'mg2'
+          _view.mg2.linkProperty("Text",  function() { return mgtext; }, function(_v) { mgtext = _v; } ); // HtmlView Page linking property 'Text' for element 'mg2'
+          _view.contactN.linkProperty("X",  function() { return x-L+blockSizeX/2; } ); // HtmlView Page linking property 'X' for element 'contactN'
+          _view.contactN.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'contactN'
+          _view.contactN.linkProperty("SizeY",  function() { return weight*scale; } ); // HtmlView Page linking property 'SizeY' for element 'contactN'
+          _view.N.linkProperty("X",  function() { return x-L+blockSizeX/2; } ); // HtmlView Page linking property 'X' for element 'N'
+          _view.N.linkProperty("Y",  function() { return y+weight; } ); // HtmlView Page linking property 'Y' for element 'N'
+          _view.N.linkProperty("Text",  function() { return Ntext; }, function(_v) { Ntext = _v; } ); // HtmlView Page linking property 'Text' for element 'N'
+          _view.Friction.linkProperty("SizeX",  function() { return Friction*scale; } ); // HtmlView Page linking property 'SizeX' for element 'Friction'
+          _view.Friction.linkProperty("LineColor",  function() { return colorF; }, function(_v) { colorF = _v; } ); // HtmlView Page linking property 'LineColor' for element 'Friction'
+          _view.Friction.linkProperty("X",  function() { return x-L+blockSizeX/2; } ); // HtmlView Page linking property 'X' for element 'Friction'
+          _view.Friction.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'Friction'
+          _view.F.linkProperty("FillColor",  function() { return colorF; }, function(_v) { colorF = _v; } ); // HtmlView Page linking property 'FillColor' for element 'F'
+          _view.F.linkProperty("X",  function() { return x-L+Friction; } ); // HtmlView Page linking property 'X' for element 'F'
+          _view.F.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'F'
+          _view.F.linkProperty("Text",  function() { return Fdftext; }, function(_v) { Fdftext = _v; } ); // HtmlView Page linking property 'Text' for element 'F'
+          _view.wood.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'wood'
+          _view.wood.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'wood'
+          _view.wood.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'wood'
+          _view.wood.linkProperty("Visibility",  function() { return selected[0]==="wood"; } ); // HtmlView Page linking property 'Visibility' for element 'wood'
+          _view.wood.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'wood'
+          _view.wood_oil.linkProperty("SizeX",  function() { return blockSizeX; }, function(_v) { blockSizeX = _v; } ); // HtmlView Page linking property 'SizeX' for element 'wood_oil'
+          _view.wood_oil.linkProperty("X",  function() { return x-L; } ); // HtmlView Page linking property 'X' for element 'wood_oil'
+          _view.wood_oil.linkProperty("Y",  function() { return y; }, function(_v) { y = _v; } ); // HtmlView Page linking property 'Y' for element 'wood_oil'
+          _view.wood_oil.linkProperty("Visibility",  function() { return selected[0]==="wood with oil"; } ); // HtmlView Page linking property 'Visibility' for element 'wood_oil'
+          _view.wood_oil.linkProperty("SizeY",  function() { return blockSizeY; }, function(_v) { blockSizeY = _v; } ); // HtmlView Page linking property 'SizeY' for element 'wood_oil'
+          _view.energiesplot.linkProperty("Width",  function() { return Width2; }, function(_v) { Width2 = _v; } ); // HtmlView Page linking property 'Width' for element 'energiesplot'
+          _view.ke.linkProperty("SizeY",  function() { return kineticenergy; }, function(_v) { kineticenergy = _v; } ); // HtmlView Page linking property 'SizeY' for element 'ke'
+          _view.ke3.linkProperty("Y",  function() { return kineticenergy+4; } ); // HtmlView Page linking property 'Y' for element 'ke3'
+          _view.ke3.linkProperty("Text",  function() { return "ke="+kineticenergy.toFixed(0)+ " J"; } ); // HtmlView Page linking property 'Text' for element 'ke3'
+          _view.pe.linkProperty("SizeY",  function() { return potentialenergy; }, function(_v) { potentialenergy = _v; } ); // HtmlView Page linking property 'SizeY' for element 'pe'
+          _view.pe3.linkProperty("Y",  function() { return potentialenergy+4; } ); // HtmlView Page linking property 'Y' for element 'pe3'
+          _view.pe3.linkProperty("Text",  function() { return "pe="+potentialenergy.toFixed(0)+" J"; } ); // HtmlView Page linking property 'Text' for element 'pe3'
+          _view.heat.linkProperty("SizeY",  function() { return heat; }, function(_v) { heat = _v; } ); // HtmlView Page linking property 'SizeY' for element 'heat'
+          _view.heat3.linkProperty("Y",  function() { return heat+4; } ); // HtmlView Page linking property 'Y' for element 'heat3'
+          _view.heat3.linkProperty("Text",  function() { return "heat="+heat.toFixed(0)+ " J"; } ); // HtmlView Page linking property 'Text' for element 'heat3'
+          _view.totalenergy.linkProperty("Y",  function() { return totalenergy; }, function(_v) { totalenergy = _v; } ); // HtmlView Page linking property 'Y' for element 'totalenergy'
+          _view.energiess.linkProperty("X",  function() { return counter%2*6; } ); // HtmlView Page linking property 'X' for element 'energiess'
+          _view.ke2.linkProperty("SizeY",  function() { return kineticenergys; }, function(_v) { kineticenergys = _v; } ); // HtmlView Page linking property 'SizeY' for element 'ke2'
+          _view.ke4.linkProperty("Y",  function() { return kineticenergys+4; } ); // HtmlView Page linking property 'Y' for element 'ke4'
+          _view.pe2.linkProperty("SizeY",  function() { return potentialenergys; }, function(_v) { potentialenergys = _v; } ); // HtmlView Page linking property 'SizeY' for element 'pe2'
+          _view.pe4.linkProperty("Y",  function() { return potentialenergys+4; } ); // HtmlView Page linking property 'Y' for element 'pe4'
+          _view.heat2.linkProperty("SizeY",  function() { return heats; }, function(_v) { heats = _v; } ); // HtmlView Page linking property 'SizeY' for element 'heat2'
+          _view.heat4.linkProperty("Y",  function() { return heats+4; } ); // HtmlView Page linking property 'Y' for element 'heat4'
+          break;
+      } // end of switch
+    }; // end of new reset
+
+    _model.setView(_view);
+    _model.reset();
+    _view._enableEPub();
+  } // end of _selectView
+
+  _model.setAutoplay(false);
+  _model.setFPS(20);
+  _model.setStepsPerDisplay(1);
+  _selectView(_model._autoSelectView(_getViews())); // this includes _model.reset()
+  return _model;
+}
+
+function frictionprimaryenergy_View (_topFrame,_viewNumber,_libraryPath,_codebasePath) {
+  var _view;
+  switch(_viewNumber) {
+    case -10 : break; // make Lint happy
+    default :
+    case 0: _view = frictionprimaryenergy_View_0 (_topFrame); break;
+  } // end of switch
+
+  if (_codebasePath) _view._setResourcePath(_codebasePath);
+
+  if (_libraryPath) _view._setLibraryPath(_libraryPath);
+
+  _view._addDescriptionPage('Intro Page','./frictionprimaryenergy_Intro_1.html');
+
+  return _view;
+} // end of main function
+
+function frictionprimaryenergy_View_0 (_topFrame) {
+  var _view = EJSS_CORE.createView(_topFrame);
+
+  _view._reset = function() {
+    _view._clearAll();
+    _view._addElement(EJSS_INTERFACE.panel,"full", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'full'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"mrocket2", _view.full) // EJsS HtmlView.HtmlView Page: declaration of element 'mrocket2'
+      .setProperty("BorderStyle","double") // EJsS HtmlView.HtmlView Page: setting property 'BorderStyle' for element 'mrocket2'
+      .setProperty("BorderColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'BorderColor' for element 'mrocket2'
+      .setProperty("BorderWidth",3) // EJsS HtmlView.HtmlView Page: setting property 'BorderWidth' for element 'mrocket2'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.comboBox,"comboBox", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'comboBox'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"label32223", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'label32223'
+      .setProperty("Background","Green") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'label32223'
+      .setProperty("Tooltip","angle of slope in degree") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'label32223'
+      .setProperty("Text"," angle= ") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'label32223'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"slider22223", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'slider22223'
+      .setProperty("Width","10vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'slider22223'
+      .setProperty("Maximum",90) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'slider22223'
+      .setProperty("Minimum",0) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'slider22223'
+      .setProperty("Background","Green") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'slider22223'
+      .setProperty("Step",5) // EJsS HtmlView.HtmlView Page: setting property 'Step' for element 'slider22223'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"field22223", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'field22223'
+      .setProperty("Width","5vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'field22223'
+      .setProperty("Format","00.0") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'field22223'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"label222222", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'label222222'
+      .setProperty("Background","Green") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'label222222'
+      .setProperty("Tooltip","degree") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'label222222'
+      .setProperty("Text"," ° ") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'label222222'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"label3", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'label3'
+      .setProperty("Background","Orange") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'label3'
+      .setProperty("Tooltip","mass of block ") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'label3'
+      .setProperty("Text"," m = ") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'label3'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.slider,"slider2", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'slider2'
+      .setProperty("Width","10vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'slider2'
+      .setProperty("Maximum",7) // EJsS HtmlView.HtmlView Page: setting property 'Maximum' for element 'slider2'
+      .setProperty("Minimum",1) // EJsS HtmlView.HtmlView Page: setting property 'Minimum' for element 'slider2'
+      .setProperty("Background","Orange") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'slider2'
+      .setProperty("Tooltip","mass of block") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'slider2'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.numberField,"field2", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'field2'
+      .setProperty("Width","5vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'field2'
+      .setProperty("Format","00.00") // EJsS HtmlView.HtmlView Page: setting property 'Format' for element 'field2'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.imageAndTextButton,"label22", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'label22'
+      .setProperty("Background","Orange") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'label22'
+      .setProperty("Tooltip","kilogram") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'label22'
+      .setProperty("Text"," kg ") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'label22'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"fvst", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'fvst'
+      .setProperty("Tooltip","f vs t") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'fvst'
+      .setProperty("Foreground","White") // EJsS HtmlView.HtmlView Page: setting property 'Foreground' for element 'fvst'
+      .setProperty("Text","f vs t") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'fvst'
+      .setProperty("Display","none") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'fvst'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.checkBox,"xvst2", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'xvst2'
+      .setProperty("Background","Magenta") // EJsS HtmlView.HtmlView Page: setting property 'Background' for element 'xvst2'
+      .setProperty("Tooltip","v vs t") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'xvst2'
+      .setProperty("Text","v vs t") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'xvst2'
+      .setProperty("Display","none") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'xvst2'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.twoStateButton,"playPauseButton22", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'playPauseButton22'
+      .setProperty("Width","10vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'playPauseButton22'
+      .setProperty("TextOn","►") // EJsS HtmlView.HtmlView Page: setting property 'TextOn' for element 'playPauseButton22'
+      .setProperty("Tooltip","Play/Pause") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'playPauseButton22'
+      .setProperty("TextOff","❚❚") // EJsS HtmlView.HtmlView Page: setting property 'TextOff' for element 'playPauseButton22'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"initialize", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'initialize'
+      .setProperty("ImageUrl","/org/opensourcephysics/resources/controls/images/initial.gif") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'initialize'
+      .setProperty("Text","Store Data") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'initialize'
+      .setProperty("Display","none") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'initialize'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.button,"resetButton22", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'resetButton22'
+      .setProperty("Width","10vw") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'resetButton22'
+      .setProperty("Text","↻") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'resetButton22'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.twoStateButton,"FullScreen2Button", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'FullScreen2Button'
+      .setProperty("TextOn","FullScreen") // EJsS HtmlView.HtmlView Page: setting property 'TextOn' for element 'FullScreen2Button'
+      .setProperty("TextOff","exit FullScreen") // EJsS HtmlView.HtmlView Page: setting property 'TextOff' for element 'FullScreen2Button'
+      .setProperty("Tooltip","Fullscreen ") // EJsS HtmlView.HtmlView Page: setting property 'Tooltip' for element 'FullScreen2Button'
+      .setProperty("ImageOnUrl","./Android_robot.svg.png") // EJsS HtmlView.HtmlView Page: setting property 'ImageOnUrl' for element 'FullScreen2Button'
+      .setProperty("ImageOffUrl","/org/opensourcephysics/resources/controls/images/close.gif") // EJsS HtmlView.HtmlView Page: setting property 'ImageOffUrl' for element 'FullScreen2Button'
+      .setProperty("Display","none") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'FullScreen2Button'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"feedback", _view.mrocket2) // EJsS HtmlView.HtmlView Page: declaration of element 'feedback'
+      .setProperty("Html","<a href=\"http://weelookang.blogspot.com/2014/04/ejss-static-and-kinetic-friction-on.html?m=1\"         target=\"_blank\">Feedback Google+</a>") // EJsS HtmlView.HtmlView Page: setting property 'Html' for element 'feedback'
+      .setProperty("Display","none") // EJsS HtmlView.HtmlView Page: setting property 'Display' for element 'feedback'
+      ;
+
+    _view._addElement(EJSS_INTERFACE.panel,"panel", _view._topFrame) // EJsS HtmlView.HtmlView Page: declaration of element 'panel'
+      .setProperty("Width","100%") // EJsS HtmlView.HtmlView Page: setting property 'Width' for element 'panel'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.plottingPanel,"plottingPanel", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'plottingPanel'
+      .setProperty("Height","90vh") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'plottingPanel'
+      .setProperty("Gutters",[0,0,0,0]) // EJsS HtmlView.HtmlView Page: setting property 'Gutters' for element 'plottingPanel'
+      .setProperty("YScalePrecision",0) // EJsS HtmlView.HtmlView Page: setting property 'YScalePrecision' for element 'plottingPanel'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'plottingPanel'
+      .setProperty("Title","Static and Kinetic Frictional Model for Primary School Science Inquiry") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'plottingPanel'
+      .setProperty("SquareAspect",true) // EJsS HtmlView.HtmlView Page: setting property 'SquareAspect' for element 'plottingPanel'
+      .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'plottingPanel'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'plottingPanel'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'plottingPanel'
+      .setProperty("XScalePrecision",0) // EJsS HtmlView.HtmlView Page: setting property 'XScalePrecision' for element 'plottingPanel'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"slope", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'slope'
+      .setProperty("FillColor","Green") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'slope'
+      .setProperty("RelativePosition","NORTH_EAST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'slope'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'slope'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'slope'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.group,"group", _view.plottingPanel) // EJsS HtmlView.HtmlView Page: declaration of element 'group'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'group'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"particle", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'particle'
+      .setProperty("FillColor","Orange") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'particle'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'particle'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'particle'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.image,"glass", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'glass'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'glass'
+      .setProperty("ImageUrl","./FrictionPrimary/320px-Broken_glass.jpg") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'glass'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.image,"iron", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'iron'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'iron'
+      .setProperty("ImageUrl","./FrictionPrimary/320px-Iron_disulfide_pyrite01.jpg") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'iron'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.image,"rubber2", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'rubber2'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'rubber2'
+      .setProperty("ImageUrl","./FrictionPrimary/320px-Rubber_bands_-_Colors_-_Studio_photo_2011.jpg") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'rubber2'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.arrow,"weight", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'weight'
+      .setProperty("SizeX",0) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'weight'
+      .setProperty("LineColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'weight'
+      .setProperty("LineWidth",3) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'weight'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"mg2", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'mg2'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'mg2'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.arrow,"contactN", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'contactN'
+      .setProperty("SizeX",0) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'contactN'
+      .setProperty("LineColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'contactN'
+      .setProperty("LineWidth",3) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'contactN'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"N", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'N'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'N'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.arrow,"Friction", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'Friction'
+      .setProperty("SizeY",0) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'Friction'
+      .setProperty("LineWidth",3) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'Friction'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"F", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'F'
+      .setProperty("RelativePosition","SOUTH") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'F'
+      .setProperty("PixelSize",true) // EJsS HtmlView.HtmlView Page: setting property 'PixelSize' for element 'F'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.image,"wood", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'wood'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'wood'
+      .setProperty("ImageUrl","./FrictionPrimary/320px-Iroko_wood.jpg") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'wood'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.image,"wood_oil", _view.group) // EJsS HtmlView.HtmlView Page: declaration of element 'wood_oil'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'wood_oil'
+      .setProperty("ImageUrl","./Friction/320px-Iroko_wood.jpg") // EJsS HtmlView.HtmlView Page: setting property 'ImageUrl' for element 'wood_oil'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.plottingPanel,"energiesplot", _view.panel) // EJsS HtmlView.HtmlView Page: declaration of element 'energiesplot'
+      .setProperty("Height","90vh") // EJsS HtmlView.HtmlView Page: setting property 'Height' for element 'energiesplot'
+      .setProperty("YScalePrecision",0) // EJsS HtmlView.HtmlView Page: setting property 'YScalePrecision' for element 'energiesplot'
+      .setProperty("XFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'XFixedTick' for element 'energiesplot'
+      .setProperty("Title","Energies") // EJsS HtmlView.HtmlView Page: setting property 'Title' for element 'energiesplot'
+      .setProperty("AxisXShow",false) // EJsS HtmlView.HtmlView Page: setting property 'AxisXShow' for element 'energiesplot'
+      .setProperty("MaximumY",110) // EJsS HtmlView.HtmlView Page: setting property 'MaximumY' for element 'energiesplot'
+      .setProperty("MaximumX",5) // EJsS HtmlView.HtmlView Page: setting property 'MaximumX' for element 'energiesplot'
+      .setProperty("YFixedTick",0) // EJsS HtmlView.HtmlView Page: setting property 'YFixedTick' for element 'energiesplot'
+      .setProperty("YAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'YAutoTicks' for element 'energiesplot'
+      .setProperty("MinimumX",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumX' for element 'energiesplot'
+      .setProperty("MinimumY",0) // EJsS HtmlView.HtmlView Page: setting property 'MinimumY' for element 'energiesplot'
+      .setProperty("XTickStep",5) // EJsS HtmlView.HtmlView Page: setting property 'XTickStep' for element 'energiesplot'
+      .setProperty("TitleY","Energy") // EJsS HtmlView.HtmlView Page: setting property 'TitleY' for element 'energiesplot'
+      .setProperty("YTickStep",10) // EJsS HtmlView.HtmlView Page: setting property 'YTickStep' for element 'energiesplot'
+      .setProperty("AutoScaleY",true) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleY' for element 'energiesplot'
+      .setProperty("TitleX","Types of energies") // EJsS HtmlView.HtmlView Page: setting property 'TitleX' for element 'energiesplot'
+      .setProperty("AutoScaleX",false) // EJsS HtmlView.HtmlView Page: setting property 'AutoScaleX' for element 'energiesplot'
+      .setProperty("XAutoTicks",false) // EJsS HtmlView.HtmlView Page: setting property 'XAutoTicks' for element 'energiesplot'
+      .setProperty("XScalePrecision",0) // EJsS HtmlView.HtmlView Page: setting property 'XScalePrecision' for element 'energiesplot'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.group,"energies", _view.energiesplot) // EJsS HtmlView.HtmlView Page: declaration of element 'energies'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"ke", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'ke'
+      .setProperty("FillColor","Magenta") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'ke'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'ke'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'ke'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'ke'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'ke'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'ke'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"ke3", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'ke3'
+      .setProperty("RelativePosition","CENTERED") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'ke3'
+      .setProperty("X",0.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'ke3'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"pe", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'pe'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'pe'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'pe'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'pe'
+      .setProperty("X",2) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'pe'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'pe'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"pe3", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'pe3'
+      .setProperty("RelativePosition","CENTERED") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'pe3'
+      .setProperty("X",2.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'pe3'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"heat", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'heat'
+      .setProperty("FillColor","Red") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'heat'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'heat'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'heat'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'heat'
+      .setProperty("X",4) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'heat'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'heat'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"heat3", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'heat3'
+      .setProperty("X",4.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'heat3'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.segment,"totalenergy", _view.energies) // EJsS HtmlView.HtmlView Page: declaration of element 'totalenergy'
+      .setProperty("SizeX",5) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'totalenergy'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'totalenergy'
+      .setProperty("LineColor","Black") // EJsS HtmlView.HtmlView Page: setting property 'LineColor' for element 'totalenergy'
+      .setProperty("Attributes",{ "stroke-dasharray":"8 8 8 8" }) // EJsS HtmlView.HtmlView Page: setting property 'Attributes' for element 'totalenergy'
+      .setProperty("SizeY",0) // EJsS HtmlView.HtmlView Page: setting property 'SizeY' for element 'totalenergy'
+      .setProperty("LineWidth",4) // EJsS HtmlView.HtmlView Page: setting property 'LineWidth' for element 'totalenergy'
+      .setProperty("Offset","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'Offset' for element 'totalenergy'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.group,"energiess", _view.energiesplot) // EJsS HtmlView.HtmlView Page: declaration of element 'energiess'
+      .setProperty("Visibility",false) // EJsS HtmlView.HtmlView Page: setting property 'Visibility' for element 'energiess'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"ke2", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'ke2'
+      .setProperty("FillColor","Magenta") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'ke2'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'ke2'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'ke2'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'ke2'
+      .setProperty("X",0) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'ke2'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'ke2'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"ke4", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'ke4'
+      .setProperty("X",0.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'ke4'
+      .setProperty("Text","ke") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'ke4'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"pe2", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'pe2'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'pe2'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'pe2'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'pe2'
+      .setProperty("X",2) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'pe2'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'pe2'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"pe4", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'pe4'
+      .setProperty("X",2.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'pe4'
+      .setProperty("Text","pe") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'pe4'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.shape,"heat2", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'heat2'
+      .setProperty("FillColor","Red") // EJsS HtmlView.HtmlView Page: setting property 'FillColor' for element 'heat2'
+      .setProperty("SizeX",1) // EJsS HtmlView.HtmlView Page: setting property 'SizeX' for element 'heat2'
+      .setProperty("RelativePosition","SOUTH_WEST") // EJsS HtmlView.HtmlView Page: setting property 'RelativePosition' for element 'heat2'
+      .setProperty("ShapeType","RECTANGLE") // EJsS HtmlView.HtmlView Page: setting property 'ShapeType' for element 'heat2'
+      .setProperty("X",4) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'heat2'
+      .setProperty("Y",0) // EJsS HtmlView.HtmlView Page: setting property 'Y' for element 'heat2'
+      ;
+
+    _view._addElement(EJSS_DRAWING2D.text,"heat4", _view.energiess) // EJsS HtmlView.HtmlView Page: declaration of element 'heat4'
+      .setProperty("X",4.5) // EJsS HtmlView.HtmlView Page: setting property 'X' for element 'heat4'
+      .setProperty("Text","heat") // EJsS HtmlView.HtmlView Page: setting property 'Text' for element 'heat4'
+      ;
+
+  };
+
+  return _view;
+}
+
+
+//--><!]]></script>
+  </head>
+  <body>
+    <div role="button" id="_topFrame" style="text-align:center"></div>
+  <div id="metadata" class="metadata" style="display:none;">
+    <br />
+    <div id="title_author">
+      <hr />
+      <b>Title and author:</b>
+      <p>
+      Static and Kinetic Frictional Model for Primary School Science Inquiry<br />
+     <img alt="Logo" src="FrictionPrimary/Screenshot 2020-02-14 at 3.57.21 PM (2).png" />
+      </p>
+      <p>
+      <img alt="author image" src="01authorlooakng50x50.png" />
+      <img alt="author image" src="FrictionPrimary/PacoEsquembre2011.png" />
+ weelookang@gmail.com; Francisco Esquembre
+      </p>
+    </div>
+    <hr />
+    <p></p>
+    <div id="copyright_message">
+      <div class="cc_left"  style="float:left">&#169; 2020, creative commons attribution. Compiled with EJS 6.0 (191124)
+</div>
+      <div class="cc_right" style="float:right">    Released under a <a rel="license" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.en_US"> <img alt="Creative Commons Attribution-NonCommercial-ShareAlike" src="_ejs_library/images/cc_icon.png" /> </a> license.</div>
+    </div>
+  </div>
+    <script type="text/javascript"><!--//--><![CDATA[//><!--
+      var _model;
+      var _scorm;
+      window.addEventListener('load',
+        function () { 
+          _model =  new frictionprimaryenergy("_topFrame","_ejs_library/",null);
+          if (typeof _isApp !== "undefined" && _isApp) _model.setRunAlways(true);
+          TextResizeDetector.TARGET_ELEMENT_ID = '_topFrame';
+          TextResizeDetector.USER_INIT_FUNC = function () {
+            var iBase = TextResizeDetector.addEventListener(function(e,args) {
+              _model._fontResized(args[0].iBase,args[0].iSize,args[0].iDelta);
+              },null);
+            _model._fontResized(iBase);
+          };
+          _model.onload();
+        }, false);
+    //--><!]]></script>
+  </body>
+</html>
