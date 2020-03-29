@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Checkbox.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-	<style>
-	sub{
-	vertical-align:sub;
-	font-size:smaller;
-	}
-	</style>
 </head>
 
 <body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
@@ -24,14 +18,19 @@
         </div>
     </div>
     <div class="d-xl-flex align-items-xl-center contextdivision" id="div-context" style="margin-right: auto;margin-left: auto;">
-        <div class="d-xl-flex align-items-xl-center -classification" id="div-main" style="height: 713px;width: 1786px;margin-top: 126px;margin-right: auto;margin-left: 112px;"><input type="number" id="number-1" style="margin-top: -307px;position: absolute;margin-left: 717px;width: 124px;height: 59px;font-size: 44px;"><label id="field-accle" style="margin-top: 252px;margin-left: 174px;font-size: 42px;position: absolute;">Acceleration :</label>
+        <div id="div-top" style="position: absolute;"><input type="number" id="number-1" style="margin-top: 87px;position: absolute;margin-left: 180px;width: 124px;height: 59px;font-size: 44px;"><label id="field-force" style="margin-top: 81px;font-size: 42px;margin-left: 42px;position: absolute;width: 148px;">Force :</label>
+            <button
+                class="btn btncheck" id="gobtn" type="button" style="position: absolute;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 150px;height: 50px;margin-left: 340px;margin-top: 93px;"></button>
+        </div>
+        <div class="d-xl-flex align-items-xl-center -classification" id="div-main" style="height: 713px;width: 1786px;margin-top: 47px;margin-right: auto;margin-left: 112px;">
+            <div id="div-ironblocks" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"><input type="number" id="number-2" style="position: absolute;font-size: 44px;"><input type="number" id="number-3" style="position: absolute;font-size: 44px;"><input type="number" id="number-4" style="position: absolute;font-size: 44px;"></div>
+        </div>
+        <div id="div-fields" style="position: absolute;"><label id="field-accle" style="margin-top: 59px;margin-left: -5px;font-size: 42px;position: absolute;">Acceleration :</label><label id="field-zero" style="font-size: 50px;margin-left: 256px;position: absolute;margin-top: 53px;">0</label>
             <label
-                id="field-force" style="margin-top: -310px;font-size: 42px;margin-left: 571px;position: absolute;">Force :</label><label id="field-zero" style="font-size: 50px;margin-left: 436px;position: absolute;margin-top: 253px;">0</label>
-                <div id="div-ironblocks" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;background-image: url(&quot;assets/img/block1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"><input type="number" id="number-2" style="position: absolute;margin-top: 196px;margin-left: 19px;font-size: 44px;width: 94px;"><input type="number" id="number-3" style="position: absolute;margin-top: 196px;margin-left: 332px;font-size: 44px;width: 94px;">
-                    <input
-                        type="number" id="number-4" style="position: absolute;margin-top: 196px;margin-left: 673px;font-size: 44px;width: 94px;"></div><label id="field-t1" style="margin-left: 655px;font-size: 42px;margin-top: 518px;">T<sub>1</sub> :</label><label id="field-zero1" style="font-size: 50px;position: absolute;margin-left: 949px;margin-top: 254px;">0</label><label id="field-t2"
-                    style="font-size: 42px;position: absolute;margin-top: 254px;margin-left: 877px;">T<sub>2</sub> :</label><label id="field-zero2" style="font-size: 50px;position: absolute;margin-left: 731px;margin-top: 252px;">0</label><button class="btn btncheck"
-                    id="gobtn" type="button" style="position: absolute;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 150px;height: 50px;margin-left: 878px;margin-top: -307px;"></button></div>
+                id="field-t1" style="margin-left: 429px;font-size: 42px;margin-top: 59px;position: absolute;">T1 :</label><label id="field-zero1" style="font-size: 50px;position: absolute;margin-left: 949px;margin-top: 53px;">0</label><label id="field-t2" style="font-size: 42px;position: absolute;margin-top: 58px;margin-left: 877px;">T2 :</label>
+                <label
+                    id="field-zero2" style="font-size: 50px;position: absolute;margin-left: 504px;margin-top: 53px;">0</label>
+        </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
