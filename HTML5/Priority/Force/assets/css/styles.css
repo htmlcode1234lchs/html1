@@ -1,5 +1,5 @@
 .wheels{
-	animation: rotation 10s infinite linear;
+	animation: rotation 0s infinite linear;
 }
 @keyframes rotation {
 		from {
