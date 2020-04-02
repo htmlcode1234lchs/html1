@@ -83,7 +83,8 @@
                     <img id="r1img2" class="img2r1" draggable="true" ondragstart="drag(event)"
                         src="assets/img/Copper.png"
                         style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
-                    <img id="r1img3" class="img3r1" draggable="true" ondragstart="drag(event)" src="assets/img/Iron.png"
+                    <img id="r1img3" class="img3r1" draggable="true" ondragstart="drag(event)" 
+                        src="assets/img/Iron.png"
                         style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
                     <img id="r1img4" class="img4r1" draggable="true" ondragstart="drag(event)"
                         src="assets/img/Paper.png"
@@ -94,12 +95,13 @@
                     <img id="r1img6" class="img5r1" draggable="true" ondragstart="drag(event)"
                         src="assets/img/Steel.png"
                         style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
-                    <img id="r1img7" class="img1r1" draggable="true" ondragstart="drag(event)" src="assets/img/Wood.png"
+                    <img id="r1img7" class="img1r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Wood.png"
                         style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
                 </div>
             </div>
             <label id="div-text" style="position: absolute;">
-                Paper does not attract to the magnet
+                
             </label>
         </div>
 
@@ -127,6 +129,9 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 <script>
+    var correct = 0;
+    var incorrect = 0;
+    var messagesArray = ['Aluminim', 'Copper', 'Iron', 'Paper', 'Plastic', 'Steel', 'Wood'];
     function play(audioToPlay) {
         var audio = document.getElementById(audioToPlay);
         audio.play();
@@ -144,12 +149,16 @@
         ev.preventDefault();
         var data = ev.dataTransfer.getData("text");
         console.log(data);
-        if (data == '') {
+        if (data == 'r1img3') {
             ev.target.appendChild(document.getElementById(data));
             correct++;
+            $('#div-text').text('Iron attract to the magnet');
+            $('#r1img3').css('margin-top', '3%');
+            $('#r1img3').css('margin-left', '5%');
             play("correct");
         } else {
             incorrect++;
+            $('#div-text').text((messagesArray[data.charAt(data.length-1)-1])+' does not attract to the magnet')
             play("wrong");
         }
         $('#CorrectAnswers').text(correct);
