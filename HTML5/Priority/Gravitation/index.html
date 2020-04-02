@@ -8,12 +8,12 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/Checkbox.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-	<style>
+<!-- 	<style>
 	sub{
 	vertical-align:sub:
 	font-size:smaller;
 	}
-	</style>
+	</style> -->
 </head>
 
 <body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
@@ -28,16 +28,77 @@
             <div id="div-img1" style="width: 1130px;background-color: rgba(255,255,255,0);height: 572px;margin-left: 41px;background-image: url(&quot;assets/img/1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
         </div>
     </div>
-    <div class="text-center" id="div-forces" style="margin-left: auto;margin-right: auto;margin-top: -670px;"><label id="force1" style="position: absolute;font-size: 35px;margin-left: -549px;margin-top: 7px;">Force :</label><label id="force2" style="position: absolute;font-size: 35px;margin-left: 289px;margin-top: 7px;">Force :</label><input type="number"
-            id="f1" style="position: absolute;margin-left: -428px;margin-top: 12px;font-size: 35px;width: 128px;height: 57px;"><input type="number" id="f2" style="position: absolute;margin-left: 417px;margin-top: 12px;font-size: 35px;width: 128px;height: 57px;">
-        <label
-            id="g-1" style="position: absolute;font-size: 40px;margin-top: 289px;color: rgb(255,255,255);font-weight: bold;margin-left: -84px;">T<sub>1</sub></label><label id="g-2" style="position: absolute;font-size: 40px;color: rgb(255,255,255);margin-top: 289px;margin-left: 61px;font-weight: bold;">T<sub>2</sub></label><label id="g1" style="position: absolute;font-size: 35px;margin-left: -549px;margin-top: 72px;letter-spacing: -1px;">Torque T<sub>1</sub>&nbsp; &nbsp; &nbsp; :&nbsp; &nbsp;0&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
-            <label
-                id="g2" style="position: absolute;font-size: 35px;margin-left: 246px;margin-top: 70px;letter-spacing: -1px;width: 362px;">Torque T<sub>2</sub> :&nbsp; &nbsp; 0&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label><button class="btn" id="gobtn" type="button" style="position: absolute;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 150px;height: 67px;margin-left: -54px;margin-top: -29px;"></button></div>
-    <div
-        class="text-center toprightdiv" id="righttopdiv-2" style="width: 1200px;margin-left: auto;margin-right: auto;margin-top: -755px;"><label id="questionlabel-2" class="questionlabel" style="font-size: 36px;margin-top: -265px;">Arm Wrestling<br></label></div>
+    <div class="text-center" id="div-forces" 
+        style="margin-left: auto;margin-right: auto;margin-top: -670px;">
+        <label id="force1" 
+            style="position: absolute;font-size: 35px;margin-left: -549px;margin-top: 7px;">Force :</label>
+        <label id="force2" 
+            style="position: absolute;font-size: 35px;margin-left: 289px;margin-top: 7px;">Force :</label>
+        <input type="number" id="f1" oninput="f1()"
+            style="position: absolute;margin-left: -428px;margin-top: 12px;font-size: 35px;width: 128px;height: 57px;">
+        <input type="number" id="f2" oninput="f2()"
+            style="position: absolute;margin-left: 417px;margin-top: 12px;font-size: 35px;width: 128px;height: 57px;">
+        <label id="g-1" 
+            style="position: absolute;font-size: 40px;margin-top: 289px;color: rgb(255,255,255);font-weight: bold;margin-left: -84px;">T<sub>1</sub></label>
+        <label id="g-2" 
+            style="position: absolute;font-size: 40px;color: rgb(255,255,255);margin-top: 289px;margin-left: 61px;font-weight: bold;">T<sub>2</sub></label>
+        <label id="g1" 
+            style="position: absolute;font-size: 35px;margin-left: -549px;margin-top: 72px;letter-spacing: -1px;">Torque T<sub>1</sub>&nbsp; &nbsp; &nbsp; :&nbsp; &nbsp;<span id="t1Value">0</span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+        <label id="g2" 
+            style="position: absolute;font-size: 35px;margin-left: 246px;margin-top: 70px;letter-spacing: -1px;width: 362px;">Torque T<sub>2</sub> :&nbsp; &nbsp; <span id="t2Value">0</span>&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+        <button class="btn" id="gobtn" type="button" 
+            style="position: absolute;background-image: url(&quot;assets/img/Go.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 150px;height: 67px;margin-left: -54px;margin-top: -29px;"></button>
+    </div>
+    <div class="text-center toprightdiv" id="righttopdiv-2" style="width: 1200px;margin-left: auto;margin-right: auto;margin-top: -755px;">
+        <label id="questionlabel-2" class="questionlabel" style="font-size: 36px;margin-top: -265px;">Arm Wrestling<br>
+        </label>
+    </div>
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var D = 10;
+    function f1(){
+        var f1Value = document.getElementById("f1").value;
+        var T1 = (f1Value * D).toFixed(2);
+        $('#t1Value').text(T1);
+        armWrestling();
+    }
+    function f2(){
+        var f2Value = document.getElementById("f2").value;
+        var T2 = (f2Value * D).toFixed(2);
+        $('#t2Value').text(T2);
+        armWrestling();
+    }
 
+    $('#gobtn').click(function(){
+        armWrestling();
+    });
+
+    function armWrestling(){
+        var f1Value = document.getElementById("f1").value;
+        var f2Value = document.getElementById("f2").value;
+        if(f1Value == f2Value){
+            $('#div-img1').css('background-image','url(assets/img/1.png)');
+        }else if( (2*f1Value) <= f2Value){ // F2 WINNER
+            $('#div-img1').css('background-image','url(assets/img/8.png)');
+        }else if( f1Value >= (2*f2Value)){ // F1 WINNER
+            $('#div-img1').css('background-image','url(assets/img/7.png)');
+        }else if((f1Value/2) >= f2Value){
+            $('#div-img1').css('background-image','url(assets/img/5.png)');
+        }else if(f1Value <= (f2Value/2)){
+            $('#div-img1').css('background-image','url(assets/img/6.png)');
+        }else if(f1Value > f2Value){
+            $('#div-img1').css('background-image','url(assets/img/2.png)');
+        }else if(f1Value < f2Value){
+            $('#div-img1').css('background-image','url(assets/img/3.png)');
+        }
+    }
+    $('#home').click(function(){
+        window.location.reload();
+    });
+    $('#reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>

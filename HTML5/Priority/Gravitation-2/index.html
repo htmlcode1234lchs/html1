@@ -37,21 +37,71 @@
             class="btn btn-primary" id="btn-reset" type="button" style="width: 50px;height: 50px;margin-left: 630px;margin-top:-110px;background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
     </div>
     <div class="d-xl-flex align-items-xl-center middledivision" id="div-middle" style="width: 1000px;height: 450px;margin-right: auto;margin-left: auto;margin-top: 51px;">
-        <div class="d-xl-flex align-items-xl-center middleleftdivision" id="div-middleleft" style="width: 500px;height: 400px;background-image: url(&quot;assets/img/Level%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+        <div class="d-xl-flex align-items-xl-center middleleftdivision" id="div-middleleft" 
+            style="width: 500px;height: 400px;background-image: url(&quot;assets/img/Level1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
             <div id="div-mass" class="massdivision" style="width: 100px;height: 120px;margin-left: 50px;margin-top: 196px;"><label id="lab-mass" class="masslabel" style="font-size: 35px;margin-left: 26px;">M</label><label id="lab-massvalue" class="Massvaluelabel" style="width: 100px;height: 50px;font-size: 35px;background-color: #ffffff;"></label></div>
             <div id="div-force"
-                class="Forcedivision" style="width: 100px;height: 120px;margin-left: 220px;margin-top: 166px;"><label id="lab-force" class="forcelabel" style="font-size: 35px;margin-left: 26px;">F</label><label id="lab-forcevalue" class="forcevaluelabel" style="width: 100px;height: 50px;font-size: 35px;background-color: #ffffff;"></label></div>
+                class="Forcedivision" 
+                style="width: 100px;height: 120px;margin-left: 220px;margin-top: 166px;">
+                <label id="lab-force" class="forcelabel" 
+                    style="font-size: 35px;margin-left: 26px;">F</label>
+                <label id="lab-forcevalue" class="forcevaluelabel" 
+                    style="width: 100px;height: 50px;font-size: 35px;background-color: #ffffff;"></label>
+            </div>
         </div>
-        <div id="div-middleright" class="middlerightdivision" style="width: 400px;height: 400px;margin-right: auto;margin-left: auto;">
-            <div id="div-1" class="division1" style="margin-top: 35px;width: 400px;height: 45px;"><label id="div1-lab1" class="division1label1" style="font-size: 30px;">Force:&nbsp;</label><input type="text" id="div1-label1-value" class="division1label1value" style="width: 80px;height: 45px;font-size: 30px;"></div>
+        <div id="div-middleright" class="middlerightdivision" 
+            style="width: 400px;height: 400px;margin-right: auto;margin-left: auto;">
+            <div id="div-1" class="division1" style="margin-top: 35px;width: 400px;height: 45px;">
+                <label id="fValue" class="division1label1" style="font-size: 30px;">Force:&nbsp;</label>
+                <input type="number" oninput="f()" id="f" class="division1label1value" 
+                    style="width: 80px;height: 45px;font-size: 30px;">
+            </div>
             <div id="div-2" class="division2"
-                style="margin-top: 35px;width: 400px;height: 45px;"><label id="div2-lab-1" class="division2label1" style="font-size: 30px;">Mass:&nbsp;</label><input type="text" id="div2-label1-value" style="width: 80px;height: 45px;margin-left: 5px;font-size: 30px;"></div>
+                style="margin-top: 35px;width: 400px;height: 45px;">
+                <label id="mValue" class="division2label1" style="font-size: 30px;">Mass:&nbsp;</label>
+                <input type="number" oninput="m()" id="m" 
+                style="width: 80px;height: 45px;margin-left: 5px;font-size: 30px;">
+            </div>
             <div id="div-3" class="division1"
-                style="margin-top: 35px;width: 400px;height: 45px;"><label id="div3-lab-1" class="division3label1" style="font-size: 30px;">Acceleration:&nbsp;</label><label id="div3-label1-value" class="division3label1value" style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label></div>
+                    style="margin-top: 35px;width: 400px;height: 45px;">
+                <label id="div3-lab-1" class="division3label1" 
+                    style="font-size: 30px;">Acceleration:&nbsp;<span id="accValue"></span></label>
+                <label id="div3-label1-value" class="division3label1value" 
+                    style="font-size: 30px;background-color: #ffffff;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</label>
+            </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    function f(){
+        $('#lab-forcevalue').text(document.getElementById('f').value)
+        gravitation();
+    }
+    function m(){
+        $('#lab-massvalue').text(document.getElementById('m').value)
+        gravitation();
+    }
+    function gravitation(){
+        var f = document.getElementById('f').value;
+        var m = document.getElementById('m').value;
+        var Acceleration = (f / (m*9.8)).toFixed(2);
+        $('#div3-label1-value').text(Acceleration);
+        if( f == m){
+            $('#div-middleleft').css('background-image','url(assets/img/Level1.png)')
+        }else if( f > m){
+            $('#div-middleleft').css('background-image','url(assets/img/Level2.png)')
+        }else if(f < m){
+            $('#div-middleleft').css('background-image','url(assets/img/Level3.png)')
+        }
+    }
 
+    $('#btn-home').click(function(){
+        window.location.reload();
+    });
+    $('#btn-reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>

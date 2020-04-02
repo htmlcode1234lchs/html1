@@ -7,29 +7,161 @@
     <title>Magnet</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        #answer {
+            width: 300px;
+            height: 125px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
 </head>
 
-<body style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+<body
+    style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="titlediv" class="divtitle" style="height: 100px;">
-        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary btnhome" id="homebtn" type="button" style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-            <button
-                class="btn btn-primary btnreset" id="resetbtn" type="button" style="margin-left: 680px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;">
+            <button class="btn btn-primary btnhome" id="homebtn" type="button"
+                style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+            <button class="btn btn-primary btnreset" id="resetbtn" type="button"
+                style="margin-left: 680px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv"
+        style="margin-left: auto;margin-right: auto;">
         <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
-            <div class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the object to check the attraction</label></div>
-            <div id="rightmiddlediv" class="middlerightdiv" style="background-image: url(&quot;assets/img/magnet.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="rightdiv" class="middlerightdiv" style="background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <div class="text-center divright1img" id="right1imgdivjunk"><img id="r1img1" class="img1r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Aluminim.png&quot;);"><img id="r1img2" class="img2r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Copper.png&quot;);">
-                    <img
-                        id="r1img3" class="img3r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Iron.png&quot;);"><img id="r1img4" class="img4r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Paper.png&quot;);"><img id="r1img5" class="img5r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Plastic.png&quot;);">
-                        <img
-                            id="r1img6" class="img5r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Steel.png&quot;);"><img id="r1img7" class="img1r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Wood.png&quot;);"></div>
-            </div><label id="div-text" style="position: absolute;">Paper does not attract to the magnet</label></div>
+            <div class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;">
+                <label style="font-size: 30px;">Drag and drop the object to check the attraction</label>
+            </div>
+            <div ondrop="drop(event)" ondragover="allowDrop(event)">
+                <div id="rightmiddlediv" class="middlerightdiv" 
+                    style="background-image: url(&quot;assets/img/magnet.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+                </div>
+            </div>
+            <div id="rightdiv" class="middlerightdiv"
+                style="background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <div class="text-center divright1img" id="right1imgdivjunk">
+                    <img id="r1img1" class="img1r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Aluminim.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img2" class="img2r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Copper.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img3" class="img3r1" draggable="true" ondragstart="drag(event)" src="assets/img/Iron.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img4" class="img4r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Paper.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img5" class="img5r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Plastic.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img6" class="img5r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Steel.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <img id="r1img7" class="img1r1" draggable="true" ondragstart="drag(event)" src="assets/img/Wood.png"
+                        style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                </div>
+            </div>
+            <label id="div-text" style="position: absolute;">
+                Paper does not attract to the magnet
+            </label>
+        </div>
+
+    </div>
+    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-center">
+                            <td align="lef">
+                                <div id="CorrectAnswers">0</div>
+                            </td>
+
+                            <td align="right">
+                                <div id="IncorrectAnswers">0</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        console.log(data);
+        if (data == '') {
+            ev.target.appendChild(document.getElementById(data));
+            correct++;
+            play("correct");
+        } else {
+            incorrect++;
+            play("wrong");
+        }
+        $('#CorrectAnswers').text(correct);
+        $('#IncorrectAnswers').text(incorrect);
+    }
+
+    $('#homebtn').click(function () {
+        window.location.reload();
+    });
+    $('#resetbtn').click(function () {
+        window.location.reload();
+    });
+</script>
 
 </html>
