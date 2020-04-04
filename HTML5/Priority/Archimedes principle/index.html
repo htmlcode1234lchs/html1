@@ -19,21 +19,117 @@
     <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
         <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
             <div class="text-center toprightdiv" id="righttopdiv" style="margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the objects into the jar</label></div>
-            <div id="rightmiddlediv" class="middlerightdiv" style="background-image: url(&quot;assets/img/bekaer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <div class="text-center divright1img" id="right1imgdiv"></div>
+            <div id="rightmiddlediv" class="middlerightdiv" 
+                style="background-image: url(&quot;assets/img/bekaer.png&quot;);
+                background-position: center;background-size: contain;
+                background-repeat: no-repeat;" ondrop="drop(event)"
+                ondragover="allowDrop(event)">
+                <div class="text-center divright1img" id="right1imgdiv" style="height: 78px;
+                margin-top: 0;
+                margin-left: 13%;
+                width: 72%" >
+
+                </div>
+                <div style="width: 72%;
+                height: 218px;
+                margin-left: 14%;" id="waterId" >
+
+                </div>
             </div>
             <div id="rightdiv" class="middlerightdiv" style="background-image: url(&quot;assets/img/Block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <div class="text-center divright1img" id="right1imgdivjunk"><img id="r1img1" class="img1r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/aluminum.png&quot;);"><img id="r1img2" class="img2r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Copper.png&quot;);">
-                    <img
-                        id="r1img3" class="img3r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Iron.png&quot;);"><img id="r1img4" class="img4r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Paper.png&quot;);"><img id="r1img5" class="img5r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Plastic.png&quot;);">
-                        <img
-                            id="r1img6" class="img5r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/pen.png&quot;);"><img id="r1img7" class="img1r1" style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/Wood.png&quot;);"><img id="r1img8" class="img1r1"
-                                style="background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-image: url(&quot;assets/img/brick.png&quot;);"></div>
+                <div class="text-center divright1img" id="right1imgdivjunk">
+                    <img id="r1img1" class="img1r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/aluminum.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img2" class="img2r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Copper.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img3" class="img3r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Iron.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img4" class="img4r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Paper.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img5" class="img5r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Plastic.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img6" class="img5r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/pen.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img7" class="img1r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/Wood.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;">
+                    <img id="r1img8" class="img1r1" draggable="true" ondragstart="drag(event)"
+                        src="assets/img/brick.png"
+                        style="background-position: center;
+                        background-size: contain;background-repeat: no-repeat;
+                        position: absolute;"></div>
             </div>
         </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var waterArrayTop = ['10%','5%','1%', '0%']
+    var airArrayLeft = ['-9%','1%','1%', '0%']
+    var waterArrayLeft = ['4%'];
+    var wt = 0;
+    var al = 0;
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
 
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        console.log(data);
+        if(data == 'r1img1' || data == 'r1img4' || data == 'r1img5' || data == 'r1img7'){
+            document.getElementById('right1imgdiv').appendChild(document.getElementById(data));
+            $('#'+data).css('margin-left', airArrayLeft[al]);
+            $('#'+data).css('margin-top','0px');
+            al++
+        }
+        else if(data == 'r1img2' || data == 'r1img3' || data == 'r1img6' || data == 'r1img8'){
+            document.getElementById('waterId').appendChild(document.getElementById(data));
+            $('#'+data).css('margin-left','4%');
+            $('#'+data).css('margin-top',waterArrayTop[wt]);
+            wt++;
+        }
+       /*  if(data == answersArray[currentPosition]){
+            ev.target.appendChild(document.getElementById(data));
+            correct++;  
+            play("correct");
+            $('#nextBtn').css('display','block');
+        }else{
+            incorrect++;                 
+            play("wrong");
+        } */
+    }
+    
+    $('#homebtn').click(function(){
+        window.location.reload();
+    });
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>
