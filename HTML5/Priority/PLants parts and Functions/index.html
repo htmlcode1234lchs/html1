@@ -24,20 +24,47 @@
             <div class="text-center divright1img" id="right1imgdiv" style="background-image: url(&quot;assets/img/water.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
             <div id="rightdiv" class="middlerightdiv" style="margin-left: 523px;height: 192px;width: 203px;position: absolute;margin-top: 35px;"></div>
             <div id="left1imgdiv" style="background-image: url(&quot;assets/img/1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-        </div><select class="invisible" id="div-select-1" style="font-size: 30px;position: absolute;"><optgroup label="Select"><option value="12" selected="">Water</option><option value="13">Blue</option><option value="">Purple</option><option value="">Red</option><option value="">Yellow</option></optgroup></select>
+        </div>
+        <!-- <select class="invisible" id="div-select-1" style="font-size: 30px;position: absolute;"><optgroup label="Select"><option value="12" selected="">Water</option><option value="13">Blue</option><option value="">Purple</option><option value="">Red</option><option value="">Yellow</option></optgroup></select> -->
         <select
             id="div-select-2" style="font-size: 30px;position: absolute;">
-            <optgroup label="Select">
-                <option value="12" selected="">Water</option>
-                <option value="13">Blue</option>
-                <option value="">Purple</option>
-                <option value="">Red</option>
-                <option value="">Yellow</option>
-            </optgroup>
+                <option value="Water" selected="">Water</option>
+                <option value="Blue">Blue</option>
+                <option value="Purple">Purple</option>
+                <option value="Red">Red</option>
+                <option value="Yellow">Yellow</option>
             </select>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
+<script>
+    $('#div-select-2').change(function () {
+        var label = $('#div-select-2 :selected').val();
+        console.log(label);
+        updateImages(label);
+    });
+    function updateImages(label){
+        
+        if (label == 'Water') {
+            $('#right1imgdiv').css('background-image', 'url(assets/img/water.png)');
+        } else if (label == 'Blue') {
+            $('#right1imgdiv').css('background-image', 'url(assets/img/blue.png)');
+        } else if (label == 'Purple') {
+            $('#right1imgdiv').css('background-image', 'url(assets/img/red.png)');
+        } else if (label == 'Red') {
+            $('#right1imgdiv').css('background-image', 'url(assets/img/purple.png)');
+        } else if (label == 'Yellow') {
+            $('#right1imgdiv').css('background-image', 'url(assets/img/yellow.png)');
+        } 
+    }
+   
+    $('#homebtn').click(function(){
+        window.location.reload();
+    })
+    
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    })
+</script>
 </html>
