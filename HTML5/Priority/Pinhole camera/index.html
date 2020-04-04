@@ -23,7 +23,7 @@
             <div class="text-center divright1img" id="right1imgdivjunk" style="background-image: url(&quot;assets/img/wall1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
                 <div id="rightmiddlediv" class="middlerightdiv" style="position: absolute;background-image: url(&quot;assets/img/ray.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                     <div id="div-button"><label class="switch">
-  <input type="checkbox"checked>
+  <input type="checkbox"checked name="test">
   <span class="slider round"></span>
 </label><label id="offbtn" style="position: absolute;margin-top: 433px;margin-left: -100px;font-size: 19px;">Off</label><label style="position: absolute;margin-top: 433px;margin-left: 11px;font-size: 19px;">On</label></div>
                 </div>
@@ -32,10 +32,69 @@
             </div>
             <div id="div-rays" style="background-image: url(&quot;assets/img/ray1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
             <div id="rightdiv" class="middlerightdiv" style="background-image: url(&quot;assets/img/b.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-        </div><select id="div-select-2" style="font-size: 30px;position: absolute;"><optgroup label="Select"><option value="12" selected="">Bucket</option><option value="13">Man</option><option value="">Candle</option><option value="">Teddy Bear</option><option value="">Tree</option><option value="">Pen</option></optgroup></select></div>
+        </div>
+        <select id="div-select-2" style="font-size: 30px;position: absolute;">            
+                <option value="Bucket" selected="">Bucket</option>
+                <option value="Man">Man</option>
+                <option value="Candle">Candle</option>
+                <option value="Teddy Bear">Teddy Bear</option>
+                <option value="Tree">Tree</option>
+                <option value="Pen">Pen</option>
+        </select>
+    </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $('#div-select-2').change(function () {
+        var label = $('#div-select-2 :selected').val();
+        console.log(label);
+        updateImages(label);
+    });
+    function updateImages(label){
+        
+        if (label == 'Bucket') {
+            $('#div-img').css('background-image', 'url(assets/img/1.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/a.png)');
+        } else if (label == 'Man') {
+            $('#div-img').css('background-image', 'url(assets/img/2.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/b.png)');
+        } else if (label == 'Teddy Bear') {
+            $('#div-img').css('background-image', 'url(assets/img/4.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/d.png)');
+        } else if (label == 'Tree') {
+            $('#div-img').css('background-image', 'url(assets/img/5.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/e.png)');
+        } else if (label == 'Candle') {
+            $('#div-img').css('background-image', 'url(assets/img/3.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/c.png)');
+        } else if (label == 'Pen') {
+            $('#div-img').css('background-image', 'url(assets/img/6.png)');
+            $('#rightdiv').css('background-image', 'url(assets/img/f.png)');
+        } 
+    }
+    $('input[name=test]').change(function () {
+        if ($('input[name=test]').is(':checked')) {
+            var label = $('#div-select-2 :selected').val();
+            $('#div-rays').css('background-image', 'url(assets/img/ray1.png)');
+            updateImages(label);
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/ray.png)');
+        } else {
+            $('#div-img').css('background-image', 'url()');
+            $('#rightdiv').css('background-image', 'url()');
+            $('#div-rays').css('background-image', 'url()');
+            $('#rightmiddlediv').css('background-image', 'url()');
+           // $('$right1imgdivjunk').css('background-image', 'url(Torch-off.png)');
+        }
+    });
 
+    $('#homebtn').click(function(){
+        window.location.reload();
+    })
+    
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    })
+</script>
 </html>

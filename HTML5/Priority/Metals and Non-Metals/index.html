@@ -6,32 +6,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Metals and non metals</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+   <!--  <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <style>
+        #CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        #IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        .battery {
+            width: 300px;
+            height: 125px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+        .wire {
+            width: 300px;
+            height: 125px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+        .bulb {
+            width: 300px;
+            height: 125px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+        }
+    </style>
 </head>
 
-<body style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
-    <div id="div-title" class="title division" style="width: 900px;height: 100px;margin-right: auto;margin-left: auto;"><button class="btn btn-primary" id="btn-home" type="button" style="width: 50px;height: 50px;margin: 20px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
-        <button
-            class="btn btn-primary" id="btn-reset" type="button" style="width: 50px;height: 50px;margin-left: 700px;background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+<body
+    style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
+    <div id="div-title" class="title division" style="width: 900px;height: 100px;margin-right: auto;margin-left: auto;">
+        <button class="btn btn-primary" id="btn-home" type="button"
+            style="width: 50px;height: 50px;margin: 20px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+        <button class="btn btn-primary" id="btn-reset" type="button"
+            style="width: 50px;height: 50px;margin-left: 700px;background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
     </div>
     <div class="d-xl-flex align-items-xl-center bodydiv" id="div-body">
-        <div class="text-center leftdivision" id="div-left" style="width: 150px;height: 300px;background-image: url(&quot;assets/img/Block%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;margin-top: -101px;"><img id="img1" class="image1" style="width: 80px;height: 80px;background-image: url(&quot;assets/img/Battery.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 20px;"><img id="img2" class="image2"
-                style="width: 80px;height: 80px;background-image: url(&quot;assets/img/wire.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 10px;"><img id="img3" class="image3" style="background-image: url(&quot;assets/img/Bulb.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 10px;width: 80px;height: 80px;"></div>
-        <div
-            id="div-middle" class="middle division" style="width: 600px;height: 400px;margin-left: auto;margin-right: auto;"></div>
-    <div class="text-center d-xl-flex align-items-xl-center right division" id="div-right" style="width: 450px;height: 500px;background-image: url(&quot;assets/img/Block%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
-        <div class="text-center right1division" id="div-innerright1" style="width: 180px;height: 500px;margin-left: auto;margin-right: auto;"><img id="r1img1" class="right1image1" style="width: 100px;height: 100px;margin-top: 10px;background-image: url(&quot;assets/img/Zinc.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r1img2"
-                class="r1image2" style="width: 100px;height: 100px;background-image: url(&quot;assets/img/Iron.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 20px;"><img id="r1img3" class="r1image3"
-                style="width: 100px;height: 100px;margin-top: 20px;background-image: url(&quot;assets/img/copper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r1img4" class="r1image4" style="width: 100px;height: 100px;margin-top: 20px;background-image: url(&quot;assets/img/sulphur.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-        <div
-            class="text-center innerright2division" id="div-innerright2" style="width: 180px;height: 500px;margin-left: auto;margin-right: auto;"><img id="r2img1" class="r2image2" style="width: 100px;height: 100px;margin-top: 10px;background-image: url(&quot;assets/img/Iodine.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r2img2" class="r2image2"
-                style="width: 100px;height: 100px;margin-top: 20px;background-image: url(&quot;assets/img/magnesium.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="r2img3" class="r2image3" style="width: 100px;height: 100px;margin-top: 20px;background-image: url(&quot;assets/img/alluminum.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-            <img
-                id="r2img4" class="r2image4" style="width: 100px;height: 100px;margin-top: 20px;background-image: url(&quot;assets/img/carbon.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+        <div class="text-center leftdivision" id="div-left"
+            style="width: 150px;height: 300px;background-image: url(&quot;assets/img/Block%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;margin-top: -101px;">
+            <img id="img1" class="image1" draggable="true" ondragstart="drag(event)" src="assets/img/Battery.png"
+                style="width: 80px;height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 20px;">
+            <img id="img2" class="image2" draggable="true" ondragstart="drag(event)" src="assets/img/wire.png"
+                style="width: 80px;height: 80px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 10px;">
+            <img id="img3" class="image3" draggable="true" ondragstart="drag(event)" src="assets/img/Bulb.png"
+                style="background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 10px;width: 80px;height: 80px;">
+        </div>
+        <div id="div-middle" class="middle division"
+            style="width: 600px;height: 400px;margin-left: auto;margin-right: auto;">
+            <div class="battery" id="battery" ondrop="drop(event)"
+            ondragover="allowDrop(event)"></div> <br>
+            <div class="wire" id="wire" ondrop="drop(event)"
+            ondragover="allowDrop(event)"></div></br>
+            <div class="bulb" id="bulb" ondrop="drop(event)"
+            ondragover="allowDrop(event)"></div>
+        </div>
+        <div class="text-center d-xl-flex align-items-xl-center right division" id="div-right"
+            style="width: 450px;height: 500px;background-image: url(&quot;assets/img/Block%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: auto;margin-right: auto;">
+            <div class="text-center right1division" id="div-innerright1"
+                style="width: 180px;height: 500px;margin-left: auto;margin-right: auto;">
+                <img id="r1img1" class="right1image1" src="assets/img/Zinc.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 10px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="r1img2" class="r1image2" src="assets/img/Iron.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 20px;">
+                <img id="r1img3" class="r1image3" src="assets/img/copper.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 20px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="r1img4" class="r1image4" src="assets/img/sulphur.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 20px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </div>
+            <div class="text-center innerright2division" id="div-innerright2"
+                style="width: 180px;height: 500px;margin-left: auto;margin-right: auto;">
+                <img id="r2img1" class="r2image2" src="assets/img/Iodine.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 10px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="r2img2" class="r2image2" src="assets/img/magnesium.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 20px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="r2img3" class="r2image3" src="assets/img/alluminum.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 20px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="r2img4" class="r2image4" src="assets/img/carbon.png"
+                    draggable="true" ondragstart="drag(event)"
+                    style="width: 100px;height: 100px;margin-top: 20px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </div>
+        </div>
     </div>
+    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+        <section style="width: 100%;height: 100%">
+            <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                        <tr class="text-center">
+                            <td align="lef">
+                                <div id="CorrectAnswers">0</div>
+                            </td>
+                          
+                            <td align="right">
+                                <div id="IncorrectAnswers">0</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </div>
     <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var array = ['r1img1', 'r1img2', 'r1img3', 'r1img4', 'r2img1', 'r2img2', 'r2img3', 'r2img4'];
+    var resultArray = ['yes', 'yes', 'yes', 'no', 'no', 'no', 'yes', 'yes'];
+    var correct = 0;
+    var incorrect = 0; 
 
+    function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        console.log(data);
+        console.log('ff='+ev.target.id);
+        if((data == 'img1' || data == 'img3') && ev.target.id != 'wire'){
+            ev.target.appendChild(document.getElementById(data));           
+            play("correct");
+        }else if(data == 'img2' && ev.target.id == 'wire'){
+            document.getElementById('wire').appendChild(document.getElementById('img2'));           
+            play("correct");            
+        }
+        else if(array.includes(data)){
+            var position = fruits.indexOf(data);
+            if(resultArray[position] == 'yes'){
+                ev.target.appendChild(document.getElementById(data));
+                correct++;  
+                document.getElementById('bulb').src = 'assets/img/carbon.png';
+                play("correct");
+            }else{
+                play("wrong");
+                incorrect++;
+            }
+        }
+        else{                 
+            play("wrong");            
+        }
+    }
+    function showAnswer(){
+        document.getElementById('answer').appendChild(document.getElementById(answersArray[currentPosition]));
+        $('#nextBtn').css('display','block');
+    }
+    $('#nextBtn').click(function(){
+        if(currentPosition == answersArray.length-1){
+            $('#nextBtn').css('display','none');
+            $('#answer').empty();
+            $('#status').css('display','block');
+            $('#showbtn').css('display','none');
+            $('#status').text('All questions are completed. please click home or reset button to reload.')
+        }else{            
+            init(currentPosition+1);
+        }
+    });
+    $('#btn-home').click(function(){
+        window.location.reload();
+    });
+    $('#btn-reset').click(function(){
+        window.location.reload();
+    });
+</script>
 </html>
