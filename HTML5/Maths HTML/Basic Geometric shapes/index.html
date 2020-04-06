@@ -30,7 +30,7 @@
 				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
 			<button id="img6" class="arcimg button" style="background-image: url(&quot;assets/img/Arc.png&quot;);
 				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-			<button id="img7" class="triangleimg" style="background-image: url(&quot;assets/img/Triangle.png&quot;);
+			<button id="img7" class="triangleimg" style="background-image: url(&quot;assets/img/Triangle_H.png&quot;);
 				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
 			<button id="img8" class="circleimg" style="background-image: url(&quot;assets/img/Circle_Icon.png&quot;);
 				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
@@ -56,6 +56,11 @@
     var withoutbackground = ['Point.png', 'Ray.png', 'Angle.png',
                     'Quadrilateral.png', 'Line.png', 'Arc.png',
                     'Triangle.png','Circle_Icon.png'];
+
+    var S = ['Point_S.png', 'Ray_S.png', 'Angle_S.png',
+                    'Quadrilateral_S.png', 'Line_S.png', 'Arc_S.png',
+                    'Triangle_S.png','Circle_S.png'];
+    
     var staticValues = [1,2,3,4,5,6,7,8];
 
     $('.text-center > button').click(function(){       
@@ -65,11 +70,15 @@
             if(element == selectedId){
                 console.log("if = "+element+" = "+withbackground[element-1])
                 $('#img'+element).css('background-image','url(assets/img/'+withbackground[element-1]+')');
+                $('#div-middletop').css('background-image','url(assets/img/'+S[element-1]+')')
             }else{
                 console.log("else = "+element+" = "+withoutbackground[element-1])
                 $('#img'+element).css('background-image','url(assets/img/'+withoutbackground[element-1]+')');
             }
         });
     });
+    $('#btn-reset').click(function(){
+        window.location.reload();
+    })
 </script>
 </html>
