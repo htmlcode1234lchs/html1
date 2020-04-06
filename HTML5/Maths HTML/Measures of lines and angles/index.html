@@ -46,25 +46,94 @@ for (var i = 0; i < btns.length; i++) {
     </div>
     <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
         <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
-            <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="position: absolute;"><button class="btn" id="btn1" type="button" style="position: absolute;background-image: url(&quot;assets/img/Line_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-			<button class="btn" id="btn2"
-                    type="button" style="position: absolute;background-image: url(&quot;assets/img/ParallelLines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn3" type="button" style="position: absolute;background-image: url(&quot;assets/img/Perpendicular%20Lines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                <button
-                    class="btn" id="btn4" type="button" style="position: absolute;background-image: url(&quot;assets/img/Intersecting%20Lines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn5" type="button" style="position: absolute;background-image: url(&quot;assets/img/Obtuse%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button
-                        class="btn" id="btn6" type="button" style="position: absolute;background-image: url(&quot;assets/img/Right%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn7" type="button" style="position: absolute;background-image: url(&quot;assets/img/Acute%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
-            <div
-                id="rightmiddlediv" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/Line_L.png&quot;);background-position: center;background-size: contain;position: absolute;"></div>
-        <div id="rightdiv" class="middlerightdiv" style="position: absolute;"><button class="btn" id="divbtn1" type="button" style="background-image: url(&quot;assets/img/Ruler%20_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;margin-left: 80px;"></button>
-            <button
-                class="btn" id="divbtn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Protractor.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 80px;"></button><button class="btn btn-primary" id="drawbtn" type="button" style="background-image: url(&quot;assets/img/Drawing%20Mode.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
-                <button
-                    class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/Reset_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+            <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" 
+                style="position: absolute;">
+            <button class="btn" id="btn1" type="button" 
+                style="position: absolute;background-image: url(&quot;assets/img/Line_H.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn" id="btn2" type="button" 
+                style="position: absolute;background-image: url(&quot;assets/img/ParallelLines.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn" id="btn3" type="button" 
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Perpendicular%20Lines.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn" id="btn4" type="button" 
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Intersecting%20Lines.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn btn-primary" id="btn5" type="button" 
+                style="position: absolute;background-image: url(&quot;assets/img/Obtuse%20Angle.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn" id="btn6" type="button" 
+                style="position: absolute;background-image: url(&quot;assets/img/Right%20Angle.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+            <button class="btn" id="btn7" type="button" 
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Acute%20Angle.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </button>
+        </div>
+        <div id="rightmiddlediv" class="middlerightdiv" 
+            style="background-repeat: no-repeat;
+            background-image: url(&quot;assets/img/Line_L.png&quot;);
+            background-position: center;background-size: contain;position: absolute;">
+        </div>
+        <div id="rightdiv" class="middlerightdiv" 
+            style="position: absolute;">
+            <button class="btn" id="divbtn1" type="button" 
+                style="background-image: url(&quot;assets/img/Ruler%20_H.png&quot;);
+                background-position: center;background-size: contain;
+                background-repeat: no-repeat;position: absolute;margin-left: 80px;">
+            </button>
+            <button class="btn" id="divbtn2" type="button" 
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Protractor.png&quot;);
+                background-position: center;background-size: contain;
+                background-repeat: no-repeat;margin-left: 80px;">
+            </button>
+            <button class="btn btn-primary" id="drawbtn" type="button" 
+                style="background-image: url(&quot;assets/img/Drawing%20Mode.png&quot;);
+                background-position: center;background-size: contain;
+                background-repeat: no-repeat;background-color: rgba(255,255,255,0);
+                position: absolute;">
+            </button>
+            <button class="btn btn-primary" id="resetbtn" type="button" 
+                style="background-image: url(&quot;assets/img/Reset_H.png&quot;);
+                background-position: center;background-size: contain;
+                background-repeat: no-repeat;background-color: rgba(255,255,255,0);
+                position: absolute;">
+            </button>
         </div>
     </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
+<script>
+    var withbackground = ['Line_H.png', 'ParallelLines_H.png', 'Perpendicular%20Lines_H.png',
+                    'Intersecting%20Lines_H.png', 'Obtuse%20Angle_H.png', 'Right%20Angle_H.png',
+                    'Acute%20Angle_H.png'];
+    var withoutbackground = ['Line.png', 'ParallelLines.png', 'Perpendicular%20Lines.png',
+                    'Intersecting%20Lines.png', 'Obtuse%20Angle.png', 'Right%20Angle.png',
+                    'Acute%20Angle.png'];
+    var staticValues = [1,2,3,4,5,6,7]
+    $('.divleft > button').click(function(){       
+        var selectedId = this.id.charAt(this.id.length-1);
+        console.log(selectedId);
+        staticValues.forEach(element =>{
+            if(element == selectedId){
+                $('#btn'+element).css('background-image','url(assets/img/'+withbackground[element-1]+')');
+            }else{
+                $('#btn'+element).css('background-image','url(assets/img/'+withoutbackground[element-1]+')')
+            }
+        });
+    });
+</script>
 </html>
