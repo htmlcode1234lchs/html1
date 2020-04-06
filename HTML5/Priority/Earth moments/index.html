@@ -291,6 +291,14 @@
        updateTimezone(label);
     });
 
+    $('#homebtn').click(function(){
+        window.location.reload();
+    });
+
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    });
+
     function updateTimezone(label){
         var zones = getTimezonData();
         var zone = zones.filter(values =>{
