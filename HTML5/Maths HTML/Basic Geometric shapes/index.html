@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Basic Geometric Shapes</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/untitled.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <div id="div-title" class="title division" style="width: 900px;height: 80px;margin-right: auto;margin-left: auto;"></div>
+    <div class="d-xl-flex align-items-xl-center middledivision" id="div-middle" style="margin-right: auto;margin-left: auto;">
+    <div class="d-xl-flex align-items-xl-center middleleftdivision" id="div-middleleft">
+          <div class="text-center middleleftfirstdivision" id="div-middleleft1" style="margin-left: auto;margin-right: auto;">
+			<button id="img1" class="pointimg" style="background-image: url(&quot;assets/img/Point.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img2" class="rayimg" style="background-image: url(&quot;assets/img/Ray_H.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img3" class="angleimg" style="background-image: url(&quot;assets/img/Angle.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img4" class="quadrilateralimg" style="background-image: url(&quot;assets/img/Quadrilateral.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+		</div>
+        <div class="text-center middleleftseconddivision" id="div-middleleft2" style="margin-left: auto;margin-right: auto;">
+			<button id="img5" class="lineimg button" style="background-image: url(&quot;assets/img/Line.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img6" class="arcimg button" style="background-image: url(&quot;assets/img/Arc.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img7" class="triangleimg" style="background-image: url(&quot;assets/img/Triangle.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button id="img8" class="circleimg" style="background-image: url(&quot;assets/img/Circle_Icon.png&quot;);
+				background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+		</div>
+	</div>
+    <div id="div-middleright" class="middlerightdivision" style="margin-left: auto;margin-right: auto;">
+        <div class="d-xl-flex justify-content-xl-center align-items-xl-center middletopdivision" id="div-middletop" style="margin-top: 50px;background-image: url(&quot;assets/img/Triangle_S.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+        <div id="div-midbottom" class="middlebottomdivision" style="height: 60px;margin-top: 50px;"><button class="btn btn-primary shadow-none" id="btn-demo" type="button" style="background-repeat: no-repeat;background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Demo%20Mode.png&quot;);background-position: center;background-size: contain;"></button>
+            <button
+                class="btn btn-primary shadow-none" id="btn-reset" type="button" style="background-image: url(&quot;assets/img/Reset_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);"></button>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/bs-init.js"></script>
+</body>
+<script>
+	var withbackground = ['Point_H.png', 'Ray_H.png', 'Angle_H.png',
+                    'Quadrilateral_H.png', 'Line_H.png', 'Arc_H.png',
+                    'Triangle_H.png','Circle_Icon_H.png'];
+					
+    var withoutbackground = ['Point.png', 'Ray.png', 'Angle.png',
+                    'Quadrilateral.png', 'Line.png', 'Arc.png',
+                    'Triangle.png','Circle_Icon.png'];
+    var staticValues = [1,2,3,4,5,6,7,8];
+
+    $('.text-center > button').click(function(){       
+        var selectedId = this.id.charAt(this.id.length-1);
+        console.log(selectedId);
+        staticValues.forEach((element, index) =>{
+            if(element == selectedId){
+                console.log("if = "+element+" = "+withbackground[element-1])
+                $('#img'+element).css('background-image','url(assets/img/'+withbackground[element-1]+')');
+            }else{
+                console.log("else = "+element+" = "+withoutbackground[element-1])
+                $('#img'+element).css('background-image','url(assets/img/'+withoutbackground[element-1]+')');
+            }
+        });
+    });
+</script>
+</html>
