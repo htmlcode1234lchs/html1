@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Measures of lines</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+	
+	<style>
+	<!-- #btn1{
+	background-image: url("assets/img/Line.png");
+	}
+	#btn1.active{
+	background-image: url("assets/img/Line_H.png");
+	}
+	#btn2{
+	background-image: url("assets/img/ParallelLines.png");
+	}
+	#btn2.active{
+	background-image: url("assets/img/ParallelLines_H.png");
+	} -->
+	.active, .btn:hover {
+  background-color: #666;
+  color: white;
+}
+	</style>
+	<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("leftdiv");
+var btns = header.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+</head>
+
+<body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
+    <div id="titlediv" class="divtitle" style="height: 100px;">
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"></div>
+    </div>
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
+        <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+            <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="position: absolute;"><button class="btn" id="btn1" type="button" style="position: absolute;background-image: url(&quot;assets/img/Line_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+			<button class="btn" id="btn2"
+                    type="button" style="position: absolute;background-image: url(&quot;assets/img/ParallelLines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn3" type="button" style="position: absolute;background-image: url(&quot;assets/img/Perpendicular%20Lines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                <button
+                    class="btn" id="btn4" type="button" style="position: absolute;background-image: url(&quot;assets/img/Intersecting%20Lines.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn5" type="button" style="position: absolute;background-image: url(&quot;assets/img/Obtuse%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                    <button
+                        class="btn" id="btn6" type="button" style="position: absolute;background-image: url(&quot;assets/img/Right%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn7" type="button" style="position: absolute;background-image: url(&quot;assets/img/Acute%20Angle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+            <div
+                id="rightmiddlediv" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/Line_L.png&quot;);background-position: center;background-size: contain;position: absolute;"></div>
+        <div id="rightdiv" class="middlerightdiv" style="position: absolute;"><button class="btn" id="divbtn1" type="button" style="background-image: url(&quot;assets/img/Ruler%20_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;margin-left: 80px;"></button>
+            <button
+                class="btn" id="divbtn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Protractor.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 80px;"></button><button class="btn btn-primary" id="drawbtn" type="button" style="background-image: url(&quot;assets/img/Drawing%20Mode.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                <button
+                    class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/Reset_H.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
