@@ -21,15 +21,31 @@
     <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
         <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;position: relative;height: 726px;margin-top: -5px;">
             <div class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the object to check the attraction</label></div>
-            <div class="text-center divright1img" id="right1imgdivjunk" style="background-image: url(&quot;assets/img/wall.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
-                <div id="rightmiddlediv" class="middlerightdiv" style="position: absolute;background-image: url(&quot;assets/img/c.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                    <div id="div-on-off"><label class="switch">
-  <input type="checkbox"checked>
-  <span class="slider round"></span>
-</label><label id="offbtn" style="position: absolute;margin-top: 433px;margin-left: -100px;font-size: 19px;">Off</label><label style="position: absolute;margin-top: 433px;margin-left: 11px;font-size: 19px;">On</label></div>
+            <div class="text-center divright1img" id="right1imgdivjunk" 
+                style="background-image: url(&quot;assets/img/wall.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;
+                position: absolute;">
+                <div id="rightmiddlediv" class="middlerightdiv" 
+                    style="position: absolute;background-image: url(&quot;assets/img/c.png&quot;);
+                        background-position: center;background-size: contain;
+                        background-repeat: no-repeat;">
+                    <div id="div-on-off">
+                        <label class="switch">
+                            <input type="checkbox"checked>
+                            <span class="slider round"></span>
+                        </label>
+                        <label id="offbtn" 
+                            style="position: absolute;margin-top: 433px;margin-left: -100px;
+                            font-size: 19px;">Off</label>
+                        <label 
+                            style="position: absolute;margin-top: 433px;margin-left: 11px;
+                            font-size: 19px;">On</label>
+                    </div>
                 </div>
                 <div id="div-mirror" 
-                    style="background-image: url(&quot;assets/img/1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    style="background-image: url(&quot;assets/img/1.png&quot;);
+                    background-position: center;background-size: contain;
+                    background-repeat: no-repeat;position: absolute;">
                     <div id="div-rays" 
                         style="background-image: url(&quot;assets/img/4.png&quot;);
                         background-position: center;background-size: contain;
@@ -57,14 +73,14 @@
     });
     function updateImages(label){        
         if (label == 'Transparent  Glass') {
-            $('#div-img').css('background-image', 'url(assets/img/zTeddy.png)');
-            $('#div-img1').css('background-image', 'url(assets/img/zTeddy%20Shadow.png)');
+            $('#div-mirror').css('background-image', 'url(assets/img/1.png)');
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/a.png)');
         } else if (label == 'Opaque') {
-            $('#div-img').css('background-image', 'url(assets/img/Ball.png)');
-            $('#div-img1').css('background-image', 'url(assets/img/Ball-Shadow.png)');
+            $('#div-mirror').css('background-image', 'url(assets/img/2.png)');
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/b.png)');
         } else if (label == 'Translucent Glass') {
-            $('#div-img').css('background-image', 'url(assets/img/Bird.png)');
-            $('#div-img1').css('background-image', 'url(assets/img/Bird-Shadow.png)');
+            $('#div-mirror').css('background-image', 'url(assets/img/3.png)');
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/c.png)');
         } 
     }
     $('input[name=test]').change(function () {

@@ -123,10 +123,14 @@ for (var i = 0; i < btns.length; i++) {
     var withoutbackground = ['Line.png', 'ParallelLines.png', 'Perpendicular%20Lines.png',
                     'Intersecting%20Lines.png', 'Obtuse%20Angle.png', 'Right%20Angle.png',
                     'Acute%20Angle.png'];
+    var withoutbackground_L = ['Line_L.png', 'ParallelLines_L.png', 'Perpendicular_L.png',
+                    'Intersecting%20Lines_L.png', 'Obtuse%20Angle_L.png', 'RightAngle_L.png',
+                    'Acute%20Angle_L.png'];
     var staticValues = [1,2,3,4,5,6,7];
 
     var leftWithBackground = ['Ruler%20_H.png', 'Protractor_H.png'];
     var leftWithOutBackground = ['Ruler.png', 'Protractor.png'];
+    var leftWithOutBackground_L = ['Ruler_L.png', 'Protractor_L.png'];
     var leftStaticValues = [1,2];
 
     $('.divleft > button').click(function(){       
@@ -135,6 +139,7 @@ for (var i = 0; i < btns.length; i++) {
         staticValues.forEach(element =>{
             if(element == selectedId){
                 $('#btn'+element).css('background-image','url(assets/img/'+withbackground[element-1]+')');
+                $('#rightmiddlediv').css('background-image','url(assets/img/'+withoutbackground_L[element-1]+')');
             }else{
                 $('#btn'+element).css('background-image','url(assets/img/'+withoutbackground[element-1]+')')
             }
@@ -146,6 +151,7 @@ for (var i = 0; i < btns.length; i++) {
         leftStaticValues.forEach(element=>{
             if(element == selectedId){
                 $('#divbtn'+element).css('background-image','url(assets/img/'+leftWithBackground[element-1]+')');
+                $('#rightmiddlediv').css('background-image','url(assets/img/'+leftWithOutBackground_L[element-1]+')');
             }else{
                 $('#divbtn'+element).css('background-image','url(assets/img/'+leftWithOutBackground[element-1]+')');
             }
