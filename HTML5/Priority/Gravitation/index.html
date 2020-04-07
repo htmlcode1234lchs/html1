@@ -59,14 +59,14 @@
 <script>
     var D = 10;
     function f1(){
-        var f1Value = document.getElementById("f1").value;
-        var T1 = (f1Value * D).toFixed(2);
+        var f1Value = parseFloat(document.getElementById("f1").value);
+        var T1 = (f1Value * D).toFixed(0);
         $('#t1Value').text(T1);
         armWrestling();
     }
     function f2(){
-        var f2Value = document.getElementById("f2").value;
-        var T2 = (f2Value * D).toFixed(2);
+        var f2Value =parseFloat(document.getElementById("f2").value);
+        var T2 = (f2Value * D).toFixed(0);
         $('#t2Value').text(T2);
         armWrestling();
     }
@@ -76,8 +76,8 @@
     });
 
     function armWrestling(){
-        var f1Value = document.getElementById("f1").value;
-        var f2Value = document.getElementById("f2").value;
+        var f1Value = parseFloat(document.getElementById("f1").value);
+        var f2Value = parseFloat(document.getElementById("f2").value);
         if(f1Value == f2Value){
             $('#div-img1').css('background-image','url(assets/img/1.png)');
         }else if( (2*f1Value) <= f2Value){ // F2 WINNER

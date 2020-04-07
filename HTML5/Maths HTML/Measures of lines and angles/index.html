@@ -85,10 +85,10 @@ for (var i = 0; i < btns.length; i++) {
             background-image: url(&quot;assets/img/Line_L.png&quot;);
             background-position: center;background-size: contain;position: absolute;">
         </div>
-        <div id="rightdiv" class="middlerightdiv" 
+        <div id="rightdiv" class="middlerightdiv " 
             style="position: absolute;">
             <button class="btn" id="divbtn1" type="button" 
-                style="background-image: url(&quot;assets/img/Ruler%20_H.png&quot;);
+                style="background-image: url(&quot;assets/img/Ruler.png&quot;);
                 background-position: center;background-size: contain;
                 background-repeat: no-repeat;position: absolute;margin-left: 80px;">
             </button>
@@ -123,7 +123,12 @@ for (var i = 0; i < btns.length; i++) {
     var withoutbackground = ['Line.png', 'ParallelLines.png', 'Perpendicular%20Lines.png',
                     'Intersecting%20Lines.png', 'Obtuse%20Angle.png', 'Right%20Angle.png',
                     'Acute%20Angle.png'];
-    var staticValues = [1,2,3,4,5,6,7]
+    var staticValues = [1,2,3,4,5,6,7];
+
+    var leftWithBackground = ['Ruler%20_H.png', 'Protractor_H.png'];
+    var leftWithOutBackground = ['Ruler.png', 'Protractor.png'];
+    var leftStaticValues = [1,2];
+
     $('.divleft > button').click(function(){       
         var selectedId = this.id.charAt(this.id.length-1);
         console.log(selectedId);
@@ -135,6 +140,18 @@ for (var i = 0; i < btns.length; i++) {
             }
         });
     });
+
+    $('#rightdiv > button').click(function(){
+        var selectedId = this.id.charAt(this.id.length-1);
+        leftStaticValues.forEach(element=>{
+            if(element == selectedId){
+                $('#divbtn'+element).css('background-image','url(assets/img/'+leftWithBackground[element-1]+')');
+            }else{
+                $('#divbtn'+element).css('background-image','url(assets/img/'+leftWithOutBackground[element-1]+')');
+            }
+        });
+    });
+
     $('#resetbtn').click(function(){
         window.location.reload();
     })

@@ -63,11 +63,11 @@
 
         var Acceleration = (force / ( (t1*9.8) + (t2*9.8) + (t3*9.8))).toFixed(2);
         var T1 = (Acceleration * t1).toFixed(2);
-        var T2 = (Acceleration * (t1+t2)).toFixed(2);
+        var T2 = (Acceleration * (parseFloat(t1)+parseFloat(t2))).toFixed(2);
 
         $('#field-zero').text(Acceleration);
-        $('#field-zero1').text(T1);
-        $('#field-zero2').text(T2);
+        $('#field-zero2').text(T1);
+        $('#field-zero1').text(T2);
 
         if(force > (t1+t2+t3)){
             $('#div-ironblocks').css('margin-left','10%');   

@@ -28,15 +28,64 @@
   <span class="slider round"></span>
 </label><label id="offbtn" style="position: absolute;margin-top: 433px;margin-left: -100px;font-size: 19px;">Off</label><label style="position: absolute;margin-top: 433px;margin-left: 11px;font-size: 19px;">On</label></div>
                 </div>
-                <div id="div-mirror" style="background-image: url(&quot;assets/img/1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
-                    <div id="div-rays" style="background-image: url(&quot;assets/img/4.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+                <div id="div-mirror" 
+                    style="background-image: url(&quot;assets/img/1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                    <div id="div-rays" 
+                        style="background-image: url(&quot;assets/img/4.png&quot;);
+                        background-position: center;background-size: contain;
+                        background-repeat: no-repeat;position: absolute;">
+                    </div>
                 </div>
             </div>
             <div id="rightdiv" class="middlerightdiv"></div>
-        </div><select id="div-select-2" style="font-size: 30px;position: absolute;"><optgroup label="Select"><option value="12" selected="">Transparent  Glass</option><option value="13">Opaque</option><option value="">Translucent Glass</option></optgroup></select></div>
+        </div>
+        <select id="div-select-2" style="font-size: 30px;position: absolute;">
+            <option value="Transparent  Glass" selected="">Transparent  Glass</option>
+            <option value="Opaque">Opaque</option>
+            <option value="Translucent Glass">Translucent Glass</option>
+        </select>
+    </div>
     <script
         src="assets/js/jquery.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $('#div-select-2').change(function () {
+        var label = $('#div-select-2 :selected').val();
+        console.log(label);
+        updateImages(label);
+    });
+    function updateImages(label){        
+        if (label == 'Transparent  Glass') {
+            $('#div-img').css('background-image', 'url(assets/img/zTeddy.png)');
+            $('#div-img1').css('background-image', 'url(assets/img/zTeddy%20Shadow.png)');
+        } else if (label == 'Opaque') {
+            $('#div-img').css('background-image', 'url(assets/img/Ball.png)');
+            $('#div-img1').css('background-image', 'url(assets/img/Ball-Shadow.png)');
+        } else if (label == 'Translucent Glass') {
+            $('#div-img').css('background-image', 'url(assets/img/Bird.png)');
+            $('#div-img1').css('background-image', 'url(assets/img/Bird-Shadow.png)');
+        } 
+    }
+    $('input[name=test]').change(function () {
+        if ($('input[name=test]').is(':checked')) {
+            var label = $('#div-select-2 :selected').val();
+            updateImages(label);
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/Torch-on.png)');
+        } else {
+            $('#div-img').css('background-image', 'url()');
+            $('#div-img1').css('background-image', 'url()');
+            $('#rightmiddlediv').css('background-image', 'url(assets/img/Torch-off.png)');
+        }
+    });
 
+    
+    $('#homebtn').click(function(){
+        window.location.reload();
+    })
+    
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    })
+</script>
 </html>

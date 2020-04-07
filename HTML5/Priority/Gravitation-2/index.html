@@ -84,8 +84,8 @@
         gravitation();
     }
     function gravitation(){
-        var f = document.getElementById('f').value;
-        var m = document.getElementById('m').value;
+        var f = parseFloat(document.getElementById('f').value);
+        var m = parseFloat(document.getElementById('m').value);
         var Acceleration = (f / (m*9.8)).toFixed(2);
         $('#div3-label1-value').text(Acceleration);
         if( f == m){
