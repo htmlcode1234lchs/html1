@@ -40,7 +40,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #img-t-riangle {
+  #img-triangle {
     width: 150px;
     height: 150px;
     margin-top: 10px;
@@ -133,7 +133,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #img-t-riangle {
+  #img-triangle {
     width: 120px;
     height: 120px;
     margin-top: 10px;
@@ -204,7 +204,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #img-trap {
+  #img-trapezoid {
     width: 150px;
     height: 150px;
     margin-top: 10px;
@@ -212,7 +212,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #img-trap {
+  #img-trapezoid {
     width: 120px;
     height: 120px;
     margin-top: 10px;

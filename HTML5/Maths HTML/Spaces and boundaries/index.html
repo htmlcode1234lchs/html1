@@ -8,21 +8,77 @@
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- <link rel="stylesheet" href="assets/css/stylejs.css"> -->
 </head>
+<script>
+    localStorage.setItem('type', 'square');
+</script>
 
-<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
-    <div id="div-title" class="title division" style="width: 900px;height: 80px;margin-right: auto;margin-left: auto;"></div>
-    <div class="d-xl-flex align-items-xl-center middledivision" id="div-middle" style="margin-right: auto;margin-left: auto;">
-        <div class="text-center middlefirstdivision" id="div-middle1" style="margin-left: auto;margin-right: auto;"><img data-bs-hover-animate="pulse" id="img-square" class="squareimg" style="background-image: url(&quot;assets/img/Square_Icon.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img data-bs-hover-animate="pulse"
-                id="img-t-riangle" class="triangleimg" style="background-image: url(&quot;assets/img/Triangle_Icon.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img data-bs-hover-animate="pulse" id="img-rectangle" class="rectangleimg"
-                style="background-image: url(&quot;assets/img/Rectangle_Icon.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img data-bs-hover-animate="pulse" id="img-trap" class="trapeziumimg" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/Trapezium.png&quot;);background-position: center;background-size: contain;"></div>
-        <div
-            class="text-center d-xl-flex justify-content-xl-center align-items-xl-center middleseconddivision" id="div-middle2" style="margin-left: auto;margin-right: auto;"></div>
-    <div id="div-middle3" class="middlethirddivision" style="background-image: url(&quot;assets/img/Perimeter.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><label id="lab-perivalue" class="perimetervalue" style="margin-top: 60px;"></label></div>
+<body
+    style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <div id="div-title" class="title division" style="width: 900px;height: 80px;margin-right: auto;margin-left: auto;">
+    </div>
+    <div class="d-xl-flex align-items-xl-center middledivision" id="div-middle"
+        style="margin-right: auto;margin-left: auto;">
+        <div class="text-center middlefirstdivision" id="div-middle1" style="margin-left: auto;margin-right: auto;">
+            <img data-bs-hover-animate="pulse" id="img-square" class="squareimg" style="background-image: url(&quot;assets/img/Square_Icon.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img data-bs-hover-animate="pulse" id="img-triangle" class="triangleimg" style="background-image: url(&quot;assets/img/Triangle_Icon.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img data-bs-hover-animate="pulse" id="img-rectangle" class="rectangleimg" style="background-image: url(&quot;assets/img/Rectangle_Icon.png&quot;);
+                background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img data-bs-hover-animate="pulse" id="img-trapezoid" class="trapeziumimg" style="background-repeat: no-repeat;
+                background-image: url(&quot;assets/img/Trapezium.png&quot;);
+                background-position: center;background-size: contain;">
+        </div>
+        <div class="text-center d-xl-flex justify-content-xl-center align-items-xl-center middleseconddivision"
+            id="div-middle2" style="margin-left: auto;margin-right: auto;">
+             <iframe src="triangles-interactive.html" id="frameId" scrolling="no" style="width:542px; height:312px; overflow:hidden; margin:auto; 
+                display:block; border:none;display: none;">
+            </iframe> 
+            <div id="content">
+
+            </div>
+        </div>
+        <div id="div-middle3" class="middlethirddivision" style="background-image: url(&quot;assets/img/Perimeter.png&quot;);
+        background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <label id="lab-perivalue" class="perimetervalue" style="margin-top: 60px;"></label>
+        </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
+     <script src="assets/js/geom-quad.js"></script> 
+     <!-- <script src="assets/js/geom-triangle-types.js"></script> -->
+    <!--  <script src="assets/js/geom-quad.js"></script>
+    <script src="assets/js/geom-triangle-types.js"></script> -->
 </body>
+<script>
+    geomquadMain("type", 'square');
+    $('#div-middle1 > img').click(function () {
+        console.log(this.id);//
+        if (this.id == 'img-triangle') {
+            $('#frameId').css('display','block');
+            $('#content').css('display','none');
+            document.getElementById('frameId').src = 'triangles-interactive.html';
+           // geomtriangletypesMain('type');
+            $('#lab-perivalue').text(180)
+        } else {
+            localStorage.setItem('type', this.id.replace('img-', '').trim());
+           // document.getElementById('frameId').src = 'igeom-quad-type.html';
+           $('#frameId').css('display','none');
+            $('#content').css('display','block');
+            geomquadMain("type", this.id.replace('img-', '').trim());
+        }
+    });
+
+    function handleMessage(request, sender, sendResponse) {
+        console.log("Message from the content script: " +
+            request.greeting);
+        sendResponse({ response: "Response from background script" });
+    }
+
+   // browser.runtime.onMessage.addListener(handleMessage);
+</script>
 
 </html>
