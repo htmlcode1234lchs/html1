@@ -4,8 +4,8 @@ function geomtriangletypesMain(imode) {
     var version = '0.662';
     my.mode = typeof imode !== 'undefined' ? imode : 'type';
     var modes = ['type', 'median', 'circum', 'incircle', 'ortho', 'area', 'perim', 'inequal', 'angles', 'choose']
-    w = 550;
-    h = 350;
+    w = 800;
+    h = 400;
     var canvasid = "canvas" + my.mode;
     my.titleid = "title" + my.mode;
     my.infoid = "info" + my.mode;
@@ -327,7 +327,7 @@ function makeShapes() {
 }
 function drawBG(w, h) {
     g.lineWidth = 1;
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 20; i++) {
         var xPix = i * 60;
         g.beginPath();
         if (i % 2) {
@@ -339,7 +339,7 @@ function drawBG(w, h) {
         g.lineTo(xPix, h);
         g.stroke();
     }
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 12; i++) {
         var yPix = i * 60;
         g.beginPath();
         if (i % 2) {

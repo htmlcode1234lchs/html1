@@ -25,14 +25,14 @@ function geomquadMain(imode, modeType) {
     my.titleid = "title" + mode;
     my.infoid = "info" + mode;
     dragQ = false;
-    w = 540;
-    h = 310;
+    w = 750;
+    h = 400;
     if (!chooseQ) {
         w = 450;
         h = 320;
     }
     var s = '';
-    s += '<div style="position:relative;margin-top:-36% !important; width:' + w + 'px; height:' + h + 'px;  border-radius: 9px; margin:auto; display:block; ">';
+    s += '<div style="position:relative; width:' + w + 'px; height:' + h + 'px;  border-radius: 9px; margin:auto; display:block; ">';
     s += '<canvas id="' + canvasid + '" width="' + w + '" height="' + h + '" style="z-index:4;"></canvas>';
     s += '<div id="' + my.titleid + '" style="font: 12pt arial; font-weight: bold; position:absolute; top:14px; left:0px; width:540px; text-align:center;"></div>';
     s += '<div id="' + my.infoid + '" style="font: 10pt arial; font-weight: bold; color: #6600cc; position:absolute; top:35px; left:0px; width:540px; text-align:center;"></div>';
@@ -133,7 +133,7 @@ function toggleBtn(btn, onq) {
 
 function drawBGS(w, h) {
     g.lineWidth = 1;
-    for (var i = 0; i < 10; i++) {
+    for (var i = 0; i < 20; i++) {
         var xPix = i * 60;
         g.beginPath();
         if (i % 2) {
@@ -145,7 +145,7 @@ function drawBGS(w, h) {
         g.lineTo(xPix, h);
         g.stroke();
     }
-    for (i = 0; i < 6; i++) {
+    for (i = 0; i < 12; i++) {
         var yPix = i * 60;
         g.beginPath();
         if (i % 2) {
