@@ -1,0 +1,303 @@
+@media (min-width: 1800px) {
+  #div-water {
+    width: 1920px;
+    height: 324px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-land {
+    width: 1920px;
+    height: 296px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-land {
+    width: 1769px;
+    height: 315px;
+    margin-top: -5px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-water {
+    width: 1774px;
+    height: 473px;
+    margin-top: -57px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-water {
+    width: 1398px;
+    height: 403px;
+    margin-top: -111px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-land {
+    width: 1418px;
+    height: 312px;
+    margin-top: -54px;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
+}
+
+#titlediv-1 {
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #homebtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 6px;
+    margin-left: 406px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #homebtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 12px;
+    margin-left: 525px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #homebtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 14px;
+    margin-left: 595px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #resetbtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 14px;
+    margin-left: 1262px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #resetbtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 12px;
+    margin-left: 1120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #resetbtn-1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 6px;
+    margin-left: 887px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-plant {
+    width: 289px;
+    height: 538px;
+    margin-top: -337px;
+    margin-left: 539px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-plant {
+    width: 287px;
+    height: 551px;
+    margin-top: -296px;
+    margin-left: 740px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-plant {
+    width: 360px;
+    height: 583px;
+    margin-top: -304px;
+    margin-left: 739px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-sunrays {
+    width: 157px;
+    height: 125px;
+    margin-top: 124px;
+    margin-left: 329px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-sunrays {
+    width: 160px;
+    height: 226px;
+    margin-top: 82px;
+    margin-left: 426px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-sunrays {
+    width: 291px;
+    height: 126px;
+    margin-top: 142px;
+    margin-left: 465px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-sun {
+    width: 329px;
+    height: 250px;
+    margin-top: -61px;
+    margin-left: 268px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-sun {
+    width: 287px;
+    height: 219px;
+    margin-top: -28px;
+    margin-left: 226px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-sun {
+    width: 189px;
+    height: 197px;
+    margin-top: -29px;
+    margin-left: 190px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-rays {
+    width: 239px;
+    height: 81px;
+    margin-top: -185px;
+    margin-left: 948px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-rays {
+    width: 146px;
+    height: 121px;
+    margin-top: -225px;
+    margin-left: 966px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-rays {
+    width: 104px;
+    height: 92px;
+    margin-top: -216px;
+    margin-left: 772px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-co2 {
+    width: 104px;
+    height: 92px;
+    margin-top: -201px;
+    margin-left: 400px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-co2 {
+    width: 146px;
+    height: 121px;
+    margin-top: -189px;
+    margin-left: 548px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-co2 {
+    width: 149px;
+    height: 80px;
+    margin-top: -185px;
+    margin-left: 613px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-scope {
+    width: 256px;
+    height: 165px;
+    margin-top: -489px;
+    margin-left: 954px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-scope {
+    width: 198px;
+    height: 262px;
+    margin-top: -541px;
+    margin-left: 951px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-scope {
+    width: 168px;
+    height: 158px;
+    margin-top: -474px;
+    margin-left: 747px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #div-label-box {
+    width: 532px;
+    height: 364px;
+    margin-top: 142px;
+    margin-left: 1375px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #div-label-box {
+    width: 465px;
+    height: 267px;
+    margin-top: 82px;
+    margin-left: 1185px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #div-label-box {
+    width: 467px;
+    height: 312px;
+    margin-top: 124px;
+    margin-left: 921px;
+  }
+}
+
