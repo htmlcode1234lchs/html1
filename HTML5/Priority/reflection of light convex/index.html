@@ -45,8 +45,39 @@
         </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </body>
 <script>
+     $( function() {
+    $( "#div-img1" ).draggable({
+        containment: "parent",
+        drag: function(event) {
+        var top = $(this).position().top;
+        var left = $(this).position().left;
+        console.log(top+' = '+left);
+        label =  $('#div-select-2 :selected').val();
+        if(left > 15){
+            if (label == 'Tree') {
+                $('#div-img1').css('background-image', 'url(assets/img/ReflectionTree.png)');
+            } else if (label == 'Car') {
+                $('#div-img1').css('background-image', 'url(assets/img/ReflectionCar.png)');
+            } else if (label == 'House') {
+                $('#div-img1').css('background-image', 'url(assets/img/ReflectionHouse.png)');
+            }
+            $('#div-img').css('background-image','url()');
+        }else{
+            $('#div-img').css('background-image','url(assets/img/Rays.gif)');
+            if (label == 'Tree') {
+                $('#div-img1').css('background-image', 'url(assets/img/a.png)');
+            } else if (label == 'Car') {
+                $('#div-img1').css('background-image', 'url(assets/img/b.png)');
+            } else if (label == 'House') {
+                $('#div-img1').css('background-image', 'url(assets/img/c.png)');
+            }
+        }
+    }
+    });
+  } );
     $('#div-select-2').change(function () {
         var label = $('#div-select-2 :selected').val();
         console.log(label);
