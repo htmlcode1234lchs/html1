@@ -11,27 +11,113 @@
     <link rel="stylesheet" href="assets/css/Toggle-Switch.css">
 </head>
 
-<body style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+<body
+    style="background-image: url(&quot;assets/img/Bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
     <div id="titlediv" class="divtitle" style="height: 100px;">
-        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn btnhome" id="homebtn" type="button" style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 84px;"></button>
-            <button
-                class="btn btn-primary btnreset" id="resetbtn" type="button" style="margin-left: 588px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"><button
+                class="btn btnhome" id="homebtn" type="button"
+                style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 84px;"></button>
+            <button class="btn btn-primary btnreset" id="resetbtn" type="button"
+                style="margin-left: 588px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
-        <div class="visible divrightmain" id="rightmaindiv" style="margin-left: auto;margin-right: auto;position: relative;"><input type="checkbox" id="check1" style="position: absolute;"><input type="checkbox" id="check2" style="position: absolute;"><label id="field1" style="position: absolute;">Keep the tubes</label><label id="field2" style="position: absolute;">Blow Co2</label>
-            <div
-                class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;"><label class="invisible" style="font-size: 30px;">Drag and drop the object to check the attraction</label>
-                <div class="invisible middlerightdiv" id="rightdiv" style="background-image: url(&quot;assets/img/Lime%20water%20with%20bubbles.gif&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-                <div class="invisible middlerightdiv" id="rightmiddlediv" style="position: absolute;background-image: url(&quot;assets/img/strw%20B.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                <div class="text-center invisible divright1img" id="right1imgdivjunk" style="background-image: url(&quot;assets/img/strw%20A.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-                <div id="div-mirror" style="background-image: url(&quot;assets/img/lime%20water.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv"
+        style="margin-left: auto;margin-right: auto;">
+        <div class="visible divrightmain" id="rightmaindiv"
+            style="margin-left: auto;margin-right: auto;position: relative;">
+            <input type="checkbox" id="check1" style="position: absolute;">
+            <input type="checkbox" disabled id="check2" style="position: absolute;"
+                title="enabled after clicking `Keep the tubes` ">
+            <label id="field1" style="position: absolute;">Keep the tubes</label>
+            <label id="field2" style="position: absolute;">Blow Co2</label>
+            <div class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;"><label
+                    class="invisible" style="font-size: 30px;">Drag and drop the object to check the attraction</label>
+                <div class="invisible middlerightdiv" id="rightdiv" style="background-image: url(&quot;assets/img/Lime%20water%20with%20bubbles.gif&quot;);
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    position: absolute;">
+                </div>
+                <div class="invisible middlerightdiv" id="rightmiddlediv" style="position: absolute;background-image: url(&quot;assets/img/strw%20B.png&quot;);
+                    background-position: center;background-size: contain;background-repeat: no-repeat;">
+                </div>
+                <div class="text-center invisible divright1img" id="right1imgdivjunk" style="background-image: url(&quot;assets/img/strw%20A.png&quot;);
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    position: absolute;">
+                </div>
+                <div id="div-mirror" class="visible" style="background-image: url(&quot;assets/img/lime%20water.png&quot;);
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    position: absolute;">
+                </div>
+            </div>
         </div>
     </div>
-    </div>
-    <div id="timer"><label style="font-size: 20px;font-weight: bold;">Timer:&nbsp;</label><input type="text" readonly=""></div>
+    <div id="timer"><label style="font-size: 20px;font-weight: bold;">Timer:&nbsp;</label>
+        <input type="text" id='countdowntimer'
+            readonly=""></div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $('#check1').click(function () {
+        console.log(this.id);
+        if ($(this).is(':checked')) {
+            console.log('checked');
+            $('#check2').prop("disabled", false);
+            $('#rightmiddlediv').removeClass('invisible');
+            $('#right1imgdivjunk').removeClass('invisible');
+
+            $('#rightmiddlediv').addClass('visible');
+            $('#right1imgdivjunk').addClass('visible');
+        } else {
+            $('#check2').prop("disabled", true);
+
+            $('#rightmiddlediv').removeClass('visible');
+            $('#right1imgdivjunk').removeClass('visible');
+
+            $('#rightmiddlediv').addClass('invisible');
+            $('#right1imgdivjunk').addClass('invisible');
+        }
+        // 
+    });
+    $('#check2').click(function () {
+        console.log(this.id);
+        if ($(this).is(':checked')) {
+            $('#div-mirror').addClass('invisible');
+            $('#rightmiddlediv').addClass('invisible');
+            $('#right1imgdivjunk').addClass('invisible');
+
+            $('#rightdiv').removeClass('invisible');
+            $('#rightdiv').addClass('visible');
+
+            var timeleft = 10;
+            var downloadTimer = setInterval(function () {
+                timeleft--;
+                document.getElementById("countdowntimer").value = timeleft;
+                if (timeleft <= 0){
+                    if(timeleft == 0){
+                        $('#rightdiv').css('background-image','url(assets/img/milky-water.gif)');
+                    }
+                        clearInterval(downloadTimer);
+                    
+                }
+            }, 1000);
+
+        } else {
+            $('#rightdiv').css('background-image','url(assets/img/Lime%20water%20with%20bubbles.gif)');
+            $('#rightdiv').removeClass('visible');
+            $('#rightdiv').addClass('invisible');
+
+            $('#div-mirror').removeClass('invisible');
+            $('#rightmiddlediv').removeClass('invisible');
+            $('#right1imgdivjunk').removeClass('invisible');
+
+            $('#div-mirror').addClass('visible');
+            $('#rightmiddlediv').addClass('visible');
+            $('#right1imgdivjunk').addClass('visible');
+
+
+        }
+    });
+</script>
+
 
 </html>
