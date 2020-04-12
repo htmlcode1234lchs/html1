@@ -3769,7 +3769,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1399px) {
-  #btn8 {
+  #btn6 {
     width: 80px;
     height: 80px;
     margin-top: 382px;
@@ -3777,7 +3777,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1799px) {
-  #btn8 {
+  #btn6 {
     width: 100px;
     height: 100px;
     margin-top: 208px;
@@ -3785,7 +3785,7 @@
 }
 
 @media (min-width: 1800px) {
-  #btn8 {
+  #btn6 {
     width: 115px;
     height: 115px;
     margin-top: -167px;
