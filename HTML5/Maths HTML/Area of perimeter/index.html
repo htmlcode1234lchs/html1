@@ -7,26 +7,100 @@
     <title>Area_perimeter</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/stylejs.css">
 </head>
 
 <body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
-    <div class="d-inline-flex d-xl-flex align-items-xl-center" id="main-division" style="background-position: center;background-size: contain;background-repeat: no-repeat;margin-right: auto;margin-left: auto;"><button class="btn" id="reset-button" type="button" style="background-color: rgb(255,255,255);background-image: url(&quot;assets/img/Reset_H.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+    <div class="d-inline-flex d-xl-flex align-items-xl-center" id="main-division" 
+        style="background-position: center;background-size: contain;
+        background-repeat: no-repeat;margin-right: auto;margin-left: auto;">
+        <button class="btn" id="reset-button" type="button" 
+            style="background-color: rgb(255,255,255);
+            background-image: url(&quot;assets/img/Reset_H.png&quot;);
+            background-size: contain;background-repeat: no-repeat;position: absolute;">
+        </button>
         <div id="properties-div"
             style="background-image: url(&quot;assets/img/Properties.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
-			<input type="text" id="div-text" style="font-weight: bold;position: absolute;text-align:center;">
-			<input type="text" id="div-text-1" style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-			<input type="text" id="div-text-2" style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-            <input type="text" id="div-text-3" style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-			<input type="text" id="div-text-4" style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;"></div>
-        <div id="div-2" style="position: absolute;">
-            <div class="d-inline-flex" id="div-square" style="position: absolute;background-image: url(&quot;assets/img/Square_Icon.png&quot;);background-size: contain;background-repeat: no-repeat;"></div>
-            <div id="triangle" style="position: absolute;background-image: url(&quot;assets/img/Triangle_Icon.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-            <div id="retangle" style="position: absolute;background-image: url(&quot;assets/img/Rectangle_Icon.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+            <input type="number" id="div-text" 
+                style="font-weight: bold;position: absolute;text-align:center;">
+            <input type="number" id="div-text-1" 
+                style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
+            <input type="number" id="div-text-2" 
+                style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
+            <input type="number" id="div-text-3" 
+                style="display: none;font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
+            <input type="number" id="div-text-4" 
+                style="display: none; font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
         </div>
-        <div id="empty-box" style="background-repeat: no-repeat;background-size: contain;"></div>
+        <div id="div-2" style="position: absolute;">
+            <div class="d-inline-flex" id="div-square" onclick="display('square')"
+                style="position: absolute; 
+                background-image: url(&quot;assets/img/Square_Icon.png&quot;);
+                background-size: contain;background-repeat: no-repeat;">
+            </div>
+            <div id="triangle" onclick="display('triangle')"
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Triangle_Icon.png&quot;);
+                background-size: contain;background-repeat: no-repeat;position: absolute;">
+            </div>
+            <div id="retangle" onclick="display('rectangle')"
+                style="position: absolute;
+                background-image: url(&quot;assets/img/Rectangle_Icon.png&quot;);
+                background-size: contain;background-repeat: no-repeat;position: absolute;">
+            </div>
+        </div>
+        <div id="empty-box" 
+            style="background-repeat: no-repeat;background-size: contain;">
+           <!--  <iframe src="triangles-interactive.html" id="frameId" scrolling="no" style="width:542px; height:312px; overflow:hidden; margin:auto; 
+            display:block; border:none;display: none;">
+        </iframe> --> 
+        <div id="content">
+
+        </div>
+        </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/geom-triangle-types.js"></script>
+    <script src="assets/js/geom-quad.js"></script>
+    
 </body>
-
+    <script>
+        init();
+        function init(){
+            $('#div-text').val('');
+            $('#div-text-1').val('');
+            $('#div-text-3').val('');
+            $('#div-text-4').val('');
+            $('#div-text-2').val('');
+            geomquadMain("type", 'square');
+        }
+        $('#reset-button').click(function(){
+            init();
+        })
+        function display(id){
+            if (id == 'triangle') {
+           // $('#frameId').css('display','block');
+            $('#content').empty();
+            geomtriangletypesMain('type');
+          //  document.getElementById('frameId').src = 'triangles-interactive.html';          
+            $('#div-text-3').css('display','none');
+            $('#div-text-4').css('display','none');
+            $('#div-text-2').css('display','block');
+        } else {           
+           $('#frameId').css('display','none');
+            $('#content').css('display','block');
+            geomquadMain("type", id);
+            if(id=='square'){
+                $('#div-text-2').css('display','block');
+                $('#div-text-3').css('display','none');
+                $('#div-text-4').css('display','none');
+            }else{
+                $('#div-text-2').css('display','none');
+                $('#div-text-3').css('display','block');
+                $('#div-text-4').css('display','block');
+            }
+        }
+        }
+    </script>
 </html>

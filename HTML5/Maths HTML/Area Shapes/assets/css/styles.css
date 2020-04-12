@@ -175,7 +175,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  1 {
+  lengthId {
     width: 180px;
     height: 200px;
   }
@@ -362,7 +362,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #lab-property1 {
+  #lengthId {
     width: 100px;
     height: 25px;
     margin-top: 68px;
@@ -371,7 +371,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #lab-property2 {
+  #breadthId {
     width: 100px;
     height: 25px;
     font-size: 20px;
@@ -380,7 +380,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #div-property3 {
+  #heightId {
     width: 100px;
     height: 25px;
     font-size: 20px;
@@ -389,7 +389,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #div-property4 {
+  #radusId {
     width: 100px;
     height: 25px;
     font-size: 20px;
@@ -398,7 +398,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #div-property5 {
+  #sideAId {
     width: 100px;
     height: 25px;
     font-size: 20px;
@@ -407,7 +407,7 @@
 }
 
 @media screen and (min-width: 1500px) and (max-width:1920px) {
-  #div-property6 {
+  #sideBId {
     width: 100px;
     height: 25px;
     font-size: 20px;
@@ -591,7 +591,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #lab-property1 {
+  #lengthId {
     width: 95px;
     height: 15px;
     margin-top: 76px;
@@ -600,7 +600,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #lab-property2 {
+  #breadthId {
     width: 95px;
     height: 15px;
     font-size: 14px;
@@ -608,7 +608,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #div-property3 {
+  #heightId {
     width: 95px;
     height: 15px;
     font-size: 14px;
@@ -616,7 +616,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #div-property4 {
+  #radusId {
     width: 95px;
     height: 15px;
     font-size: 14px;
@@ -624,7 +624,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #div-property5 {
+  #sideAId {
     width: 95px;
     height: 15px;
     font-size: 14px;
@@ -632,7 +632,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width:1499px) {
-  #div-property6 {
+  #sideBId {
     width: 95px;
     height: 15px;
     font-size: 14px;
@@ -774,7 +774,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #lab-property1 {
+  #lengthId {
     width: 80px;
     font-size: 12px;
     margin-top: 76px;
@@ -783,7 +783,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #lab-property2 {
+  #breadthId {
     width: 80px;
     font-size: 12px;
     margin-top: -39px;
@@ -792,7 +792,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #div-property3 {
+  #heightId {
     width: 80px;
     font-size: 12px;
     margin-top: -18px;
@@ -801,7 +801,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #div-property4 {
+  #radusId {
     width: 80px;
     font-size: 12px;
     margin-top: -78px;
@@ -810,7 +810,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #div-property5 {
+  #sideAId {
     width: 80px;
     font-size: 12px;
     margin-top: -19px;
@@ -819,7 +819,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width:1199px) {
-  #div-property6 {
+  #sideBId {
     width: 80px;
     font-size: 12px;
     margin-top: -36px;
