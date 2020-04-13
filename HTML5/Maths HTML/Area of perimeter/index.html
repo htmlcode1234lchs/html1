@@ -21,16 +21,18 @@
         </button>
         <div id="properties-div"
             style="background-image: url(&quot;assets/img/Properties.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
-            <input type="number" id="div-text" 
+            <input type="number" id="div-text" disabled
                 style="font-weight: bold;position: absolute;text-align:center;">
-            <input type="number" id="div-text-1" 
+            <input type="number" id="div-text-1" disabled
+                style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;"><!--onchange="updateId('div-text-2')"-->
+            <input type="number" min="1" max="9" id="div-text-2" oninput="updateGraph('div-text-2')"
                 style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-            <input type="number" id="div-text-2" 
-                style="font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-            <input type="number" id="div-text-3" 
-                style="display: none;font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
-            <input type="number" id="div-text-4" 
-                style="display: none; font-size: 31px;font-weight: bold;position: absolute;text-align:center;">
+            <input type="number" id="div-text-3" oninput="updateLength('div-text-3')"
+                style="display: none;font-size: 31px;font-weight: bold;position: absolute;
+                text-align:center;">
+            <input type="number" id="div-text-4" oninput="updateBreadth('div-text-4')"
+                style="display: none; font-size: 31px;font-weight: bold;position: absolute;
+                text-align:center;">
         </div>
         <div id="div-2" style="position: absolute;">
             <div class="d-inline-flex" id="div-square" onclick="display('square')"
@@ -50,10 +52,7 @@
             </div>
         </div>
         <div id="empty-box" 
-            style="background-repeat: no-repeat;background-size: contain;">
-           <!--  <iframe src="triangles-interactive.html" id="frameId" scrolling="no" style="width:542px; height:312px; overflow:hidden; margin:auto; 
-            display:block; border:none;display: none;">
-        </iframe> --> 
+            style="background-repeat: no-repeat;background-size: contain;">            
         <div id="content">
 
         </div>
@@ -66,6 +65,41 @@
     
 </body>
     <script>
+
+       /*  $(function () {
+        $("#div-text-2").keydown(function () {
+            if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 1)){
+                $(this).data("old", $(this).val());
+            }
+            if(selectedType == 'square'){
+                updateSideValues($(this).val());
+            }else{
+                updateTriangletypesMain($(this).val());
+            }
+        });
+        $("#div-text-2").keyup(function () {
+            // Check correct, else revert back to old value.
+            if (!$(this).val() || (parseInt($(this).val()) <= 9 && parseInt($(this).val()) >= 1))
+                ;
+            else{
+                $(this).val($(this).data("old"));               
+            }
+            if(selectedType == 'square'){
+                updateSideValues($(this).val());
+            }else{
+                updateTriangletypesMain($(this).val());
+            }
+        });
+    }); */
+    //$("#div-text-2").init
+    function updateGraph(id) {
+        if(selectedType == 'square'){
+                updateSideValues($('#'+id).val());
+            }else{
+                updateTriangletypesMain($('#'+id).val());
+            }
+    }
+    var selectedType = '';
         init();
         function init(){
             $('#div-text').val('');
@@ -73,17 +107,17 @@
             $('#div-text-3').val('');
             $('#div-text-4').val('');
             $('#div-text-2').val('');
+            selectedType = 'square';
             geomquadMain("type", 'square');
         }
         $('#reset-button').click(function(){
-            init();
+            window.location.reload();
         })
         function display(id){
+            selectedType = id;
             if (id == 'triangle') {
-           // $('#frameId').css('display','block');
             $('#content').empty();
-            geomtriangletypesMain('type');
-          //  document.getElementById('frameId').src = 'triangles-interactive.html';          
+            geomtriangletypesMain('type');         
             $('#div-text-3').css('display','none');
             $('#div-text-4').css('display','none');
             $('#div-text-2').css('display','block');

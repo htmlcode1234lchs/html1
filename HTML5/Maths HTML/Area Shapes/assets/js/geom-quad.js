@@ -1183,18 +1183,19 @@ function getSides(pts) {
         //console.log(Math.round(sides[i]));
         tot += Math.round(sides[i]);
     }
-   // localStorage.setItem('tot', tot);
-   // console.log(document.getElementById('lab-perivalue'));
+   
    if(mode == 'square'){
-    $('#lab-areavalue').text(Math.round(Math.round(sides[0])*2));
+    $('#lab-areavalue').text((Math.round(sides[0]) * Math.round(sides[0])).toFixed(2));
     $('#sideAId').text(Math.round(Math.round(sides[0])));
    }
    else if(mode == 'rectangle'){
-    $('#lab-areavalue').text(Math.round(Math.round(sides[0]) * Math.round(sides[1])));
+    $('#lab-areavalue').text(((sides[0]) * (sides[1])).toFixed(2));
     $('#lengthId').text(Math.round(sides[0]));
     $('#breadthId').text(Math.round(sides[1]));
    }else if(mode == 'parallelogram'){
-
+        $('#lab-areavalue').text((Math.round(sides[0]) * Math.round(sides[1])).toFixed(2));
+        $('#breadthId').text(Math.round(sides[0]));
+        $('#heightId').text('');
    }else if(mode == 'trapezoid'){
        $('#sideAId').text();
        $('#sideBId').text();

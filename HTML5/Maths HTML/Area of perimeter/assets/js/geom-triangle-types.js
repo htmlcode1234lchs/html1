@@ -61,14 +61,86 @@ function geomtriangletypesMain(imode) {
     this.descr = "Triangle";
     this.info = "Three sides, three angles";
     my.triTyp = 'equi';
-   //el.addEventListener("mousedown", onMouseDown, false);
+    el.addEventListener("mousedown", onMouseDown, false);
    // el.addEventListener('touchstart', ontouchstart, false);
    // el.addEventListener("mousemove", dopointer, false);
-    makeShapesTriangle()
+   var posTriangle = [
+    [195, 88, "A"],
+                [85, 196, "B"],
+                [233, 236, "C"]
+];
+    makeShapesTriangle(posTriangle)
     //radio(0, 0)
     toggleSidesTriangle();
     updateTriangle()
     toggleAnglesTriangle()
+}
+
+function updateTriangletypesMain(val){
+    console.log('val='+val)
+    posTriangle = [
+        [255, 140, "A"],
+        [66, 236, "B"],
+        [263, 284, "C"]
+    ];
+    if(val == 1){
+        posTriangle = [
+            [238, 160, "A"],
+            [218, 198, "B"],
+            [264, 195, "C"]
+        ];
+    }else if(val == 2){
+        posTriangle = [
+            [243, 141, "A"],
+            [207, 203, "B"],
+            [280, 204, "C"]
+        ];
+    }else if(val == 3){
+        posTriangle = [
+            [244, 122, "A"],
+            [197, 211, "B"],
+            [292, 216, "C"]
+        ];
+    }else if(val == 4){
+        posTriangle = [
+            [243, 107, "A"],
+            [167, 218, "B"],
+            [304, 232, "C"]
+        ];
+    }else if(val == 5){
+        posTriangle = [
+            [195, 88, "A"],
+                [85, 196, "B"],
+                [233, 236, "C"]
+        ];
+    }else if(val == 6){
+        posTriangle = [
+            [201, 69, "A"],
+            [84, 195, "B"],
+            [278, 229, "C"]    
+        ];
+    }else if(val == 7){
+        posTriangle = [
+            [229, 66, "A"],
+            [95, 222, "B"],
+            [322, 247, "C"]    
+        ];
+    }else if(val == 8){
+        posTriangle = [
+            [242, 61, "A"],
+            [88, 238, "B"],
+            [349, 269, "C"]
+        ];
+    }else if(val == 9){
+        posTriangle = [
+            [254, 27, "A"],
+            [88, 238, "B"],
+            [379, 263, "C"]
+        ];
+    }
+    makeShapesTriangle(posTriangle);
+   // toggleSidesTriangle();
+    updateTriangle()
 }
 
 function updateTriangle() {
@@ -266,16 +338,12 @@ function hitTest(shape, mx, my) {
     return (dx * dx + dy * dy < shape.rad * shape.rad);
 }
 
-function makeShapesTriangle() {
+function makeShapesTriangle(posTriangle) {
     var i;
     var tempX;
     var tempY;
     var tempColor;
-    var posTriangle = [
-        [255, 140, "A"],
-        [66, 236, "B"],
-        [263, 284, "C"]
-    ];
+    
     switch (my.triTyp) {
         case "acute":
             posTriangle = [
@@ -285,11 +353,11 @@ function makeShapesTriangle() {
             ];
             break;
         case "equi":
-            posTriangle = [
+            /* posTriangle = [
                 [195, 88, "A"],
                 [85, 196, "B"],
                 [233, 236, "C"]
-            ];
+            ]; */
             break;
         case "iso":
             posTriangle = [
@@ -779,9 +847,9 @@ Triangle.prototype.drawSides = function(g) {
     var side2 = tsides[0]; 
     var side3 = tsides[0]; 
     var perimeter = (side1 + side2 + side3)/2;
-    var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+    var area = ((side1/2)* 1.732).toFixed(2) ;//Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
     //console.log(area);
-    $('#div-text').val(Math.round(area));
+    $('#div-text').val((area));
     $('#div-text-1').val(Math.round(tsides[0]*3));
     $('#div-text-2').val(Math.round(tsides[0]));
 };
@@ -1295,6 +1363,7 @@ function getClockwise(pts) {
 
 function getSidesTriangle(pts) {
     var numPoints = pts.length;
+    console.log(JSON.stringify(pts))
     var sides = [];
     for (var i = 0; i < numPoints; i++) {
         var pt = pts[i];

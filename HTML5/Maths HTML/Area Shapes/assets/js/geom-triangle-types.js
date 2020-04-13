@@ -788,12 +788,15 @@ Triangle.prototype.drawSides = function(g) {
     var side1 = tsides[0]; 
     var side2 = tsides[1]; 
     var side3 = tsides[2]; 
-    var perimeter = (side1 + side2 + side3)/2;
-    var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
-    //console.log(area);
-    $('#lab-areavalue').text(Math.round(area));
+    var perimeter = (side1 + side2 + side3)/2;//((side1/2)* 1.732).toFixed(2);//
+    var area =  (Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)))).toFixed(2);
+   // console.log(JSON.stringify(tsides));
+    $('#lab-areavalue').text((area));
     $('#lab-perimetervalue').text(Math.round(sides[0] + sides[1] + sides[2]));
-
+    tsides.sort;
+    //console.log(JSON.stringify(tsides))
+    $('#breadthId').text(Math.round(tsides[0]));
+    $('#heightId').text(((area * 2)/tsides[0]).toFixed(2));
 };
 Triangle.prototype.getAngles = function() {
     var angs = [];

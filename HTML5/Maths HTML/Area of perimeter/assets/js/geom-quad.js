@@ -36,7 +36,7 @@ function geomquadMain(imode, modeType) {
     s += '<canvas id="' + canvasid + '" width="' + w + '" height="' + h + '" style="z-index:4;"></canvas>';
     s += '<div id="' + my.titleid + '" style="font: 12pt arial; font-weight: bold; position:absolute; top:14px; left:0px; width:540px; text-align:center;"></div>';
     s += '<div id="' + my.infoid + '" style="font: 10pt arial; font-weight: bold; color: #6600cc; position:absolute; top:35px; left:0px; width:540px; text-align:center;"></div>';
-   
+
     /* if (chooseQ) {
         s += '<form onclick="doType()" id="formtype" style="display:none;font: 11pt arial; font-weight: bold; color: #6600cc; background: rgba(200,220,256,0.7); padding: 5px; position:absolute; top:45px; left:2px; z-index:3; text-align:left; ">';
         var opts = [
@@ -62,12 +62,12 @@ function geomquadMain(imode, modeType) {
     //s += '<button id="resetBtn" onclick="reset()" style="z-index:2; position:absolute; right:3px; bottom:3px;" class="togglebtn" >Reset</button>';
     //s += '<div id="copyrt" style="font: 9px arial; color: #6600cc; position:absolute; left:3px; bottom:3px;"></div>';
     s += '</div>';
-   // document.write(s);
-   $('#content').empty();
-   document.getElementById('content').innerHTML += s;
-   //$('#content').innerHTML = document.write(s);
+    // document.write(s);
+    $('#content').empty();
+    document.getElementById('content').innerHTML += s;
+    //$('#content').innerHTML = document.write(s);
     el = document.getElementById(canvasid);
-    
+
     ratio = 2;
     el.width = w * ratio;
     el.height = h * ratio;
@@ -85,13 +85,319 @@ function geomquadMain(imode, modeType) {
     my.shapes = [];
     my.quad = new Quad();
     my.quad.setLabels("", "", "", "", "", "");
-    makeShapes();
+    var pos = [
+        [200, 240, "A"],
+        [293, 210, "B"],
+        [143, 120, "C"],
+        [126, 160, "D"]
+    ];
+    if (mode == 'rectangle') {
+        pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [188, 134, "C"],
+        [189, 88, "D"]
+        ]
+    }
+    makeShapes(pos);
     drawShapes();
-    //el.addEventListener("mousedown", mouseDownListener, false);
+    el.addEventListener("mousedown", mouseDownListener, false);
     //el.addEventListener('touchstart', ontouchstart, false);
     //el.addEventListener("mousemove", domousemove, false);
     doType();
     toggleSides();
+}
+
+function prepareLengthPOS(val1, val2){
+    var data = [];
+    var lable = ['A','B','C','D'];
+        this.pts.forEach((element, index) => {
+            var d = [];
+            if(index == 2){
+                d = [val1, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [val2, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        });
+     //console.log(JSON.stringify(data));
+    return data;
+}
+
+function updateLength(id){
+    var value = $('#'+id).val();
+    console.log('Rectangle Length Value= '+value);
+   // console.log(JSON.stringify(this.pts))
+    var pos = [
+        [300, 90, "A"],
+        [299, 136, "B"],
+        [178, 134, "C"],
+        [179, 88, "D"]
+    ];
+    
+    if(value == 1){
+        /* pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [290, 134, "C"],
+        [287, 88, "D"]
+        ] */
+        /* var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [290, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [287, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(290, 287);
+       // console.log(JSON.stringify(data));
+    }
+    else if(value == 2){
+        /* pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [275, 134, "C"],
+        [273, 88, "D"]
+        ] */
+        /* var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [275, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [272, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(275, 272);;
+       // console.log(JSON.stringify(data));
+    }
+    else if(value == 3){
+       /*  pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [250, 134, "C"],
+        [248, 88, "D"]
+        ] */
+       /*  var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [250, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [248, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(250, 248);;
+        //console.log(JSON.stringify(data));
+    }
+    else if(value == 4){
+        /* pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [230, 134, "C"],
+        [228, 88, "D"]
+        ] */
+        /* var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [230, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [228, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(230, 228);;
+       // console.log(JSON.stringify(data));
+    }
+    else if(value == 5){
+        /* pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [210, 134, "C"],
+        [205, 88, "D"]
+        ] */
+        /* var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [210, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [205, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(210, 205);;
+       // console.log(JSON.stringify(data));
+    }
+    else if(value == 6){
+       /*  pos = [[300, 90, "A"],
+        [299, 136, "B"],
+        [188, 134, "C"],
+        [189, 88, "D"]
+        ] *//* 
+        var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [188, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [189, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(188, 189);;
+        //console.log(JSON.stringify(data));
+    }
+    else if(value == 7){
+        /* pos = [
+            [300, 90, "A"],
+            [299, 136, "B"],
+            [178, 134, "C"],
+            [179, 88, "D"]
+        ]  
+        var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [178, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [179, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        });*/
+        pos = prepareLengthPOS(178, 179);;
+        //console.log(JSON.stringify(data));
+    }else if(value == 8){
+        /* var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [155, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [154, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(155, 154);;
+        //console.log(JSON.stringify(data));
+    }else if(value == 9){
+       /*  var data = [];
+        this.pts.forEach((element, index) => {
+            console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 2){
+                d = [138, element.y, lable[index]];
+            }
+            else if(index == 3){
+                d = [139, element.y, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        }); */
+        pos = prepareLengthPOS(138, 139);;
+        //console.log(JSON.stringify(data));
+    }
+    makeShapes(pos);
+    drawShapes();
+    doType();
+}
+function prepareBreadthPOS(val1, val2){
+    var lable = ['A','B','C','D'];
+    
+        var data = [];
+        this.pts.forEach((element, index) => {
+           // console.log(JSON.stringify(element)) ;
+            var d = [];
+            if(index == 1){
+                d = [element.x-100, val1,, lable[index]];
+            }
+            else if(index == 2){
+                d = [element.x-100, val2, lable[index]];
+            }else{
+                d = [element.x-100, element.y, lable[index]];
+            }
+            data.push(d);
+        });
+        
+       // console.log(JSON.stringify(data));
+        return data;
+}
+function updateBreadth(id){
+    var value = $('#'+id).val();
+    console.log('Rectangle Breadth Value= '+value);
+    var pos = [
+        [210, 240, "A"],
+        [303, 210, "B"],
+        [143, 120, "C"],
+        [126, 160, "D"]
+    ];
+    if(value == 1){
+        pos = prepareBreadthPOS(106, 104);
+    }else if(value == 2){
+        pos = prepareBreadthPOS(116, 114);
+    }else if(value == 3){
+        pos = prepareBreadthPOS(126, 124);
+    }else if(value == 4){
+        pos = prepareBreadthPOS(136, 134);
+    }
+    else if(value == 5){
+        /* pos = [[300, 90, "A"],
+        [299, 144, "B"],
+        [188, 142, "C"],
+        [189, 88, "D"]
+        ] */
+        pos = prepareBreadthPOS(144, 142);
+    }else if(value == 6){
+        pos = prepareBreadthPOS(152, 150);
+    }
+    else if(value == 7){
+        pos = prepareBreadthPOS(164, 162);
+    }
+    else if(value == 8){
+        pos = prepareBreadthPOS(176, 174);
+    }
+    else if(value == 9){
+        pos = prepareBreadthPOS(185, 183);
+    }
+    makeShapes(pos);
+    drawShapes();
+    doType();
 }
 
 function reset() {
@@ -111,7 +417,7 @@ function toggleAngles() {
 
 function toggleSides() {
     my.sidesQ = !my.sidesQ;
-   // toggleBtn("sidesBtn", my.sidesQ);
+    // toggleBtn("sidesBtn", my.sidesQ);
     update();
 }
 
@@ -197,6 +503,93 @@ function domousemove(e) {
         }
     }
 }
+function updateId(id){
+    updateSideValues($('#'+id).val());
+}
+function updateSideValues(value) {
+    console.log('updateSideValues = ' + value);
+    var pos = [
+        [200, 240, "A"],
+        [293, 210, "B"],
+        [143, 120, "C"],
+        [126, 160, "D"]
+    ];
+    //var value = $('#'+id).val();
+    if(value == 1){
+        pos = [
+            [232, 171, "A"],
+        [209, 143, "B"],
+        [237, 129, "C"],
+        [251, 157, "D"]
+        ]
+    }else if(value == 2){
+        pos = [
+            [218, 184, "A"],
+            [196, 138, "B"],
+            [242, 116, "C"],
+            [264, 162, "D"]
+        ]
+    }else if(value == 3){
+        pos = [
+            [212, 198, "A"],
+            [182, 132, "B"],
+            [248, 102, "C"],
+            [278, 168, "D"]
+        ]
+    }else if(value == 4){
+        pos = [
+            [206, 214, "A"],
+            [266, 126, "B"],
+            [254, 86, "C"],
+            [294, 174, "D"]
+    
+        ]
+    }else if(value == 5){
+        pos = [
+            [202, 230, "A"],
+            [150, 122, "B"],
+            [258, 70, "C"],
+            [310, 179, "D"]
+        ]
+    }else if(value == 6){
+        pos = [
+            [200, 240, "A"],
+            [293, 210, "B"],
+            [143, 120, "C"],
+            [126, 160, "D"]
+        ]
+    }
+    else if (value == 7) {
+        pos = [
+            [200, 251, "A"],
+        [230, 120, "B"],
+        [260, 49, "C"],
+        [330, 180, "D"]
+        ]
+    }else if(value == 8 ){
+        pos = [
+            [200, 265, "A"],
+        [215, 120, "B"],
+        [260, 35, "C"],
+        [345, 180, "D"]
+        ]
+    }else if(value == 9){
+        pos = [
+            [294, 282, "A"],
+            [198, 115, "B"],
+            [265, 20, "C"],
+            [362, 185, "D"]
+        ]
+    }
+    makeShapes(pos);
+    drawShapes();
+   // el.addEventListener("mousedown", mouseDownListener, false);
+    //el.addEventListener('touchstart', ontouchstart, false);
+    //el.addEventListener("mousemove", domousemove, false);
+    doType();
+   // toggleSides();
+
+}
 
 function mouseDownListener(evt) {
     var i;
@@ -204,6 +597,7 @@ function mouseDownListener(evt) {
     var bRect = el.getBoundingClientRect();
     var mouseX = (evt.clientX - bRect.left) * (el.width / ratio / bRect.width);
     var mouseY = (evt.clientY - bRect.top) * (el.height / ratio / bRect.height);
+   // console.log(mouseX + ' = ' + mouseY)
     for (i = 0; i < my.numPts; i++) {
         if (hitTest(my.shapes[i], mouseX, mouseY)) {
             dragNo = i;
@@ -216,6 +610,7 @@ function mouseDownListener(evt) {
             }
         }
     }
+
     if (dragQ) {
         if (evt.touchQ) {
             window.addEventListener('touchmove', ontouchmove, false);
@@ -290,7 +685,7 @@ function doType() {
         case "square":
             my.titleStr = "Square";
             my.descrStr = "All sides equal, all right angles";
-          //  console.log(w/2+30 + ' = '+h/2)
+            //  console.log(w/2+30 + ' = '+h/2)
             my.quad.makeRegular(dragNo, w / 2 + 30, h / 2);
             break;
         case "rectangle":
@@ -334,25 +729,15 @@ function getType() {
     return typeStr;
 }
 
-function getDescr() {}
+function getDescr() { }
 
-function makeShapes() {
+function makeShapes(pos) {
     var i;
     var tempX;
     var tempY;
     var tempColor;
-    var pos = [
-        [200, 240, "A"],
-        [293, 210, "B"],
-        [143, 120, "C"],
-        [126, 160, "D"]
-    ];
-    if(mode == 'rectangle'){
-        [300, 90, "A"],
-        [293, 210, "B"],
-        [143, 244, "C"],
-        [180, 120, "D"]
-    }
+
+    
     switch (getType().toLowerCase()) {
         /* case "any":
             break;
@@ -501,16 +886,16 @@ function TextBox(ig, ifont, ifontSize, iwd, ilines, itxt, ix, iy, iinputQ) {
     this.clr = "#000000";
     this.refresh();
 }
-TextBox.prototype.refresh = function() {
+TextBox.prototype.refresh = function () {
     this.g.font = this.fontSize + "px " + this.font;
     this.g.fillStyle = this.clr;
     this.g.fillText(this.txt, this.posx, this.posy, this.wd);
 };
-TextBox.prototype.setText = function(itxt) {
+TextBox.prototype.setText = function (itxt) {
     this.txt = itxt;
     this.refresh();
 };
-TextBox.prototype.setClr = function(iclr) {
+TextBox.prototype.setClr = function (iclr) {
     this.clr = iclr;
 };
 
@@ -530,7 +915,7 @@ function Quad() {
         pts[k] = new Pt(0, 0);
     }
 }
-Quad.prototype.makeRegular = function(PointNum, midX, midY) {
+Quad.prototype.makeRegular = function (PointNum, midX, midY) {
     var movedQ = true;
     var obj = my.shapes[PointNum];
     var radius = dist(midX - obj.x, midY - obj.y);
@@ -549,7 +934,7 @@ Quad.prototype.makeRegular = function(PointNum, midX, midY) {
     }
     return movedQ;
 };
-Quad.prototype.makeParallel = function(PointNum) {
+Quad.prototype.makeParallel = function (PointNum) {
     var ANum = PointNum;
     var BNum = PointNum + 1;
     var CNum = PointNum + 2;
@@ -569,7 +954,7 @@ Quad.prototype.makeParallel = function(PointNum) {
     Dobj.x = Cobj.x + ABx;
     Dobj.y = Cobj.y + ABy;
 };
-Quad.prototype.makeKite = function(PointNum) {
+Quad.prototype.makeKite = function (PointNum) {
     var ANum = 3;
     var BNum = 0;
     var CNum = BNum + 1;
@@ -593,7 +978,7 @@ Quad.prototype.makeKite = function(PointNum) {
     }
     if (PointNum == BNum) {
         Angle = Math.atan2(Bobj.y - Oy, Bobj.x - Ox) + Math.PI / 2;
-       // console.log("B");
+        // console.log("B");
     }
     if (PointNum == CNum) {
         d = dist(Cobj.x - Ox, Cobj.y - Oy);
@@ -616,7 +1001,7 @@ Quad.prototype.makeKite = function(PointNum) {
     Aobj = this.kitePosNegPt(Aobj, Ox, Oy, Angle);
     Cobj = this.kitePosNegPt(Cobj, Ox, Oy, Angle);
 };
-Quad.prototype.kitePosNegPt = function(pt, Ox, Oy, Angle) {
+Quad.prototype.kitePosNegPt = function (pt, Ox, Oy, Angle) {
     var d = dist(pt.x - Ox, pt.y - Oy);
     var posPt = new Pt(0, 0);
     posPt.x = Ox + d * Math.cos(Angle);
@@ -635,7 +1020,7 @@ Quad.prototype.kitePosNegPt = function(pt, Ox, Oy, Angle) {
     }
     return pt;
 };
-Quad.prototype.makeKiteConcaveOnly = function(PointNum) {
+Quad.prototype.makeKiteConcaveOnly = function (PointNum) {
     var ANum = 3;
     var BNum = 0;
     var CNum = BNum + 1;
@@ -672,7 +1057,7 @@ Quad.prototype.makeKiteConcaveOnly = function(PointNum) {
     Cobj.x = Ox + CO * Math.cos(Angle - Math.PI);
     Cobj.y = Oy + CO * Math.sin(Angle - Math.PI);
 };
-Quad.prototype.makeRhombus = function(PointNum) {
+Quad.prototype.makeRhombus = function (PointNum) {
     var ANum = PointNum - 1;
     var BNum = PointNum;
     var CNum = PointNum + 1;
@@ -701,7 +1086,7 @@ Quad.prototype.makeRhombus = function(PointNum) {
     Dobj.x = Aobj.x + Side * Math.cos(AngleAD);
     Dobj.y = Aobj.y + Side * Math.sin(AngleAD);
 };
-Quad.prototype.makeRectangle = function(PointNum) {
+Quad.prototype.makeRectangle = function (PointNum) {
     var ANum = PointNum - 1;
     var BNum = PointNum;
     var CNum = PointNum + 1;
@@ -723,7 +1108,7 @@ Quad.prototype.makeRectangle = function(PointNum) {
     Dobj.x = Aobj.x + AD * Math.cos(Angle - Math.PI / 2);
     Dobj.y = Aobj.y + AD * Math.sin(Angle - Math.PI / 2);
 };
-Quad.prototype.makeTrapez = function(PointNum) {
+Quad.prototype.makeTrapez = function (PointNum) {
     var ANum = 0;
     var BNum = 1;
     var CNum = 2;
@@ -768,10 +1153,10 @@ Quad.prototype.makeTrapez = function(PointNum) {
             break;
     }
 };
-Quad.prototype.getAngles = function() {
+Quad.prototype.getAngles = function () {
     return [pts[0].getAngle(), pts[1].getAngle(), pts[2].getAngle()];
 };
-Quad.prototype.getNo = function(varName) {
+Quad.prototype.getNo = function (varName) {
     switch (varName) {
         case "A":
             return 0;
@@ -792,7 +1177,7 @@ Quad.prototype.getNo = function(varName) {
     }
     return -1;
 };
-Quad.prototype.getVal = function(varName) {
+Quad.prototype.getVal = function (varName) {
     switch (varName) {
         case "A":
         case "B":
@@ -808,7 +1193,7 @@ Quad.prototype.getVal = function(varName) {
     }
     return 0;
 };
-Quad.prototype.setLabels = function(angleA, angleB, angleC, angleD, sidea, sideb, sidec, sided) {
+Quad.prototype.setLabels = function (angleA, angleB, angleC, angleD, sidea, sideb, sidec, sided) {
     this.setLabel("A", angleA);
     this.setLabel("B", angleB);
     this.setLabel("C", angleC);
@@ -818,7 +1203,7 @@ Quad.prototype.setLabels = function(angleA, angleB, angleC, angleD, sidea, sideb
     this.setLabel("c", sidec);
     this.setLabel("d", sidec);
 };
-Quad.prototype.setLabel = function(varName, labelStr) {
+Quad.prototype.setLabel = function (varName, labelStr) {
     var lblNo = this.getNo(varName);
     if (lblNo < 0)
         return;
@@ -840,7 +1225,7 @@ Quad.prototype.setLabel = function(varName, labelStr) {
         default:
     }
 };
-Quad.prototype.getUserStr = function(varName) {
+Quad.prototype.getUserStr = function (varName) {
     switch (varName) {
         case "A":
         case "B":
@@ -866,18 +1251,18 @@ Quad.prototype.getUserStr = function(varName) {
     }
     return "";
 };
-Quad.prototype.setxy = function(ptNo, ix, iy) {
+Quad.prototype.setxy = function (ptNo, ix, iy) {
     pts[ptNo].setxy(ix, iy);
 };
-Quad.prototype.updateMe = function() {
+Quad.prototype.updateMe = function () {
     setAngles(pts);
     this.sides = getSides(pts);
 };
-Quad.prototype.setAllKnown = function(knownQ) {
+Quad.prototype.setAllKnown = function (knownQ) {
     this.isAngleKnownQ = [knownQ, knownQ, knownQ, knownQ];
     this.isSideKnownQ = [knownQ, knownQ, knownQ, knownQ];
 };
-Quad.prototype.setKnown = function(varName, knownQ) {
+Quad.prototype.setKnown = function (varName, knownQ) {
     switch (varName) {
         case "A":
         case "B":
@@ -894,7 +1279,7 @@ Quad.prototype.setKnown = function(varName, knownQ) {
         default:
     }
 };
-Quad.prototype.isKnown = function(varName) {
+Quad.prototype.isKnown = function (varName) {
     switch (varName) {
         case "A":
         case "B":
@@ -910,13 +1295,13 @@ Quad.prototype.isKnown = function(varName) {
     }
     return false;
 };
-Quad.prototype.userSide = function(i) {
+Quad.prototype.userSide = function (i) {
     return Math.round(this.sides[i] * this.scaleFactor, this.dec);
 };
-Quad.prototype.userAngle = function(x) {
+Quad.prototype.userAngle = function (x) {
     return Math.round(x * 180 / Math.PI, this.dec);
 };
-Quad.prototype.drawSides = function(g) {
+Quad.prototype.drawSides = function (g) {
     var ptC = new Pt();
     ptC.setAvg(pts);
     g.fillStyle = "#000000";
@@ -929,7 +1314,7 @@ Quad.prototype.drawSides = function(g) {
         g.fillText(side, ptM.x - 10, ptM.y + 5, 100);
     }
 };
-Quad.prototype.drawInscr = function(g) {
+Quad.prototype.drawInscr = function (g) {
     g.beginPath()
     g.lineWidth = 2
     g.fillStyle = "hsla(240,100%,60%,0.1)";
@@ -949,7 +1334,7 @@ Quad.prototype.drawInscr = function(g) {
         g.fill()
     }
 }
-Quad.prototype.drawAngles = function(g) {
+Quad.prototype.drawAngles = function (g) {
     var angSum = 0;
     var angDescr = "";
     var angs = [];
@@ -962,7 +1347,7 @@ Quad.prototype.drawAngles = function(g) {
         } else {
             if (angDeg > 90) {
                 d = Math.max(20, 30 - (angDeg - 90) / 6);
-            } else {}
+            } else { }
             g.fillStyle = "rgba(0, 0, 255, 0.3)";
             g.beginPath();
             g.moveTo(pts[i].x, pts[i].y);
@@ -985,16 +1370,16 @@ Quad.prototype.drawAngles = function(g) {
         txtPt.y = pts[i].y + (d + 15) * Math.sin(aMid) - 0;
         g.fillStyle = "rgba(0, 0, 255, 1)";
         g.fillText(Math.round(ang) + "°", txtPt.x - 10, txtPt.y + 5, 100);
-       // console.log(ang)
+        // console.log(ang)
     }
     return angs;
 };
-Quad.prototype.drawDiags = function(g) {
+Quad.prototype.drawDiags = function (g) {
     g.strokeStyle = "#666666";
     var diagCount = 0;
     for (var i = 0; i < pts.length - 2; i++) {
         for (var j = i + 2; j < pts.length; j++) {
-            if (i == 0 && j == pts.length - 1) {} else {
+            if (i == 0 && j == pts.length - 1) { } else {
                 g.beginPath();
                 g.moveTo(pts[i].x, pts[i].y);
                 g.lineTo(pts[j].x, pts[j].y);
@@ -1004,10 +1389,10 @@ Quad.prototype.drawDiags = function(g) {
         }
     }
 };
-Quad.prototype.setDec = function(decimals) {
+Quad.prototype.setDec = function (decimals) {
     this.dec = decimals;
 };
-Line.prototype.getLength = function(n) {
+Line.prototype.getLength = function (n) {
     var dx = this.b.x - this.a.x;
     var dy = this.b.y - this.a.y;
     return Math.sqrt(dx * dx + dy * dy) * this.scaleFactor;
@@ -1024,29 +1409,29 @@ function Pt(ix, iy) {
     this.angleIn = 0;
     this.angleOut = 0;
 }
-Pt.prototype.setxy = function(ix, iy) {
+Pt.prototype.setxy = function (ix, iy) {
     this.x = ix;
     this.y = iy;
     this.validPtQ = true;
 };
-Pt.prototype.setPrevPt = function() {
+Pt.prototype.setPrevPt = function () {
     if (this.validPtQ) {
         this.prevx = this.x;
         this.prevy = this.y;
         this.prevQ = true;
     }
 };
-Pt.prototype.getAngle = function() {
+Pt.prototype.getAngle = function () {
     return this.angleOut - this.angleIn;
 };
-Pt.prototype.drawMe = function(g) {
+Pt.prototype.drawMe = function (g) {
     g.fillStyle = "rgba(0, 0, 255, 0.3)";
     g.beginPath();
     g.arc(this.x, this.y, 20, 0, 2 * Math.PI, false);
     g.closePath();
     g.fill();
 };
-Pt.prototype.getAvg = function(pts) {
+Pt.prototype.getAvg = function (pts) {
     var xSum = 0;
     var ySum = 0;
     for (var i = 0; i < pts.length; i++) {
@@ -1058,20 +1443,20 @@ Pt.prototype.getAvg = function(pts) {
     newPt.y = ySum / pts.length;
     return newPt;
 };
-Pt.prototype.setAvg = function(pts) {
+Pt.prototype.setAvg = function (pts) {
     this.setPrevPt();
     var newPt = this.getAvg(pts);
     this.x = newPt.x;
     this.y = newPt.y;
     this.validPtQ = true;
 };
-Pt.prototype.interpolate = function(pt1, pt2, f) {
+Pt.prototype.interpolate = function (pt1, pt2, f) {
     this.setPrevPt();
     this.x = pt1.x * f + pt2.x * (1 - f);
     this.y = pt1.y * f + pt2.y * (1 - f);
     this.validPtQ = true;
 };
-Pt.prototype.translate = function(pt, addQ) {
+Pt.prototype.translate = function (pt, addQ) {
     addQ = typeof addQ !== 'undefined' ? addQ : true;
     var t = new Pt(this.x, this.y);
     t.x = this.x;
@@ -1085,10 +1470,10 @@ Pt.prototype.translate = function(pt, addQ) {
     }
     return t;
 };
-Pt.prototype.multiply = function(fact) {
+Pt.prototype.multiply = function (fact) {
     return new Pt(this.x * fact, this.y * fact);
 };
-Pt.prototype.multiplyMe = function(fact) {
+Pt.prototype.multiplyMe = function (fact) {
     this.x *= fact;
     this.y *= fact;
 };
@@ -1140,23 +1525,23 @@ function getClockwise(pts) {
 
 function handleResponse(message) {
     console.log(`Message from the background script:  ${message.response}`);
-  }
-  
-  function handleError(error) {
+}
+
+function handleError(error) {
     console.log(`Error: ${error}`);
-  }
-  
-  function notifyBackgroundPage(e) {
+}
+
+function notifyBackgroundPage(e) {
     var sending = browser.runtime.sendMessage({
-      greeting: "Greeting from the content script"
+        greeting: "Greeting from the content script"
     });
-    sending.then(handleResponse, handleError);  
-  }
-  
-  
+    sending.then(handleResponse, handleError);
+}
+
+
 
 function getSides(pts) {
-    //console.log(JSON.stringify(pts))
+  //  console.log(JSON.stringify(pts))
     var numPoints = pts.length;
     //console.log('numPoints= '+numPoints)
     var sides = [];
@@ -1164,40 +1549,40 @@ function getSides(pts) {
         var pt = pts[i];
         //console.log('pt='+pt.x+' = '+pt.y)
         var ptp1 = pts[loop(i, 0, numPoints - 1, 1)];
-      //  console.log('ptp='+(ptp1.x - pt.x)+' = '+(ptp1.y - pt.y))
-        if(mode == 'square'){
-         //   alert('hello')
-         sides.push(dist((ptp1.x - pt.x)/22, (ptp1.y - pt.y)/22));
-        }else{
-            if(i == 0 || i == 2){
-                sides.push(dist((ptp1.x - pt.x)/11, (ptp1.y - pt.y)/11));
-            }else{
-                sides.push(dist((ptp1.x - pt.x)/18, (ptp1.y - pt.y)/18));
+        //  console.log('ptp='+(ptp1.x - pt.x)+' = '+(ptp1.y - pt.y))
+        if (mode == 'square') {
+            //   alert('hello')
+            sides.push(dist((ptp1.x - pt.x) / 22, (ptp1.y - pt.y) / 22));
+        } else {
+            if (i == 0 || i == 2) {
+                sides.push(dist((ptp1.x - pt.x) / 11, (ptp1.y - pt.y) / 11));
+            } else {
+                sides.push(dist((ptp1.x - pt.x) / 18, (ptp1.y - pt.y) / 18));
             }
         }
     }
     //console.log(sides);
-   // alert('sahdsajd');
+    // alert('sahdsajd');
     var tot = 0;
-    for(var i= 0;i<sides.length;i++){
+    for (var i = 0; i < sides.length; i++) {
         //console.log(Math.round(sides[i]));
         tot += Math.round(sides[i]);
     }
-   // localStorage.setItem('tot', tot);
-   // console.log(document.getElementById('lab-perivalue'));
-   if(mode == 'square'){
-    $('#div-text').val(Math.round(Math.round(sides[0])*2));
-    $('#div-text-2').val(Math.round(Math.round(sides[0])));
-   }
-   else if(mode == 'rectangle'){
-    $('#div-text').val(Math.round(Math.round(sides[0]) * Math.round(sides[1])));
-    $('#div-text-3').val(Math.round(sides[0]));
-    $('#div-text-4').val(Math.round(sides[1]));
-   }
+    // localStorage.setItem('tot', tot);
+    // console.log(document.getElementById('lab-perivalue'));
+    if (mode == 'square') {
+        $('#div-text').val((Math.round(sides[0]) * Math.round(sides[0])).toFixed(2));
+        $('#div-text-2').val(Math.round(Math.round(sides[0])));
+    }
+    else if (mode == 'rectangle') {
+        $('#div-text').val(((sides[0]) * (sides[1])).toFixed(2));
+        $('#div-text-3').val(Math.round(sides[1]));
+        $('#div-text-4').val(Math.round(sides[0]));
+    }
     $('#div-text-1').val(tot);
     //console.log(mode)
-   // window.addEventListener("click", notifyBackgroundPage);
-   // document.getElementById('lab-perivalue').htmlFor = tot;
+    // window.addEventListener("click", notifyBackgroundPage);
+    // document.getElementById('lab-perivalue').htmlFor = tot;
     return (sides);
 }
 
@@ -1226,10 +1611,10 @@ function Line(pt1, pt2) {
     this.a = pt1;
     this.b = pt2;
 }
-Line.prototype.getMidPt = function() {
+Line.prototype.getMidPt = function () {
     return new Pt((this.a.x + this.b.x) / 2, (this.a.y + this.b.y) / 2);
 };
-Line.prototype.getClosestPoint = function(toPt, inSegmentQ) {
+Line.prototype.getClosestPoint = function (toPt, inSegmentQ) {
     var AP = toPt.translate(this.a, false);
     var AB = this.b.translate(this.a, false);
     var ab2 = AB.x * AB.x + AB.y * AB.y;
@@ -1241,7 +1626,7 @@ Line.prototype.getClosestPoint = function(toPt, inSegmentQ) {
     var closest = this.a.translate(AB.multiply(t));
     return closest;
 };
-Line.prototype.setLen = function(newLen, fromMidQ) {
+Line.prototype.setLen = function (newLen, fromMidQ) {
     fromMidQ = typeof fromMidQ !== 'undefined' ? fromMidQ : true;
     var len = this.getLength();
     if (fromMidQ) {
@@ -1256,10 +1641,10 @@ Line.prototype.setLen = function(newLen, fromMidQ) {
         this.b = this.a.translate(diffPt, false);
     }
 };
-Line.prototype.getAngle = function() {
+Line.prototype.getAngle = function () {
     return Math.atan2(this.b.y - this.a.y, this.b.x - this.a.x);
 };
-CanvasRenderingContext2D.prototype.drawBox = function(midX, midY, radius, angle) {
+CanvasRenderingContext2D.prototype.drawBox = function (midX, midY, radius, angle) {
     g.beginPath();
     var pts = [
         [0, 0],
