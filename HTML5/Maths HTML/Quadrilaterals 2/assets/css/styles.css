@@ -20,9 +20,9 @@
 @media (min-width: 1800px) {
   #leftdiv {
     width: 237px;
-    height: 705px;
+    height: 386px;
     margin-left: 23px;
-    margin-top: 122px;
+    margin-top: 343px;
   }
 }
 
@@ -3552,8 +3552,7 @@
   #btn4 {
     width: 115px;
     height: 115px;
-    margin-top: -388px;
-    margin-left: 111px;
+    margin-top: -56px;
   }
 }
 
@@ -3561,8 +3560,7 @@
   #btn5 {
     width: 115px;
     height: 115px;
-    margin-top: -278px;
-    margin-left: 111px;
+    margin-top: 55px;
   }
 }
 
@@ -3769,7 +3767,7 @@
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1399px) {
-  #btn6 {
+  #btn8 {
     width: 80px;
     height: 80px;
     margin-top: 382px;
@@ -3777,7 +3775,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1799px) {
-  #btn6 {
+  #btn8 {
     width: 100px;
     height: 100px;
     margin-top: 208px;
@@ -3785,11 +3783,10 @@
 }
 
 @media (min-width: 1800px) {
-  #btn6 {
+  #btn8 {
     width: 115px;
     height: 115px;
-    margin-top: -167px;
-    margin-left: 111px;
+    margin-top: 166px;
   }
 }
 
