@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Visualizing 3d correction</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
+    <div id="titlediv" class="divtitle" style="height: 100px;">
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"></div>
+    </div>
+    <div>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active text-center" role="tab" data-toggle="tab" href="#tab-1" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">3D</a></li>
+            <li class="nav-item"><a class="nav-link text-center" role="tab" data-toggle="tab" href="#tab-2" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">2D</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active visible" role="tabpanel" id="tab-1">
+                <p class="invisible">Content for tab 1.</p>
+                <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                    <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="position: absolute;"><button class="btn" id="btn1" type="button" style="position: absolute;background-image: url(&quot;assets/img/cube%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                            id="btn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn3" type="button"
+                            style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn4" type="button" style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button
+                            class="btn" id="btn6" type="button" style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn7" type="button" style="position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                    <div
+                        id="rightmiddlediv" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/3d%20shape%20block.png&quot;);background-position: center;background-size: contain;position: absolute;">
+                        <div id="div-rightinside" style="background-image: url(&quot;assets/img/pyramid%203d.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+                </div>
+                <div id="rightmiddlediv-1" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/isometric%20view.png&quot;);background-position: center;background-size: contain;position: absolute;">
+                    <div id="div-leftinside" style="background-image: url(&quot;assets/img/dot%20paper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                        <div id="div-leftiside1" style="position: absolute;background-image: url(&quot;assets/img/pyramid%20isometric.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    </div>
+                </div>
+                <div id="rightdiv" class="middlerightdiv" style="position: absolute;"><button class="btn" id="divbtn1" type="button" style="background-image: url(&quot;assets/img/faces%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn"
+                        id="divbtn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/edges%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary"
+                        id="btn5" type="button" style="position: absolute;background-image: url(&quot;assets/img/vertices.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);"></button></div>
+                <div
+                    id="div-downbtn" style="margin-right: auto;margin-left: auto;position: absolute;"><button class="btn btn-primary" id="netbtn" type="button" style="background-image: url(&quot;assets/img/net%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                    <button
+                        class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+            </div>
+        </div>
+        <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;"></div>
+    </div>
+    <div class="tab-pane" role="tabpanel" id="tab-2">
+        <p class="invisible">Content for tab 2.</p>
+        <div id="playareadiv2d" style="margin-left: auto;margin-right: auto;">
+            <div id="rightmaindiv2d" style="margin-left: auto;margin-right: auto;margin-top: -68px;">
+                <div id="leftdiv2d" style="position: absolute;"><button class="btn" id="btn12d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cube%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                        id="btn22d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn32d"
+                        type="button" style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn42d" type="button"
+                        style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn52d" type="button" style="position: absolute;background-image: url(&quot;assets/img/pyramid%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                    <button
+                        class="btn" id="btn82d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                </div>
+                <div id="rightmiddlediv2d" style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
+                    <div id="div-c2d" style="background-image: url(&quot;assets/img/2d%20projection%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                        <div id="div--light2d" style="background-image: url(&quot;assets/img/pyramid%203d.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+                        <div id="div-b-torch-on2d" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/torch%20on.png&quot;);"></div>
+                        <div id="div-b-torch-off2d" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/torch%20off.png&quot;);"></div>
+                        <div id="shadow-surface2d" style="background-image: url(&quot;assets/img/shasow%20wall.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;background-position: center;">
+                            <div id="shadow2d" style="position: absolute;background-image: url(&quot;assets/img/pyrimd%20shadow.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="rightdiv2d" style="position: absolute;"><button class="btn" id="divbtn12d" type="button" style="background-image: url(&quot;assets/img/torch%20light%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;background-color: rgba(255,255,255,0);"></button>
+                    <button
+                        class="btn" id="resetbtn2d" type="button" style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
