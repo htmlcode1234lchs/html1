@@ -73,6 +73,9 @@
                     <div id="content" style="margin-top: 10%;">
 
                     </div>
+                    <iframe src="" id="frameId" scrolling="no" style="width:542px; height:312px; overflow:hidden; margin:auto; 
+                display:block; border:none;display: none;">
+            </iframe> 
                 </div>
             </div>
         </div>
@@ -117,6 +120,7 @@
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/geom-triangle-types.js"></script>
     <script src="assets/js/geom-quad.js"></script>
+    <!-- <script src="assets/js/circle-prop.js"></script> -->
 </body>
 <script>
     
@@ -153,9 +157,18 @@
         updateImage(id)
         updateEmpty();
         if (id == 'triangle') {
+            $('#frameId').css('display','none');
+            $('#content').css('display','block');
             $('#content').empty();
             geomtriangletypesMain('type');
-        } else {
+        }else if(id == 'circle'){
+            $('#frameId').css('display','block');
+            $('#content').css('display','none');
+            document.getElementById('frameId').src = 'circle.html';
+        }
+         else {
+            $('#frameId').css('display','none');
+            $('#content').css('display','block');
             geomquadMain("type", id);
         }
     }
@@ -176,5 +189,4 @@
         }
     })
 </script>
-
 </html>

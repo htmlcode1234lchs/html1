@@ -1166,8 +1166,9 @@ function getSides(pts) {
         var ptp1 = pts[loop(i, 0, numPoints - 1, 1)];
       //  console.log('ptp='+(ptp1.x - pt.x)+' = '+(ptp1.y - pt.y))
         if(mode == 'square'){
-         //   alert('hello')
-         sides.push(dist((ptp1.x - pt.x)/22, (ptp1.y - pt.y)/22));
+            sides.push(dist((ptp1.x - pt.x)/22, (ptp1.y - pt.y)/22));
+        }else if(mode == 'rhombus'){
+            sides.push(dist((ptp1.x - pt.x)/22, (ptp1.y - pt.y)/22));
         }else{
             if(i == 0 || i == 2){
                 sides.push(dist((ptp1.x - pt.x)/11, (ptp1.y - pt.y)/11));
@@ -1185,24 +1186,31 @@ function getSides(pts) {
     }
    
    if(mode == 'square'){
-    $('#lab-areavalue').text((Math.round(sides[0]) * Math.round(sides[0])).toFixed(2));
-    $('#sideAId').text(Math.round(Math.round(sides[0])));
+        $('#lab-areavalue').text((Math.round(sides[0]) * Math.round(sides[0])).toFixed(2));
+        $('#sideAId').text(Math.round(Math.round(sides[0])));
    }
    else if(mode == 'rectangle'){
-    $('#lab-areavalue').text(((sides[0]) * (sides[1])).toFixed(2));
-    $('#lengthId').text(Math.round(sides[0]));
-    $('#breadthId').text(Math.round(sides[1]));
+        $('#lab-areavalue').text(((sides[0]) * (sides[1])).toFixed(2));
+        $('#lengthId').text(Math.round(sides[0]));
+        $('#breadthId').text(Math.round(sides[1]));
    }else if(mode == 'parallelogram'){
         $('#lab-areavalue').text((Math.round(sides[0]) * Math.round(sides[1])).toFixed(2));
-        $('#breadthId').text(Math.round(sides[0]));
-        $('#heightId').text('');
+        $('#breadthId').text(Math.round(sides[1]));
+        $('#heightId').text(Math.round(sides[0]));
    }else if(mode == 'trapezoid'){
-       $('#sideAId').text();
-       $('#sideBId').text();
-       $('#heightId').text();
+       $('#sideAId').text(Math.round(sides[0]));
+       $('#sideBId').text(Math.round(sides[2]));
+       $('#heightId').text(Math.round(sides[1]));
+        var s = (Math.round(sides[0]) + Math.round(sides[2]))/2;
+        var a = s * Math.round(sides[1]);
+       $('#lab-areavalue').text(a.toFixed(2));
    }else if(mode == 'rhombus'){
+        $('#lab-areavalue').text(((Math.round(sides[0]) * Math.round(sides[1]))/2).toFixed(2));
+        $('#sideAId').text(Math.round(Math.round(sides[0])));
+   }else if(mode == 'kite'){
 
-   }else if(mode == 'any'){
+    }
+   else if(mode == 'any'){
 
    }
     $('#lab-perimetervalue').text(tot);

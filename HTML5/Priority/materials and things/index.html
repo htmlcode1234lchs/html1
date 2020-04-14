@@ -18,20 +18,25 @@
                 class="btn btn-primary btnreset" id="resetbtn" type="button" style="margin-left: 680px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
         </div>
     </div>
-    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
-        <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;position: relative;height: 726px;margin-top: -5px;">
-            <div class="text-center toprightdiv" id="topdiv" style="margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the object to check the attraction</label></div>
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" 
+        style="margin-left: auto;margin-right: auto;">
+        <div id="rightmaindiv" class="divrightmain" 
+            style="margin-left: auto;margin-right: auto;position: relative;
+            height: 726px;margin-top: -5px;">
+            <div class="text-center toprightdiv" id="topdiv" 
+                style="margin-left: auto;margin-right: auto;">
+                <label style="font-size: 30px;">Drag and drop the object to check the attraction</label></div>
             <div class="text-center divright1img" id="right1imgdivjunk" 
                 style="background-image: url(&quot;assets/img/wall.png&quot;);
                 background-position: center;background-size: contain;background-repeat: no-repeat;
                 position: absolute;">
                 <div id="rightmiddlediv" class="middlerightdiv" 
-                    style="position: absolute;background-image: url(&quot;assets/img/c.png&quot;);
+                    style="position: absolute;background-image: url(&quot;assets/img/a.png&quot;);
                         background-position: center;background-size: contain;
                         background-repeat: no-repeat;">
                     <div id="div-on-off">
                         <label class="switch">
-                            <input type="checkbox"checked>
+                            <input type="checkbox"checked name="test">
                             <span class="slider round"></span>
                         </label>
                         <label id="offbtn" 
@@ -86,12 +91,13 @@
     $('input[name=test]').change(function () {
         if ($('input[name=test]').is(':checked')) {
             var label = $('#div-select-2 :selected').val();
+            $('#div-rays').css('background-image', 'url(assets/img/4.png)');
             updateImages(label);
-            $('#rightmiddlediv').css('background-image', 'url(assets/img/Torch-on.png)');
+            
         } else {
-            $('#div-img').css('background-image', 'url()');
-            $('#div-img1').css('background-image', 'url()');
-            $('#rightmiddlediv').css('background-image', 'url(assets/img/Torch-off.png)');
+            $('#div-mirror').css('background-image', 'url()');
+            $('#div-rays').css('background-image', 'url()');
+            $('#rightmiddlediv').css('background-image', 'url()');
         }
     });
 
