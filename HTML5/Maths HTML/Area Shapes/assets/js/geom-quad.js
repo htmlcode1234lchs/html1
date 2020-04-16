@@ -137,9 +137,9 @@ function drawBGS(w, h) {
         var xPix = i * 60;
         g.beginPath();
         if (i % 2) {
-            g.strokeStyle = "rgba(0,0,256,0.2)";
+            g.strokeStyle = "rgba(255, 0, 153, 0.92)";
         } else {
-            g.strokeStyle = "rgba(0,0,256,0.1)";
+            g.strokeStyle = "rgba(255, 0, 153, 0.92)";
         }
         g.moveTo(xPix, 0);
         g.lineTo(xPix, h);
@@ -149,9 +149,9 @@ function drawBGS(w, h) {
         var yPix = i * 60;
         g.beginPath();
         if (i % 2) {
-            g.strokeStyle = "rgba(0,0,256,0.2)";
+            g.strokeStyle = "rgba(255, 0, 153, 0.92)";
         } else {
-            g.strokeStyle = "rgba(0,0,256,0.1)";
+            g.strokeStyle = "rgba(255, 0, 153, 0.92)";
         }
         g.moveTo(0, yPix);
         g.lineTo(w, yPix);
