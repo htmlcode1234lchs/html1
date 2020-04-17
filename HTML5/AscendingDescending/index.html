@@ -348,7 +348,6 @@
         });
         return flag;
     }
-
     function generateData(digits, size) {
         return Array.apply(null, { length: size || 100 }).map(function () {
             return Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
