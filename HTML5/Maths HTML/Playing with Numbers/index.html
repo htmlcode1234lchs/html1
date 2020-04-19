@@ -175,7 +175,7 @@
     var randomArray = [];
     var selectedRule = 0;
     $('.leftdivision > button').click(function(){
-        console.log(this.id);
+        //console.log(this.id);
         staticArray.forEach((element, index) =>{
             if(index <=3){
                 $('#formCheck-t'+(index+1)).prop("checked", false);   
@@ -187,13 +187,13 @@
         staticArray.forEach((element, index) =>{
             var id = this.id.charAt(this.id.length-1);
             selectedRule = id;
-            console.log('id = '+id);
+           // console.log('id = '+id);
             if(id == element){
                 $('#btn-left'+element).css('background-image','url(assets/img/rule%20'+element+'%202.png)');
                 $('#lab-rule').empty();
                 $('#lab-rule').text(divisbilityRuleArray[index]);
                 randomArray = generateData(2, 4);
-                console.log('randomArray= '+JSON.stringify(randomArray));
+                //console.log('randomArray= '+JSON.stringify(randomArray));
                 randomArray.forEach((element, index)=>{
                     $('#fl-name'+(index+1)).text(element);
                 })  
@@ -208,14 +208,14 @@
         });
     }
     $('#btn-check').click(function(){
-        console.log('randomArray= '+JSON.stringify(randomArray));
+       // console.log('randomArray= '+JSON.stringify(randomArray));
         randomArray.forEach((element, index) =>{
             var flag = $("input[name='radiobtn"+(index+1)+"']:checked").val();
             if(flag == 'undefined'){
 
             }else{
                 var r = parseInt(element)%parseInt(selectedRule);
-                console.log('r = '+r)
+                //console.log('r = '+r)
                 if(r == 0){
                     if(flag == 'True'){
                         $('#fl-t'+(index+1)).css('color','green');
