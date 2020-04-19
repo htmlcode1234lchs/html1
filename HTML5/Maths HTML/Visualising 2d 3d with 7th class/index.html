@@ -7,291 +7,323 @@
     <title>Visualizing 3d correction</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .tourchlight {
+            background-image: url(assets/img/2d/torch%20on.png);
+        }
+
+        .active1 {
+            background-image: url(assets/img/2d/torchoff.png);
+        }
+    </style>
 </head>
 
-<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
+<body
+    style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
     <div id="titlediv" class="divtitle" style="height: 100px;">
         <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"></div>
     </div>
     <div>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active text-center" role="tab" data-toggle="tab" id="link3d" href="#tab-1" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">3D</a></li>
-            <li class="nav-item"><a class="nav-link text-center" role="tab" data-toggle="tab" id="link2d" href="#tab-2" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">2D</a></li>
+            <li class="nav-item"><a class="nav-link active text-center" role="tab" data-toggle="tab" id="link3d"
+                    href="#tab-1"
+                    style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">3D</a>
+            </li>
+            <li class="nav-item"><a class="nav-link text-center" role="tab" data-toggle="tab" id="link2d" href="#tab-2"
+                    style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(74,80,85);">2D</a>
+            </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active visible" role="tabpanel" id="tab-1">
                 <p class="invisible">Content for tab 1.</p>
-                <div id="rightmaindiv" class="divrightmain" 
-                    style="margin-left: auto;margin-right: auto;">
-                    <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" 
-                        style="position: absolute;">
-                        <button class="btn" id="btn1" type="button" 
-                            style="position: absolute;
+                <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                    <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="position: absolute;">
+                        <button class="btn" id="btn1" type="button" style="position: absolute;
                             background-image: url(&quot;assets/img/cube%202.png&quot;);
                             background-position: center;background-size: contain;
                             background-repeat: no-repeat;">
                         </button>
-                        <button class="btn" id="btn2" type="button" 
-                            style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);
+                        <button class="btn" id="btn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
                         </button>
-                        <button class="btn" id="btn3" type="button"
-                            style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);
+                        <button class="btn" id="btn3" type="button" style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
                         </button>
-                        <button class="btn" id="btn4" type="button" 
-                            style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);
+                        <button class="btn" id="btn4" type="button" style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
                         </button>
-                        <button class="btn" id="btn5" type="button" 
-                            style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);
+                        <button class="btn" id="btn5" type="button" style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
                         </button>
-                        <button class="btn" id="btn6" type="button" 
-                            style="position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);
+                        <button class="btn" id="btn6" type="button" style="position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
                         </button>
                     </div>
-                    <div id="rightmiddlediv" class="middlerightdiv" 
-                        style="background-repeat: no-repeat;
+                    <div id="rightmiddlediv" class="middlerightdiv" style="background-repeat: no-repeat;
                         background-image: url(&quot;assets/img/3d%20shape%20block.png&quot;);
                         background-position: center;background-size: contain;position: absolute;">
-                        <div id="div-rightinside" 
-                            style="background-image: url(&quot;assets/img/pyrimd%203d.png&quot;);
+                        <div id="div-rightinside" style="background-image: url(&quot;assets/img/pyrimd%203d.png&quot;);
                             background-position: center;background-size: contain;
                             background-repeat: no-repeat;position: absolute;">
                         </div>
-                </div>
-                <div id="rightmiddlediv-1" class="middlerightdiv" 
-                    style="background-repeat: no-repeat;
+                    </div>
+                    <div id="rightmiddlediv-1" class="middlerightdiv" style="background-repeat: no-repeat;
                         background-image: url(&quot;assets/img/isometric%20view.png&quot;);
                         background-position: center;background-size: contain;position: absolute;">
-                    <div id="div-leftinside" 
-                        style="background-image: url(&quot;assets/img/dot%20paper.png&quot;);
+                        <div id="div-leftinside" style="background-image: url(&quot;assets/img/dot%20paper.png&quot;);
                         background-position: center;background-size: contain;background-repeat: no-repeat;
                         position: absolute;">
-                        <div id="div-leftiside1" 
-                            style="position: absolute;
-                            background-image: url(&quot;assets/img/3d/pyramid%20isometric.png&quot;);
+                            <div id="div-leftiside1" style="position: absolute;
+                            background-image: url(&quot;assets/img/3d/pyrimd%20isometric.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="rightdiv" class="middlerightdiv" style="position: absolute;">
-                    <button class="btn" id="divbtn1" type="button" 
-                        style="background-image: url(&quot;assets/img/faces%201.png&quot;);
+                    <div id="rightdiv" class="middlerightdiv" style="position: absolute;">
+                        <button class="btn" id="divbtn1" type="button" style="background-image: url(&quot;assets/img/faces%201.png&quot;);
                         background-position: center;background-size: contain;background-repeat: no-repeat;
                         position: absolute;">
-                    </button>
-                    <button class="btn" id="divbtn2" type="button" 
-                        style="position: absolute;background-image: url(&quot;assets/img/edges%201.png&quot;);
+                        </button>
+                        <button class="btn" id="divbtn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/edges%201.png&quot;);
                         background-position: center;background-size: contain;background-repeat: no-repeat;">
-                    </button>
-                    <button class="btn btn-primary" id="divbtn3" type="button" 
-                        style="position: absolute;background-image: url(&quot;assets/img/vertices.png&quot;);
+                        </button>
+                        <button class="btn btn-primary" id="divbtn3" type="button" style="position: absolute;background-image: url(&quot;assets/img/vertices.png&quot;);
                             background-position: center;background-size: contain;background-repeat: no-repeat;
                             background-color: rgba(255,255,255,0);">
-                    </button>
-                </div>
-                <div id="div-downbtn" style="margin-right: auto;margin-left: auto;position: absolute;">
-                    <button class="btn btn-primary" id="netbtn" type="button" 
+                        </button>
+                    </div>
+                    <div id="div-downbtn" style="margin-right: auto;margin-left: auto;position: absolute;">
+                        <button class="btn btn-primary" id="netbtn" type="button" 
                         style="background-image: url(&quot;assets/img/net%202.png&quot;);
                         background-position: center;background-size: contain;background-repeat: no-repeat;
                         background-color: rgba(255,255,255,0);position: absolute;">
-                    </button>
-                    <button
-                        class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
-            </div>
-        </div>
-        <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;"></div>
-    </div>
-    <div class="tab-pane" role="tabpanel" id="tab-2">
-        <p class="invisible">Content for tab 2.</p>
-        <div id="playareadiv2d" style="margin-left: auto;margin-right: auto;">
-            <div id="rightmaindiv2d" style="margin-left: auto;margin-right: auto;margin-top: -68px;">
-                <div id="leftdiv2d" class="divleft" style="position: absolute;">
-                    <button class="btn" id="btn12d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cube%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button class="btn" id="btn22d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button class="btn" id="btn32d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button class="btn" id="btn42d" type="button" style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button class="btn" id="btn52d" type="button" style="position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                    <button class="btn" id="btn62d" type="button" style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        </button>
+                        <button class="btn btn-primary" id="resetbtn" type="button"
+                            style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                    </div>
                 </div>
-                <div id="rightmiddlediv2d" style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
-                    <div id="div-c2d" style="background-image: url(&quot;assets/img/2d%20projection%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
-                        <div id="div--light2d" style="background-image: url(&quot;assets/img/pyrimd%203d.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
-                        <div id="div-b-torch-on2d" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/2d/torch%20on.png&quot;);"></div>
-                        <div id="div-b-torch-off2d" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/2d/torch%20off.png&quot;);"></div>
-                        <div id="shadow-surface2d" style="background-image: url(&quot;assets/img/shasow%20wall.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;background-position: center;">
-                            <div id="shadow2d" style="position: absolute;background-image: url(&quot;assets/img/2d/pyrimd%20shadow.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;"></div>
+                <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv"
+                    style="margin-left: auto;margin-right: auto;"></div>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab-2">
+                <p class="invisible">Content for tab 2.</p>
+                <div id="playareadiv2d" style="margin-left: auto;margin-right: auto;">
+                    <div id="rightmaindiv2d" style="margin-left: auto;margin-right: auto;margin-top: -68px;">
+                        <div id="leftdiv2d" class="divleft" style="position: absolute;">
+                            <button class="btn" id="btn12d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/cube%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn" id="btn22d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn" id="btn32d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn" id="btn42d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn" id="btn52d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn" id="btn62d" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        </div>
+                        <div id="rightmiddlediv2d"
+                            style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
+                            <div id="div-c2d"
+                                style="background-image: url(&quot;assets/img/2d%20projection%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                                <div id="div--light2d"
+                                    style="background-image: url(&quot;assets/img/pyrimd%203d.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
+                                </div>
+                                <div id="div-b-torch-on2d"
+                                    style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/2d/torch%20on.png&quot;);">
+                                </div>
+                                <div id="div-b-torch-off2d"
+                                    style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;background-image: url(&quot;assets/img/2d/torchoff.png&quot;);">
+                                </div>
+                                <div id="shadow-surface2d"
+                                    style="background-image: url(&quot;assets/img/shasow%20wall.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;background-position: center;">
+                                    <div id="shadow2d"
+                                        style="position: absolute;background-image: url(&quot;assets/img/2d/pyrimd%20shadow.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="rightdiv2d" style="position: absolute;">
+                            <button class="btn tourchlight" id="divbtn12d" type="button" 
+                            style="background-position: center;background-size: contain;
+                        background-repeat: no-repeat;position: absolute;
+                        background-color: rgba(255,255,255,0);">
+                            </button>
+                            <button class="btn" id="resetbtn2d" type="button"
+                                style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
                         </div>
                     </div>
                 </div>
-                <div id="rightdiv2d" style="position: absolute;">
-                    <button class="btn" id="divbtn12d" type="button" 
-                        style="background-image: url(&quot;assets/img/torch%20light%202.png&quot;);
-                        background-position: center;background-size: contain;
-                        background-repeat: no-repeat;position: absolute;
-                        background-color: rgba(255,255,255,0);">
-                    </button>
-                    <button
-                        class="btn" id="resetbtn2d" type="button" style="background-image: url(&quot;assets/img/reset1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
-                </div>
             </div>
         </div>
-    </div>
-    </div>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
 <script>
-    var shape3dArray = ['cube%203d.png','cuboid%203d.png', 'cyclinder%203d.png','cone%203d.png','prism%203d.png', 
-                        'pyrimd%203d.png'];
-    var rwe3dArray = ['cube%20isometric.png','Cuboidisometric.png', 'cyclinder%20isometric.png',
-                    'cone%20isometric.png','prism%20isometric.png', 'pyramid%20isometric.png'];
-    var faces3dArray = ['cube%20face.png','cuboid%20face.png', 'cylinder%20face.png','cone%20face.png',
-                    'prism%20face.png', 'pyrimd%20face.png'];
-    var edges3dArray = ['cube%20edges.png','cuboid%20edges.png', 'cylinder%20edges.png','cone%20edges.png',
-                    'prism%20edges.png', 'pyrimd%20edges.png'];
-    var vertices3dArray = ['cube%20vertices.png','cuboid%20vertices.png', 'cylinder%20vertices.png',
-                    'cone%20vertices.png', 'prism%20vertices.png', 'pyrimd%20vertices.png'];
-    var withbakground3dArray = ['cube%201.png', 'cuboid%201.png','cyclinder%201.png','cone%201.png',
-                        'prism%201.png', 'pyramid%201.png'];
-    var withoutbakground3dArray = ['cube%202.png', 'cuboid%202.png','cyclinder%202.png','cone%202.png',
-                        'prism%202.png', 'pyramid%202.png'];
+    var shape3dArray = ['cube%203d.png', 'cuboid%203d.png', 'cyclinder%203d.png', 'cone%203d.png', 'prism%203d.png',
+        'pyrimd%203d.png'];
+    var rwe3dArray = ['cube%20isometric.png', 'Cuboidisometric.png', 'cylinder%20isometric.png',
+        'cone%20isometric.png', 'prism%20isometric.png', 'pyrimd%20isometric.png'];
+    var faces3dArray = ['cube%20face.png', 'cuboid%20face.png', 'cylinder%20face.png', 'cone%20face.png',
+        'prism%20face.png', 'pyrimd%20face.png'];
+    var edges3dArray = ['cube%20edges.png', 'cuboid%20edges.png', 'cylinder%20edges.png', 'cone%20edges.png',
+        'prism%20edges.png', 'pyrimd%20edges.png'];
+    var vertices3dArray = ['cube%20vertices.png', 'cuboid%20vertices.png', 'cylinder%20vertices.png',
+        'cone%20vertices.png', 'prism%20vertices.png', 'pyrimd%20vertices.png'];
+    var withbakground3dArray = ['cube%201.png', 'cuboid%201.png', 'cyclinder%201.png', 'cone%201.png',
+        'prism%201.png', 'pyramid%201.png'];
+    var withoutbakground3dArray = ['cube%202.png', 'cuboid%202.png', 'cyclinder%202.png', 'cone%202.png',
+        'prism%202.png', 'pyramid%202.png'];
 
-    var shape2dArray = ['cube%203d.png','cuboid%203d.png', 'cyclinder%203d.png','cone%203d.png','prism%203d.png', 
-                        'pyrimd%203d.png'];
-    var rwe2dArray = ['cube%20shasow.png', 'cunoid%20shadow.png','cyclinder%20shadow.png','cone%20shadow.png'
-                    ,'prism%20shadow.png', 'pyrimd%20shadow.png'];
-    var faces2dArray = ['sqaure%20face.png', 'rectangle%20face.png','circle%20face.png','triangle%20face.png'
-                    ,'hexagon%20face.png','ocatgon%20face.png'];;
-    var edges2dArray = ['sqaure%20edges.png', 'rectangle%20edges.png','circle%20edges.png','triangle%20edges.png'
-                ,'hexagon%20edges.png','ocatgon%20edges.png'];;
-    var vertices2dArray = ['sqaure%20vertices.png', 'rectangle%20vertices.png','circle%20vertices.png','triangle%20vertices.png'
-                    ,'hexagon%20vertices.png','ocatgon%20vertices.png'];;
-    var withbakground2dArray = ['sqaure%201.png','rectangle%201.png', 'circle%201.png', 'triangle%201.png'
-                , 'hexagon%201.png','ocatgon%201.png'];
-    var withoutbakground2dArray = ['sqaure%202.png','rectangle%202.png', 'circle%202.png', 'triangle%202.png'
-                , 'hexagon%202.png' ,'ocatgon%202.png'];
+    var shape2dArray = ['cube%203d.png', 'cuboid%203d.png', 'cyclinder%203d.png', 'cone%203d.png', 'prism%203d.png',
+        'pyrimd%203d.png'];
+    var rwe2dArray = ['cube%20shasow.png', 'cunoid%20shadow.png', 'cyclinder%20shadow.png', 'cone%20shadow.png'
+        , 'prism%20shadow.png', 'pyrimd%20shadow.png'];
+    var faces2dArray = ['sqaure%20face.png', 'rectangle%20face.png', 'circle%20face.png', 'triangle%20face.png'
+        , 'hexagon%20face.png', 'ocatgon%20face.png'];;
+    var edges2dArray = ['sqaure%20edges.png', 'rectangle%20edges.png', 'circle%20edges.png', 'triangle%20edges.png'
+        , 'hexagon%20edges.png', 'ocatgon%20edges.png'];;
+    var vertices2dArray = ['sqaure%20vertices.png', 'rectangle%20vertices.png', 'circle%20vertices.png', 'triangle%20vertices.png'
+        , 'hexagon%20vertices.png', 'ocatgon%20vertices.png'];;
+    var withbakground2dArray = ['sqaure%201.png', 'rectangle%201.png', 'circle%201.png', 'triangle%201.png'
+        , 'hexagon%201.png', 'ocatgon%201.png'];
+    var withoutbakground2dArray = ['sqaure%202.png', 'rectangle%202.png', 'circle%202.png', 'triangle%202.png'
+        , 'hexagon%202.png', 'ocatgon%202.png'];
 
-    var staticArray = [1,2,3,4,5,6];
-   
+    var staticArray = [1, 2, 3, 4, 5, 6];
+
     var selectedId = 1;
     var selectedIdTab = 'link3d';
     init(1);
-    $('.nav-tabs .nav-item > a').click(function(){
+    $('.nav-tabs .nav-item > a').click(function () {
         console.log(this.id);
         selectedIdTab = this.id;
-        if(this.id == 'link2d'){
-            $('#'+this.id).css('background-color','rgb(0,135,182)');
-            $('#'+this.id).css('color','white');
-            $('#link3d').css('color','rgb(0,135,182)');
-            $('#link3d').css('background-color','');
+        if (this.id == 'link2d') {
+            $('#' + this.id).css('background-color', 'rgb(0,135,182)');
+            $('#' + this.id).css('color', 'white');
+            $('#link3d').css('color', 'rgb(0,135,182)');
+            $('#link3d').css('background-color', '');
             init(1)
-        }else if(this.id == 'link3d'){
-            $('#'+this.id).css('background-color','rgb(0,135,182)');
-            $('#'+this.id).css('color','white');
-            $('#link2d').css('color','rgb(0,135,182)');
-            $('#link2d').css('background-color','');
+        } else if (this.id == 'link3d') {
+            $('#' + this.id).css('background-color', 'rgb(0,135,182)');
+            $('#' + this.id).css('color', 'white');
+            $('#link2d').css('color', 'rgb(0,135,182)');
+            $('#link2d').css('background-color', '');
             init(1)
         }
     });
-    function init(position){
+    function init(position) {
         selectedId = position;
-       if(selectedIdTab == 'link3d'){
-        $('#div-rightinside').css('background-image','url(assets/img/'+shape3dArray[position-1]+')');
-        $('#div-leftiside1').css('background-image','url(assets/img/3d/'+rwe3dArray[position-1]+')');
-       }else{
-        $('#div--light2d').css('background-image','url(assets/img/'+shape2dArray[position-1]+')');
-        $('#shadow2d').css('background-image','url(assets/img/2d/'+rwe2dArray[position-1]+')');  
-       }
+        if (selectedIdTab == 'link3d') {
+            $('#div-rightinside').css('background-image', 'url(assets/img/' + shape3dArray[position - 1] + ')');
+            $('#div-leftiside1').css('background-image', 'url(assets/img/3d/' + rwe3dArray[position - 1] + ')');
+        } else {
+            $('#div--light2d').css('background-image', 'url(assets/img/' + shape2dArray[position - 1] + ')');
+            $('#shadow2d').css('background-image', 'url(assets/img/2d/' + rwe2dArray[position - 1] + ')');
+        }
     }
-    $('.divleft button').click(function(){
+    $('.divleft button').click(function () {
         console.log(this.id);
         var selectedId = 0;
-        if(selectedIdTab == 'link3d'){
-            selectedId = this.id.replace('btn','').trim();
+        if (selectedIdTab == 'link3d') {
+            selectedId = this.id.replace('btn', '').trim();
         }
-        else{
-            selectedId = this.id.replace('btn','').trim().replace('2d','').trim();
+        else {
+            selectedId = this.id.replace('btn', '').trim().replace('2d', '').trim();
         }
         console.log(selectedId);
-        staticArray.forEach((element, index) =>{
-            console.log(element + ' = '+index+ ' = '+withoutbakground2dArray[index])
-            if(element == selectedId){
-                if(selectedIdTab == 'link3d'){
-                    $('#btn'+selectedId).css('background-image','url(assets/img/'+withoutbakground3dArray[index]+')');
-                }else{
-                    $('#btn'+selectedId+'2d').css('background-image','url(assets/img/'+withoutbakground3dArray[index]+')');
+        staticArray.forEach((element, index) => {
+            console.log(element + ' = ' + index + ' = ' + withoutbakground2dArray[index])
+            if (element == selectedId) {
+                if (selectedIdTab == 'link3d') {
+                    $('#btn' + selectedId).css('background-image', 'url(assets/img/' + withoutbakground3dArray[index] + ')');
+                } else {
+                    $('#btn' + selectedId + '2d').css('background-image', 'url(assets/img/' + withoutbakground3dArray[index] + ')');
                 }
-            }else{
-                if(selectedIdTab == 'link3d'){
-                    $('#btn'+element).css('background-image','url(assets/img/'+withbakground3dArray[index]+')');
+            } else {
+                if (selectedIdTab == 'link3d') {
+                    $('#btn' + element).css('background-image', 'url(assets/img/' + withbakground3dArray[index] + ')');
                 }
-                else{
-                    $('#btn'+element+'2d').css('background-image','url(assets/img/'+withbakground3dArray[index]+')');
+                else {
+                    $('#btn' + element + '2d').css('background-image', 'url(assets/img/' + withbakground3dArray[index] + ')');
                 }
             }
         })
         init(selectedId);
     });
-    $('#divbtn1').click(function(){
+    $('#divbtn1').click(function () {
         console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+faces2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+faces3dArray[selectedId-1]+')');
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + faces2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + faces3dArray[selectedId - 1] + ')');
         }
     });
-    $('#divbtn2').click(function(){
+    $('#divbtn2').click(function () {
         console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+edges2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+edges3dArray[selectedId-1]+')');
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + edges2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + edges3dArray[selectedId - 1] + ')');
         }
     });
-    $('#divbtn3').click(function(){
+    $('#divbtn3').click(function () {
         console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+vertices2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+vertices3dArray[selectedId-1]+')');
-        }
-    });
-
-    $('#divbtn-1').click(function(){
-        console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+faces2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+faces3dArray[selectedId-1]+')');
-        }
-    });
-    $('#divbtn-2').click(function(){
-        console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+edges2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+edges3dArray[selectedId-1]+')');
-        }
-    });
-    $('#divbtn-3').click(function(){
-        console.log();
-        if(selectedIdTab == 'link2d'){
-            $('#div-rightinside-1').css('background-image','url(assets/img/2d/'+vertices2dArray[selectedId-1]+')');
-        }else{
-            $('#div-rightinside').css('background-image','url(assets/img/3d/'+vertices3dArray[selectedId-1]+')');
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + vertices2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + vertices3dArray[selectedId - 1] + ')');
         }
     });
 
-    $('#resetbtn').click(function(){
+    $('#divbtn-1').click(function () {
+        console.log();
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + faces2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + faces3dArray[selectedId - 1] + ')');
+        }
+    });
+    $('#divbtn-2').click(function () {
+        console.log();
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + edges2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + edges3dArray[selectedId - 1] + ')');
+        }
+    });
+    $('#divbtn-3').click(function () {
+        console.log();
+        if (selectedIdTab == 'link2d') {
+            $('#div-rightinside-1').css('background-image', 'url(assets/img/2d/' + vertices2dArray[selectedId - 1] + ')');
+        } else {
+            $('#div-rightinside').css('background-image', 'url(assets/img/3d/' + vertices3dArray[selectedId - 1] + ')');
+        }
+    });
+    $('.tourchlight').on("click", function () {
+        $(this).toggleClass("active1");
+        
+        if($(this).attr('class').trim() == 'btn tourchlight active1'){
+            console.log($(this).attr('class'));
+            $('#div-b-torch-off2d').css('display','block');
+            $('#div-b-torch-on2d').css('display','none');
+            $('#shadow2d').css('background-image', 'url()')
+           // $('#div-b-torch-on2d').css('background-image','assets/img/2d/torch%20on.png')
+        }else if($(this).attr('class').trim() == 'btn tourchlight'){
+            //$('#div-b-torch-on2d').css('background-image','assets/img/2d/torchoff.png');
+            $('#shadow2d').css('background-image', 'url(assets/img/2d/' + rwe2dArray[selectedId - 1] + ')');
+            $('#div-b-torch-off2d').css('display','none');
+            $('#div-b-torch-on2d').css('display','block');
+        }
+    });
+    $('#resetbtn').click(function () {
         window.location.reload();
     });
-    $('#resetbtn2d').click(function(){
+    $('#resetbtn2d').click(function () {
         window.location.reload();
     })
 </script>
+
 </html>

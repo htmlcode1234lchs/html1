@@ -4049,7 +4049,7 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
-  #btn-7 {
+  #divbtn-3 {
     width: 130px;
     height: 130px;
     margin-left: 50px;
@@ -4058,7 +4058,7 @@
 }
 
 @media screen and (min-width: 1400px) and (max-width: 1799px) {
-  #btn-7 {
+  #divbtn-3 {
     width: 165px;
     height: 165px;
     margin-top: 356px;
@@ -4067,7 +4067,7 @@
 }
 
 @media (min-width: 1800px) {
-  #btn-7 {
+  #divbtn-3 {
     width: 200px;
     height: 200px;
     margin-top: 320px;
