@@ -174,8 +174,13 @@
     var staticArray = [2,3,4,5,6,7,8,9,10,11]
     var randomArray = [];
     var selectedRule = 0;
+    updateValues(2)
     $('.leftdivision > button').click(function(){
-        //console.log(this.id);
+        var id = this.id.charAt(this.id.length-1);
+       updateValues(id)
+    });
+
+    function updateValues(selectedId){
         staticArray.forEach((element, index) =>{
             if(index <=3){
                 $('#formCheck-t'+(index+1)).prop("checked", false);   
@@ -185,15 +190,13 @@
             }
         })
         staticArray.forEach((element, index) =>{
-            var id = this.id.charAt(this.id.length-1);
-            selectedRule = id;
-           // console.log('id = '+id);
-            if(id == element){
+            
+            selectedRule = selectedId;
+            if(selectedId == element){
                 $('#btn-left'+element).css('background-image','url(assets/img/rule%20'+element+'%202.png)');
                 $('#lab-rule').empty();
                 $('#lab-rule').text(divisbilityRuleArray[index]);
                 randomArray = generateData(2, 4);
-                //console.log('randomArray= '+JSON.stringify(randomArray));
                 randomArray.forEach((element, index)=>{
                     $('#fl-name'+(index+1)).text(element);
                 })  
@@ -201,7 +204,8 @@
                 $('#btn-left'+element).css('background-image','url(assets/img/rule%20'+element+'%201.png)');
             }
         });
-    });
+    }
+
     function generateData(digits, size) {
         return Array.apply(null, { length: size || 100 }).map(function () {
             return Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
