@@ -7,74 +7,374 @@
     <title>LevelsofGovt</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        .CorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Correct.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: left;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+
+        .IncorrectAnswers {
+            background-color: rgba(0, 123, 255, 0);
+            background-image: url(assets/img/Incorrect.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 157px;
+            height: 43px;
+            padding-right: 12px;
+            padding-left: 12px;
+            padding-top: 8px;
+            margin-left: 6%;
+            text-align: right;
+            font-size: 20px;
+            font-family: "Comic Sans MS";
+            border: 0px;
+        }
+    </style>
 </head>
 
-<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+<body
+    style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <audio id="wrong" src="assets/sound/Wrong-answer.mp3"></audio>
+    <audio id="correct" src="assets/sound/Correct-answer.mp3"></audio>
     <div id="titlediv" class="divtitle" style="height: 100px;">
-        <div id="btnsdiv" class="divbtns" style="margin-left: auto;margin-right: auto;width: 900px;"><button class="btn btn-primary shadow-none" id="hb" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40PX;height: 40PX;margin-left: 189px;margin-top: 29px;"></button>
-            <button
-                class="btn btn-primary shadow-none" id="rb" type="button" style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40PX;height: 40PX;margin-left: 669px;margin-top: -70px;"></button>
+        <div id="btnsdiv" class="divbtns" style="margin-left: auto;margin-right: auto;width: 900px;"><button
+                class="btn btn-primary shadow-none" id="hb" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40PX;height: 40PX;margin-left: 189px;margin-top: 29px;"></button>
+            <button class="btn btn-primary shadow-none" id="rb" type="button"
+                style="background-color: rgba(255,255,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 40PX;height: 40PX;margin-left: 669px;margin-top: -70px;"></button>
         </div>
     </div>
     <div id="tabs" class="tabss">
         <ul class="nav nav-tabs">
-            <li class="nav-item text-center"><a class="nav-link active" role="tab" data-toggle="tab" id="link1-tab1" href="#tab-1">Central-Government</a></li>
-            <li class="nav-item text-center"><a class="nav-link" role="tab" data-toggle="tab" id="link2-tab1" href="#tab-2">State-Government</a></li>
-            <li class="nav-item text-center"><a class="nav-link" role="tab" data-toggle="tab" id="link3-tab1" href="#tab-3">Local-Government</a></li>
+            <li class="nav-item text-center"><a class="nav-link active" role="tab" data-toggle="tab" id="link1-tab1"
+                    href="#tab-1">Central-Government</a></li>
+            <li class="nav-item text-center"><a class="nav-link" role="tab" data-toggle="tab" id="link2-tab1"
+                    href="#tab-2">State-Government</a></li>
+            <li class="nav-item text-center"><a class="nav-link" role="tab" data-toggle="tab" id="link3-tab1"
+                    href="#tab-3">Local-Government</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" role="tabpanel" id="tab-1">
-                <div class="text-center divques-tab1" id="quesdiv-tab1" style="margin-left: auto;margin-right: auto;"><label id="queslabel-tab1" class="labelques-tab1" style="color: rgb(0,0,0);font-size: 30px;">Drag and drop the heirarchy of Central Government.</label></div>
+                <div class="text-center divques-tab1" id="quesdiv-tab1" style="margin-left: auto;margin-right: auto;">
+                    <label id="queslabel-tab1" class="labelques-tab1" style="color: rgb(0,0,0);font-size: 30px;">
+                        Drag and drop the heirarchy of Central Government.
+                    </label>
+                </div>
                 <div id="playarea-tab1" class="div-playarea-tab1" style="margin-right: auto;margin-left: auto;">
-                    <div class="d-xl-flex align-items-xl-center div-bottom-tab1" id="blocks-div-tab1" style="margin-top: 10px;margin-right: auto;margin-left: auto;">
-                        <div class="text-center div-left-tab1" id="left-div-tab1" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block-1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img1-tab1" class="img1-left-tab1" style="background-image: url(&quot;assets/img/Minister’s%20of%20state.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img2-tab1" class="img2-left-tab1"
-                                style="background-image: url(&quot;assets/img/Additional%20Secretaries.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img3-tab1" class="img3-left-tab1" style="background-image: url(&quot;assets/img/Cabinet%20Minister%20button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="left-img4-tab1" class="img4-left-tab1" style="background-image: url(&quot;assets/img/Joint%20Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img5-tab1" class="img5-left-tab1" style="background-image: url(&quot;assets/img/Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                        <div class="text-center div-right-tab1"
-                            id="right-div-tab1" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block-2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img1-tab1" class="img1-right-tab1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img2-tab1" class="img2-right-tab1" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="right-img3-tab1" class="img3-right-tab1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img4-tab1" class="img4-right-tab1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img5-tab1" class="img5-right-tab1" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    <div class="d-xl-flex align-items-xl-center div-bottom-tab1" id="blocks-div-tab1"
+                        style="margin-top: 10px;margin-right: auto;margin-left: auto;">
+                        <div class="text-center div-left-tab1" id="left-div-tab1" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/block-1.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img1-tab1" class="img1-left-tab1" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Minister’s%20of%20state.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img2-tab1" class="img2-left-tab1" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Additional%20Secretaries.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img3-tab1" class="img3-left-tab1" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Cabinet%20Minister%20button.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img4-tab1" class="img4-left-tab1" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Joint%20Secretary.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img5-tab1" class="img5-left-tab1" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Secretary.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </div>
+                        <div class="text-center div-right-tab1" id="right-div-tab1" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/block-2.png&quot;);background-position: center;
+                            background-size: contain;background-repeat: no-repeat;">
+                            <div id="right-img1-tab1" class="img1-right-tab1" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img2-tab1" class="img2-right-tab1" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img3-tab1" class="img3-right-tab1" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img4-tab1" class="img4-right-tab1" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img5-tab1" class="img5-right-tab1" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                        </div>
                     </div>
-                    <div id="bottom-div-tab1" class="div-bottom-tab1" style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;"><button class="btn btn-primary shadow-none" id="checkbtn-2" type="button" style="background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;margin-left: 103px;background-color: rgba(255,255,255,0);"></button>
-                        <label
-                            id="resultlabel-2" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary shadow-none" id="answerbtn-2" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button></div>
+                    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+                        <section style="width: 100%;height: 100%">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td align="lef">
+                                                <div class="CorrectAnswers" id="CorrectAnswers">0</div>
+                                            </td>
+                                            <td align="center">
+                                                <button class="btn btn-primary shadow-none" id="nextBtn" type="button"
+                                                    style="background-image: url(&quot;assets/img/Next.png&quot;);
+                                                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                                                    background-color: rgba(0,123,255,0);width: 250px;height: 70px;display: none;">
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <span style="display: none; font-size: 28px;color: yellow;"
+                                                    id="status"></span>
+                                            </td>
+                                            <td align="center">
+
+                                                <button
+                                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                                </button>
+                                            </td>
+                                            <td align="right">
+                                                <div class="IncorrectAnswers" id="IncorrectAnswers">0</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
+
+                    <!--  <div id="bottom-div-tab1" class="div-bottom-tab1" 
+                        style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;">
+                        <button class="btn btn-primary shadow-none" id="checkbtn-2" type="button" 
+                            style="background-image: url(&quot;assets/img/Check.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;
+                            width: 250px;height: 60px;margin-left: 103px;background-color: rgba(255,255,255,0);">
+                        </button>
+                        <label id="resultlabel-2" class="label-result" 
+                            style="font-size: 35px;margin-left: 140px;">Result</label>
+                        <button class="btn btn-primary shadow-none" id="answerbtn-2" type="button" 
+                            style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;
+                            width: 250px;height: 60px;background-color: rgba(255,255,255,0);margin-left: 155px;">
+                        </button>
+                    </div> -->
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
-                <div class="text-center divques-tab2" id="quesdiv-tab2" style="margin-left: auto;margin-right: auto;"><label id="queslabel-tab2" class="labelques-tab2" style="color: rgb(0,0,0);font-size: 30px;">Drag and drop the heirarchy of State Government.</label></div>
+                <div class="text-center divques-tab2" id="quesdiv-tab2" style="margin-left: auto;margin-right: auto;">
+                    <label id="queslabel-tab2" class="labelques-tab2" style="color: rgb(0,0,0);font-size: 30px;">
+                        Drag and drop the heirarchy of State Government.
+                    </label>
+                </div>
                 <div id="playarea-tab2" class="div-playarea" style="margin-right: auto;margin-left: auto;">
-                    <div class="d-xl-flex align-items-xl-center div-bottom-tab2" id="blocks-div-tab2" style="margin-top: 10px;margin-right: auto;margin-left: auto;">
-                        <div class="text-center div-left-tab2" id="left-div-tab2" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block-1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img1-tab2" class="img1-left-tab2" style="background-image: url(&quot;assets/img/Principal%20Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img2-tab2" class="img2-left-tab2"
-                                style="background-image: url(&quot;assets/img/Joint%20Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img3-tab2" class="img3-left-tab2" style="background-image: url(&quot;assets/img/Minister%20button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="left-img4-tab2" class="img4-left-tab2" style="background-image: url(&quot;assets/img/Additional%20Chief%20Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img5-tab2" class="img5-left-tab2" style="background-image: url(&quot;assets/img/Additional%20Secretary.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                        <div class="text-center div-right-tab2"
-                            id="right-div-tab2" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/Block-6.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img1-tab2" class="img1-right-tab2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img2-tab2" class="img2-right-tab2" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="right-img3-tab2" class="img3-right-tab2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img4-tab2" class="img4-right-tab2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img5-tab2" class="img5-right-tab2" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    <div class="d-xl-flex align-items-xl-center div-bottom-tab2" id="blocks-div-tab2"
+                        style="margin-top: 10px;margin-right: auto;margin-left: auto;">
+                        <div class="text-center div-left-tab2" id="left-div-tab2" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/block-1.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img1-tab2" class="img1-left-tab2" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Principal%20Secretary.png" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;">
+                            <img id="left-img2-tab2" class="img2-left-tab2" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Joint%20Secretary.png" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;">
+                            <img id="left-img3-tab2" class="img3-left-tab2" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Minister%20button.png" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;">
+                            <img id="left-img4-tab2" class="img4-left-tab2" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Additional%20Chief%20Secretary.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img5-tab2" class="img5-left-tab2" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Additional%20Secretary.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </div>
+                        <div class="text-center div-right-tab2" id="right-div-tab2" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/Block-6.png&quot;);background-position: center;
+                            background-size: contain;background-repeat: no-repeat;">
+                            <div id="right-img1-tab2" class="img1-right-tab2" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img2-tab2" class="img2-right-tab2" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img3-tab2" class="img3-right-tab2" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img4-tab2" class="img4-right-tab2" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img5-tab2" class="img5-right-tab2" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                        </div>
                     </div>
-                    <div id="bottom-div-tab2" class="bottom-tab2" style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;"><button class="btn btn-primary shadow-none" id="checkbtn-1" type="button" style="background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;margin-left: 103px;background-color: rgba(255,255,255,0);"></button>
-                        <label
-                            id="resultlabel-1" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary shadow-none" id="answerbtn-1" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button></div>
+                    <!--  <div id="bottom-div-tab2" class="bottom-tab2" 
+                        style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;">
+                        <button class="btn btn-primary shadow-none" id="checkbtn-1" type="button" 
+                            style="background-image: url(&quot;assets/img/Check.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;
+                            width: 250px;height: 60px;margin-left: 103px;background-color: rgba(255,255,255,0);">
+                        </button>
+                        <label id="resultlabel-1" class="label-result" 
+                            style="font-size: 35px;margin-left: 140px;">Result</label>
+                        <button class="btn btn-primary shadow-none" id="answerbtn-1" type="button" 
+                            style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;
+                            width: 250px;height: 60px;background-color: rgba(255,255,255,0);margin-left: 155px;">
+                        </button>
+                    </div> -->
+                    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+                        <section style="width: 100%;height: 100%">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td align="lef">
+                                                <div class="CorrectAnswers" id="CorrectAnswersState">0</div>
+                                            </td>
+                                            <td align="center">
+                                                <button class="btn btn-primary shadow-none" id="nextBtn" type="button"
+                                                    style="background-image: url(&quot;assets/img/Next.png&quot;);
+                                                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                                                    background-color: rgba(0,123,255,0);width: 250px;height: 70px;display: none;">
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <span style="display: none; font-size: 28px;color: yellow;"
+                                                    id="status"></span>
+                                            </td>
+                                            <td align="center">
+
+                                                <button
+                                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                                </button>
+                                            </td>
+                                            <td align="right">
+                                                <div class="IncorrectAnswers" id="IncorrectAnswersState">0</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-3">
-                <div class="text-center divques-tab3" id="quesdiv-tab3" style="margin-left: auto;margin-right: auto;"><label id="queslabel-tab3" class="labelques-tab2" style="color: rgb(0,0,0);font-size: 30px;">Drag and drop the heirarchy of Local Government.</label></div>
+                <div class="text-center divques-tab3" id="quesdiv-tab3" style="margin-left: auto;margin-right: auto;">
+                    <label id="queslabel-tab3" class="labelques-tab2" style="color: rgb(0,0,0);font-size: 30px;">
+                        Drag and drop the heirarchy of Local Government.
+                    </label>
+                </div>
                 <div id="playarea-tab3" class="div-playarea" style="margin-right: auto;margin-left: auto;">
-                    <div class="d-xl-flex align-items-xl-center div-bottom-tab3" id="blocks-div-tab3" style="margin-top: 10px;margin-right: auto;margin-left: auto;">
-                        <div class="text-center div-left-tab3" id="left-div-tab3" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/block-1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img1-tab3" class="img1-left-tab3" style="background-image: url(&quot;assets/img/Deputy%20Collector%20SDM.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img2-tab3" class="img2-left-tab3"
-                                style="background-image: url(&quot;assets/img/Block%20Development%20Officer%20BDO.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img3-tab3" class="img3-left-tab3" style="background-image: url(&quot;assets/img/Tehsildar.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="left-img4-tab3" class="img4-left-tab3" style="background-image: url(&quot;assets/img/Collector%20button.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="left-img5-tab3" class="img5-left-tab3" style="background-image: url(&quot;assets/img/Additional%20Collector%20adm.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-                        <div class="text-center div-right-tab3"
-                            id="right-div-tab3" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/Block4.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img1-tab3" class="img1-right-tab3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img2-tab3" class="img2-right-tab3" style="background-position: center;background-size: contain;background-repeat: no-repeat;">
-                            <img
-                                id="right-img3-tab3" class="img3-right-tab3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img4-tab3" class="img4-right-tab3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="right-img5-tab3" class="img5-right-tab3" style="background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    <div class="d-xl-flex align-items-xl-center div-bottom-tab3" id="blocks-div-tab3"
+                        style="margin-top: 10px;margin-right: auto;margin-left: auto;">
+                        <div class="text-center div-left-tab3" id="left-div-tab3" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/block-1.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                            <img id="left-img1-tab3" class="img1-left-tab3" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Deputy%20Collector%20SDM.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img2-tab3" class="img2-left-tab3" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Block%20Development%20Officer%20BDO.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img3-tab3" class="img3-left-tab3" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Tehsildar.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img4-tab3" class="img4-left-tab3" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Collector%20button.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                            <img id="left-img5-tab3" class="img5-left-tab3" draggable="true" ondragstart="drag(event)"
+                                src="assets/img/Additional%20Collector%20adm.png"
+                                style="background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </div>
+                        <div class="text-center div-right-tab3" id="right-div-tab3" style="margin-right: auto;margin-left: auto;
+                            background-image: url(&quot;assets/img/Block4.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                            <div id="right-img1-tab3" class="img1-right-tab3" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img2-tab3" class="img2-right-tab3" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img3-tab3" class="img3-right-tab3" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img4-tab3" class="img4-right-tab3" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                            <div id="right-img5-tab3" class="img5-right-tab3" ondrop="drop(event)"
+                                ondragover="allowDrop(event)" style="background-position: center;background-size: contain;
+                                background-repeat: no-repeat;border: 1px solid tan;margin-left: 18%;"></div>
+                        </div>
                     </div>
-                    <div id="bottom-div-tab3" class="bottom-tab3" style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;"><button class="btn btn-primary shadow-none" id="checkbtn-3" type="button" style="background-image: url(&quot;assets/img/Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;margin-left: 103px;background-color: rgba(255,255,255,0);"></button>
-                        <label
-                            id="resultlabel-3" class="label-result" style="font-size: 35px;margin-left: 140px;">Result</label><button class="btn btn-primary shadow-none" id="answerbtn-3" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 250px;height: 60px;background-color: rgba(255,255,255,0);margin-left: 155px;"></button></div>
+                    <!--  <div id="bottom-div-tab3" class="bottom-tab3" 
+                        style="margin-left: auto;width: 1100px;margin-right: auto;margin-top: 10px;">
+                        <button class="btn btn-primary shadow-none" id="checkbtn-3" type="button" 
+                            style="background-image: url(&quot;assets/img/Check.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;width: 250px;height: 60px;
+                            margin-left: 103px;background-color: rgba(255,255,255,0);">
+                        </button>
+                        <label id="resultlabel-3" class="label-result" 
+                            style="font-size: 35px;margin-left: 140px;">Result</label>
+                        <button class="btn btn-primary shadow-none" id="answerbtn-3" type="button" 
+                            style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;width: 250px;height: 60px;
+                            background-color: rgba(255,255,255,0);margin-left: 155px;">
+                        </button>
+                    </div> -->
+                    <div class="text-center rightbottomdiv" id="bottomrightdiv">
+                        <section style="width: 100%;height: 100%">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tbody>
+                                        <tr class="text-center">
+                                            <td align="lef">
+                                                <div class="CorrectAnswers" id="CorrectAnswersLocal">0</div>
+                                            </td>
+                                            <td align="center">
+                                                <button class="btn btn-primary shadow-none" id="nextBtn" type="button"
+                                                    style="background-image: url(&quot;assets/img/Next.png&quot;);
+                                                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                                                    background-color: rgba(0,123,255,0);width: 250px;height: 70px;display: none;">
+                                                </button>
+                                            </td>
+                                            <td>
+                                                <span style="display: none; font-size: 28px;color: yellow;"
+                                                    id="status"></span>
+                                            </td>
+                                            <td align="center">
+
+                                                <button
+                                                    class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
+                                                </button>
+                                            </td>
+                                            <td align="right">
+                                                <div class="IncorrectAnswers" id="IncorrectAnswersLocal">0</div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,5 +382,160 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
+<script>
+    $('.nav-tabs .nav-item > a').click(function () {
+        console.log(this.id);
+        if (this.id == 'link1-tab1') {
+            var images = $(' <img id="left-img1-tab1" class="img1-left-tab1" ' +
+                'draggable="true" ondragstart="drag(event)" ' +
+                'src="assets/img/Minister’s%20of%20state.png"' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img2-tab1" class="img2-left-tab1"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Additional%20Secretaries.png"' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img3-tab1" class="img3-left-tab1" ' +
+                ' draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Cabinet%20Minister%20button.png"' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img4-tab1" class="img4-left-tab1" ' +
+                ' draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Joint%20Secretary.png"' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img5-tab1" class="img5-left-tab1"' +
+                ' draggable="true" ondragstart="drag(event)"' +
+                ' src="assets/img/Secretary.png"' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">');
+            $('#left-div-tab1').empty();
+            $('#left-div-tab1').append(images);
+        } else if (this.id == 'link2-tab1') {
+            var images = $(' <img id="left-img1-tab2" class="img1-left-tab2" ' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Principal%20Secretary.png"' +
+                'style="background-position: center;background-size: contain;' +
+                'background-repeat: no-repeat;">' +
+                '<img id="left-img2-tab2" class="img2-left-tab2"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Joint%20Secretary.png"' +
+                'style="background-position: center;background-size: contain;' +
+                'background-repeat: no-repeat;">' +
+                '<img id="left-img3-tab2" class="img3-left-tab2"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Minister%20button.png"' +
+                'style="background-position: center;background-size: contain;' +
+                ' background-repeat: no-repeat;">' +
+                '<img id="left-img4-tab2" class="img4-left-tab2"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Additional%20Chief%20Secretary.png" ' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img5-tab2" class="img5-left-tab2"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                'src="assets/img/Additional%20Secretary.png"' +
+                'style="background-position: center;background-size: contain;background-repeat: no-repeat;">');
+            $('#left-div-tab2').empty();
+            $('#left-div-tab2').append(images);
+        } else if (this.id == 'link3-tab1') {
+            var images = $('<img id="left-img1-tab3" class="img1-left-tab3" ' +
+                ' draggable="true" ondragstart="drag(event)"' +
+                ' src="assets/img/Deputy%20Collector%20SDM.png" ' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img2-tab3" class="img2-left-tab3"' +
+                'draggable="true" ondragstart="drag(event)"' +
+                ' src="assets/img/Block%20Development%20Officer%20BDO.png"' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img3-tab3" class="img3-left-tab3"' +
+                ' draggable="true" ondragstart="drag(event)" ' +
+                ' src="assets/img/Tehsildar.png"' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img4-tab3" class="img4-left-tab3"' +
+                '  draggable="true" ondragstart="drag(event)" ' +
+                ' src="assets/img/Collector%20button.png"' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">' +
+                '<img id="left-img5-tab3" class="img5-left-tab3" ' +
+                '   draggable="true" ondragstart="drag(event)"' +
+                ' src="assets/img/Additional%20Collector%20adm.png"' +
+                ' style="background-position: center;background-size: contain;background-repeat: no-repeat;">');
+            $('#left-div-tab3').empty();
+            $('#left-div-tab3').append(images);
+        }
+        $('#CorrectAnswers').text('');
+        $('#IncorrectAnswers').text('');
+        $('#CorrectAnswersState').text('');
+        $('#IncorrectAnswersState').text('');
+        $('#CorrectAnswersLocal').text('');
+        $('#IncorrectAnswersLocal').text('');
+        for(var i=1;i<4;i++){
+            for(var j=1;j<6;j++){
+                $('#right-img'+j+'-tab'+i).empty();
+            }
+        }
+    }); 
+    var CentralAnswersArray = [2, 4, 1, 5, 3];
+    var StateGovernmentArray = [3, 5, 1, 2, 4];
+    var LocalGovernmentArray = [3, 4, 5, 1, 2];
+    var correct = 0;
+    var incorrect = 0;
+    function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        console.log(data);
+        var currentTab = data.split('-')[data.split('-').length - 1];
+        console.log('currentTab = ' + currentTab);
+
+        var sourceId = data.split('-')[1].replace('img', '').trim();
+        console.log('sourceId = ' + sourceId)
+        console.log('target = ' + ev.target.id);
+        var targetId = ev.target.id.split('-')[1].replace('img', '').trim();
+        console.log('target id = ' + targetId)
+        var resultArray = [];
+        if (currentTab == 'tab1') {
+            resultArray = CentralAnswersArray;
+        } else if (currentTab == 'tab2') {
+            resultArray = StateGovernmentArray;
+        } else if (currentTab == 'tab3') {
+            resultArray = LocalGovernmentArray;
+        }
+
+        console.log('reslt = ' + resultArray[sourceId - 1])
+        if (resultArray[sourceId - 1] == targetId) {
+            ev.target.appendChild(document.getElementById(data));
+            correct++;
+            play("correct");
+            // $('#nextBtn').css('display','block');
+        } else {
+            incorrect++;
+            play("wrong");
+        }
+        if (currentTab == 'tab1') {
+            $('#CorrectAnswers').text(correct);
+            $('#IncorrectAnswers').text(incorrect);
+        } else if (currentTab == 'tab2') {
+            $('#CorrectAnswersState').text(correct);
+            $('#IncorrectAnswersState').text(incorrect);
+        } else if (currentTab == 'tab3') {
+            $('#CorrectAnswersLocal').text(correct);
+            $('#IncorrectAnswersLocal').text(incorrect);
+        }
+    }
+    function showAnswer() {
+        answersArray.forEach(element => {
+            document.getElementById('img-' + element).appendChild(document.getElementById(element));
+        })
+    }
+</script>
 
 </html>

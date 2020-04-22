@@ -204,7 +204,7 @@
  
   var answersArray = ['north', 'west', 'south', 'east', 'north-west',
          'north-east', 'south-west','south-east'];
-  var correct = 0;
+     var correct = 0;
      var incorrect = 0;
      function play(audioToPlay) {
          var audio = document.getElementById(audioToPlay);
@@ -244,10 +244,8 @@
      }
      function showAnswer(){
          answersArray.forEach(element =>{
-            document.getElementById('img-'+element).appendChild(document.getElementById(element));
-        
-         })
-        
+            document.getElementById('img-'+element).appendChild(document.getElementById(element));        
+         })        
      }
      $('#nextBtn').click(function(){
          if(currentPosition == answersArray.length-1){
