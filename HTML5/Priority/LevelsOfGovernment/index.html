@@ -138,7 +138,7 @@
 
                                                 <button
                                                     class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
-                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer('1');"
                                                     style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
                                                 </button>
                                             </td>
@@ -256,7 +256,7 @@
 
                                                 <button
                                                     class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
-                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer('2');"
                                                     style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
                                                 </button>
                                             </td>
@@ -362,7 +362,7 @@
 
                                                 <button
                                                     class="btn btn-primary d-xl-flex m-auto justify-content-xl-center align-items-xl-center"
-                                                    id="showbtn" type="button" onclick="javascript:showAnswer();"
+                                                    id="showbtn" type="button" onclick="javascript:showAnswer('3');"
                                                     style="width: 210px;height: 45px;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-size: cover;background-repeat: no-repeat;border: 0px">
                                                 </button>
                                             </td>
@@ -474,6 +474,7 @@
     var CentralAnswersArray = [2, 4, 1, 5, 3];
     var StateGovernmentArray = [3, 5, 1, 2, 4];
     var LocalGovernmentArray = [3, 4, 5, 1, 2];
+    var staticArray = [1,2,3,4,5]
     var correct = 0;
     var incorrect = 0;
     function play(audioToPlay) {
@@ -531,11 +532,30 @@
             $('#IncorrectAnswersLocal').text(incorrect);
         }
     }
-    function showAnswer() {
-        answersArray.forEach(element => {
+    function showAnswer(id) {
+        var array = [];
+        console.log(id)
+        if(id == 1){
+            array = CentralAnswersArray;
+        }else if(id == 2){
+            array = StateGovernmentArray;
+        }else if(id == 3){
+            array = LocalGovernmentArray;
+        }
+        array.forEach((element, index) =>{
+            console.log(('right-img'+(index+1)+'-tab'+id)+"=element="+('left-img'+element+'-tab'+id))
+            document.getElementById('right-img'+(index+1)+'-tab'+id).appendChild(document.getElementById('left-img'+element+'-tab'+id));
+        });
+    /*     answersArray.forEach(element => { //left-img1-tab1 right-img1-tab3
             document.getElementById('img-' + element).appendChild(document.getElementById(element));
-        })
+        }) */
     }
+    $('#rb').click(function(){
+        window.location.reload();
+    });
+    $('#hb').click(function(){
+        window.location.reload();
+    })
 </script>
 
 </html>
