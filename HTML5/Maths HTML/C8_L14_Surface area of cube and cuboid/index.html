@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Visualizing 3d</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
+    <div id="titlediv" class="divtitle" style="height: 100px;">
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"></div>
+    </div>
+    <div class="text-primary">
+        <ul class="nav nav-tabs" style="margin-top: -31px;">
+            <li class="nav-item"><a class="nav-link active text-center" role="tab" data-toggle="tab" id="link3d" href="#tab-1" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(0,134,181);background-color: rgb(255,255,255);">Area</a></li>
+            <li class="nav-item"><a class="nav-link text-center" role="tab" data-toggle="tab" id="link2d" href="#tab-2" style="width: 250px;height: 55px;font-size: 25px;font-weight: bold;color: rgb(0,134,181);background-color: #ffffff;">2D</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active visible" role="tabpanel" id="tab-1">
+                <p class="invisible">Content for tab 1.</p>
+                <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                    <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv" style="position: absolute;"><button class="btn" id="btn1" type="button" style="position: absolute;background-image: url(&quot;assets/img/cube%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                            id="btn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                    <div id="rightmiddlediv"
+                        class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/isometric%20block.png&quot;);background-position: center;background-size: contain;position: absolute;">
+                        <div id="div-rightinside" style="background-image: url(&quot;assets/img/volume%20cube.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;color: rgb(0,0,0);"></div>
+                        <div id="div-rightinside3" style="background-image: url(&quot;assets/img/isometric%20dot%20paper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;color: rgb(0,0,0);"></div>
+                    </div>
+                    <div id="rightmiddlediv-1" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/net%20block.png&quot;);background-position: center;background-size: contain;position: absolute;color: #ffffff;">
+                        <div id="div-leftiside1" style="position: absolute;background-image: url(&quot;assets/img/cube%20net.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    </div>
+                    <div id="rightmiddlediv-4" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/example%20block.png&quot;);background-position: center;background-size: contain;position: absolute;">
+                        <div id="div-leftiside-2" style="position: absolute;background-image: url(&quot;assets/img/voluume%20cube%20ex.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;color: rgb(0,0,0);"></div>
+                    </div>
+                    <div id="rightdiv" class="middlerightdiv" style="position: absolute;background-image: url(&quot;assets/img/latreal%20%20surface%20area%20%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;color: rgb(255,255,255);"><input type="text" id="txt1" style="position: absolute;"></div>
+                    <div id="leftdiv-2" class="middlerightdiv" style="position: absolute;background-image: url(&quot;assets/img/total%20surface%20area%20%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><input type="text" id="txt-2" style="position: absolute;"></div>
+                    <div id="div-downbtn" style="margin-right: auto;margin-left: auto;position: absolute;"><button class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button></div>
+                </div>
+                <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;"></div>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab-2">
+                <p class="invisible">Content for tab 2.</p>
+                <div id="rightmaindiv-1" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                    <div class="d-xl-flex align-items-xl-center divleft" id="leftdiv-1" style="position: absolute;"><button class="btn" id="btn-1" type="button" style="position: absolute;background-image: url(&quot;assets/img/cube%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                            id="btn-2" type="button" style="position: absolute;background-image: url(&quot;assets/img/cuboid%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                    <div id="rightmiddlediv-2"
+                        class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/volume%20isometric%20block.png&quot;);background-position: center;background-size: contain;position: absolute;color: rgb(0,0,0);">
+                        <div id="div-rightinside-1" style="background-image: url(&quot;assets/img/volume%20cuboid.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+                        <div id="div-rightinside-2" style="background-image: url(&quot;assets/img/volume%20drop%20paper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
+                    </div>
+                    <div id="rightmiddlediv-3" class="middlerightdiv" style="background-repeat: no-repeat;background-image: url(&quot;assets/img/example%20block.png&quot;);background-position: center;background-size: contain;position: absolute;color: rgb(0,0,0);">
+                        <div id="div-leftiside-1" style="position: absolute;background-image: url(&quot;assets/img/cuboid%20ex.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                    </div>
+                    <div id="rightdiv-1" class="middlerightdiv" style="position: absolute;background-image: url(&quot;assets/img/volume%20of%20cuboid.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><input type="text" id="txt3" style="font-size: 38px;"></div>
+                    <div id="div-downbtn-1" style="margin-right: auto;margin-left: auto;position: absolute;"><button class="btn btn-primary" id="resetbtn-1" type="button" style="background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button></div>
+                </div>
+                <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv-1" style="margin-left: auto;margin-right: auto;"></div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
