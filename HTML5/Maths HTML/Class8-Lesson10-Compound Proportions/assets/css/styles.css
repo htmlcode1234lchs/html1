@@ -1,0 +1,750 @@
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea {
+    width: 1500px;
+    height: 800px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea1 {
+    width: 1300px;
+    height: 200px;
+    margin-top: 73px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div1-textarea {
+    width: 1280px;
+    height: 110px;
+    margin-top: 73px;
+    margin-left: 10px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea2 {
+    width: 1300px;
+    height: 150px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea3 {
+    height: 450px;
+    width: 1500px;
+    margin-top: -22px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea4 {
+    width: 1500px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea2 {
+    width: 1200px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div2-textarea {
+    font-size: 30px;
+    width: 1300px;
+    height: 100px;
+    margin-top: 19px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea3-first {
+    width: 500px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea3-second {
+    width: 650px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #playarea3-div1 {
+    width: 150px;
+    height: 330px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #playarea3-div2 {
+    width: 150px;
+    height: 330px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #playarea3-div3 {
+    width: 150px;
+    height: 330px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input1 {
+    width: 120px;
+    margin-top: 176px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input2 {
+    width: 120px;
+    margin-top: 16px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input3 {
+    width: 120px;
+    margin-top: 12px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input4 {
+    width: 120px;
+    margin-top: 176px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input5 {
+    width: 120px;
+    margin-top: 16px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input6 {
+    width: 120px;
+    margin-top: 12px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input7 {
+    width: 120px;
+    margin-top: 176px;
+    margin-left: 15px;
+    font-size: 30px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input8 {
+    width: 120px;
+    margin-top: 16px;
+    margin-left: 15px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input9 {
+    width: 120px;
+    margin-top: 12px;
+    margin-left: 15px;
+    height: 40px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-play3innerdiv1 {
+    height: 80px;
+    width: 650px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-play3innerdiv2 {
+    height: 300px;
+    width: 650px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #txtarea-solution {
+    width: 630px;
+    height: 280px;
+    font-size: 30px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-answer {
+    font-size: 30px;
+    width: 200px;
+    height: 50px;
+    margin-left: 76px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #ans-inputtext {
+    width: 180px;
+    font-size: 30px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-check {
+    height: 60px;
+    width: 220px;
+    margin-left: 250px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-show {
+    width: 220px;
+    height: 60px;
+    margin-left: 145px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-result {
+    width: 220px;
+    height: 60px;
+    margin-left: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea {
+    width: 1200px;
+    height: 720px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea1 {
+    width: 1200px;
+    height: 180px;
+    margin-top: 73px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea2 {
+    width: 1000px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea3 {
+    height: 400px;
+    width: 1200px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea4 {
+    width: 1200px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div1-textarea {
+    width: 1150px;
+    height: 100px;
+    margin-top: 61px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div2-textarea {
+    font-size: 25px;
+    width: 1200px;
+    height: 80px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea3-first {
+    width: 450px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea3-second {
+    height: 350px;
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #playarea3-div1 {
+    width: 120px;
+    height: 300px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #playarea3-div2 {
+    width: 120px;
+    height: 300px;
+    margin-left: 34px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #playarea3-div3 {
+    width: 120px;
+    height: 300px;
+    margin-left: 28px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input1 {
+    width: 100px;
+    margin-top: 156px;
+    height: 35px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input2 {
+    width: 100px;
+    margin-top: 16px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input3 {
+    width: 100px;
+    margin-top: 12px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input4 {
+    width: 100px;
+    margin-top: 156px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input5 {
+    width: 100px;
+    margin-top: 16px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input6 {
+    width: 100px;
+    margin-top: 12px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input7 {
+    width: 100px;
+    margin-top: 156px;
+    margin-left: 15px;
+    font-size: 30px;
+    height: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input8 {
+    width: 100px;
+    margin-top: 16px;
+    margin-left: 15px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input9 {
+    width: 100px;
+    margin-top: 12px;
+    margin-left: 15px;
+    height: 35px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-play3innerdiv1 {
+    height: 70px;
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-play3innerdiv2 {
+    height: 280px;
+    width: 600px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-answer {
+    font-size: 25px;
+    width: 180px;
+    height: 45px;
+    margin-left: 76px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #ans-inputtext {
+    width: 160px;
+    font-size: 25px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #txtarea-solution {
+    width: 580px;
+    height: 260px;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-check {
+    height: 50px;
+    width: 180px;
+    margin-left: 250px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-show {
+    width: 180px;
+    height: 50px;
+    margin-left: 145px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-result {
+    width: 180px;
+    height: 50px;
+    margin-left: 140px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea {
+    width: 1000px;
+    height: 650px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea1 {
+    width: 1000px;
+    height: 150px;
+    margin-top: 73px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea3 {
+    height: 350px;
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea4 {
+    width: 1000px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div1-textarea {
+    width: 980px;
+    height: 80px;
+    margin-top: 50px;
+    font-size: 20px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div2-textarea {
+    font-size: 20px;
+    width: 1000px;
+    height: 70px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea3-first {
+    width: 350px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea3-second {
+    width: 500px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #playarea3-div1 {
+    width: 100px;
+    height: 250px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #playarea3-div2 {
+    width: 100px;
+    height: 250px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #playarea3-div3 {
+    width: 100px;
+    height: 250px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input1 {
+    width: 80px;
+    margin-top: 130px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input2 {
+    width: 80px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input3 {
+    width: 80px;
+    margin-top: 8px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input4 {
+    width: 80px;
+    margin-top: 130px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input5 {
+    width: 80px;
+    margin-top: 10px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input6 {
+    width: 80px;
+    margin-top: 8px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input7 {
+    width: 80px;
+    margin-top: 130px;
+    margin-left: 15px;
+    font-size: 20px;
+    height: 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input8 {
+    width: 80px;
+    margin-top: 10px;
+    margin-left: 15px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input9 {
+    width: 80px;
+    margin-top: 8px;
+    margin-left: 15px;
+    height: 30px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-play3innerdiv1 {
+    height: 50px;
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-play3innerdiv2 {
+    height: 250px;
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-answer {
+    font-size: 20px;
+    width: 160px;
+    height: 35px;
+    margin-left: 76px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #ans-inputtext {
+    width: 140px;
+    font-size: 20px;
+    height: 40px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-check {
+    height: 40px;
+    width: 150px;
+    margin-left: 129px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-show {
+    width: 150px;
+    height: 40px;
+    margin-left: 145px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-result {
+    width: 150px;
+    height: 40px;
+    margin-left: 140px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #txtarea-solution {
+    width: 480px;
+    height: 220px;
+    font-size: 20px;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
