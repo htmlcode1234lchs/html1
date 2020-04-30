@@ -42,8 +42,8 @@
                         class="solutiontextarea" placeholder="Solution" style="resize: none;"></textarea></div>
             </div>
         </div>
-        <div id="div-playarea4" class="playareadivision4"><button class="btn btn-primary shadow-none" id="btn-check"
-                type="button"
+        <div id="div-playarea4" class="playareadivision4">
+            <button class="btn btn-primary shadow-none" id="btn-check" type="button"
                 style="background-image: url(&quot;assets/img/check%20answer%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
             <button class="btn btn-primary shadow-none" id="btn-show" type="button"
                 style="background-image: url(&quot;assets/img/Show%20answer%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button><button
@@ -54,6 +54,143 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $('#div1-textarea').val('Some times change in one quantity depends upon the change in two or more quantities in some ' +
+        ' proportion. Then we equate the ratio of the first quantity to the compound ratio of the other two ' +
+        'quantities. ' +
+        '(i) One quantity may be in direct proportion with the other two quantities. ' +
+        '(ii) One quantity may be in inverse proportion with the other two quantities ' +
+        '(iii) One quantity may be in direct proportion with the one of the two quantities and in inverse ' +
+        'proportion with the remaining quantity.');
+    var random = generateData(2, 5);
+    var hours = randomIntFromInterval(1,8);
+    var hours2 = randomIntFromInterval(1,8);
+    console.log(random)
+    console.log('hours: '+hours)
+    random.splice(1, 1,hours);
+    random.splice(3, 1,hours2);
+    console.log(random);
+    var question = random[0] + ' workers working ' + random[1] + ' hours day can finish a piece of work in ' + random[2] + ' days. ' +
+        'If each worker works ' + random[3] + ' hours a day, find the number of workers to ' +
+        ' fiinish the same piece of work in ' + random[4] + ' days.';
+    $('#div2-textarea').val(question);
+    function generateData(digits, size) {
+        return Array.apply(null, { length: size || 100 }).map(function () {
+            //return Math.floor(Math.random() * Math.pow(10, digits) + Math.pow(10, digits)).toString().slice(-digits);
+            return Math.floor(Math.random() * (30 - 1 + 1) + 1).toString().slice(-digits);
+        });
+    }
+    $('#btn-check').click(function () {
+        if ($('#input1').val() == random[0]) {
+            $('#input1').css('color', 'green');
+        } else {
+            $('#input1').css('color', 'red');
+        }
 
+        if ($('#input4').val() == random[1]) {
+            $('#input4').css('color', 'green');
+        } else {
+            $('#input4').css('color', 'red');
+        }
+
+        if ($('#input7').val() == random[2]) {
+            $('#input7').css('color', 'green');
+        } else {
+            $('#input7').css('color', 'red');
+        }
+
+        if ($('#input2').val() == '?(x)') {
+            $('#input2').css('color', 'green');
+        } else {
+            $('#input2').css('color', 'red');
+        }
+
+        if ($('#input5').val() == random[3]) {
+            $('#input5').css('color', 'green');
+        } else {
+            $('#input5').css('color', 'red');
+        }
+
+        if ($('#input8').val() == random[4]) {
+            $('#input8').css('color', 'green');
+        } else {
+            $('#input8').css('color', 'red');
+        }
+
+        if ($('#input3').val() == random[0] + ': x' || $('#input3').val() == random[0] + ':x') {
+            $('#input3').css('color', 'green');
+        } else {
+            $('#input3').css('color', 'red');
+        }
+
+        if ($('#input6').val() == (random[1] + ':' + random[3]) || $('#input6').val() == (random[1] + ' : ' + random[3])) {
+            $('#input6').css('color', 'green');
+        } else {
+            $('#input6').css('color', 'red');
+        }
+        if ($('#input9').val() == (random[2] + ':' + random[4]) || $('#input9').val() == (random[2] + ':' + random[4])) {
+            $('#input9').css('color', 'green');
+        } else {
+            $('#input9').css('color', 'red');
+        }
+        var mul1 = random[3] * random[4];
+        var mul2 = random[1] * random[2];
+        var side = random[0] * mul2;
+        var result = Math.floor(side / mul1);
+        if ($('#ans-inputtext').val() == result) {
+            $('#ans-inputtext').css('color', 'green');
+        } else {
+            $('#ans-inputtext').css('color', 'red');
+        }
+    });
+    function randomIntFromInterval(min, max) { // min and max included 
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+    $('#btn-show').click(function () {
+
+        $('#input1').val(random[0]);
+        $('#input4').val(random[1]);
+        $('#input7').val(random[2]);
+
+        $('#input2').val('?(x)');
+        $('#input5').val(random[3]);
+        $('#input8').val(random[4]);
+
+        $('#input3').val(random[0] + ': x');
+        $('#input6').val(random[1] + ':' + random[3]);
+        $('#input9').val(random[2] + ':' + random[4]);
+        var mul1 = random[3] * random[4];
+        var mul2 = random[1] * random[2];
+        var side = random[0] * mul2;
+        var result = Math.floor(side / mul1);
+        var answerDescription = $('#input3').val() + ' = inverse ration of ' + random[1] + ':' + random[3] + ' i.e ' + random[3] + ':' + random[1] + ' \n' +
+            '' + $('#input3').val() + ' is directly proportional to ' + random[3] + ':' + random[1] + ' \n' +
+            'again, number of days is inversely proportional to number of workers, \n' +
+            '\n' +
+            'Number of workers = 1 / number of days \n' +
+            '\n' +
+            '' + $('#input3').val() + ' = inverse ration of ' + random[2] + ':' + random[4] + ' i.e ' + random[4] + ':' + random[2] + ' \n' +
+            '\n' +
+            'As, number of workers depends upon two variables i.e number of days and number of hours per day. \n' +
+            'Therefore, \n' +
+            'Number of workers = compound ratio of inverse ratio of hours per day and inverse ratio of number f days. \n' +
+            '' + $('#input3').val() + ' = compound ratio of ' + random[3] + ':' + random[1] + ' and ' + random[4] + ':' + random[2] + ' \n' +
+            '' + $('#input3').val() + ' = ' + random[3] + '*' + random[4] + ' : ' + random[1] + '*' + random[2] + ' \n' +
+            '' + $('#input3').val() + ' = ' + mul1 + ' : ' + mul2 + ' \n' +
+            // ''+$('#input3').val()+' = '+random[3]+' : 345 \n'+
+            'product of means = product of extremes  \n' +
+            //''+random[0]+' * x = 15 * 345 \n'+
+            '' + mul1 + ' * x = ' + random[0] + '*' + mul2 + ' \n' +
+            'x = ' + side + '/' + mul1 + ' \n' +
+            'x = ' + result + ' \n' +
+            ' \n' +
+            ' Hence the required number of workers = ' + result + '.';
+        $('#ans-inputtext').val(result);
+        $('#txtarea-solution').val(answerDescription);
+    });
+    $('#btn-result').click(function () {
+        window.location.reload();
+    })
+</script>
 
 </html>
