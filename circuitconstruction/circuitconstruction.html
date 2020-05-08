@@ -15948,7 +15948,14 @@ aimxcel.chipper.runRequireJS = function() {
                         if(86.94000000000001193712 == t(this.entries[6])){
                                 return "translate(100,100)";
                             }else{
-                            return "translate(" + t(this.entries[6]) + "," + t(this.entries[7]) + ")";
+                                //7.92000000000001591616,229.60000000000002273737
+                                console.log(t(this.entries[6]) + "," + t(this.entries[7]))
+                                if(t(this.entries[6]) == 7.92000000000001591616 && t(this.entries[7]) == 229.60000000000002273737){
+                                    return "translate(1000,1000)";
+                                }else{
+                                    return "translate(" + t(this.entries[6]) + "," + t(this.entries[7]) + ")";
+                                }
+                            
                             }
                             //return "translate(" + t(this.entries[6]) + "," + t(this.entries[7]) + ")";
                         case r.SCALING:
@@ -33355,7 +33362,10 @@ aimxcel.chipper.runRequireJS = function() {
                 initialize: function(t, e) {
                     this.svgBlock = t, this.gradient = e;
                     var n = void 0 !== this.definition;
-                    this.definition = this.definition || this.createDefinition(), n || this.definition.setAttribute("gradientUnits", "userSpaceOnUse"), e.transformMatrix ? this.definition.setAttribute("gradientTransform", e.transformMatrix.getSVGTransform()) : this.definition.removeAttribute("gradientTransform");
+                    this.definition = this.definition || this.createDefinition(), 
+                    n || this.definition.setAttribute("gradientUnits", "userSpaceOnUse"), 
+                    e.transformMatrix ? this.definition.setAttribute("gradientTransform", 
+                    e.transformMatrix.getSVGTransform()) : this.definition.removeAttribute("gradientTransform");
                     var r = e.getSVGStops();
                     this.stops = i(this.stops);
                     for (var o = 0; o < r.length; o++) {
@@ -50677,7 +50687,10 @@ aimxcel.chipper.runRequireJS = function() {
                         var t = this.svgGroup;
                         if (this.dirty = !1, this.transformDirty)
                             if (this.transformDirty = !1, this.willApplyTransforms) {
-                                this.node.transform.isIdentity() ? this.hasTransform && (this.hasTransform = !1, r.ie9 || r.ie10 ? t.setAttribute("transform", "") : t.removeAttribute("transform")) : (this.hasTransform = !0, t.setAttribute("transform", this.node.transform.getMatrix().getSVGTransform()))
+                                this.node.transform.isIdentity() ? this.hasTransform && 
+                                (this.hasTransform = !1, r.ie9 || r.ie10 ? t.setAttribute("transform", "") : 
+                                t.removeAttribute("transform")) : (this.hasTransform = !0, 
+                                t.setAttribute("transform", this.node.transform.getMatrix().getSVGTransform()))
                             } else this.hasTransform && (this.hasTransform = !1, r.ie9 || r.ie10 ? t.setAttribute("transform", "") : t.removeAttribute("transform"));
                         if (this.visibilityDirty && (this.visibilityDirty = !1, t.style.display = this.node.isVisible() ? "" : "none"), this.opacityDirty && (this.opacityDirty = !1, this.willApplyFilters && 1 !== this.node.opacity ? (this.hasOpacity = !0, t.setAttribute("opacity", this.node.opacity)) : this.hasOpacity && (this.hasOpacity = !1, t.removeAttribute("opacity"))), this.clipDirty)
                             if (this.clipDirty = !1, this.node.clipArea) {
