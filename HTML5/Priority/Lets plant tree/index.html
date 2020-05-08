@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div
+    <div id="timeIntervalsId"
         style="background-image: url(&quot;assets/img/6am.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;height: 650px;">
     </div>
     <div id="div-water"
@@ -31,13 +31,68 @@
                 style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
         </div>
     </div>
-    <div id="div-labels" style="margin-right: auto;margin-left: auto;"><input type="checkbox" id="check1" 
-            style="position: absolute;"><label id="field1" style="position: absolute;">Day :</label><label id="field2"
-            style="position: absolute;">Time :</label><label id="field3" style="position: absolute;">Water</label>
-        <input type="text" id="text2" disabled style="position: absolute;"><input type="text" id="text1" disabled
-            style="position: absolute;"></div>
+    <div id="div-labels" style="margin-right: auto;margin-left: auto;">
+        <input type="checkbox" id="check1" style="position: absolute;" checked>
+        <label id="field1" style="position: absolute;">Day :</label>
+        <label id="field2" style="position: absolute;">Time :</label>
+        <label id="field3" style="position: absolute;">Water</label>
+        <input type="text" id="text2" disabled style="position: absolute;" value="6 AM">
+        <input type="text" id="text1" disabled style="position: absolute;" value="1">
+    </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var staticArray = [1, 2, 3, 4, 5, 6, 7];
+    var timeIntervals = ['6 AM', '9 AM', '12 PM', '3 PM', '6 PM', '9 PM'];
+    var timeIntervalsImages = ['6am.jpg', '9am.jpg', '12pm.jpg', '3pm.jpg', '6pm.jpg', '9pm.jpg'];
+    var p = 0;
+    var tp = 0;
+    init();
+    var checkposition = 0;
+    var before = 0;
+    function init() {
+        $('#timeIntervalsId').css('background-image', 'url(assets/img/' + timeIntervalsImages[tp] + ')');
+        $('#text2').val(timeIntervals[tp]);
+        $('#text1').val(staticArray[p]);
+        //console.log('element = ' + staticArray[p]);
+        setTimeout(() => {
+            if (tp == 5) {
+                tp = -1;
+                if (p == 6) {
+                    p = 0;
+                } else {
+                    p++;
+                }
+            }
+
+            if (before == 1 && $('#check1').prop("checked") == true) {
+                $('#check1').prop("checked", false);
+                $('#div-water').css('background-image', 'url()');
+            }
+            if ($('#check1').prop("checked") == false) {
+                checkposition++;
+            }
+            if(checkposition >= 2){
+                $('#div-plant').css('background-image', 'url(assets/img/dryplant.png)');
+            }
+            tp++;
+            before++;
+           // console.log('tp = ' + tp + " = p " + p + " checkposition = " + checkposition);
+            init();
+        }, 15000);
+    }
+    $('#check1').click(function(){
+        $('#div-plant').css('background-image', 'url(assets/img/plant.png)');
+        $('#div-water').css('background-image', 'url(assets/img/water1.gif)');
+        before = 0;
+    })
+    $('#homebtn-1').click(function () {
+        window.location.reload();
+    });
+    $('#resetbtn-1').click(function () {
+        window.location.reload();
+    })
+</script>
 
 </html>
