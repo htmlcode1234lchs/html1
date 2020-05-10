@@ -73,17 +73,22 @@
 <script>
     $('#div-select-2').change(function () {
         var label = $('#div-select-2 :selected').val();
-        console.log(label);
+        if(label.trim() == 'Translucent Glass'){
+                $('#div-rays').css('display', 'none');
+            }else{
+                $('#div-rays').css('display', 'block');
+                $('#div-rays').css('background-image', 'url(assets/img/4.png)');
+            }
         updateImages(label);
     });
     function updateImages(label){        
-        if (label == 'Transparent  Glass') {
+        if (label.trim() == 'Transparent  Glass') {
             $('#div-mirror').css('background-image', 'url(assets/img/1.png)');
             $('#rightmiddlediv').css('background-image', 'url(assets/img/a.png)');
-        } else if (label == 'Opaque') {
+        } else if (label.trim() == 'Opaque') {
             $('#div-mirror').css('background-image', 'url(assets/img/2.png)');
             $('#rightmiddlediv').css('background-image', 'url(assets/img/b.png)');
-        } else if (label == 'Translucent Glass') {
+        } else if (label.trim() == 'Translucent Glass') {
             $('#div-mirror').css('background-image', 'url(assets/img/3.png)');
             $('#rightmiddlediv').css('background-image', 'url(assets/img/c.png)');
         } 
@@ -91,7 +96,12 @@
     $('input[name=test]').change(function () {
         if ($('input[name=test]').is(':checked')) {
             var label = $('#div-select-2 :selected').val();
-            $('#div-rays').css('background-image', 'url(assets/img/4.png)');
+            if(label.trim() == 'Translucent Glass'){
+                $('#div-rays').css('display', 'none');
+            }else{
+                $('#div-rays').css('display', 'block');
+                $('#div-rays').css('background-image', 'url(assets/img/4.png)');
+            }
             updateImages(label);
             
         } else {
