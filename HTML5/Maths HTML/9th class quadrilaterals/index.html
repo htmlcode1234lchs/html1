@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Quadrilateral</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
+    <div id="tabs">
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1" style="color: rgb(0,135,182);font-size: 20px;font-weight: bold;">Quadrilaterals Properties</a></li>
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2" style="color: rgb(0,135,182);font-size: 20px;font-weight: bold;">Parallelogram Properties</a></li>
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-3" style="font-size: 20px;font-weight: bold;color: rgb(0,135,182);">Properties of parallelogram</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" role="tabpanel" id="tab-1" style="margin-top: 45px;">
+                <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
+                    <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                        <div class="d-xl-flex justify-content-xl-start align-items-xl-center divleft" id="leftdiv" style="position: absolute;"><button class="btn" id="btn1" type="button" style="position: absolute;background-image: url(&quot;assets/img/Parallelogram.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                                id="btn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Square.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn3"
+                                type="button" style="position: absolute;background-image: url(&quot;assets/img/Rectangle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn4" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/Rhombus.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn5" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/trapuizum%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn8" type="button"
+                                style="position: absolute;background-image: url(&quot;assets/img/Kite.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                        <div id="rightmiddlediv" class="middlerightdiv"
+                            style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
+                            <div id="text-div" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/Information.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;"><textarea id="textarea" style="position: absolute;resize: none;"></textarea></div>
+                            <div class="text-center d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" id="div-c" style="background-color:#e7f0f2;background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                                <div id="div-b" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                            </div>
+                        </div>
+                        <div id="rightdiv" class="middlerightdiv" style="position: absolute;"><button class="btn" id="divbtn1" type="button" style="background-image: url(&quot;assets/img/ruler%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+                            <button
+                                class="btn" id="divbtn-dup" type="button" style="background-image: url(&quot;assets/img/protractor.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn" id="divbtn2" type="button" style="position: absolute;background-image: url(&quot;assets/img/set%20squre%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                                <button class="btn" id="divbtn-4" type="button" style="position: absolute;background-image: url(&quot;assets/img/line-1.png&quot;);
+								background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+									<button class="btn" id="divbtn-5" type="button" style="position: absolute;background-image: url(&quot;assets/img/compass%201.png&quot;);background-position: center;
+									background-size: contain;background-repeat: no-repeat;"></button>
+									<button class="btn" id="divbtn-6" type="button" style="position: absolute;background-image: url(&quot;assets/img/arc.png&quot;);background-position: center;
+									background-size: contain;background-repeat: no-repeat;"></button>
+                                    <button class="btn btn-primary" id="resetbtn" type="button" style="background-image: url(&quot;assets/img/reset-1.png&quot;);background-position: center;
+										background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+									<button class="btn btn-primary" id="demodrawbtn" type="button" style="background-image: url(&quot;assets/img/Demo.png&quot;);background-position: center;
+										background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                                        <div id="div-prop" style="background-image: url(&quot;assets/img/Properties.png&quot;);background-size: contain;background-position: center;background-repeat: no-repeat;"><input type="text" id="txt-prop" style="position: absolute;text-align: center;font-size: 20px;font-weight: bold;"><input type="text" id="txt-prop-2" style="position: absolute;"><input type="text" id="txt-prop-3"
+                                                style="position: absolute;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane" role="tabpanel" id="tab-2">
+                <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv-tab2" style="margin-left: auto;margin-right: auto;">
+                    <div id="rightmaindiv-tab2" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                        <div class="d-xl-flex justify-content-xl-start align-items-xl-center divleft" id="leftdiv-tab2" style="position: absolute;"><button class="btn" id="btn-1tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Parallelogram.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                            <button
+                                class="btn" id="btn-2tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Square.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-3tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Rectangle.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                                <button
+                                    class="btn" id="btn-4tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Rhombus.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn-5tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/trapuizum%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                                    <button
+                                        class="btn btn-primary" id="btn-6tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/Kite.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn-6tab-22" type="button" style="position: absolute;background-image: url(&quot;assets/img/qudertlatrial%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                        <div
+                            id="rightmiddlediv-1tab2" class="middlerightdiv" style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
+                            <div id="text-div-1tab2" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/Information.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;"><textarea id="textarea-1tab2" style="position: absolute;resize: none;"></textarea></div>
+                            <div class="text-center d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" id="div-c-1tab2" style="background-color:#e7f0f2;background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                                <div id="div-b-1tab2" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                            </div>
+                    </div>
+                    <div id="rightdiv-1tab2" class="middlerightdiv" style="position: absolute;"><button class="btn" id="divbtn-1tab2" type="button" style="background-image: url(&quot;assets/img/ruler%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+                        <button
+                            class="btn" id="divbtn-dup-1tab2" type="button" style="background-image: url(&quot;assets/img/protractor.png&quot;);background-position: center;
+							background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+							<button class="btn" id="divbtn-3tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/line-1.png&quot;);background-position: center;
+							background-size: contain;background-repeat: no-repeat;"></button>
+							<button class="btn" id="divbtn-4tab2" type="button" style="position: absolute;background-image: url(&quot;assets/img/arc.png&quot;);background-position: center;
+							background-size: contain;background-repeat: no-repeat;"></button>
+                            <button class="btn btn-primary" id="resetbtn-1tab2" type="button" style="background-image: url(&quot;assets/img/reset-1.png&quot;);background-position: center;
+							background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+							<button class="btn btn-primary" id="demodrawbtn-1tab2" type="button" style="background-image: url(&quot;assets/img/Demo.png&quot;);background-position: center;
+							background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                                <div id="div-prop-1tab2" style="background-image: url(&quot;assets/img/Properties.png&quot;);background-size: contain;background-position: center;background-repeat: no-repeat;"><input type="text" id="txt-prop-1tab2" style="position: absolute;text-align: center;font-size: 20px;font-weight: bold;"><input type="text" id="txt-prop-4tab2" style="position: absolute;"><input type="text" id="txt-prop-5tab2"
+                                        style="position: absolute;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" role="tabpanel" id="tab-3">
+            <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv-tab3" style="margin-left: auto;margin-right: auto;">
+                <div id="rightmaindiv-tab3" class="divrightmain" style="margin-left: auto;margin-right: auto;">
+                    <div class="d-xl-flex justify-content-xl-start align-items-xl-center divleft" id="leftdiv-tab3" style="position: absolute;"><button class="btn" id="btn-1tab3" type="button" style="position: absolute;background-image: url(&quot;assets/img/Theorem-1.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn"
+                            id="btn-2tab3" type="button" style="position: absolute;background-image: url(&quot;assets/img/Theorem-2.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-3tab3"
+                            type="button" style="position: absolute;background-image: url(&quot;assets/img/Theorem-3.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-4tab3" type="button"
+                            style="position: absolute;background-image: url(&quot;assets/img/Theorem-4.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn-5tab3" type="button"
+                            style="position: absolute;background-image: url(&quot;assets/img/Theorem-5.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn btn-primary" id="btn-6tab3" type="button"
+                            style="position: absolute;background-image: url(&quot;assets/img/Theorem-6.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button></div>
+                    <div id="rightmiddlediv-1tab3" class="middlerightdiv"
+                        style="background-repeat: no-repeat;background-position: center;background-size: contain;position: absolute;">
+                        <div id="text-div-1tab3" style="margin-right: auto;margin-left: auto;background-image: url(&quot;assets/img/Information.png&quot;);background-size: contain;background-repeat: no-repeat;background-position: center;"><textarea id="textarea-1tab3" style="position: absolute;resize: none;"></textarea></div>
+                        <div class="text-center d-lg-flex d-xl-flex justify-content-lg-center justify-content-xl-center" id="div-c-1tab3" style="background-color:#e7f0f2;background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;">
+                            <div id="div-b-1tab3" style="position: absolute;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+                        </div>
+                    </div>
+                    <div id="rightdiv-1tab3" class="middlerightdiv" style="display:none;position: absolute;"><button class="btn" id="divbtn-1tab3" type="button" style="background-image: url(&quot;assets/img/ruler%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+                        <button class="btn" id="divbtn-dup-1tab3" type="button" style="background-image: url(&quot;assets/img/protractor.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn" id="divbtn-2tab3" type="button" style="position: absolute;background-image: url(&quot;assets/img/set%20squre%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn" id="divbtn-3tab3" type="button" style="position: absolute;background-image: url(&quot;assets/img/diveder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="divbtn-6tab3" type="button" style="position: absolute;background-image: url(&quot;assets/img/compass%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn btn-primary" id="resetbtn-1tab3" type="button" style="background-image: url(&quot;assets/img/reset-1.png&quot;);background-position: center;
+						background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+						<button class="btn btn-primary" id="demodrawbtn-1tab3" type="button" style="background-image: url(&quot;assets/img/Demo.png&quot;);background-position: center;
+						background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+                                    <div id="div-prop-1tab3" style="background-image: url(&quot;assets/img/Properties.png&quot;);background-size: contain;background-position: center;background-repeat: no-repeat;"><input type="text" id="txt-prop-1tab3" style="position: absolute;text-align: center;font-size: 20px;font-weight: bold;"><input type="text" id="txt-prop-4tab3" style="position: absolute;"><input type="text" id="txt-prop-5tab3"
+                                            style="position: absolute;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
