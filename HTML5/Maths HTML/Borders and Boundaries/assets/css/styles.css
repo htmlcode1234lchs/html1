@@ -1,0 +1,249 @@
+@media (prefers-reduced-motion:reduce) {
+  .btn {
+    transition: none;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middle {
+    width: 1500px;
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middle1 {
+    width: 1200px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #img1 {
+    width: 350px;
+    height: 350px;
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #img2 {
+    width: 350px;
+    height: 350px;
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #img3 {
+    width: 350px;
+    height: 350px;
+    margin-top: 30px;
+    margin-left: 40px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middle2 {
+    width: 1200px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #chk1 {
+    width: 60px;
+    height: 60px;
+    margin-top: 22px;
+    margin-left: 218px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #chk2 {
+    width: 60px;
+    height: 60px;
+    margin-top: 22px;
+    margin-left: 332px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #chk3 {
+    width: 60px;
+    height: 60px;
+    margin-top: 22px;
+    margin-left: 320px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middle {
+    width: 1200px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middle1 {
+    width: 1000px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middle2 {
+    width: 1000px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-bottom {
+    width: 1000px;
+    height: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #img1 {
+    width: 250px;
+    height: 250px;
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #img2 {
+    width: 250px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #img3 {
+    width: 250px;
+    height: 250px;
+    margin-left: 50px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #chk1 {
+    width: 50px;
+    height: 50px;
+    margin-left: 212px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #chk2 {
+    width: 50px;
+    height: 50px;
+    margin-left: 261px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #chk3 {
+    width: 50px;
+    height: 50px;
+    margin-left: 236px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-check {
+    width: 300px;
+    height: 80px;
+    margin-left: 54px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #txt-result {
+    margin-top: -68px;
+    margin-left: 432px;
+    width: 200px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-show {
+    width: 300px;
+    height: 80px;
+    margin-top: -90px;
+    margin-left: 680px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-bottom {
+    width: 900px;
+    height: 80px;
+    margin-top: 75px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-check {
+    width: 250px;
+    height: 70px;
+    margin-left: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-show {
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #txt-result {
+    width: 150px;
+    font-size: 28px;
+    margin-left: 400px;
+    margin-top: -58px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-show {
+    width: 250px;
+    height: 70px;
+    margin-left: 600px;
+    margin-top: -95px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-question {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-question {
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-question-1 {
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-question-1 {
+    font-size: 30px;
+  }
+}
+
