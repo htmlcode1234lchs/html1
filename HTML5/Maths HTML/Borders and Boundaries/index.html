@@ -9,25 +9,161 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body style="background-image: url(&quot;assets/img/Borders-and-Boundaries.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
-    <div id="div-title" class="titledivision" style="width: 900px;height: 100px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none" id="btn-home" type="button" style="width: 70px;height: 70px;margin: 20px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
-        <button
-            class="btn btn-primary shadow-none" id="btn-reset" type="button" style="width: 70px;height: 70px;margin-left: 700px;background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+<body
+    style="background-image: url(&quot;assets/img/Borders-and-Boundaries.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <div id="div-title" class="titledivision" style="width: 900px;height: 100px;margin-left: auto;margin-right: auto;">
+        <button class="btn btn-primary shadow-none" id="btn-home" type="button"
+            style="width: 70px;height: 70px;margin: 20px;background-image: url(&quot;assets/img/Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+        <button class="btn btn-primary shadow-none" id="btn-reset" type="button"
+            style="width: 70px;height: 70px;margin-left: 700px;background-image: url(&quot;assets/img/Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
     </div>
-    <div class="text-center questiondivision" id="div-ques" style="width: 1200px;margin-left: auto;margin-right: auto;"><label class="text-center questionlabel" id="lab-question">Mark the Correct answer based on the question given.</label><label class="text-center questionlabel" id="lab-question-1">Mark the Correct ansalkshfpusehefiuehs iufhoiehfjsdfkjsdvkjke,fhvgosydgfiosgfjbsdjf</label></div>
-    <div
-        id="div-middle" class="middledivision" style="margin-left: auto;margin-right: auto;">
-        <div id="div-middle1" class="middle1division" style="margin-left: auto;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="img1" class="divmid1-img1" style="background-image: url(&quot;assets/img/7.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="img2" class="divmid1-img2" style="background-image: url(&quot;assets/img/6.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
-            <img
-                id="img3" class="divmid1-img3" style="background-image: url(&quot;assets/img/8.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-        <div id="div-middle2" class="middle2division" style="margin-left: auto;margin-right: auto;"><input type="checkbox" id="chk1" class="chkbox1"><input type="checkbox" id="chk2" class="chkbox2" style="width: 50px;height: 50px;"><input type="checkbox" id="chk3" class="chkbox3"></div>
+    <div class="text-center questiondivision" id="div-ques" style="width: 1200px;margin-left: auto;margin-right: auto;">
+        <label class="text-center questionlabel" id="lab-question">Mark the Correct answer based on the question
+            given.</label><label class="text-center questionlabel" id="lab-question-1"></label></div>
+    <div id="div-middle" class="middledivision" style="margin-left: auto;margin-right: auto;">
+        <div id="div-middle1" class="middle1division"
+            style="margin-left: auto;margin-right: auto;background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img id="img1" class="divmid1-img1"
+                style="display: none;  background-image: url(&quot;assets/img/7.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img id="img2" class="divmid1-img2"
+                style="display: none;background-image: url(&quot;assets/img/6.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
+            <img id="img3" class="divmid1-img3"
+                style="display: none;background-image: url(&quot;assets/img/8.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
         </div>
-        <div id="div-bottom" class="bottombuttons" style="margin-left: auto;margin-right: auto;"><button class="btn btn-primary shadow-none" id="btn-check" type="button" style="background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
-            <input
-                class="form-control-plaintext" type="text" id="txt-result" value="Result" readonly=""><button class="btn btn-primary shadow-none" id="btn-show" type="button" style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button></div>
-        <script
-            src="assets/js/jquery.min.js"></script>
-            <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <div id="div-middle2" class="middle2division" style="margin-left: auto;margin-right: auto;">
+            <input type="checkbox" id="chk1" class="chkbox1">
+            <input type="checkbox" id="chk2" class="chkbox2" style="width: 50px;height: 50px;">
+            <input type="checkbox" id="chk3" class="chkbox3"></div>
+    </div>
+    <div id="div-bottom" class="bottombuttons" style="margin-left: auto;margin-right: auto;"><button
+            class="btn btn-primary shadow-none" id="btn-check" type="button" disabled
+            style="background-image: url(&quot;assets/img/Next.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+        <input class="form-control-plaintext" type="text" id="txt-result" value="Result" readonly="">
+        <button class="btn btn-primary shadow-none" id="btn-show" type="button"
+            style="background-image: url(&quot;assets/img/Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(0,123,255,0);"></button>
+        <label id="result" style="margin-left: 46%;font-size: 18px;"></label>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var questionArray = ['1. Ramaiah, Ahmed and John are friends. They have decided to fence their lands.Who needs fencing wire more?',
+        '2. The measurements of Ranga\'s and Rama\'s fields are given below. They both want to buy fencing wire. Who needs more wire?',
+        '3. Which of the following closures has more perimeter.',
+        '4. Which of the following closures have perimeter equals to 40.',
+        '5.  Which of the following closures has more perimeter.'];
+    var answerArray = ['Option C', 'Option A', 'Option A', 'Option C', 'Option C'];
+    var options1 = ['1.png', '2.png', '3.png'];
+    var options2 = ['4.png', '5.png'];
+    var options3 = ['6.png', '7.png', '8.png'];
+    var options4 = ['6.png', '7.png', '8.png'];
+    var options5 = ['9.png', '10.png', '11.png'];
+    var option = 0;
+    var globalQuestion = 0;
+    init(option);
+
+    function init(option) {
+        globalQuestion = option;
+        $('#lab-question').empty();
+        $('#lab-question').text(questionArray[option]);
+        var optionsList = [];
+        if (option == 0) {
+            optionsList = options1;
+        }
+        else if (option == 1) {
+            optionsList = options2;
+        }
+        else if (option == 2) {
+            optionsList = options3;
+        }
+        else if (option == 3) {
+            optionsList = options4;
+        }
+        else if (option == 4) {
+            optionsList = options5;
+        }
+        $('#img1').css('display', 'none');
+        $('#img2').css('display', 'none');
+        $('#img3').css('display', 'none');
+
+        $('#chk1').css('display', 'none');
+        $('#chk2').css('display', 'none');
+        $('#chk3').css('display', 'none');
+        
+        $('#chk1').css('outline', '')
+        $('#chk2').css('outline', '')
+        $('#chk3').css('outline', '')
+        $('#result').text('');
+        $('#btn-check').prop("disabled", true);
+        optionsList.forEach((element, index) => {
+            $('#img' + (index + 1)).css('display', 'initial');
+            $('#chk' + (index + 1)).css('display', 'initial');
+
+            $('#chk'+ (index + 1)).prop("checked", false);
+            $('#img' + (index + 1)).css('background-image', 'url(assets/img/' + element + ')');
+        })
+    }
+
+    $('.middle2division > input').click(function () {
+        console.log(this.id);
+
+        if ($('#' + this.id).prop("checked") == true) {
+            var ans = '';
+            var sel = 0;
+            if (this.id == 'chk1') {
+                ans = 'Option A';
+                sel = 1;
+            }
+            else if (this.id == 'chk2') {
+                ans = 'Option B';
+                sel = 2;
+            }
+            else if (this.id == 'chk3') {
+                ans = 'Option C';
+                sel = 3;
+            }
+            console.log(ans+'='+sel)
+             if (answerArray[globalQuestion] == ans) {
+                $('#result').text('Correct');
+                $('#result').css('color', 'white');
+                $('#chk' + sel).css('outline', '2px solid #0b8044')
+            } else {
+                $('#result').text('Wrong');
+                $('#result').css('color', 'red');
+                $('#chk' + sel).css('outline', '2px solid #c00')
+            }
+            $('#btn-check').prop("disabled", false);
+        } else {
+
+        }
+    })
+    $('#btn-show').click(function () {
+        if (answerArray[globalQuestion] == 'Option A') {
+            $('#chk1').prop("checked", true);
+        }
+        else if (answerArray[globalQuestion] == 'Option A') {
+            $('#chk2').prop("checked", true);
+        }
+        else if (answerArray[globalQuestion] == 'Option A') {
+            $('#chk3').prop("checked", true);
+        }
+        $('#btn-check').prop("disabled", false);
+    });
+    
+    $('#btn-check').click(function(){
+        globalQuestion++;
+        if(globalQuestion == 6){
+            alert('All questions are completed.')
+        }else{
+            init(globalQuestion);
+        }
+    });
+    $('#btn-home').click(function () {
+        window.location.reload();
+    })
+    $('#btn-reset').click(function () {
+        window.location.reload();
+    })
+</script>
 
 </html>
