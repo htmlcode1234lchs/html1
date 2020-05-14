@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Weight</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
+    <div id="titlediv" class="divtitle" style="height: 100px;">
+        <div id="btnsdiv" class="divbtns" style="width: 900px;margin-left: auto;margin-right: auto;"><button class="btn btn-primary btnhome" id="homebtn" type="button" style="margin: 20px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Home.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+            <button
+                class="btn btn-primary btnreset" id="resetbtn" type="button" style="margin-left: 680px;background-color: rgba(0,123,255,0);width: 60px;height: 60px;background-image: url(&quot;assets/img/B_Reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+        </div>
+    </div>
+    <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
+        <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;background-image: url(&quot;assets/img/block%201.png&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;margin-right: auto;">
+            <div id="div-weightbalance" style="background-image: url(&quot;assets/img/Balancing.png&quot;);background-position: bottom;background-size: auto;background-repeat: no-repeat;margin-left: auto;margin-right: auto;"><input class="form-control-lg" type="text" id="text-kgs" style="font-weight: bold;width: 84px;height: 43px;" value="6 Kg"></div>
+            <div id="div-weights" style="width: 865px;height: 92px;"><img id="wimg1" style="margin-left: 100px;position: absolute;margin-top: 17px;background-image: url(&quot;assets/img/1kg.png&quot;);height: 73px;width: 100px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img
+                    id="wimg2" style="position: absolute;margin-left: 224px;margin-top: 26px;background-image: url(&quot;assets/img/500gm.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 89px;height: 65px;"><img id="wimg3" style="position: absolute;margin-left: 339px;margin-top: 31px;background-image: url(&quot;assets/img/200gm.png&quot;);height: 61px;width: 79px;background-position: center;background-size: contain;background-repeat: no-repeat;">
+                    <img
+                        id="wimg4" style="position: absolute;margin-left: 450px;margin-top: 39px;background-image: url(&quot;assets/img/100gm.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 52px;width: 69px;"><img id="wimg5" style="position: absolute;margin-left: 549px;margin-top: 47px;background-image: url(&quot;assets/img/50gm.png&quot;);height: 43px;background-position: center;background-size: contain;background-repeat: no-repeat;width: 59px;">
+                        <img
+                            id="wimg6" style="position: absolute;margin-left: 637px;margin-top: 51px;background-image: url(&quot;assets/img/20gm.png&quot;);height: 41px;width: 49px;background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="wimg7" style="position: absolute;margin-left: 711px;margin-top: 57px;background-image: url(&quot;assets/img/1OGM.png&quot;);width: 43px;height: 33px;background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
+            <div
+                class="text-center toprightdiv" id="righttopdiv" style="width: 705px;margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the food based on its classification</label></div>
+        <div class="text-center rightbottomdiv" id="bottomrightdiv" style="margin-right: auto;margin-left: auto;"><button class="btn btn-primary btnresult" id="correctbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
+            <button
+                class="btn btn-primary btnresult" id="incorrectbtn" type="button" style="background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);width: 190px;height: 50px;position: absolute;margin-left: 90px;"></button><label style="margin-left: -43px;font-size: 29px;">Result</label></div>
+        <div id="div-images"><img id="rightimg1" style="position: absolute;width: 100px;height: 73px;margin-top: 358px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;"><img id="rightimg2" style="position: absolute;background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 278px;margin-left: 114px;width: 100px;height: 73px;">
+            <img
+                id="rightimg3" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 199px;"><img id="rightimg4" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 120px;"><img id="rightimg5" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 41px;"></div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
