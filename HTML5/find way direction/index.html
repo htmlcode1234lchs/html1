@@ -201,9 +201,18 @@
          $('#div-options').append(answers);
      }
   */
- 
   var answersArray = ['north', 'west', 'south', 'east', 'north-west',
          'north-east', 'south-west','south-east'];
+  init();
+  function init(){
+      var random = randomNumber(0,7);
+      console.log(random)
+    document.getElementById('img-'+answersArray[random]).appendChild(document.getElementById(answersArray[random]));
+  }
+ 
+  function randomNumber(min, max) {  
+    return Math.floor(Math.random() * (max - min) + min); 
+}
      var correct = 0;
      var incorrect = 0;
      function play(audioToPlay) {
