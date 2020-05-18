@@ -1,0 +1,897 @@
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media (min-width: 900px) {
+  #leftdiv {
+    width: 600px;
+    height: 700px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #rightmaindiv {
+    width: 1100px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left1div {
+    width: 200px;
+    margin-left: 35px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2div {
+    width: 200px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3div {
+    width: 200px;
+    margin-left: 15px;
+  }
+}
+
+@media (min-width: 1700px) {
+  #bottomrightdiv {
+    width: 1200px;
+  }
+}
+
+@media (min-width: 1700px) {
+  #showansbtn {
+    width: 250px;
+    height: 80px;
+    margin-left: 245px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #rightimgsdiv {
+    width: 900px;
+    height: 700px;
+    margin-left: 164px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #right1imgdiv {
+    width: 920px;
+    height: 180px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #right2imgdiv {
+    width: 920px;
+    height: 180px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #right3imgdiv {
+    width: 920px;
+    height: 180px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r3img1 {
+    width: 160px;
+    height: 160px;
+    margin-left: -8px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r3img2 {
+    width: 160px;
+    height: 160px;
+    margin-left: 19px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r3img3 {
+    width: 160px;
+    height: 160px;
+    margin-left: 34px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r3img4 {
+    width: 160px;
+    height: 160px;
+    margin-left: 32px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r3img5 {
+    height: 160px;
+    width: 160px;
+    margin-left: 35px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r2img1 {
+    width: 160px;
+    height: 160px;
+    margin-left: -8px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r2img2 {
+    width: 160px;
+    height: 160px;
+    margin-left: 19px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r2img3 {
+    width: 160px;
+    height: 160px;
+    margin-left: 34px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r2img4 {
+    width: 160px;
+    height: 160px;
+    margin-left: 32px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r2img5 {
+    width: 160px;
+    height: 160px;
+    margin-left: 35px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r1img1 {
+    width: 160px;
+    height: 160px;
+    margin-left: -8px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r1img2 {
+    width: 160px;
+    height: 160px;
+    margin-left: 19px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r1img3 {
+    width: 160px;
+    height: 160px;
+    margin-left: 34px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r1img4 {
+    width: 160px;
+    height: 160px;
+    margin-left: 32px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #r1img5 {
+    width: 160px;
+    height: 160px;
+    margin-left: 35px;
+  }
+}
+
+#left3img1 {
+}
+
+@media (min-width: 1800px) {
+  #left1img1 {
+    width: 170px;
+    height: 155px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left1img2 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left1img3 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left1img4 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left1img5 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2img1 {
+    width: 170px;
+    height: 155px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2img2 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2img3 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2img4 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left2img5 {
+    width: 170px;
+    height: 155px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3img1 {
+    width: 170px;
+    height: 155px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3img2 {
+    width: 170px;
+    height: 155px;
+    margin: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3img3 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3img4 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #left3img5 {
+    width: 170px;
+    height: 155px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #playareadiv {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #rightimgsdiv {
+    margin-left: 100px;
+    width: 650px;
+    height: 400px;
+    margin-top: 40px;
+  }
+}
+
+#rightdiv {
+  width: 400px;
+  height: 500px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #left1div {
+    height: 620px;
+    width: 150px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #rightmaindiv {
+    width: 700px;
+    margin-left: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left1img1 {
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left1img2 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left1img3 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left1img4 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left1img5 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #left2div {
+    width: 150px;
+    height: 620px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #left3div {
+    width: 150px;
+    height: 620px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left2img1 {
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left2img2 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left2img3 {
+    margin-top: 5px;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left2img4 {
+    margin-top: 5px;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left2img5 {
+    margin-top: 5px;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left3img1 {
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left3img2 {
+    margin-top: 5px;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left3img3 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left3img4 {
+    margin-top: 5px;
+    width: 140px;
+    height: 120px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1799px) {
+  #left3img5 {
+    width: 140px;
+    height: 120px;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1800px) {
+  #rightmiddlediv {
+    width: 700px;
+    height: 850px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #rightmiddlediv {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1699px) {
+  #bottomrightdiv {
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1699px) {
+  #showansbtn {
+    width: 250px;
+    height: 80px;
+    margin-left: 209px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #playareadiv {
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #left1div {
+    height: 620px;
+    width: 150px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #left2div {
+    width: 150px;
+    height: 620px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #left3div {
+    width: 150px;
+    height: 620px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #rightmaindiv {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #rightimgsdiv {
+    margin-left: 100px;
+    width: 650px;
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #right1imgdiv {
+    width: 650px;
+    height: 150px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #right2imgdiv {
+    width: 650px;
+    height: 150px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #right3imgdiv {
+    width: 650px;
+    height: 150px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r1img1 {
+    width: 110px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r1img2 {
+    width: 110px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r1img3 {
+    width: 110px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r1img4 {
+    width: 110px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r1img5 {
+    width: 110px;
+    height: 120px;
+    margin-top: 30px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r2img1 {
+    width: 110px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r2img2 {
+    width: 110px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r2img3 {
+    width: 110px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r2img4 {
+    width: 110px;
+    height: 120px;
+    margin-left: 20px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r2img5 {
+    width: 110px;
+    height: 120px;
+    margin-top: 15px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r3img1 {
+    width: 110px;
+    height: 120px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r3img2 {
+    width: 110px;
+    height: 120px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r3img3 {
+    width: 110px;
+    height: 120px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r3img4 {
+    width: 110px;
+    height: 120px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1799px) {
+  #r3img5 {
+    width: 110px;
+    height: 120px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #right1imgdiv {
+    width: 650px;
+    height: 140px;
+    margin-top: -20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #right2imgdiv {
+    width: 650px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #right3imgdiv {
+    width: 650px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r1img1 {
+    width: 110px;
+    height: 120px;
+    margin-left: -5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r1img2 {
+    width: 110px;
+    height: 120px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r1img3 {
+    width: 110px;
+    height: 120px;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r1img4 {
+    width: 110px;
+    height: 120px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r1img5 {
+    width: 110px;
+    height: 120px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r2img1 {
+    width: 110px;
+    height: 120px;
+    margin-left: -5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r2img2 {
+    width: 110px;
+    height: 120px;
+    margin-left: 5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r2img3 {
+    width: 110px;
+    height: 120px;
+    margin-left: 12px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r2img4 {
+    width: 110px;
+    height: 120px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r2img5 {
+    width: 110px;
+    height: 120px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r3img1 {
+    width: 110px;
+    height: 120px;
+    margin-left: -5px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1399px) {
+  #r3img2 {
+    width: 110px;
+    height: 120px;
+    margin-left: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #r3img3 {
+  }
+}
+
+@media (min-width: 900px) {
+  #rightdiv {
+    width: 600px;
+    height: 700px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #middlediv {
+    width: 200px;
+    height: 700px;
+  }
+}
+
+#insideleft-div {
+  width: 600px;
+  height: 700px;
+}
+
+#insideright-div {
+  width: 600px;
+  height: 700px;
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1699px) {
+  #checkbtn {
+    width: 250px;
+    height: 80px;
+    margin-left: 159px;
+  }
+}
+
+@media (min-width: 1700px) {
+  #checkbtn {
+    width: 250px;
+    height: 80px;
+    margin-left: 235px;
+    margin-top: 20px;
+  }
+}
+
