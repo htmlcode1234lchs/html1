@@ -12,19 +12,42 @@
 <body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: cover;background-repeat: no-repeat;">
     <div style="margin-top: 63px;">
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1" style="color: rgb(0,135,182);font-size: 30px;font-weight: bold;">Surface Area</a></li>
-            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2" style="font-size: 30px;color: #0087b6;font-weight: bold;">Volume</a></li>
+            <li class="nav-item"><a class="nav-link active" role="tab" data-toggle="tab" href="#tab-1" id="tb1" style="color: rgb(0,135,182);font-size: 30px;font-weight: bold;">Surface Area</a></li>
+            <li class="nav-item"><a class="nav-link" role="tab" data-toggle="tab" href="#tab-2" id="tb2" style="font-size: 30px;color: #0087b6;font-weight: bold;">Volume</a></li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" role="tabpanel" id="tab-1" style="height: 780px;">
                 <div id="div-main" style="height: 736px;margin-right: auto;margin-left: auto;">
-                    <div id="div1" style="position: absolute;"><button class="btn" id="btn1" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/cube%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
-                        <button
-                            class="btn" id="btn2" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/cuboid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn3" type="button" style="color: #212529;position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                            <button
-                                class="btn" id="btn4" type="button" style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn5" type="button" style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                                <button
-                                    class="btn" id="btn6" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                    <div id="div1" style="position: absolute;">
+                        <button class="btn" id="btn1" type="button" 
+                            style="background-color: rgba(0,123,255,0);
+                            background-image: url(&quot;assets/img/cube%202.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;
+                            position: absolute;">
+                        </button>
+                        <button class="btn" id="btn2" type="button" 
+                            style="background-color: rgba(0,123,255,0);position: absolute;
+                            background-image: url(&quot;assets/img/cuboid%201.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn3" type="button" 
+                            style="color: #212529;position: absolute;
+                            background-image: url(&quot;assets/img/cone%201.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn4" type="button" 
+                            style="position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn5" type="button" 
+                            style="position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn6" type="button" 
+                            style="background-color: rgba(0,123,255,0);position: absolute;
+                            background-image: url(&quot;assets/img/pyramid%201.png&quot;);
+                            background-position: center;background-size: contain;background-repeat: no-repeat;">
+                        </button>
                     </div>
                     <div id="div2" style="position: absolute;background-image: url(&quot;assets/img/isometric%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                         <div class="visible" id="divinside1" style="background-image: url(&quot;assets/img/area/isometricdotpaper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
@@ -36,23 +59,58 @@
                     <div id="div4" style="position: absolute;background-image: url(&quot;assets/img/example%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                         <div id="divinside4" style="background-image: url(&quot;assets/img/area/cubefaces/cubedimensions.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
                     </div>
-                    <div id="div5" style="margin-right: auto;margin-left: auto;position: absolute;"><button class="btn" id="btn7" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/latreal%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                        <button
-                            class="btn" id="btn8" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/toatal%20%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn10" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                            <input
-                                type="text" id="formula-text1" style="position: absolute;text-align: center;font-weight: bold;"><input type="text" id="formula-text-3" style="position: absolute;text-align: center;font-weight: bold;"><input type="text" id="formula-text-4" style="position: absolute;text-align: center;font-weight: bold;"><input type="text"
-                                    id="formula-text-2" style="position: absolute;text-align: center;font-weight: bold;"></div>
+                    <div id="div5" style="margin-right: auto;margin-left: auto;position: absolute;">
+                        <button class="btn" id="btn7" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/latreal%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn" id="btn8" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/toatal%20%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn" id="btn10" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <input type="text" id="formula-text1" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="formula-text-3" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="formula-text-4" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="formula-text-2" style="position: absolute;text-align: center;font-weight: bold;">
+                    </div>
                 </div>
             </div>
             <div class="tab-pane" role="tabpanel" id="tab-2">
                 <div id="div-main-1" style="height: 736px;margin-right: auto;margin-left: auto;">
-                    <div id="div-1" style="position: absolute;"><button class="btn" id="btn-1" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/cube%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
-                        <button
-                            class="btn" id="btn-2" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/cuboid%202.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-3" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/cone%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                            <button
-                                class="btn" id="btn-4" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/cyclinder%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-5" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/prism%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                                <button
-                                    class="btn" id="btn-6" type="button" style="background-color: rgba(0,123,255,0);position: absolute;background-image: url(&quot;assets/img/pyramid%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                    <div id="div-1" style="position: absolute;">
+                        <button class="btn" id="btn-1" type="button" 
+                            style="background-color: rgba(0,123,255,0);
+                            background-image: url(&quot;assets/img/cube%201.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;position: absolute;">
+                        </button>
+                        <button class="btn" id="btn-2" type="button" 
+                            style="background-color: rgba(0,123,255,0);
+                            position: absolute;
+                            background-image: url(&quot;assets/img/cuboid%202.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn-3" type="button" 
+                            style="background-color: rgba(0,123,255,0);position: absolute;
+                            background-image: url(&quot;assets/img/cone%201.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn-4" type="button" 
+                            style="background-color: rgba(0,123,255,0);
+                            position: absolute;
+                            background-image: url(&quot;assets/img/cyclinder%201.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn-5" type="button" 
+                            style="background-color: rgba(0,123,255,0);position: absolute;
+                            background-image: url(&quot;assets/img/prism%201.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                        </button>
+                        <button class="btn" id="btn-6" type="button" 
+                            style="background-color: rgba(0,123,255,0);position: absolute;
+                            background-image: url(&quot;assets/img/pyramid%201.png&quot;);
+                            background-position: center;background-size: contain;
+                            background-repeat: no-repeat;">
+                        </button>
                     </div>
                     <div id="div-2" style="position: absolute;background-image: url(&quot;assets/img/isometric%20block.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                         <div id="divinside-1" style="background-image: url(&quot;assets/img/isometricdotpaper.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;position: absolute;"></div>
@@ -61,11 +119,15 @@
                     <div id="div-3" style="position: absolute;background-image: url(&quot;assets/img/volumeexampleblock.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;">
                         <div id="divinside-3" style="position: absolute;background-image: url(&quot;assets/img/volume/cuboidexWITHdimensions.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
                     </div>
-                    <div id="div-5" style="margin-right: auto;margin-left: auto;position: absolute;"><button class="btn" id="btn-7" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/latreal%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                        <button
-                            class="btn" id="btn-9total" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/toatal%20%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button><button class="btn" id="btn-8" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
-                            <input
-                                type="text" id="txt-1" style="position: absolute;text-align: center;font-weight: bold;"><input type="text" id="txt-2" style="position: absolute;text-align: center;font-weight: bold;"><input type="text" id="txt-3" style="position: absolute;text-align: center;font-weight: bold;"><input type="text" id="txt-4" style="position: absolute;text-align: center;font-weight: bold;"></div>
+                    <div id="div-5" style="margin-right: auto;margin-left: auto;position: absolute;">
+                        <button class="btn" id="btn-7" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/latreal%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn" id="btn-9total" type="button" style="position: absolute;background-color: rgba(0,123,255,0);color: #ffffff;background-image: url(&quot;assets/img/toatal%20%20%20surface%20area%20%20button%201.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <button class="btn" id="btn-8" type="button" style="position: absolute;background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/reset.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;"></button>
+                        <input type="text" id="txt-1" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="txt-2" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="txt-3" style="position: absolute;text-align: center;font-weight: bold;">
+                        <input type="text" id="txt-4" style="position: absolute;text-align: center;font-weight: bold;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -73,5 +135,66 @@
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
-
+<script>
+    var withbk = ['cube%202.png','cuboid%202.png','cone%202.png', 'cyclinder%202.png', 'prism%202.png','pyramid%202.png'];
+    var withoutbk = ['cube%201.png','cuboid%201.png', 'cone%201.png', 'cyclinder%201.png','prism%201.png','pyramid%201.png']
+    var saIsometricArray = ['cubeisometric.png','cubiodisometric.png',] ;
+    var sanetArray = ['cubenet.png','cuboidnet.png'];
+    var saexArray = ['cubeex.png','cuboidex.png','coneex.png', 'cylinder ex.png','','pyrimd ex.png'];
+    
+    var volumeIsometricArray = ['','cubiodisometricdimensions.png'];
+    var volimeExampleArray = ['','cuboidexWITHdimensions.png'];
+   
+    var position = 0;
+    var currentTab = 'tb1';
+    init(currentTab, position);
+    function init(id, position){
+        currentTab = id;
+        if(id == 'tb1'){
+            withbk.forEach((elemtnt, index) =>{
+                if(position == index){
+                    $('#btn'+(index+1)).css('background-image','url(assets/img/'+withbk[index]+')');
+                    $('#divinside2').css('background-image','url(assets/img/'+saIsometricArray[index]+')');
+                    $('#divinside3').css('background-image','url(assets/img/'+sanetArray[index]+')');
+                    $('#divinside4').css('background-image','url(assets/img/'+saexArray[index]+')');
+                }else{
+                    $('#btn'+(index+1)).css('background-image','url(assets/img/'+withoutbk[index]+')')
+                }
+            })            
+        }
+        else if(id == 'tb2'){
+            withbk.forEach((elemtnt, index) =>{
+                if(position == index){
+                    $('#btn-'+(index+1)).css('background-image','url(assets/img/'+withbk[index]+')');
+                    $('#divinside-2').css('background-image','url(assets/img/volume/'+volumeIsometricArray[index]+')');
+                    $('#divinside-3').css('background-image','url(assets/img/volume/'+volimeExampleArray[index]+')');
+                   // $('#divinside4').css('background-image','url(assets/img/'+saexArray[position]+')');
+                }else{
+                    $('#btn-'+(index+1)).css('background-image','url(assets/img/'+withoutbk[index]+')')
+                }
+            })            
+        }
+    }
+    $('#div1 > button').click(function(){
+        console.log(this.id);
+        var id = parseInt(this.id[this.id.length-1])-1;
+        init(currentTab, id);
+    });
+    $('#div-1 > button').click(function(){
+        console.log(this.id);
+        var id = parseInt(this.id[this.id.length-1])-1;
+        init(currentTab, id);
+    });
+    
+    $('.nav-tabs > li > a').click(function(){
+        console.log(this.id)
+        init(this.id,0);
+    });
+    $('#btn10').click(function(){
+        init(currentTab,0);
+    })
+    $('#btn-8').click(function(){
+        init(currentTab, 0);
+    });
+</script>
 </html>
