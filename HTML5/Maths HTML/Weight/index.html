@@ -7,6 +7,7 @@
     <title>Weight</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+  
 </head>
 
 <body style="background-image: url(&quot;assets/img/bg.jpg&quot;);background-position: top;background-size: auto;background-repeat: no-repeat;">
@@ -17,27 +18,277 @@
         </div>
     </div>
     <div class="d-xl-flex align-items-xl-center divplayarea" id="playareadiv" style="margin-left: auto;margin-right: auto;">
-        <div id="rightmaindiv" class="divrightmain" style="margin-left: auto;background-image: url(&quot;assets/img/block%201.png&quot;);background-position: center;background-repeat: no-repeat;background-size: contain;margin-right: auto;">
-            <div id="div-weightbalance" style="background-image: url(&quot;assets/img/Balancing.png&quot;);background-position: bottom;background-size: auto;background-repeat: no-repeat;margin-left: auto;margin-right: auto;"><input class="form-control-lg" type="text" id="text-kgs" style="font-weight: bold;width: 84px;height: 43px;" value="6 Kg"></div>
-            <div id="div-weights" style="width: 865px;height: 92px;"><img id="wimg1" style="margin-left: 100px;position: absolute;margin-top: 17px;background-image: url(&quot;assets/img/1kg.png&quot;);height: 73px;width: 100px;background-position: center;background-size: contain;background-repeat: no-repeat;">
-                <img
-                    id="wimg2" style="position: absolute;margin-left: 224px;margin-top: 26px;background-image: url(&quot;assets/img/500gm.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;width: 89px;height: 65px;"><img id="wimg3" style="position: absolute;margin-left: 339px;margin-top: 31px;background-image: url(&quot;assets/img/200gm.png&quot;);height: 61px;width: 79px;background-position: center;background-size: contain;background-repeat: no-repeat;">
-                    <img
-                        id="wimg4" style="position: absolute;margin-left: 450px;margin-top: 39px;background-image: url(&quot;assets/img/100gm.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;height: 52px;width: 69px;"><img id="wimg5" style="position: absolute;margin-left: 549px;margin-top: 47px;background-image: url(&quot;assets/img/50gm.png&quot;);height: 43px;background-position: center;background-size: contain;background-repeat: no-repeat;width: 59px;">
-                        <img
-                            id="wimg6" style="position: absolute;margin-left: 637px;margin-top: 51px;background-image: url(&quot;assets/img/20gm.png&quot;);height: 41px;width: 49px;background-position: center;background-size: contain;background-repeat: no-repeat;"><img id="wimg7" style="position: absolute;margin-left: 711px;margin-top: 57px;background-image: url(&quot;assets/img/1OGM.png&quot;);width: 43px;height: 33px;background-position: center;background-size: contain;background-repeat: no-repeat;"></div>
-            <div
-                class="text-center toprightdiv" id="righttopdiv" style="width: 705px;margin-left: auto;margin-right: auto;"><label style="font-size: 30px;">Drag and drop the food based on its classification</label></div>
-        <div class="text-center rightbottomdiv" id="bottomrightdiv" style="margin-right: auto;margin-left: auto;"><button class="btn btn-primary btnresult" id="correctbtn" type="button" style="background-image: url(&quot;assets/img/B_Check.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);position: absolute;"></button>
-            <button
-                class="btn btn-primary btnresult" id="incorrectbtn" type="button" style="background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);background-position: center;background-size: contain;background-repeat: no-repeat;background-color: rgba(255,255,255,0);width: 190px;height: 50px;position: absolute;margin-left: 90px;"></button><label style="margin-left: -43px;font-size: 29px;">Result</label></div>
-        <div id="div-images"><img id="rightimg1" style="position: absolute;width: 100px;height: 73px;margin-top: 358px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;"><img id="rightimg2" style="position: absolute;background-position: center;background-size: contain;background-repeat: no-repeat;margin-top: 278px;margin-left: 114px;width: 100px;height: 73px;">
-            <img
-                id="rightimg3" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 199px;"><img id="rightimg4" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 120px;"><img id="rightimg5" style="position: absolute;width: 100px;height: 73px;background-position: center;background-size: contain;background-repeat: no-repeat;margin-left: 114px;margin-top: 41px;"></div>
+        <div id="rightmaindiv" class="divrightmain" 
+            style="margin-left: auto;background-image: url(&quot;assets/img/block%201.png&quot;);
+            background-position: center;background-repeat: no-repeat;background-size: contain;
+            margin-right: auto;">
+            <div id="div-weightbalance" 
+                style="background-image: url(&quot;assets/img/Balancing.png&quot;);
+                background-position: bottom;background-size: auto;background-repeat: no-repeat;
+                margin-left: auto;margin-right: auto;">
+                <input class="form-control-lg" type="text" id="text-kgs" readonly
+                    style="font-weight: bold;width: 20%;margin-left: 13%;height: 43px;">
+            </div>
+            <div id="div-weights" style="width: 865px;height: 92px;">
+                <img id="wimg1" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/1kg.png"
+                    style="margin-left: 100px;position: absolute;margin-top: 17px;
+                    height: 73px;
+                    width: 100px;background-position: center;background-size: contain;
+                    background-repeat: no-repeat;">
+                <img id="wimg2" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/500gm.png"
+                    style="position: absolute;margin-left: 224px;margin-top: 26px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    width: 89px;height: 65px;">
+                <img id="wimg3" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/200gm.png"
+                    style="position: absolute;margin-left: 339px;margin-top: 31px;
+                    height: 61px;width: 79px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="wimg4" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/100gm.png"
+                    style="position: absolute;margin-left: 450px;margin-top: 39px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    height: 52px;width: 69px;">
+                <img id="wimg5" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/50gm.png"
+                    style="position: absolute;margin-left: 549px;margin-top: 47px;
+                    height: 43px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;
+                    width: 59px;">
+                <img id="wimg6" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/20gm.png"
+                    style="position: absolute;margin-left: 637px;margin-top: 51px;
+                    height: 41px;width: 49px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;">
+                <img id="wimg7" draggable="true" ondragstart="drag(event)"
+                    src="assets/img/1OGM.png"
+                    style="position: absolute;margin-left: 711px;margin-top: 57px;
+                    width: 43px;height: 33px;
+                    background-position: center;background-size: contain;background-repeat: no-repeat;">
+            </div>
+            <div class="text-center toprightdiv" id="righttopdiv" 
+                style="width: 705px;margin-left: auto;margin-right: auto;">
+                <label style="font-size: 30px;">Drag and drop the food based on its classification</label>
+            </div>
+      
+        <div id="div-images">
+            <div id="rightimg1" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="position: absolute;width: 100px;height: 73px;margin-top: 76%;border: 1px solid gray;
+                background-position: center;background-size: contain;background-repeat: no-repeat;
+                margin-left: 8%;"></div>
+            <div id="rightimg2" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="position: absolute;background-position: center;background-size: contain;border: 1px solid gray;
+                background-repeat: no-repeat;margin-top: 70%;margin-left: 8%;width: 100px;
+                height: 73px;"></div>
+            <div id="rightimg3" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="position: absolute;width: 100px;height: 73px;background-position: center;border: 1px solid gray;
+                background-size: contain;background-repeat: no-repeat;margin-left: 8%;
+                margin-top: 64%;"></div>
+            <div id="rightimg4" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="position: absolute;width: 100px;height: 73px;
+                background-position: center;background-size: contain;background-repeat: no-repeat;border: 1px solid gray;
+                margin-left: 8%;margin-top: 58%;"></div>
+            <div id="rightimg5" ondrop="drop(event)" ondragover="allowDrop(event)"
+                style="position: absolute;width: 100px;height: 73px;border: 1px solid gray;
+                background-position: center;background-size: contain;background-repeat: no-repeat;
+                margin-left: 8%;margin-top: 52%;">
+            </div>
+        </div>
+        <div class="text-center rightbottomdiv" id="bottomrightdiv" 
+        style="margin-right: auto;margin-left: auto;margin-top: 118%;">
+        <button class="btn btn-primary btnresult" id="correctbtn" type="button" 
+            style="background-image: url(&quot;assets/img/B_Check.png&quot;);
+            background-position: center;background-size: contain;background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0);position: absolute;">
+        </button>
+        <button class="btn btn-primary btnresult" id="incorrectbtn" type="button" 
+            style="background-image: url(&quot;assets/img/B_Show%20Answer.png&quot;);
+            background-position: center;background-size: contain;background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0);width: 190px;height: 50px;position: absolute;
+            margin-left: 90px;">
+        </button>
+        <label style="margin-left: -43px;font-size: 29px;">Result <p id="result">  </p></label>
+
     </div>
+    </div>
+    
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+<script>
+    var dragValues = [1,500,200,100,50,20,10];
+    var gmArray = [];
+    for(var i=10;i<=880;){
+        gmArray.push(i);
+        i +=10;
+    }
+    $('#text-kgs').val('');
+    var kgm = randomIntFromInterval(0,1);
+    var kg = 0;
+    var gm = 0;
+    if(kgm == 0){
+        kg = randomIntFromInterval(1,5);
+        $('#text-kgs').val(kg+' kg');
+    }else{
+        gm = randomIntFromInterval(0, gmArray.length);
+        $('#text-kgs').val(gmArray[gm]+' gm');
+    }
+    function randomIntFromInterval(min, max) { 
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
 
+    var resultsArray = [];
+    function play(audioToPlay) {
+        var audio = document.getElementById(audioToPlay);
+        audio.play();
+    }
+
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+    function removeNode(node) {
+        node.parentNode.removeChild(node);
+      }
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        var target = ev.target.id;
+        var nodeCopy = document.getElementById(data).cloneNode(true);
+        nodeCopy.id = "img" + ev.target.id;
+        var position = data.charAt(data.length-1);
+        resultsArray.push(dragValues[position-1]);
+        ev.target.appendChild(nodeCopy);
+        var h = 0;
+        var w = 0;
+        if(position == 1){
+            h = 73;
+            w = 100;
+        }else if( position == 2){
+            h=65;w=89;
+        }else if(position == 3){
+            h = 61;w=79;
+        }else if(position == 4){
+            h=52;w=69;
+        }else if(position == 5){
+            h=43;w=49;
+        }
+        $("#img" + ev.target.id).css('margin-left','0').css('margin-top','0')
+            .css('height',h+'px').css('width',w+'px')
+            .css('background-position','center').css('background-size','contain')
+            .css('background-repeat','no-repeat');
+
+        ev.stopPropagation();
+        return false;
+    }
+    $('#correctbtn').click(function(){
+        var sum = resultsArray.reduce(function(a, b){
+        return a + b;
+        }, 0);  
+         if(kgm ==0){
+            if( kg == sum){
+                $('#result').text('Correct')
+                $('#result').css('color','white')
+            }else{
+                $('#result').text('Wrong')
+                $('#result').css('color','red')
+            }
+         }else{
+            if(gmArray[gm] == sum){
+                $('#result').text('Correct')
+                $('#result').css('color','white')
+            }else{
+                $('#result').text('Wrong')
+                $('#result').css('color','red')
+            }
+         }
+    })
+    $('#incorrectbtn').click(function(){
+        if(kgm ==0){
+            for(var i=1;i<=kg;i++){
+                var nodeCopy = document.getElementById('wimg1').cloneNode(true);
+                nodeCopy.id = "imgrightimg" + i;
+                document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                .css('height','73px').css('width','100px')
+                .css('background-position','center').css('background-size','contain')
+                .css('background-repeat','no-repeat');
+            }
+        }else{
+            var sp =0;
+            var gmValue = gmArray[gm];
+            for(var i=1;i<6;i++){
+                if(gmValue >= 500){
+                    gmValue = gmValue - 500;
+                    var nodeCopy = document.getElementById('wimg2').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }else if(gmValue >= 200){
+                    gmValue = gmValue - 200;
+                    var nodeCopy = document.getElementById('wimg3').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }else if(gmValue >= 100){
+                    gmValue = gmValue - 100;
+                    var nodeCopy = document.getElementById('wimg4').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }else if(gmValue >= 50){
+                    gmValue = gmValue - 50;
+                    var nodeCopy = document.getElementById('wimg5').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }else if(gmValue >= 20){
+                    gmValue = gmValue - 20;
+                    var nodeCopy = document.getElementById('wimg6').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }else if(gmValue >= 10){
+                    gmValue = gmValue - 10;
+                    var nodeCopy = document.getElementById('wimg7').cloneNode(true);
+                    nodeCopy.id = "imgrightimg" + i;
+                    document.getElementById('rightimg'+i).appendChild(nodeCopy);
+                    $("#imgrightimg" + i).css('margin-left','0').css('margin-top','0')
+                    .css('height','65px').css('width','89px')
+                    .css('background-position','center').css('background-size','contain')
+                    .css('background-repeat','no-repeat');
+                }
+            }
+        }
+    })
+
+
+    $('#homebtn').click(function(){
+        window.location.reload();
+    });
+    $('#resetbtn').click(function(){
+        window.location.reload();
+    })
+</script>
 </html>
