@@ -1,0 +1,829 @@
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-playarea {
+    width: 1500px;
+    height: 800px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-left {
+    width: 130px;
+    height: 700px;
+    margin-left: -120px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left1 {
+    width: 130px;
+    height: 130px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left2 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left3 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left4 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middle {
+    width: 850px;
+    height: 800px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middle {
+    width: 750px;
+    height: 700px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-middle {
+    width: 650px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middletop {
+    width: 850px;
+    height: 180px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middletop {
+    width: 750px;
+    height: 150px;
+    margin-top: 70px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-middletop {
+    width: 650px;
+    height: 80px;
+    margin-top: 8px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-information {
+    width: 850px;
+    height: 100px;
+    margin-top: 64px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middlebottom {
+    width: 850px;
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middlebottom-1 {
+    width: 850px;
+    height: 550px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-right {
+    width: 350px;
+    height: 800px;
+    margin-left: -245px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-righttop {
+    width: 260px;
+    height: 300px;
+    margin-top: 60px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-right1 {
+    width: 130px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-right1 {
+    width: 130px;
+    height: 130px;
+    margin-left: 158px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-right1 {
+    width: 110px;
+    height: 110px;
+    margin-left: 123px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-right1 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-right2 {
+    width: 130px;
+    height: 130px;
+    margin-left: 163PX;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-right2 {
+    width: 110px;
+    height: 110px;
+    margin-left: 128px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-right2 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-right2 {
+    width: 130px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-right2 {
+    width: 110px;
+    height: 220px;
+  }
+}
+
+#btn-right4 {
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-right3 {
+    width: 130px;
+    height: 130px;
+    margin-left: 160px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-right3 {
+    width: 110px;
+    height: 110px;
+    margin-left: 126px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-right3 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-properties {
+    width: 350px;
+    height: 350px;
+    margin-left: 113px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-properties {
+    width: 280px;
+    height: 200px;
+    margin-top: 80px;
+    margin-left: 20px;
+    font-size: 35px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-reset {
+    width: 200px;
+    height: 60px;
+    margin-top: 30px;
+    margin-left: 195px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-reset {
+    width: 130px;
+    height: 40px;
+    margin-top: 30px;
+    margin-left: 169px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-reset {
+    width: 90px;
+    height: 25px;
+    margin-top: 30px;
+    margin-left: 28px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-playarea {
+    width: 1200px;
+    height: 700px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-playarea {
+    width: 1000px;
+    height: 450px;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-left {
+    width: 120px;
+    height: 550px;
+    margin-left: -62px;
+    margin-top: 27px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left1 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left1 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left2 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left2 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left3 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left3 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left4 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left4 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-information {
+    width: 750px;
+    height: 90px;
+    font-size: 25px;
+    margin-top: 50px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middlebottom {
+    width: 750px;
+    height: 480px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middlebottom-1 {
+    width: 750px;
+    height: 480px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-middlebottom-1 {
+    width: 650px;
+    height: 280px;
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-right {
+    width: 300px;
+    height: 600px;
+    margin-top: 60px;
+    margin-left: -177px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-righttop {
+    width: 220px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-right1 {
+    width: 110px;
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-right1 {
+    width: 90px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-properties {
+    width: 300px;
+    height: 300px;
+    margin-left: 78px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-properties {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-properties {
+    width: 220px;
+    height: 180px;
+    margin-top: 60px;
+    margin-left: 20px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-properties {
+    width: 130px;
+    height: 100px;
+    margin-top: 45px;
+    margin-left: 10px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-left {
+    width: 80px;
+    height: 400px;
+    margin-top: 12px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-information {
+    width: 500px;
+    height: 50px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-middlebottom {
+    width: 650px;
+    height: 280px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-right {
+    width: 200px;
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-righttop {
+    width: 180px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-right2 {
+    width: 90px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-middlebottomchild {
+    width: 750px;
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-middlebottomchild {
+    width: 800px;
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-middlebottomchild {
+    width: 600px;
+    height: 250px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left5 {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left5 {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left5 {
+    width: 110px;
+    height: 110px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-property1 {
+    width: 350px;
+    height: 160px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-property2 {
+    width: 350px;
+    height: 80px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #div-property3 {
+    width: 350px;
+    height: 80px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-property1 {
+    width: 200px;
+    height: 50px;
+    margin-top: 110px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input-property1 {
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-property2 {
+    width: 200px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input-property2 {
+    width: 100px;
+    height: 50px;
+    margin-left: 15px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #lab-property3 {
+    width: 200px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #input-property3 {
+    width: 100px;
+    height: 50px;
+    margin-left: 15px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-property1 {
+    width: 300px;
+    height: 140px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-property1 {
+    width: 150px;
+    height: 50px;
+    margin-top: 94px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input-property1 {
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-property2 {
+    width: 150px;
+    height: 50px;
+    margin-top: 18px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input-property2 {
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #div-property3 {
+    width: 300px;
+    height: 60px;
+    margin-top: 15px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #lab-property3 {
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #input-property3 {
+    width: 90px;
+    height: 40px;
+    margin-left: 15px;
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-property1 {
+    width: 200px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-property2 {
+    width: 200px;
+    height: 40px;
+    margin-top: 48px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #div-property3 {
+    width: 200px;
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-property1 {
+    width: 100px;
+    margin-top: 64px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input-property1 {
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-property2 {
+    width: 100px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #lab-property3 {
+    width: 100px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input-property3 {
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #input-property2 {
+    width: 70px;
+    height: 35px;
+    margin-left: 10px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left6 {
+    width: 80px;
+    height: 80px;
+    margin-top: -748px;
+    margin-left: 80px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left6 {
+    width: 110px;
+    height: 110px;
+    margin-top: -1018px;
+    margin-left: 116px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left6 {
+    width: 130px;
+    height: 130px;
+    margin-top: -1198px;
+    margin-left: 129px;
+  }
+}
+
+@media screen and (min-width: 1500px) and (max-width:1920px) {
+  #btn-left7 {
+    width: 130px;
+    height: 130px;
+    margin-top: -989px;
+    margin-left: 129px;
+  }
+}
+
+@media screen and (min-width: 1200px) and (max-width:1499px) {
+  #btn-left7 {
+    width: 110px;
+    height: 110px;
+    margin-top: -849px;
+    margin-left: 116px;
+  }
+}
+
+@media screen and (min-width: 1000px) and (max-width:1199px) {
+  #btn-left7 {
+    width: 80px;
+    height: 80px;
+    margin-top: -636px;
+    margin-left: 80px;
+  }
+}
+
