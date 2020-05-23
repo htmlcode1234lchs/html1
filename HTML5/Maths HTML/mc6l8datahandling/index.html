@@ -77,56 +77,55 @@
             background: #f1f7ff;
         }
 
-        
+
         ol {
-        height: 20px;
-        padding: 1em 0;
-        }
-        ol li {
-        display: inline-block;
-        height: 20px;
-        border: 1px solid #000;
-        margin-right: 4px;
-        }
-        ol li:nth-child(5n) {
-        transform: rotate(300deg);
-        height: 30px;
-        position: relative;
-        left: -15px;
-        top: 5px;
-        margin-right: 1em;
-        margin-top: -10px;
+            height: 20px;
+            padding: 1em 0;
         }
 
+        ol li {
+            display: inline-block;
+            height: 20px;
+            border: 1px solid #000;
+            margin-right: 4px;
+        }
+
+        ol li:nth-child(5n) {
+            transform: rotate(300deg);
+            height: 30px;
+            position: relative;
+            left: -15px;
+            top: 5px;
+            margin-right: 1em;
+            margin-top: -10px;
+        }
     </style>
 </head>
 
-<body id="body" style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-size: cover;background-repeat: no-repeat;">
+<body id="body"
+    style="background-image: url(&quot;assets/img/BG.jpg&quot;);background-size: cover;background-repeat: no-repeat;">
     <div id="div--1" style="margin-right: auto;margin-left: auto;">
-        <div id="div-2" 
-            style="background-image: url(&quot;assets/img/Record%20Data.png&quot;);
+        <div id="div-2" style="background-image: url(&quot;assets/img/Record%20Data.png&quot;);
             background-size: contain;background-repeat: no-repeat;">
             <input type="text" id="text-area-1" style="position: absolute;font-weight: bold;">
         </div>
-        <div id="div-3" style="background-image: url(&quot;assets/img/Frequency%20Table.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
+        <div id="div-3"
+            style="background-image: url(&quot;assets/img/Frequency%20Table.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
             <input type="number" oninput="myFunction('t-1')" id="t-1" style="position: absolute;font-weight: bold;">
             <input type="number" oninput="myFunction('t-2')" id="t-2" style="position: absolute;font-weight: bold;">
             <input type="number" oninput="myFunction('t-3')" id="t-3" style="position: absolute;font-weight: bold;">
             <input type="number" oninput="myFunction('t-4')" id="t-4" style="position: absolute;font-weight: bold;">
             <input type="number" oninput="myFunction('t-5')" id="t-5" style="position: absolute;font-weight: bold;">
 
-            <div id="d3d1" 
-                style="position: absolute;background-position: center;background-size: contain;
+            <div id="d3d1" style="position: absolute;background-position: center;background-size: contain;
                 background-repeat: no-repeat;">
                 <ol id="count1" style="margin-top: -7%;">&nbsp;</ol>
             </div>
-            <div id="d3d-4" 
-                style="position: absolute;background-position: center;background-size: contain;
+            <div id="d3d-4" style="position: absolute;background-position: center;background-size: contain;
                 background-repeat: no-repeat;">
                 <ol id="count2" style="margin-top: -50%;">&nbsp;</ol>
             </div>
-            <div id="d3d-3" 
-                style="position: absolute;background-position: center;background-size: contain;
+            <div id="d3d-3" style="position: absolute;background-position: center;background-size: contain;
                 background-repeat: no-repeat;">
                 <ol id="count3" style="margin-top: -21%;">&nbsp;</ol>
             </div>
@@ -138,36 +137,83 @@
                 background-size: contain;background-repeat: no-repeat;">
                 <ol id="count5" style="margin-top: 37%;">&nbsp;</ol>
             </div>
-			<div class="text-center divtally1" id="divtally1" style="position: absolute;"><button class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally1-1" id="btntally1-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;font-weight: bold;width: 100%;"><label id="tallylab1-1" class="tallylab1-1">+</label></button>
-                                <button
-                                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally1-2" id="btntally1-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;width: 100%;font-weight: bold;"><label id="tallylab1-2" class="tallylab1-2">-</label></button>
-                            </div>
-                            <div class="text-center divtally1" id="divtally-1" style="position: absolute;"><button class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally2-1" id="btntally2-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;font-weight: bold;width: 100%;"><label id="tallylab2-1" class="tallylab2-1">+</label></button>
-                                <button
-                                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally2-2" id="btntally2-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;width: 100%;font-weight: bold;"><label id="tallylab2-2" class="tallylab2-2">-</label></button>
-                            </div>
-                            <div class="text-center divtally1" id="divtally-2" style="position: absolute;"><button class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally3-1" id="btntally3-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;font-weight: bold;width: 100%;"><label id="tallylab3-2" class="tallylab3-1">+</label></button>
-                                <button
-                                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally3-2" id="btntally3-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;width: 100%;font-weight: bold;"><label id="tallylab3-2" class="tallylab3-2">-</label></button>
-                            </div>
-                            <div class="text-center divtally1" id="divtally-3" style="position: absolute;"><button class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally4-1" id="btntally4-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;font-weight: bold;width: 100%;"><label id="tallylab4-1" class="tallylab4-1">+</label></button>
-                                <button
-                                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally4-2" id="btntally4-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;width: 100%;font-weight: bold;"><label id="tallylab4-2" class="tallylab4-2">-</label></button>
-                            </div>
-                            <div class="text-center divtally1" id="divtally-4" style="position: absolute;"><button class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally5-1" id="btntally5-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;font-weight: bold;width: 100%;"><label id="tallylab5-1" class="tallylab5-1">+</label></button>
-                                <button
-                                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally5-2" id="btntally5-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;width: 100%;font-weight: bold;"><label id="tallylab5-2" class="tallylab5-2">-</label></button>
-                            </div>
+            <div class="text-center divtally1" id="divtally1" style="position: absolute;">
+                <button
+                    class="btn btn-primary text-center d-xl-flex justify-content-xl-center align-items-xl-center btntally1-1"
+                    id="btntally1-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;font-weight: bold;width: 100%;" onclick="updateTallyAndCount('add', '1')">
+                    <label id="tallylab1-1" class="tallylab1-1">+</label>
+                </button>
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally1-2" id="btntally1-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;width: 100%;font-weight: bold;" onclick="updateTallyAndCount('minus', '1')">
+                    <label id="tallylab1-2" class="tallylab1-2">-</label>
+                </button>
+            </div>
+            <div class="text-center divtally1" id="divtally-1" style="position: absolute;">
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally2-1" id="btntally2-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;font-weight: bold;width: 100%;" onclick="updateTallyAndCount('add', '3')">
+                    <label id="tallylab2-1" class="tallylab2-1">+</label>
+                </button>
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally2-2" id="btntally2-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;width: 100%;font-weight: bold;" onclick="updateTallyAndCount('minus', '3')">
+                    <label id="tallylab2-2" class="tallylab2-2">-</label>
+                </button>
+            </div>
+            <div class="text-center divtally1" id="divtally-2" style="position: absolute;">
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally3-1" id="btntally3-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;font-weight: bold;width: 100%;" onclick="updateTallyAndCount('add', '4')">
+                    <label id="tallylab3-2" class="tallylab3-1">+</label>
+                </button>
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally3-2" id="btntally3-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;width: 100%;font-weight: bold;" onclick="updateTallyAndCount('minus', '4')">
+                    <label id="tallylab3-2" class="tallylab3-2">-</label>
+                </button>
+            </div>
+            <div class="text-center divtally1" id="divtally-3" style="position: absolute;">
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally4-1" id="btntally4-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;font-weight: bold;width: 100%;" onclick="updateTallyAndCount('add', '2')">
+                    <label id="tallylab4-1" class="tallylab4-1">+</label>
+                </button>
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                align-items-xl-center btntally4-2" id="btntally4-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);text-align: center;
+                width: 100%;font-weight: bold;" onclick="updateTallyAndCount('minus', '2')">
+                    <label id="tallylab4-2" class="tallylab4-2">-</label>
+                </button>
+            </div>
+            <div class="text-center divtally1" id="divtally-4" style="position: absolute;">
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally5-1" id="btntally5-1" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;font-weight: bold;width: 100%;" onclick="updateTallyAndCount('add', '5')">
+                    <label id="tallylab5-1" class="tallylab5-1">+</label>
+                </button>
+                <button class="btn btn-primary text-center d-xl-flex justify-content-xl-center 
+                    align-items-xl-center btntally5-2" id="btntally5-2" type="button" style="background-color: rgb(0,134,181);color: rgb(255,255,255);
+                    text-align: center;width: 100%;font-weight: bold;" onclick="updateTallyAndCount('minus', '5')">
+                    <label id="tallylab5-2" class="tallylab5-2">-</label>
+                </button>
+            </div>
         </div>
-        <div id="div-4" style="background-image: url(&quot;assets/img/Bar%20Graph.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
+        <div id="div-4"
+            style="background-image: url(&quot;assets/img/Bar%20Graph.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;">
             <div id="in-div-4" style="position: absolute;background-size: contain;background-repeat: no-repeat;"></div>
         </div>
         <div id="div-5" style="position: absolute;">
-            <div class="btn-group" role="group" id="button-1"><button class="btn" id="b-1" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check%20tally.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn"
-                    id="b-2" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Gen%20Graph.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn" id="b-3" type="button"
-                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/check%20ans.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button class="btn" id="b-4" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/show%20ans.png&quot;);background-repeat: no-repeat;background-size: contain;position: absolute;"></button>
-                <button
-                    class="btn" id="b-5" type="button" style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
+            <div class="btn-group" role="group" id="button-1"><button class="btn" id="b-1" type="button"
+                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Check%20tally.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button
+                    class="btn" id="b-2" type="button"
+                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Gen%20Graph.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button
+                    class="btn" id="b-3" type="button"
+                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/check%20ans.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button><button
+                    class="btn" id="b-4" type="button"
+                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/show%20ans.png&quot;);background-repeat: no-repeat;background-size: contain;position: absolute;"></button>
+                <button class="btn" id="b-5" type="button"
+                    style="background-color: rgba(0,123,255,0);background-image: url(&quot;assets/img/Reset.png&quot;);background-size: contain;background-repeat: no-repeat;position: absolute;"></button>
             </div>
         </div>
     </div>
@@ -216,10 +262,7 @@
                 studendGrades += ',';
         }
         studendGrades = studendGrades.replace('undefined', '').trim();
-        console.log(studendGrades);
         $('#text-area-1').val(studendGrades);
-        // countDuplicates(studendGrades);
-        //let random= (a,b)=> a+(b-a+1)*crypto.getRandomValues(new Uint32Array(1))[0]/2**32|0
     }
     function randomIntFromInterval(min, max) { // min and max included 
         return Math.floor(Math.random() * (max - min + 1) + min);
@@ -229,34 +272,42 @@
         array_elements.sort();
         var counts = {};
         array_elements.forEach(function (x) { counts[x] = (counts[x] || 0) + 1; });
-        console.log(counts);
         return counts;
     }
 
     function myFunction(id) {
         var v = document.getElementById(id).value;
 
-        tallyMarks(id.charAt(id.length-1),parseInt(v));
+        tallyMarks(id.charAt(id.length - 1), parseInt(v));
     }
 
-    function tallyMarks(id, count){
-        console.log('id = '+id+" = "+count)
-        $('#count'+id).empty();
-        for(var i=0;i<count;i++){
-            $('#count'+id).append('<li class="'+id+'"></li>');
+    function tallyMarks(id, count) {
+        $('#count' + id).empty();
+        for (var i = 0; i < count; i++) {
+            $('#count' + id).append('<li class="' + id + '"></li>');
         }
     }
+
+    function updateTallyAndCount(type, id) {
+        var count = parseInt($('#t-' + id).val());
+        count = type == 'add' && Number.isNaN(count) ? 1 : type == 'add' ? count +1 : count - 1;
+        if (count >= 0) {            
+            $('#t-' + id).val(count);
+            tallyMarks(id, count);
+        }
+    }
+
     $('#b-1').click(function () {
         var t1 = $('#t-1').val();
         var t2 = $('#t-2').val();
         var t3 = $('#t-3').val();
         var t4 = $('#t-4').val();
-        var t5 = $('#t-5').val();        
+        var t5 = $('#t-5').val();
         studendGrades = $('#text-area-1').val();
-        var counts = countDuplicates(studendGrades);      
+        var counts = countDuplicates(studendGrades);
         if (t1 == counts['A']) {
             $('.1').css('border', '1px solid #1b844f');
-        } else {           
+        } else {
             $('.1').css('border', '');
             $('.1').css('border', '1px solid #ec3939');
         }
@@ -287,9 +338,9 @@
         var t2 = $('#t-2').val();
         var t3 = $('#t-3').val();
         var t4 = $('#t-4').val();
-        var t5 = $('#t-5').val();        
+        var t5 = $('#t-5').val();
         studendGrades = $('#text-area-1').val();
-        var counts = countDuplicates(studendGrades);      
+        var counts = countDuplicates(studendGrades);
         if (t1 == counts['A']) {
             $('#t-1').css('background-color', 'green');
         } else {
@@ -341,11 +392,10 @@
     $('#b-2').click(function () {
         studendGrades = $('#text-area-1').val();
         var counts = countDuplicates(studendGrades);
-        var graphValues =[];
+        var graphValues = [];
         for (let value of Object.values(counts)) {
             graphValues.push(value);
         }
-        console.log(graphValues);
         Highcharts.chart('in-div-4', {
             chart: {
                 type: 'column'
@@ -365,7 +415,7 @@
             }]
         });
     });
-    $('#b-5').click(function(){
+    $('#b-5').click(function () {
         window.location.reload();
     })
 </script>
